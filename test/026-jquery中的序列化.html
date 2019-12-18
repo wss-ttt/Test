@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	<form id="form">
+		编号:<input type="text" name="id">	
+		<br>
+		姓名:<input type="text" name="name">
+		<br>
+		性别:
+		<input type="radio" name="sex" value="男">男
+		<input type="radio" name="sex" value="女">女
+		<br>
+		<input type="button" name="sub" value="提交">
+		<ul>
+			<li>01</li>
+			<li>02</li>
+			<li>03</li>
+			<li>04</li>
+		</ul>
+	</form>	
+</body>
+<script type="text/javascript">
+	$('[type=button]').click(function(){
+		var res = $('#form').serializeArray();
+		$.each(res,function(index,ele){
+			console.log(index,ele);
+		});
+		res.forEach(function(ele,index){
+			console.log(ele,index);
+		});
+		for(let ele of res){
+			console.log(ele);
+		}
+		for(let index in res){
+			console.log(res[index]);
+		}
+		$('li').each(function(index,ele){
+			console.log(index,ele);	
+		});
+	})
+</script>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var now = new Date();
+		console.log('当前的时间:',now);
+		// 前30天的时间
+		var oneday = 24*3600*1000;   // 一天的毫秒数
+		var now2 = new Date(+now - 30*oneday);
+		console.log(now2);
+	</script>
+</html>

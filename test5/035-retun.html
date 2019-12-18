@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">确定</button>    
+</body>
+<script>
+    var oBtn = document.querySelector('#btn')
+    oBtn.onclick = function(){
+        test()
+        return //这样,该行代码的后面语句是不会执行的
+        console.log('此处的代码会执行吗') // 此时的代码是会执行
+    }
+    function test(){
+        console.log('test')
+        return
+    }
+</script>
+</html>

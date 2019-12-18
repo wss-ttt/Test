@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 引入所需要的文件 -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/moment-with-locales.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-sm-3">
+            <label>开始时间:</label>
+            <div class='input-group date' id='beginTime'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <label>结束时间:</label>
+            <div class='input-group date' id='endTime'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+/*$('#beginTime,#endTime').datetimepicker({
+    
+    locale: moment.locale('zh-cn'),
+    // defaultDate: "1990-1-1",
+});*/
+$('#beginTime').datetimepicker({
+    format: 'YYYY-MM-DD hh:mm:ss',
+    locale: moment.locale('zh-cn'),
+    defaultDate: "1990-1-1",
+    // endTime:new Date()
+});
+
+
+/*$('#beginTime').on('changeDate', function(ev) {
+    $('#endTime').datetimepicker('setStartDate', ev.date);
+    var d = $('#endTime').val();
+    if (d) {
+        var date = new Date(d.replace(/-/g, '/'));
+        if (date != 'Invalid Date' && date < ev.date) {
+            $('#endTime').datetimepicker('setDate', ev.date)
+        }
+    }
+});*/
+</script>
+
+</html>

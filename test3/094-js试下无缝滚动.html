@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>图片练习</title>
+        <style>
+            *{padding: 0;margin: 0;}
+            body{
+                overflow: hidden;
+            }
+            ul,li{
+                list-style: none;
+            }
+            #showbox{
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                width: 200px;
+                height: 112px;
+                border: 2px solid red;
+                margin: 0 0 0 -100px;
+            }
+            #showpic{
+                position: absolute;
+                left:0 ;
+                width: 600%;
+                height: 112px;
+                z-index: -1;
+            }
+            #showpic img{
+                float: left;
+            }
+            #box{
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                width: 800px;
+                height: 450px;
+                margin: -225px 0 0 -400px;
+                overflow: hidden;
+                
+            }
+            #box::after{
+                content: "点击屏幕暂停";
+                display: block;
+                position: absolute;
+                left: 320px;
+                top: 30px;
+                font-size: 30px;
+                color: white;
+            }
+            ul{
+                position: relative;
+                left: 0;
+                width: 600%;
+                height: 450px;
+            }
+            li{
+                width: 800px;
+                display: inline-block;
+                float: left;
+            }
+            ul img{
+                vertical-align: top;
+                width: 800px;
+                
+            }
+        </style>
+    </head>
+
+    <body >
+        <div id="showbox">
+            <div id="showpic">
+                <!-- <img src="images/1.jpg"/>
+                <img src="images/2.jpg"/>
+                <img src="images/3.jpg"/>
+                <img src="images/4.jpg"/>
+                <img src="images/5.jpg"/>
+                <img src="images/1.jpg"/> -->
+            </div>
+        </div>
+    
+        <div id="box">
+            <ul>
+                <li>
+                    <img src="images/1.jpg"/>
+                </li>
+                <li>
+                    <img src="images/2.jpg"/>
+                </li>
+                <li>
+                    <img src="images/3.jpg"/>
+                </li>
+                <li>
+                    <img src="images/4.jpg"/>
+                </li>
+                <li>
+                    <img src="images/5.jpg"/>
+                </li>
+                <li>
+                    <img src="images/1.jpg"/>
+                </li>
+            </ul>
+        </div>
+    </body>
+
+</html>
+<script type="text/javascript">
+    var ul = document.getElementsByTagName("ul")[0];
+    ul.position = 0;        //自定义属性
+    var showpic = document.getElementById("showpic");
+    showpic.position = 0;    //自定义属性
+    var timer = null;
+    var width1 =200,width2 = 800;
+    var star = true;
+    timer = setInterval(move,0);
+    function move(){
+        autoplay(ul,width2);
+        // autoplay(showpic,width1);
+    }
+    //定义自动播放函数
+    function autoplay(obj,width){
+        obj.position-=obj.offsetWidth/4000;
+        console.log(obj.position)
+        if(obj.position<-width*5){
+            obj.position =0;
+        }
+        obj.style.left = obj.position+"px";
+    }
+    //点击暂停动画
+    document.onclick = function(){
+        if(star){
+            clearInterval(timer);
+            star = false;
+        }else{
+            timer = setInterval(move,0);
+            star = true;
+        }
+    }
+</script>

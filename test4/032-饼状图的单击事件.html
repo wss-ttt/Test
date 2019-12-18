@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				width: 1200px;
+				height: 700px;
+				background-color: #ccc;
+				margin: 100px auto;
+			}
+			
+			.left {
+				height: 100%;
+				width: 50%;
+				background-color: #007AFF;
+				float: left;
+			}
+			
+			#main {
+				height: 100%;
+			}
+			
+			.right {
+				height: 100%;
+				width: 50%;
+				background-color: #00FCBD;
+				float: left;
+			}
+			
+			#main2 {
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="left">
+				<div id="main"></div>
+			</div>
+			<div class="right">
+				<div id="main2"></div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var myChart = null;
+		var myChart2 = null;
+		
+		// 模拟数据
+		var data = {
+			'wh': [{
+					'name': '新洲',
+					'value': 100
+				},
+				{
+					'name': '洪山',
+					'value': 200
+				},
+				{
+					'name': '江夏',
+					'value': 300
+				},
+				{
+					'name': '武昌',
+					'value': 400
+				}
+			],
+			'hg': [{
+					'name': '罗田',
+					'value': 100
+				},
+				{
+					'name': '阴山',
+					'value': 400
+				},
+				{
+					'name': '蕲春',
+					'value': 300
+				},
+				{
+					'name': '团风',
+					'value': 100
+				}
+			]
+		};
+
+		function initChart(names, brower) {
+			if(myChart != null && myChart != "" && myChart != undefined) {
+				myChart.dispose();
+			}
+			myChart = echarts.init(document.getElementById('main'));
+			var option = {
+				title: {
+					text: '',
+					subtext: '纯属虚构',
+					x: 'center'
+				},
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c} ({d}%)"
+				},
+				legend: {
+					orient: 'vertical',
+					left: 'left',
+					data: names
+				},
+				series: [{
+					name: '访问来源',
+					type: 'pie',
+					radius: '55%',
+					center: ['50%', '60%'],
+					data: brower,
+					itemStyle: {
+						emphasis: {
+							shadowBlur: 10,
+							shadowOffsetX: 0,
+							shadowColor: 'rgba(0, 0, 0, 0.5)'
+						}
+					},
+					label: {
+						normal: {
+							show: true,
+						}
+					},
+				}]
+			};
+			myChart.setOption(option);
+			// 图表自适应
+			$(window).resize(myChart.resize);
+			myChart.on('click', function(parms) {
+				var name = parms.name;
+				if(name=='武汉'){
+					var legendData=[],seriesData=[];
+					data['wh'].forEach(function(ele,index){
+						legendData.push(ele.name);
+						seriesData.push({
+							name:ele.name,
+							value:ele.value
+						});
+					});
+					console.log(legendData);
+					console.log(seriesData);
+					initChart2(legendData,seriesData);
+				}
+				if(name=='黄冈'){
+					var legendData=[],seriesData=[];
+					data['hg'].forEach(function(ele,index){
+						legendData.push(ele.name);
+						seriesData.push({
+							name:ele.name,
+							value:ele.value
+						});
+					});
+					initChart2(legendData,seriesData);
+				}
+			});
+		};
+
+		function initChart2(names, brower) {
+			if(!myChart2){
+				myChart2 = echarts.init(document.getElementById('main2'));
+			}
+			var option = {
+				title: {
+					text: '',
+					subtext: '纯属虚构',
+					x: 'center'
+				},
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c} ({d}%)"
+				},
+				legend: {
+					orient: 'vertical',
+					left: 'left',
+					data: names
+				},
+				series: [{
+					name: '访问来源',
+					type: 'pie',
+					radius: '55%',
+					center: ['50%', '60%'],
+					data: brower,
+					itemStyle: {
+						emphasis: {
+							shadowBlur: 10,
+							shadowOffsetX: 0,
+							shadowColor: 'rgba(0, 0, 0, 0.5)'
+						}
+					},
+					label: {
+						normal: {
+							show: false,
+						}
+					},
+				}]
+			};
+			myChart2.setOption(option);
+			// 图表自适应
+			$(window).resize(myChart2.resize);
+		};
+	</script>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var oimg = new Image();
+		oimg.src = 'images/1.jpg'
+		document.body.appendChild(oimg);
+		console.log(oimg);
+		
+		
+		oimg.onload = function(){
+			
+			console.log(oimg.width);
+			console.log(oimg.height);
+		};
+	</script>
+</html>

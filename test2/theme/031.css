@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  width: 1640px;
+  height: 700px;
+  background-color: #ccc;
+  margin: 50px auto;
+}
+
+.box > div {
+  width: 392px;
+  height: 112px;
+  border: 6px solid #57B8AD;
+  background-color: #1acd7e;
+  float: left;
+  margin-right: 1.4634146341%;
+}
+.box > div:nth-child(4n) {
+  margin-right: 0;
+}
+
+/*# sourceMappingURL=031.css.map */

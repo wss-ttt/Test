@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let o = {
+        name: '乔峰',
+        group: {
+            address: '武汉',
+            tel: '110'
+        }
+    }
+    let o2 = {
+        name: '杨过',
+        age: 18,
+        group: {
+            email: '11@qq.com'
+        }
+    }
+    let res = Object.assign({}, o, o2)
+    // 此时输出结果是: {name:'杨过',age:18,group:{email:'11@qq.com'}}
+    // 而不是   {name:'杨过',age:18,group:{email:'11@qq.com',address:'武汉',tel:'110'}}
+    console.log(res)  
+
+
+    let o3 = {
+        name:'乔峰',
+        group:{
+            addess:'武汉',
+            tel:'110'
+        }
+    }
+    /* o3.group = {
+        tel:'220'
+    } */
+    o3.group.email = 'ee@qq.com'
+    console.log('o3',o3)
+
+</script>
+
+</html>

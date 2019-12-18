@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <title>
+                Document
+            </title>
+            <style type="text/css">
+                * {
+
+        margin: 0;
+
+        padding: 0;
+
+    }
+
+    .wrap {
+
+        width: 360px;
+
+        height: 540px;
+
+        margin: 50px auto 0;
+
+        border: 2px solid paleturquoise;
+
+    }
+
+    .top {
+
+        font-size: 30px;
+
+        word-spacing: 90px;
+
+    }
+
+    #quest {
+
+        text-align: center;
+
+        font-size: 260px;
+
+    }
+
+    .answer {
+
+        margin: 50px auto 0;
+
+        text-align: center;
+
+        font-size: 40px;
+
+    }
+            </style>
+        </meta>
+    </head>
+    <body>
+        <div class="wrap">
+            <p class="top">
+                <span id="time">
+                    剩余时间:20
+                </span>
+                <span id="count">
+                    数量:0
+                </span>
+            </p>
+            <p id="quest">
+                字
+            </p>
+            <p class="answer">
+                <span>
+                    紫
+                </span>
+                <span>
+                    红
+                </span>
+                <span>
+                    黄
+                </span>
+                <span>
+                    蓝
+                </span>
+                <span>
+                    绿
+                </span>
+            </p>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var time = document.getElementById("time");
+
+var count = document.getElementById("count");
+
+var quest = document.getElementById("quest");
+
+var answer = document.getElementsByClassName("answer")[0];
+
+var spans = answer.getElementsByTagName("span");
+
+
+
+//剩余时间
+
+var times = 20;
+
+var timerTime = setInterval(function() {
+
+    times--;
+
+    time.innerHTML = '剩余时间:' + times;
+
+    if (times <= 0) {
+
+        clearInterval(timerTime);
+
+        alert("Game Over");
+
+        for (var i = 0; i < spans.length; i++) {
+
+            spans[i].onclick = null;
+
+        }
+
+    }
+
+
+
+}, 1000);
+
+
+
+//显示问题的随机数组
+
+var texts = ["红", "黄", "蓝", "绿", "紫"];
+
+//字体随机的颜色
+
+var colors = ["red", "yellow", "blue", "green", "purple"];
+
+//随机函数
+
+function randNum(x, y) {
+
+    return Math.floor(Math.random() * (y - x + 1) + x);
+
+}
+
+
+
+var answer = ''; //定义变量,存储文字,让 color 和 文字对应
+
+//问题部分
+
+function randQuest() {
+
+    quest.innerHTML = texts[randNum(0, 4)];
+
+    var color = colors[randNum(0, 4)];
+
+    quest.style.color = color;
+
+    switch (color) {
+
+        case "red":
+
+            answer = "红";
+
+            break;
+
+        case "blue":
+
+            answer = "蓝";
+
+            break;
+
+        case "green":
+
+            answer = "绿";
+
+            break;
+
+        case "purple":
+
+            answer = "紫";
+
+            break;
+
+        case "yellow":
+
+            answer = "黄";
+
+            break;
+
+        default:
+
+            break;
+
+    }
+
+}
+
+randQuest();
+//洗牌算法 (交换数组下标上的值)
+
+function randArry(arr) {
+
+    for (var i = 0; i < arr.length; i++) {
+
+        var n = randNum(0, arr.length - 1);
+
+        if (n != i) {
+
+            var temp = arr[i];
+
+            arr[i] = arr[n];
+
+            arr[n] = temp;
+
+        }
+
+    }
+
+}
+
+
+
+
+
+// 答案部分
+
+function randAns() {
+
+    randArry(texts);
+
+    randArry(colors);
+
+    for (var i = 0; i < spans.length; i++) {
+
+        spans[i].innerHTML = texts[i];
+
+        spans[i].style.color = colors[i];
+
+    }
+
+}
+
+
+
+randAns();
+
+
+
+
+
+
+
+//点击的答案和问题想对应
+
+for (var i = 0; i < spans.length; i++) {
+
+    spans[i].onclick = clickAction;
+
+}
+
+
+
+var coun = 0; //定义变量存储成绩
+
+function clickAction() {
+
+    if (this.innerHTML == answer) {
+
+        coun++;
+
+        count.innerHTML = "数量:" + coun;
+
+        randQuest();
+
+        randAns();
+
+    }
+
+}
+    </script>
+</html>

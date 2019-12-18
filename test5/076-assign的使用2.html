@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let o = {
+        name:'乔峰',
+        age:18,
+        info:{
+            tel:'110',
+            address:'武汉'
+        }
+    }
+    let o2 = Object.assign({},o)
+    o2.name = '杨过'
+    o2.info.tel = '220'
+    console.log(o)
+    console.log(o2)
+    console.log(o === o2)  // false
+    console.log(o.info === o2.info)   // true
+</script>
+</html>

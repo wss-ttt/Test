@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+body {
+	/*padding: 1em;*/
+}
+/* 这是一种CSS3定义变量的写法 */
+:root {
+	--battery-width: 50px;
+	--battery-height: 100px;
+	--battery-border-width: 10px;
+	--battery-border-color: black;
+}
+.battery {
+	/*width: var(--battery-width);  
+	height: var(--battery-height);  
+	border: var(--battery-border-width) solid var(--battery-border-color);*/
+	
+	width: 50px;
+	height: 100px;
+	border:10px solid #000;
+	
+	/*padding: calc(var(--battery-border-width) / 2);*/
+	padding: 5px;
+	/*margin-top: var(--battery-border-width);*/
+	position:relative;
+	/* 对于linear-gradient来说，如果临近两个颜色的百分比相同，可以制作出斑马线的效果，而不是渐变 */
+	/*background-image: linear-gradient(0deg, green 15%, red 15%);*/
+	background-repeat: repeat-y;
+	/*background-repeat: no-repeat;*/
+	background-size: 100% 20%;
+	background-clip: content-box; /* 将背景限定在内容区域 */
+	box-sizing: content-box;
+	transform: rotate(0deg);
+	/*display: inline-block;*/
+	margin: 100px auto;
+}
+/* 伪元素（Pseudo-elements）*/
+.battery::before {
+	content: '';
+	/*width: calc(2 * var(--battery-border-width));
+	height: var(--battery-border-width);
+	background-color: var(--battery-border-color);*/
+	
+	width: 20px;
+	height: 20px;
+	background-color: #000;
+	position: absolute;
+	/*top: calc(-2 * var(--battery-border-width));
+	left: calc(50% - var(--battery-border-width));*/
+	top:-20px;
+	left: calc(50% - 10px);
+}
+/* 伪元素的原始大小和父元素的内容区域一样 */
+.battery::after {
+	content: '';
+	
+	/*width: calc(100% - var(--battery-border-width));*/
+	/*height: calc(100% - var(--battery-border-width));*/
+	
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+	position: absolute;
+	background-color: #000;
+	/*
+	CSS3的动画有一个问题，就是如果重复播放，那么到达最后一帧时会立马切到第一帧（或某个值如果再加会达到上限，则返回初始值），导致最后一帧不显示
+	解决方法就是在终止状态前复制一份终止状态。
+	*/
+	
+	animation: battery-change 2s steps(5) both infinite;
+	animation-play-state: paused;
+}
+@keyframes battery-change {
+	0% {
+		/*height: calc(100% - var(--battery-border-width));*/
+		height: calc(100% - 10px);
+	}
+	/*80% {
+		height: 0px;
+	}*/
+	100% {
+		height: 0px;
+	}
+}
+</style>
+<style id="batteryStyle"></style>
+<script>
+window.onload = ()=> {
+	const battery = document.getElementById("battery");
+	// 伪元素不是一个实际存在于DOM的元素，因此只能用getComputedStyle拿到其计算后的属性，并且只能获取不能更改
+	const batteryAfter = window.getComputedStyle(battery, "::after");
+	//getPropertyValue拿到的值有可能会带转化后的单位px，这样是不能直接参与运算的
+	const batteryHeight = parseInt(batteryAfter.getPropertyValue("height"));
+	const batterySteps = 5;
+	const batteryStepPercent = 100 / batterySteps;
+	const batteryStepHeight = batteryHeight / batterySteps;
+	const batteryTmpValue = 100 * batteryStepHeight / batteryHeight;
+	/*
+	状态切换的方法有：
+	(1)动态切换class
+	(2)CSSStyleSheet.insertRule()和deleteRule
+	(3)使用现有的style标签，通过!import来使值生效
+	*/
+	const batteryStyle = document.getElementById("batteryStyle");
+	/*
+	offsetWidth(Height): 2*border + 2*padding + content
+	scrollWidth(Height): 1*border + 2*padding + content
+	clientWidth(Height): 0*border + 2*padding + content
+	*/
+	console.log(battery.offsetHeight, battery.scrollHeight, battery.clientHeight);
+	let batteryIntervalId;
+	
+	batteryCharging();
+	
+	function setBattery(value){
+		value = 100 - value;
+		//level这里要跟前面css的step相对应
+		const currentHeight = parseInt(value / batteryTmpValue) * batteryStepHeight;
+		batteryStyle.innerText = ".battery::after{height: " + currentHeight + "px !important; animation-play-state: paused;}";
+	}
+	
+	function batteryCharging(){
+		if(batteryIntervalId != undefined) {
+				clearInterval(batteryIntervalId);
+				batteryIntervalId = undefined;
+			}
+			batteryStyle.innerText = ".battery::after{animation-play-state: running !important;}";
+	}
+
+}
+</script>
+</head>
+
+<body>
+<div id="battery" class="battery"></div>
+</body> 
+</html>

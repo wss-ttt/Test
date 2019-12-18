@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.header{
+				height: 80px;
+				background-color: #1ACD7E;
+			}
+			.container{
+				width: 1240px;
+				margin: 0 auto 40px;
+				background-color: #ccc;
+				height: 4000px;
+			}
+			.left{
+				width: 890px;
+				float: left;
+				height:1000px;
+				background-color:red;
+			}
+			.left .leftTool{
+				width: 80px;
+				height: 664px;
+				float: left;
+				/*background-color: #007AFF;*/
+			}
+			.left .leftTool .left-stick-wp{
+				width: 80px;
+				height: 664px;
+				position: relative;
+				transition: all .5s;
+				background-color: #080808;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header"></div>
+		<div class="container">
+			<div class="left">
+				<div class="content">
+					<div class="leftTool">
+						<div class="left-stick-wp"></div>
+					</div>
+					<div class="content-article"></div>
+				</div>
+				<div class="comment">
+					
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(window).on('scroll',function(){
+			var scrollTop = $(this).scrollTop();
+			console.log(scrollTop);
+			if(scrollTop>200){
+				$('.left-stick-wp').css({
+					'top':'100px',
+					'position':'fixed'
+				});
+			}else{
+				$('.left-stick-wp').css({
+					'top':'0',
+					'position':''
+				});
+			}
+		});
+	</script>
+</html>

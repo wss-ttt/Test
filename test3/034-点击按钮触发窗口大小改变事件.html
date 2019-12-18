@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				height: 500px;
+				background-color: #00B83F;
+			}
+			.btn {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 80px;
+				background-color: rgba(0, 0, 0, .5);
+				z-index: 999;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="btn">
+			<button>隐藏</button>
+			<button>显示</button>
+			<button>触发窗口大小改变事件</button>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('button:eq(2)').click(function(){
+			$(window).trigger('resize');
+		});
+		
+		
+		$(function(){
+			
+			$('button:eq(2)').trigger('click');
+			
+			// $('button:eq(2)').click();
+			
+		})
+		
+		
+		$(window).resize(function(){
+			console.log('改变了。。。。');
+		});
+	</script>
+</html>

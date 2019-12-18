@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				/*display: none;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<select name="" id="">
+				<option value="">aaa</option>
+				<option value="">bbb</option>
+				<option value="">ccc</option>
+			</select>
+		</div>
+		<button>1</button>
+		<button>2</button>
+		<button>3</button>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('button:eq(0)').click(function(){
+			$('select option:eq(0)').attr('selected','selected');
+		});
+		$('button:eq(1)').click(function(){
+			$('select option:eq(1)').attr('selected','selected');
+		});
+		$('button:eq(2)').click(function(){
+			$('select option:eq(2)').attr('selected','selected');
+		});
+	</script>
+</html>

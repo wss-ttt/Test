@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-multiselect.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-multiselect.js"></script>
+</head>
+
+<body>
+    <h2>单选</h2>
+    <select id="test1">
+            <option value="1">广东省</option>
+        <option value="2">广西省</option>
+        <option value="3">福建省</option>
+        <option value="4">湖南省</option>
+        <option value="5">山东省</option>
+    </select>
+    <h2>多选</h2>
+    <select id="test2" multiple>
+            <option value="1">广东省</option>
+        <option value="2">广西省</option>
+        <option value="3">福建省</option>
+        <option value="4">湖南省</option>
+        <option value="5">山东省</option>
+    </select>
+    <h2>分组</h2>
+    <select id="test3" multiple>
+        <optgroup label="湖北省">
+            <option>武汉市</option>
+            <option>黄石市</option>
+            <option>黄冈市</option>
+        </optgroup>
+        <optgroup label="河南省">
+            <option>焦作市</option>
+            <option>郑州市</option>
+            <option>信阳市</option>
+        </optgroup>
+    </select>
+    <button onclick="get()">获取值</button>
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#test1').multiselect();
+    $('#test2').multiselect();
+    $('#test3').multiselect({
+        enableClickableOptGroups: true,
+        enableCollapsibleOptGroups: true,
+        nonSelectedText: '请选择',
+    });
+});
+
+function get() {
+    var vals = [];
+    $('#test3 option:selected').each(function() {
+    	var obj={};
+        // vals.push($(this).val());
+        console.log(this);
+        var group = $(this).closest('optgroup').attr('label');
+        // console.log(group);   // 湖北省
+        obj[group]=$(this).val();
+        vals.push(obj);
+    });
+    console.log(vals);
+    console.log(vals['0']['湖北省']);
+}
+
+</script>
+
+</html>

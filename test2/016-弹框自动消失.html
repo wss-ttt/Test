@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		body{
+			background-color: #ccc;
+		}
+		div.my_score{
+			position:fixed;
+			*position:absolute;
+			top:50%;
+			left:50%;
+			z-index:110;
+			width:220px;
+			height:120px;
+			line-height:120px;
+			border:4px solid black;
+			transform: translate(-50%,-50%);
+			border-radius:8px;
+			-webkit-border-radius:8px;
+			-moz-border-radius:8px; 
+			text-align:center;
+			font-size:18px;
+			font-weight:lighter;
+			background-color: #1acd7e;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="myscore" class="my_score" style="display:none;">广告</div>
+		<div class="main">aaaaa</div>
+	</body>
+	<script>
+		window.onload = function(){
+			
+			var oScore = document.getElementById('myscore');
+			
+			oScore.style.display = 'block';
+			
+			setTimeout(function(e){
+				
+				e.style.display = 'none';
+				
+			},2000,oScore);
+		}
+	</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				float: left;
+			}
+			.content{
+				border: 1px solid red;
+				float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul class="nav nav-pills">
+			<li>
+				<a href="#idea" data-toggle="tab" data-target="#idea">
+					<i class="glyphicon glyphicon-menu-right"></i> 人才理念
+				</a>
+			</li>
+			<li>
+				<a href="#plan" data-toggle="tab">
+					<i class="glyphicon glyphicon-menu-right"></i> 职业规划
+				</a>
+			</li>
+			<li>
+				<a href="#recruit" data-toggle="tab">
+					<i class="glyphicon glyphicon-menu-right"></i> 人才招聘
+				</a>
+			</li>
+		</ul>
+		<div class="content tab-content">
+			<div class="tab-pane active" id="idea">人才理念</div>
+			<div class="tab-pane" id="plan">职业规划</div>
+			<div class="tab-pane" id="recruit">人才招聘</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

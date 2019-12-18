@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/bootstrap-table.css" />
+		<style type="text/css">
+			.serious {
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+				border-radius: 50%;
+				background-color: red;
+			}
+			
+			#toolbar {
+				width: 200px;
+				height: 100px;
+				border: 1px solid red;
+			}
+			
+			#bootstraptable {
+				border: 1px solid green;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div id="toolbar">好好学习</div>
+			<table id="bootstraptable">
+			</table>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap-table.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap-table-zh-CN.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#bootstraptable').bootstrapTable({
+				method: 'get',
+				url: 'data/data2.json',
+				search: true, // 是否显示搜索的文本框
+				showSearch: true,
+				showRefresh: true,
+				showColumns: true,
+				showToggle: true,
+				//				striped: true, // 表格的各行变色(可以看一下的它的原理)
+				pagination: true,
+				pageNumber: 1, // 初始化加载第几页的数据
+				pageSize: 5, // 每一页显示的条数
+				//				toolbar: '#boolbar',
+				showFooter: true,
+				locale: "zh-CN",
+				columns: [{
+						checkbox: true
+					},
+					{
+						field: '',
+						title: '序号', // 自定义序号列
+						formatter: function(value, row, index) {
+							return index + 1;
+						}
+					},
+					{
+						field: 'name',
+						title: '姓名'
+					},
+					{
+						field: 'age',
+						title: '年龄'
+					},
+					{
+						field: '', // 自定义列
+						title: '等级',
+						formatter: function(value, row, index) {
+							//							return `<span style="display:inline-block;width:18px;height:18px;background-color:red;border-radius:50%;"></span>`
+							return `<span class="serious"></span>`;
+						}
+					}
+				],
+				formatNoMatches: function() {
+					return '暂无数据';
+				}
+			});
+		});
+	</script>
+
+</html>

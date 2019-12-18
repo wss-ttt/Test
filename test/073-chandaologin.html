@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面自适应</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /*保证盒子大小不变*/
+        }
+
+        body {
+            background: #1183fb linear-gradient(-90deg, #0a48d1 0%, #1183fb 100%);
+            background-color: #1183fb;
+        }
+
+        .main {
+            /*border: 1px solid #fff;*/
+            /*background: #eee;*/
+        }
+
+        .main .container {
+            padding: 0 20px;
+        }
+
+        .main .container .box {
+            width: 100%;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .main .container .box .header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .main .container .box .header h2 {
+            font-size: 16px;
+            line-height: 32px;
+            margin: 0;
+            font-weight: 700;
+        }
+		.main .container .box .content{
+			margin: 20px 0;
+		}
+        .main .container .box .content img {
+            margin-left: 40px;
+            /*border: 1px solid red;*/
+        }
+
+        .main .container .box .content .table-form .keepLoginBox {
+            position: relative; /*父级相对定位*/
+        }
+
+        .main .container .box .content .table-form .keepLoginBox input[type=checkbox] {
+            position: absolute; /*子级相对定位*/
+            top: 0;
+            left: 0;
+
+        }
+
+        .main .container .box .content .table-form .keepLoginBox label {
+            padding-left: 30px;
+        }
+		.main .container .box .content .table-form a{
+			color:#3c4353;
+		}
+		.main .container .box .content .table-form a:hover{
+			color:#0c64eb;
+		}
+		.form-actions .btn{
+			margin-right: 10px;   /*10个像素的右边距*/
+			outline: none;
+		}
+		.form-actions .btn-primary{
+			background: #0c64eb;
+			border: none;
+		}
+		.form-actions .btn-primary:hover{
+			background: rgba(12,100,235,.8);
+			border: none;
+		}
+        #login {
+            max-width: 600px !important;
+            margin: 0 auto;
+            height: 285px;
+            /*border: 1px solid red;*/
+            /*background: #fff;*/
+
+            /*为了防止窗口缩放太小 可以给一个最小的宽度*/
+            /*min-width: 600px;*/
+        }
+
+        .col-4 {
+            padding: 0;
+        }
+
+        .col-8 {
+            padding: 0;
+        }
+		.form-control{
+			box-shadow: none;   /*去掉阴影*/
+		}
+        .table-form > tbody > tr > th {
+            text-align: right;
+            /*右对齐*/
+        }
+
+        .table > thead > tr > th,
+        .table > tbody > tr > th,
+        .table > tfoot > tr > th,
+        .table > thead > tr > td,
+        .table > tbody > tr > td,
+        .table > tfoot > tr > td {
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+            border-top: none;
+        }
+		a:focus,a:hover{
+			color:#0c64eb;
+			text-decoration: none;
+		}
+        @media screen and (min-width: 1400px) {
+            .main .container {
+                padding: 0 40px;
+            }
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body>
+<div class="main">
+    <div class="container" id="login">
+        <div class="box">
+            <div class="header">
+                <h2>武汉XXXXX技术有限公司项目管理系统</h2>
+            </div>
+            <div class="content">
+                <div class="col-xs-4 col-4">
+                    <img src="http://placehold.it/100x150/">
+                </div>
+                <div class="col-xs-8 col-8">
+                    <form>
+                        <table class="table table-form">
+                            <tbody>
+	                            <tr>
+	                                <th>用户名</th>
+	                                <td><input class='form-control' type='text' name='account' id='account' autofocus/></td>
+	                            </tr>
+	                            <tr>
+	                                <th>密码</th>
+	                                <td><input class='form-control' type='password' name='password'/></td>
+	                            </tr>
+	                            <tr>
+	                                <th></th>
+	                                <td>
+	                                    <div class="keepLoginBox">
+	                                        <input type='checkbox' id="keepLogin" name='keepLogin'/>
+	                                        <label for="keepLogin">保持登录</label>
+	                                    </div>
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                            	<th></th>
+	                            	<td class="form-actions">
+	                            		<button type="submit" class="btn btn-primary">登录</button>
+	                            		<a href="#">忘记密码</a>
+	                            	</td>
+	                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var $login = $('#login');
+
+    $(function () {
+        adjustPanelPos();
+        $(window).on('resize', adjustPanelPos);
+    })
+
+    function adjustPanelPos() {
+        var bestTop = Math.max(0, Math.floor($(window).height() - $login.outerHeight()) / 2);
+        $login.css('margin-top', bestTop);
+        var windowH = $(window).height();
+        var loginH = $login.outerHeight();
+        console.log('window的heiht:', windowH);
+        console.log('login的height:', loginH);
+    }
+</script>
+
+</html>

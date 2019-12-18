@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/swiper.css" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				width: 600px;
+				height: 300px;
+				border: 1px solid #000;
+			}
+			.box>div{
+				font-size:40px;
+				color:#fff;
+			}
+			.box1{
+				background-color: #125C5B;
+			}
+			.box2{
+				background-color: #1ACD7E;
+			}
+			.box3{
+				background-color: #007AFF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="swiper-container box">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide box1">1</div>
+				<div class="swiper-slide box2">2</div>
+				<div class="swiper-slide box3">3</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.swiper-container', {
+			direction: 'horizontal', // 垂直切换选项
+			loop: true, // 循环模式选项
+			autoplay: true, //可选选项，自动滑动
+			speed: 800, //可选选项，滑动速度
+			
+		})
+	</script>
+
+</html>

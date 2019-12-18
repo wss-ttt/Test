@@ -1,0 +1,8 @@
+1 如果assessErr=0
+	chart:在图表的柱子上需要显示一定的宽度 所以需要给assessErr=-0.001，但是在悬浮提示的
+	时候还是提示为0
+
+	table:依旧显示0
+2 如果assessErr=-99    assessType=9
+	chart: 柱状图的柱子不需要显示宽度,所以就绪把assessErr变成0  同时说明是虚拟数据
+	table: 显示成'/'

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 400px;
+			height: 150px;
+			background: green;
+			position: absolute;   /*此时div是绝对定位*/
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>	
+</body>
+<script type="text/javascript">
+	window.onresize=window.onload=function(){
+		// 1 获取浏览器可视区域的宽度和高度
+		var cW=document.documentElement.clientWidth||document.body.clientWidth;
+		var cH=document.documentElement.clientHeight||document.body.clientHeight;
+		// 2 获取元素自身的宽度和高度
+		var oBox=document.querySelector('.box');
+		var w=oBox.offsetWidth;
+		var h=oBox.offsetHeight;
+		// 3 取中计算
+		var left=(cW-w)/2;
+		var top=(cH-h)/2;
+		// 4 赋值
+		oBox.style.left=left+'px';	
+		oBox.style.top=top+'px';
+	}
+</script>
+</html>

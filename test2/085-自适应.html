@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="theme/085_2.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="left">左边</div>
+			<div class="right">
+				<div class="header">头部</div>
+				<div class="tabs"></div>
+				<div class="main-content">
+					<div class="select">查询</div>
+					<div class="detect">主题</div>
+				</div>
+				<div class="footer">底部</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var html_fontsize = $('html').css('font-size');
+		console.log(html_fontsize);   // 默认字体大小是16px
+		var h = document.body.clientHeight||document.documentElement.clientHeight;
+		console.log(h);
+	</script>
+</html>

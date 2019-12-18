@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+</head>
+
+<body>
+    <h2>常规</h2>
+    <select class="selectpicker">
+        <option value="1">广东省</option>
+        <option value="2">广西省</option>
+        <option value="3">福建省</option>
+        <option value="4">湖南省</option>
+        <option value="5">山东省</option>
+    </select>
+    <h2>搜索框</h2>
+    <select class="selectpicker" data-live-search="true">
+        <option value="1">广东省</option>
+        <option value="2">广西省</option>
+        <option value="3">福建省</option>
+        <option value="4">湖南省</option>
+        <option value="5">山东省</option>
+    </select>
+    <h2>多选</h2>
+    <select class="selectpicker" id="sel3" multiple>
+        <option value="1">广东省</option>
+        <option value="2">广西省</option>
+        <option value="3">福建省</option>
+        <option value="4">湖南省</option>
+        <option value="5">山东省</option>
+    </select>
+    <h2>分组</h2>
+    <select class="selectpicker" id="sel4" multiple>
+        <optgroup label="湖北省">
+            <option value="wh">武汉市</option>
+            <option value="hs">黄石市</option>
+            <option value="hg">黄冈市</option>
+        </optgroup>
+        <optgroup label="河南省">
+            <option value="jz">焦作市</option>
+            <option value="zz">郑州市</option>
+            <option value="xy">信阳市</option>
+        </optgroup>
+        <optgroup label="河北省">
+            <option>石家庄市</option>
+            <option>邯郸市</option>
+        </optgroup>
+        <optgroup label="湖南省">
+            <option>长沙市</option>
+            <option>衡阳市</option>
+        </optgroup>
+    </select>
+    <button class="btn btn-primary" id="btn">回显</button>
+    <button class="btn btn-primary" id="btn2">获取选中的值</button>
+    <div class="box">
+    </div>
+</body>
+<script type="text/javascript">
+//回显
+$('#btn').click(function() {
+    $('#sel4').selectpicker('val', ['wh', 'hs','zz'])
+});
+
+$('#btn2').click(function() {
+    var val = $('#sel4').selectpicker('val'); // 可以获取选中的值
+    // console.log(val);
+});
+// 改变事件
+$('#sel4').change(function() {
+    var vals = [];
+    $('#sel4 option:selected').each(function() {
+        // console.log(this);
+        var obj = {};
+        var group = $(this).closest('optgroup').attr('label');
+        obj[group] = $(this).val();
+        vals.push(obj);
+    });
+    // console.log(vals);
+    var str = '';
+    vals.forEach(function(ele, index) {
+        // console.log(ele);
+        for (let [key, value] of Object.entries(ele)) {
+            str += key + ":" + value + "<br>";
+        }
+    });
+    $('.box').html(str);
+});
+
+
+// 选中事件
+/*$('#sel4').on('changed.bs.select', function(e) {
+    // 选中的option中遍历
+    var arr = [];
+    var txt = $(this).find('option:selected').each(function() {
+        var arr2 = [];
+        var lab = $(this).closest('optgroup').attr('label');
+
+        arr2.push(lab);
+        arr2.push($(this).val());
+        arr.push(arr2);
+    });
+    console.log(arr);
+});*/
+
+$('#sel4').on('changed.bs.select',function(e){
+    var data=[];
+    $('#sel4 optgroup').each(function(){
+        var grp={};
+        // 获取省份
+        var lab=$(this).attr('label');
+        grp['position']=lab;
+        grp['xw']=[];
+        
+        $(this).find('option:selected').each(function(){
+            grp['xw'].push($(this).val());
+        });
+        // console.log(grp);
+        data.push(grp);
+    });
+    // console.log(data);
+    // 对data进行处理
+    data=handlerData(data);
+    console.log(data);
+})
+function handlerData(data){
+    /*data.forEach(function(ele,index){
+        if(ele['xw'].length==0){
+            // 删除元素
+            data.splice(index,1);
+        }
+    });*/
+
+    return data.filter(function(item,index){
+        // console.log(item,index);
+        return item['xw'].length!=0;
+    });
+}
+
+/*
+[
+    {
+        "position":"1",
+        "xw":[a,b,c]
+    },
+    {
+        ...
+    }
+]
+ */
+/*$('#sel4').on('changed.bs.select',function(e){
+    var arr=[];
+    $(this).find('option:selected').each(function(){
+        // 找父级
+        var obj={};
+        $(this).closest('optgroup').each(function(){
+           var grp=$(this).attr('label'); 
+           var vals=[];
+           $(this).find('option:selected').each(function(){
+                vals.push($(this).val());
+           });
+           console.log(vals);
+        });
+        
+    });
+});*/
+</script>
+
+</html>

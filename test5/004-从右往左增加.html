@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>xxxx</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#div {
+				width: 0;
+				background-color: #0000E3;
+				height: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div"></div>
+		<button id="button">点击</button>
+
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$('#button').click(function() {
+			$('#div').animate({
+				width: '100px'
+			})
+		});
+	</script>
+
+</html>

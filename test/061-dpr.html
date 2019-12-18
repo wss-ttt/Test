@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        width: 300px;
+        height: 100px;
+        background: #ccc;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+<script type="text/javascript">
+/*var w=screen.width;
+	console.log('screen的宽度:',w);
+	var dpr=window.devicePixelRatio;
+	console.log('设备像素比:',dpr);// 1.25个设备像素==1个css像素
+	var lw=w*dpr;
+	console.log('逻辑分辨率的宽度:',lw);*/
+
+
+console.log(window.devicePixelRatio); // 1.25
+console.log(document.documentElement.clientWidth); // 1536
+console.log(document.documentElement.clientHeight); // 723
+console.log(window.screen.width) // 1536
+console.log(window.screen.height) // 864
+
+
+
+
+</script>
+
+</html>

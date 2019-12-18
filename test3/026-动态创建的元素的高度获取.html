@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>创建元素</button>
+		<button>获取高度</button>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('button:eq(0)').click(function(){
+			var str = `<div class= "box">好好学习</div>`;
+			$('body').append(str);
+		});
+		$('button:eq(1)').click(function(){
+			var h = $('.box').height();
+			console.log(h);
+		});
+	</script>
+</html>

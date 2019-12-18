@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+
+
+	<head>
+	
+		<title>测试DIV页面</title>
+	
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="this is my page">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	
+		<style type="text/css" src="css/testDIV.css"></style>
+	
+		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+	
+		<script type="text/javascript" src="testjs/testDIV.js"></script>
+		</head>
+
+
+	<body id="bodya">
+	
+		<table border="0" id="tbl_1">
+		
+			<tr>
+			
+				<td>
+				
+					<div id="a" style="background-color: #FFBBFF;">
+						<input type="button" value="a">                 </div>
+					</td>
+			
+				<td>
+				
+					<div id="b" style="background-color: #FFBBbb;">
+						<input type="button" value="b">                 </div>
+					</td>
+				</tr>
+		
+			<tr>
+			
+				<td>
+				
+					<div id="c" style="background-color: #FFBBDD;">
+						<input type="button" value="c">                 </div>
+
+					</td>
+			
+				<td>
+				
+					<div id="d" style="background-color: #000000;">
+						<input type="button" value="d">                 </div>
+					</td>
+				</tr>
+			</table>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {   
+			//取得frame的宽度和高度
+			var frame_height = $(document).height();
+			var frame_width = $(document).width();
+			//alert('frame的高度='+frame_height+"  frame的宽度="+frame_width);
+			//var a = screen.availWidth/2;
+			//var b = screen.availHeight/2;
+			//取得当前table
+			var tbl_1 = $("#tbl_1");
+			tbl_1.height = frame_height / 2;
+			tbl_1.width = frame_width / 2;
+
+			//给table中赋值
+			$("#a").css({
+				width: tbl_1.width,
+				height: tbl_1.height,
+				"margin": "0px",
+				"margin": "0px"
+			});
+			$("#b").css({
+				width: tbl_1.width,
+				height: tbl_1.height
+			});
+			$("#c").css({
+				width: tbl_1.width,
+				height: tbl_1.height
+			});
+			$("#d").css({
+				width: tbl_1.width,
+				height: tbl_1.height
+			});
+
+			//alert(tbl_1.height);
+			/***********************************div-a******************************************************/
+			$("#a").toggle( function() {    
+				$("#b").hide();    
+				$("#c").hide();    
+				$("#d").hide();   
+				$("#a").css({
+					width: frame_width,
+					height: frame_height,
+					"margin": "0px",
+					"margin": "0px"
+				}); 
+			},  function() {    
+				$("#b").show();    
+				$("#c").show();    
+				$("#d").show();   
+				$("#a").css({
+					width: tbl_1.width,
+					height: tbl_1.height,
+					   "margin": "0px",
+					"margin": "0px"
+				}); 
+			});
+			/*************************************div-b*******************************************************/
+			 
+			$("#b").toggle( function() {    
+				$("#a").hide();    
+				$("#c").hide();    
+				$("#d").hide();   
+				$("#b").css({
+					width: frame_width,
+					height: frame_height,
+					"margin": "0px",
+					"margin": "0px"
+				}); 
+			},  function() {    
+				$("#a").show();    
+				$("#c").show();    
+				$("#d").show();   
+				$("#b").css({
+					width: tbl_1.width,
+					height: tbl_1.height,
+					   "margin": "0px",
+					"margin": "0px",
+					left: "tbl_1.width"
+				}); 
+			});
+			/*************************************div-c*******************************************************/
+			 
+			$("#c").toggle( function() {    
+				$("#a").hide();    
+				$("#b").hide();    
+				$("#d").hide();   
+				$("#c").css({
+					width: frame_width,
+					height: frame_height,
+					"margin": "0px",
+					"margin": "0px"
+				}); 
+			},  function() {    
+				$("#a").show();    
+				$("#b").show();    
+				$("#d").show();   
+				$("#c").css({
+					width: tbl_1.width,
+					height: tbl_1.height,
+					   "margin": "0px",
+					"margin": "0px"
+				}); 
+			});
+			/*************************************div-d*******************************************************/
+			 
+			$("#d").toggle( function() {    
+				$("#a").hide();    
+				$("#b").hide();    
+				$("#c").hide();   
+				$("#d").css({
+					width: frame_width,
+					height: frame_height,
+					"margin": "0px",
+					"margin": "0px"
+				}); 
+			},  function() {    
+				$("#a").show();    
+				$("#b").show();    
+				$("#c").show();   
+				$("#d").css({
+					width: tbl_1.width,
+					height: tbl_1.height,
+					   "margin": "0px",
+					"margin": "0px",
+					left: "tbl_1.width"
+				}); 
+			});
+		});
+	</script>
+
+</html>

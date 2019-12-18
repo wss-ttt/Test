@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>jquery事件：one()方法的使用</title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("h1").one("click", function() {
+					$(this).animate({
+						fontSize: "+=3px"
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>这是一个标题</h1>
+	</body>
+</html>

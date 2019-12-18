@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script src="js/jquery.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.box{
+			height: 400px;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="box">
+				好好学习
+				<button class="close">关闭</button>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="box">
+				天天向上
+			</div>
+		</div>
+	</div>	
+</body>
+<script type="text/javascript">
+	$('.close').click(function(){
+		/*$(this).closest('.box').css({
+			'display':'none'
+		});*/
+		$(this).closest('.box').remove();
+	});
+</script>
+</html>

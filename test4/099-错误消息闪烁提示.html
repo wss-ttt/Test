@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			label{
+				display: block;
+			}
+			input{
+				display: block;
+			}
+			.red{
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<label for="">用户名</label>
+		<input type="text" name="username" />
+		<button>注册</button>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('button').click(function(){
+			$('label').html('用户名');
+			var username = $('[name=username]').val();
+			if(username === ''){
+				$('label').
+				append("<span style='display:none' class='red'> 请输入用户名.</span>");
+				$('label span').fadeIn('medium')
+			}
+		});
+	</script>
+</html>

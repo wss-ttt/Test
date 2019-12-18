@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 100px;
+				height: 100px;
+				background-color: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<button>创建</button>
+		<!--<div class="box">111</div>-->
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('button').click(function(){
+			var htmlStr = '<div class= "box"></box>'
+			$('body').append(htmlStr);
+		});
+		$('body').on('click','.box',function(){
+			console.log(11);
+		});
+	</script>
+</html>

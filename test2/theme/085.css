@@ -1,0 +1,70 @@
+.test {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  width: 20%;
+}
+
+.test2 {
+  width: 200px;
+  height: 200px;
+  background-color: #0B9AEC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  min-height: 937px;
+  min-width: 1920px;
+}
+.container .left {
+  width: 11.4583333333%;
+  height: 100%;
+  background-color: #ccc;
+  float: left;
+}
+.container .right {
+  width: 88.5416666667%;
+  height: 100%;
+  background-color: #00B83F;
+  float: left;
+}
+.container .right .header {
+  height: 50px;
+  height: 5.3361792956%;
+  background-color: pink;
+}
+.container .right .tabs {
+  height: 40px;
+  height: 4.2689434365%;
+  background-color: blue;
+}
+.container .right .main-content {
+  height: 86.1259338314%;
+  background-color: red;
+  padding: 30px 30px 10px;
+  padding: 1.7647058824% 1.7647058824% 0.5882352941%;
+}
+.container .right .main-content .select {
+  height: 8.537886873%;
+  background-color: brown;
+}
+.container .right .footer {
+  height: 40px;
+  height: 4.2689434365%;
+  background-color: #0B9AEC;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/*# sourceMappingURL=085.css.map */

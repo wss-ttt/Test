@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .content{
+            width: 400px;
+            height: 400px;
+            background-color: cornsilk;
+            margin: 100px auto;
+            overflow: auto;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: cyan;
+        }
+        .box:hover ~ .xf{
+            display: block;
+        }
+        .xf{
+            width: 500px;
+            height: 500px;
+            background-color: darkgoldenrod;
+            display: none;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="box"></div>
+        <div class="xf"></div>
+    </div>
+</body>
+</html>

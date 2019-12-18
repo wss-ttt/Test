@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*css中height是不能继承的*/
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			html,body{
+				height: 100%;
+			}
+			.box{
+				padding: 10px;
+				/*height: 100%;*/
+			}
+			.main{
+				width: 400px;
+				/*height: 100%;*/
+				height:400px;
+				background-color: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="main"></div>
+		</div>
+		<button>获取高度</button>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('button').click(function(){
+			var h = $('.box').height();
+			console.log(h);
+		});
+	</script>
+</html>

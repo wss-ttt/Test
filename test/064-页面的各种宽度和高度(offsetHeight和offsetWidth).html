@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面的各种宽度和高度</title>
+	<style type="text/css">
+		*{
+			  margin: 0;
+			  padding: 0;  
+		}
+		body{
+			height: 2000px;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			overflow: auto;
+		}	
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<div style="height: 100px;"></div>
+	</div>
+</body>
+<script type="text/javascript">
+	var oBox=document.getElementById('box');
+	var boxH=oBox.offsetHeight;
+	var boxW=oBox.offsetWidth;
+	console.log('box的高度:',boxH);
+	console.log('box的宽度:',boxW);
+
+</script>
+</html>

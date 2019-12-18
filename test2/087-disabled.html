@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				background-color: #ccc;
+			}
+			button{
+				width: 120px;
+				height: 40px;
+				background-color: #CCCCCC;
+				border: 1px solid #666;
+				outline: none;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="box" disabled="disabled"></div>
+		<button disabled="disabled">好好学习</button>
+		<input type="text" disabled="disabled" />
+	</body>
+	<script type="text/javascript">
+		var box = document.querySelector('.box');
+		box.onclick=function(){
+			console.log(111);
+		}
+		var btn = document.querySelector('button');
+		btn.onclick=function(){
+			console.log(222);
+		}
+	</script>
+</html>

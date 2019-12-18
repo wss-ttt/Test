@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var o1 = {
+			'name':'乔峰',
+			'age':18
+		};
+		var o2 = {
+			'name':'张三',
+			'age':34,
+			'sex':'男',
+			'hobby':'篮球'
+		};
+		var res = $.extend(o1,o2);
+		console.log(o1);
+		console.log(o2);
+		console.log(res);
+		console.log(res === o1);
+	</script>
+</html>

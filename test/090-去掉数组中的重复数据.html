@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var arr = [2,45,6,6,7,8,9,0];
+		var res = []
+		var o = {};
+		for(let item of arr){
+			console.log(item);
+			console.log(o[item]);
+			if(!o[item]){
+				o[item]=item;// 这里可以随便赋一个值
+				res.push(item);
+			}
+		}
+		console.log('res:',res);
+	</script>
+</html>

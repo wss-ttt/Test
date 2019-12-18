@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body onkeydown="enterKey();">
+		<button>确定</button>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('button').click(function(){
+			console.log('好好学习 天天向上');
+		});
+		function enterKeyDown(){
+			if(event.keyCode==13){
+				$('button').click();
+			}
+		}
+	</script>
+</html>

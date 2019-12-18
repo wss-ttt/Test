@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.row{
+				display: flex;
+				flex-wrap: wrap; /*换行*/
+			}
+			h1{
+				text-align: center;
+			}
+			.img img{
+				max-width: 100%;
+				height: auto;
+			}
+			@media  (min-width: 992px) {
+				.order1{
+					order: 2;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<h1>黑色毛衣</h1>
+				</div>
+				<div class="col-md-5">
+					<div class="img">
+						<img src="images/1.jpg"/>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-7 order1">
+					<h1>给我一首歌的时间</h1>
+				</div>
+				<div class="col-md-5 order2">
+					<div class="img">
+						<img src="images/2.jpg" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-7">
+					<h1>黑色毛衣</h1>
+				</div>
+				<div class="col-md-5">
+					<div class="img">
+						<img src="images/3.jpg"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+	<ul>
+		<li>0001</li>
+		<li>0002</li>
+		<li>0003</li>
+		<li>0004</li>
+		<li>0005</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	// 给每一li添加自定义属性
+	$('ul li').each(function(index){
+		if(!$(this).attr('data-index')){
+			$(this).attr('data-index','li:'+index);
+		}
+	});
+	// 获取自定义属性值
+	$('ul li').each(function(){
+		var res = $(this).attr('data-index');
+		console.log(res);
+	});
+</script>
+
+</html>

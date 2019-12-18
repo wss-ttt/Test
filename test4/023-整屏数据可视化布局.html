@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="theme/023.css" />
+	</head>
+
+	<body>
+		<div class="visual-box">
+			<div class="v-title"></div>
+			<div class="v-container">
+				<div class="v-c-l fl"></div>
+				<div class="v-c-m fl" ondrop="drop(event,this)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event, this)">
+					<div id="map"></div>
+					<div class="item4">
+						好好学习 天天向上
+					</div>
+					<div class="fullscreen">全屏</div>
+					<div class="exitscreen">退出全屏</div>
+				</div>
+				<div class="v-c-r fr">
+					<div class="v-f-r-t">
+						<div class="content">好好学习</div>
+						<div class="fullscreen">全屏</div>
+						<div class="exitscreen">退出全屏</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$.get('mapdata/hubei.json', function(data) { //这里是json转js，如果是js文件就不需要这一步
+			echarts.registerMap('hubei', data); //设置地图
+			var myChart = echarts.init(document.getElementById('map')); //初始化
+			myChart.setOption({
+				title: {
+					text: '湖北'
+				},
+				series: [{
+					type: 'map', //类型必须是map
+					map: 'hubei' //注意这里的值需要和echarts.registerMap('henan',data);一致
+				}]
+			});
+			$(window).resize(myChart.resize);
+			myChart.on('click', function(params) {
+				console.log(params); //此处写点击事件内容
+			}); //点击事件，此事件还可以用到柱状图等其他地图
+		});
+
+		$('.fullscreen').click(function() {
+			var ele = document.querySelector('.v-c-m');
+			//			requestFullScreen(ele);
+			requestFullScreen2(ele);
+		});
+		$('.exitscreen').click(function() {
+			exitFullscreen();
+		});
+		// 全屏
+		function requestFullScreen(element) {
+			var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+			if(requestMethod) {
+				requestMethod.call(element);
+			} else if(typeof window.ActiveXObject !== "undefined") {
+				var wscript = new ActiveXObject("WScript.Shell");
+				if(wscript !== null) {
+					wscript.SendKeys("{F11}");
+				}
+			}
+		}
+
+		function requestFullScreen2(element) {
+			if(element.requestFullscreen) {
+				element.requestFullscreen();
+			} else if(element.mozRequestFullScreen) {
+				element.mozRequestFullScreen();
+			} else if(element.webkitRequestFullscreen) {
+				element.webkitRequestFullscreen();
+			} else if(element.msRequestFullscreen) {
+				element.msRequestFullscreen();
+			}
+		}
+
+		// 退出全屏
+		function exitFullscreen() {
+			if(document.exitFullscreen) {
+				document.exitFullscreen();
+			} else if(document.mozCancelFullScreen) {
+				document.mozCancelFullScreen();
+			} else if(document.webkitExitFullscreen) {
+				document.webkitExitFullscreen();
+			}
+		}
+
+		$('.v-f-r-t').click(function() {
+			$('.item4').show().siblings().hide();
+		});
+		// 交换
+		function exchange(ele1, ele2) {
+
+		}
+
+		function allowDrop(ev) {
+			ev.preventDefault();
+		}
+
+		var srcdiv = null;
+
+		function drag(ev, divdom) {
+			srcdiv = divdom;
+			ev.dataTransfer.setData("text/html", divdom.innerHTML);
+		}
+
+		function drop(ev, divdom) {
+			ev.preventDefault();
+			if(srcdiv != divdom) {
+				srcdiv.innerHTML = divdom.innerHTML;
+				divdom.innerHTML = ev.dataTransfer.getData("text/html");
+			}
+		}
+	</script>
+
+</html>

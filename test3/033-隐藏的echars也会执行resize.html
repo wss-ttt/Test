@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				height: 500px;
+				background-color: #00B83F;
+			}
+			#bar{
+				
+				height: 100%;
+				
+				 width: 100%;    
+				
+				/*width: 500px;
+				height: 500px;*/
+				
+			}
+			.btn {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 80px;
+				background-color: rgba(0, 0, 0, .5);
+				z-index: 999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div id="bar"></div>
+		</div>
+		
+		<div class="btn">
+			<button>隐藏</button>
+			<button>显示</button>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var myChart = null;
+
+		initChart();
+		
+		function initChart() {
+			console.log('initChart');
+			if(!myChart){
+				myChart = echarts.init(document.getElementById('bar'));
+			}
+			// 设置参数配置
+			var option = {
+				title: {
+					text: '柱状图'
+				},
+				tooltip: {},
+				legend: {
+					data: ['模拟数据']
+				},
+				xAxis: {
+					data: ['数学', '语文', '英语', '体育', '高数', '美术', '音乐', '思想', 'aa', 'bb', 'cc']
+				},
+				yAxis: {
+					splitLine: {
+						show: false // 是否显示y轴的分割线 默认是true
+					}
+				},
+				series: {
+					type: 'bar', // 表示的是柱状图
+					data: [98, 80, 54, 60, 64, 89, 76, 88, 99, 55, 66],
+					name: '模拟数据',
+					//				barWidth: 30,
+				}
+
+			};
+			// 显示图表
+			myChart.setOption(option);
+			$(window).resize(myChart.resize);
+		}
+	
+		// 隐藏
+		$('button:eq(0)').click(function(){
+			$('.box').hide();
+		});
+		
+		// 显示
+		$('button:eq(1)').click(function(){
+			$('.box').show();
+			$(window).trigger('resize');
+		});
+
+	</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="sidebar">侧边栏</div>
+		<div class="main">主体部分</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() { 
+			// 切换侧边栏
+			$(".navbar-left li").click(toggleSidebar); }); 
+			//切换侧边栏显示隐藏 
+			function toggleSidebar(){ 
+				$("body").toggleClass("big-page"); 
+				return false; 
+			}
+	</script>
+
+</html>

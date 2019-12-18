@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button>获取样式</button>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    /* var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    console.log(w, h); */
+    let h = document.documentElement['clientHeight']
+    console.log(h)
+    let h2 = $(window).height()
+    console.log(h2)
+
+    $(window).bind("load resize",function(){
+        console.log('窗口大小改变')
+    })
+</script>
+
+</html>

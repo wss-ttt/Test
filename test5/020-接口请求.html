@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+	</head>
+
+	<body>
+		<button class="btn btn-danger">请求数据</button>
+		<img src="" alt="" />
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('button').on('click', function() {
+				var baseUrl = ' https://www.easy-mock.com/mock/5d22bc4759381a3b76dfd22d/example';
+				$.ajax({
+					type: 'get',
+					url: baseUrl + '/user/list',
+					success: function(res) {
+						console.log(res);
+						console.log(res.data.image);
+						$('img').attr('src', res.data.image);
+					}
+				});
+			});
+		})
+	</script>
+
+</html>

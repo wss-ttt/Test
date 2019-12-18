@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+	<script src="js/jquery.js"></script>
+</head>
+
+<body>
+	<div id="box">
+		<select multiple>
+			<option>上海</option>
+			<option>北京</option>
+		</select>
+		<button id="add">添加</button>
+	</div>
+</body>
+<script type="text/javascript">
+	$('#add').click(function(){
+		$('#box').clone(true).appendTo('body');
+	});
+</script>
+</html>

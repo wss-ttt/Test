@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				border: 10px solid red;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var w = $('.box').height();  // 不包含border和padding
+		var w2 = $('.box').outerHeight();  // 包含border和padding
+		console.log(w,w2);
+	</script>
+</html>

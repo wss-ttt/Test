@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200.5px;
+            height: 200.4px;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    let oBox = document.querySelector('.box')
+    let w = oBox.clientWidth
+    let h = oBox.clientHeight
+    console.log('w',w)   // 201
+    console.log('h',h)   // 200  
+    let w2 = oBox.offsetWidth
+    let h2 = oBox.offsetHeight
+    console.log('w2',w2)   // 201
+    console.log('h2',h2)    // 200
+
+    // 精确获取元素的宽度和高度   第一种方法
+    console.log(window.getComputedStyle(oBox))
+    let w3 = window.getComputedStyle(oBox).width
+    let h3 = window.getComputedStyle(oBox).height
+    console.log('w3',w3)   //  200.5px  (带有单位)
+    console.log('h3',h3)    // 200.391px  (带有单位)
+    // 精确获取元素的宽度和高度   第一种方法
+    console.log(oBox.getBoundingClientRect())
+    let w4 = oBox.getBoundingClientRect().width
+    let h4 = oBox.getBoundingClientRect().height
+    console.log('w4',w4)     // 200.5   (没有带单位)
+    console.log('h4',h4)      // 200.390652  (没有带单位)
+</script>
+</html>

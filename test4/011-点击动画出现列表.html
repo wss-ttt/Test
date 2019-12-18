@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			ul,li{
+				list-style: none;
+			}
+			ul.navBar{
+				position: fixed;
+				top:10%;
+				left: 50%;
+			}
+			
+			ul.navBar li{
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background-color: #999;
+				border: 3px solid #fff;
+				margin-bottom: 30px;
+				position: relative;
+				cursor: pointer;
+				transition: all .5s;
+			}
+			ul.navBar li.active{
+				border: 3px solid #33bcb7;
+				background-color: #fff;
+			}
+			ul.navBar li.active>div{
+				display: block;
+			}
+			ul.navBar li>div{
+				width: 83px;
+				height: 35px;
+				line-height: 35px;
+				background-color: #33bcb7;
+				color:#fff;
+				text-align: center;
+				display: none;
+				position: absolute;
+				top:-17.5px;
+				left: -95px;
+				animation: slideInRight .5s both;
+			}
+			@keyframes slideInRight{
+				0%{
+					transform: translateX(20px);
+					opacity: 0;
+				}
+				100%{
+					transform: translateX(0px);
+					pacity: 1;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="navBar">
+			<li>
+				<div>一月</div>
+			</li>
+			<li>
+				<div>二月</div>
+			</li>
+			<li>
+				<div>三月</div>
+			</li>
+			<li>
+				<div>四月</div>
+			</li>
+			<li>
+				<div>五月</div>
+			</li>
+		</ul>
+	</body>
+	<script src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$('ul.navBar li').click(function(){
+			$(this).addClass('active').siblings().removeClass('active');
+		});
+	</script>
+</html>

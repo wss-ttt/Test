@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			button{
+				pointer-events: none;
+			}
+			button:focus{
+				border: 1px solid red;
+			}
+			.box{
+				width: 100px;
+				height: 100px;
+				background-color: #ccc;
+				pointer-events: none;
+			}
+			.box:hover{
+				background-color: #00B83F;
+			}
+		</style>
+	</head>
+	<body>
+		<button >确定</button>
+		<div class="box" disabled="disabled"></div>
+		<input type="text" name="" id="" value=""  disabled="disabled"/>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	$('button').click(function(){
+		console.log('aa');
+	});
+	
+	$('.box').click(function(){
+		console.log('11');
+	});
+	</script>
+</html>

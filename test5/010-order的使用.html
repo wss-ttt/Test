@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				background-color: #CCCCCC;
+				margin: 100px auto;
+				display: flex;
+			}
+			.box .left{
+				width: 30%;
+				background-color: #28A745;
+				order: 4;
+			}
+			.box .right{
+				flex: 1;
+				background-color: #007AFF;
+				order: 2;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="left">1</div>
+			<div class="right">2</div>
+		</div>
+	</body>
+</html>

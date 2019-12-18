@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        /*1rem=16px*/
+        font-size: 16px;
+    }
+
+    .item {
+        /*padding:10px;*/
+        padding: 0.625rem;
+        display: flex;
+        background: #1acd7e;
+        /*width: 110px;*/
+        width: 6.875rem;
+    }
+
+    .item>div {
+        /*width: 10px;*/
+        width: 0.625rem;
+        /*margin-right: 10px;*/
+        margin-right: 0.625rem;
+        /*height: 20px;*/
+        height: 1.25rem;
+        background: blue;
+        text-align: center;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    .item>div:last-child {
+        margin-right: 0px;
+    }
+
+    @media only screen and (min-width: 401px) {
+        html {
+            font-size: 25px !important;
+        }
+    }
+
+    @media only screen and (min-width: 428px) {
+        html {
+            font-size: 26.75px !important;
+        }
+    }
+
+    @media only screen and (min-width: 481px) {
+        html {
+            font-size: 30px !important;
+        }
+    }
+
+    @media only screen and (min-width: 569px) {
+        html {
+            font-size: 35px !important;
+        }
+    }
+
+    @media only screen and (min-width: 641px) {
+        html {
+            font-size: 40px !important;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="item">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+if (!window.screenX) {
+    //IE6~8
+    var oStyle = document.createElement("link");
+    oStyle.rel = "stylesheet";
+    oStyle.type = "text/css";
+    if (screen.width > 1024) {
+        oStyle.href = "widthScreen.css";	
+    } else {
+        oStyle.href = "normalScreen.css";	
+    }
+    document.getElementsByTagName("head")[0].appendChild(oStyle);
+}
+</script>

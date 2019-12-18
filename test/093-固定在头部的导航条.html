@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			a{
+				text-decoration: none;
+				color:#000;
+			}
+			ul,li{
+				list-style: none;
+			}
+			.nav{
+				height: 60px;
+				background: #26ab7a;
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 5555;
+			}
+			.nav .logo{
+				width: 220px;
+				height: 60px;
+				background-color: black;
+				float: left;
+				color:#fff;
+				/*这里可以放一个logo的背景图片*/
+				/*background-image: url('images/logo-small.png') no-repeat center center;*/
+			}
+			.nav ul.list{
+				float: left;
+				height: 60px;
+				line-height: 60px;
+				padding-left: 100px;
+			}
+			.nav ul.list li{
+				float: left;
+				width: 120px;
+			}
+			.nav ul.list li a{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				color:#fff;
+				font-size:16px;
+			}
+			.main{
+				/*让展示内容的区域出现滚动条*/
+				height: 1000px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="logo">logo</div>
+			<ul class="list">
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">博客</a>
+				</li>
+				<li>
+					<a href="#">相册</a>
+				</li>
+			</ul>
+		</div>
+		<div class="main"></div>
+	</body>
+</html>

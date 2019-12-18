@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浏览器的各种宽度和高度</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// 获取浏览器的宽度、高度
+	var h=window.outerHeight;
+	var w=window.outerWidth;
+	console.log('浏览器的宽度:',w);
+	console.log('浏览器的高度:',h);
+
+
+	// 浏览内页面可用宽度、高度
+	var ah=window.innerHeight;
+	var aw=window.innerWidth;
+	console.log('浏览内页面可用宽度',aw);
+	console.log('浏览内页面可用高度',ah);
+
+	console.log('浏览器中其他地方所占用去的高度:',(h-ah));
+
+
+	
+
+</script>
+</html>

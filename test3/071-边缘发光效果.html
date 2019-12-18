@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding:0;
+			}
+			body{
+				background: #1a1a1a;
+			}
+			.box{
+				width: 400px;
+				height: 100px;
+				border: 2px solid rgba(30,255,244,1);
+				margin: 100px auto;
+				animation: shine 1s ease-out infinite alternate;
+			}
+			@keyframes shine{
+				0%{
+					border-color: #00b8b6;
+					box-shadow: 0 0 5px rgba(0, 255, 253, 0.2), inset 0 0 5px rgba(0, 255, 253, 0.1), 0 2px 0 #000;
+				}
+				100%{
+    				border-color: #00fffc;
+    				box-shadow: 0 0 20px rgba(0, 255, 253, 0.6), inset 0 0 10px rgba(0, 255, 253, 0.4), 0 2px 0 #000;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

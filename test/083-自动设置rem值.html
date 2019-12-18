@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	html{
+    		/*font-size:10px;*/
+    		font-size:62.5%;
+    	}
+    	body{
+    		font-size:16px;
+    	}
+    	.box{
+    		width: 10rem;
+    		height: 10rem;
+    		background: #ccc;
+    	}
+    </style>
+</head>
+
+<body>
+	<div class="box">
+		好好学习
+	</div>
+</body>
+<script type="text/javascript">
+//页面大小出现变化的时候再次获取新的font-size值 
+$(function(){
+	setHtmlFontSize(20);
+});
+$(window).resize(function() {
+    setHtmlFontSize(20);
+}) //初始化执行 setHtmlFontSize(20);
+//动态设置html元素的font-size的方法 
+function setHtmlFontSize(num) {
+    //页面的宽度，其中17为页面默认的导航条的宽度 
+    var drp=window.devicePixelRatio;  // 获取设备像素比
+    console.log(drp);
+    // 获取的是可视区的宽度
+    console.log(document.documentElement.clientWidth);
+    console.log(document.documentElement.clientWidth*drp);
+    var _w=document.documentElement.clientWidth*drp;
+
+    $('html').css('fontSize', _w / num);
+}
+</script>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			.header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 100px;
+				width: 100%;
+				background-color: #fff;
+				border-bottom: 2px solid cornflowerblue;
+			}
+			
+			.header ul {
+				display: flex;
+				height: 100px;
+				width: 100%;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			.header ul li {
+				padding: 0 20px;
+				font-size: 26px;
+				cursor: pointer;
+			}
+			
+			.wrap {
+				width: 1200px;
+				margin: 100px auto;
+			}
+			
+			.wrap div {
+				height: 500px;
+				font-size: 50px;
+				color: #fff;
+				text-align: center;
+			}
+			
+			.wrap #home {
+				background-color: #00FCBD;
+			}
+			
+			.wrap #news {
+				background-color: #122B40;
+			}
+			
+			.wrap #products {
+				background-color: #1F58B1;
+			}
+			
+			.wrap #contactus {
+				background-color: #007AFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<ul>
+				<li data-area="#home">首页</li>
+				<li data-area="#news">新闻</li>
+				<li data-area="#products">产品</li>
+				<li data-area="#contactus">联系我们</li>
+			</ul>
+		</div>
+		<div class="wrap">
+			
+			<div id="home">首页
+			</div>
+			
+			<div id="news">新闻</div>
+			
+			<div id="contactus">联系我们</div>
+			<div id="products">产品</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			smoothScroll();
+
+			var flag = localStorage.getItem('contactus');
+			console.log(flag);
+			if(flag === 'wss') {
+				$('html, body').animate({
+					scrollTop: $('#products').offset().top - 100
+				}, 500);
+			}
+		});
+
+		function smoothScroll() {
+			$('.header ul li').click(function() {
+				console.log('我要开始滑动了。。。');
+				var id = $(this).data('area');
+				$('html, body').animate({
+					scrollTop: $(id).offset().top - 100
+				}, 500);
+				return false;
+			});
+		}
+	</script>
+
+</html>

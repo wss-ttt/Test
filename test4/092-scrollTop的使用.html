@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				height: 6000px;
+				background-color: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<button>点击</button>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('button').click(function(){
+			var th = $(document).height();
+			var wh = $(window).height();
+			console.log(th);
+			console.log(wh);
+			// 让滚动条滚动条最底部
+			$(window).scrollTop(th- wh);
+		});
+		
+		$(window).scroll(function(){
+			console.log($(this).scrollTop());
+		})
+	</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .out {
+            height: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            background-color: #ccc;
+            position: relative;
+            top:-15px;
+        }
+
+        .in {
+            height: 100%;
+            /* width: 100%;      注意:  不能添加width */
+            margin-left: -15px;
+            margin-right: -15px;
+            background-color: darkturquoise;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="out">
+        <div class="in">发发发</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> -->
+    <script src="js/jquery.js"></script>
+    <script src="js/plugins/myBox.js"></script>
+    <style type="text/css">
+    * {
+        margin: 0px;
+        padding: 0px;
+        /*box-sizing: border-box;*/
+    }
+
+    .tt {
+        width: 119px;
+        overflow: hidden;
+        text-align: center;
+        background: linear-gradient(to bottom, #1acd7e 0%, green 100%);
+        padding-top: 5px;
+    }
+
+    .tt .watch {
+        float: left;
+        width: 10px;
+        height: 20px;
+        background-color: red;
+        margin-right: 1px;
+        margin-bottom: 5px;
+    }
+
+    .tt .watch:first-child,
+    .tt .watch:nth-child(11) {
+        margin-left: 5px;
+    }
+
+    .tt .watch:last-child {
+        margin-right: 0;
+    }
+
+    .box1{
+    	float: left;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+    <hr>
+    <button id="btn">改变颜色</button>
+    <hr>
+    <div class="box1">
+	    <svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
+	        <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+	        <g>
+	            <title>background</title>
+	            <rect fill="#fff" id="canvas_background" height="402" width="582" y="-1" x="-1" />
+	            <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+	                <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" />
+	            </g>
+	        </g>
+	        <g>
+	            <title>Layer 1</title>
+	            <rect id="svg_5" height="100" width="400" y="-0.00001" x="0" stroke-width="0" stroke="#000" fill="#ff56ff" />
+	            <rect id="svg_6" height="30" width="10" y="10" x="20" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" onclick="alert('aa')"/>
+	            <rect id="svg_16" height="30" width="10" y="10" x="39.33334" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_17" height="30" width="10" y="10" x="59.99991" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_18" height="30" width="10" y="10" x="79.99983" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_19" height="30" width="10" y="10" x="99.99974" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_20" height="30" width="10" y="10" x="119.99966" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_21" height="30" width="10" y="10" x="139.99957" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_22" height="30" width="10" y="10" x="159.99949" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_23" height="30" width="10" y="10" x="179.9994" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_24" height="30" width="10" y="10" x="199.99932" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_25" height="30" width="10" y="10" x="219.99923" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_26" height="30" width="10" y="10" x="239.99915" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_27" height="30" width="10" y="10" x="259.99906" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_28" height="30" width="10" y="10" x="279.99898" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_29" height="30" width="10" y="10" x="299.99889" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_30" height="30" width="10" y="10" x="319.99881" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_31" height="30" width="10" y="10" x="339.99872" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_32" height="30" width="10" y="10" x="359.99864" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_33" height="30" width="10" y="10" x="377.99856" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_54" height="30" width="10" y="52.66648" x="20" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_55" height="30" width="10" y="52.66648" x="39.33334" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_56" height="30" width="10" y="52.66648" x="59.99991" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_57" height="30" width="10" y="52.66648" x="79.99983" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_58" height="30" width="10" y="52.66648" x="99.99974" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_59" height="30" width="10" y="52.66648" x="119.99966" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_60" height="30" width="10" y="52.66648" x="139.99957" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_61" height="30" width="10" y="52.66648" x="159.99949" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_62" height="30" width="10" y="52.66648" x="179.9994" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_63" height="30" width="10" y="52.66648" x="199.99932" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_64" height="30" width="10" y="52.66648" x="219.99923" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_65" height="30" width="10" y="52.66648" x="239.99915" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_66" height="30" width="10" y="52.66648" x="259.99906" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_67" height="30" width="10" y="52.66648" x="279.99898" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_68" height="30" width="10" y="52.66648" x="299.99889" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_69" height="30" width="10" y="52.66648" x="319.99881" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_70" height="30" width="10" y="52.66648" x="339.99872" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_71" height="30" width="10" y="52.66648" x="359.99864" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_72" height="30" width="10" y="52.66648" x="377.99856" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	        </g>
+	    </svg>
+    </div>
+    <div class="box1">
+	    <svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
+	        <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+	        <g>
+	            <title>background</title>
+	            <rect fill="#fff" id="canvas_background" height="402" width="582" y="-1" x="-1" />
+	            <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+	                <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" />
+	            </g>
+	        </g>
+	        <g>
+	            <title>Layer 1</title>
+	            <rect id="svg_5" height="100" width="400" y="-0.00001" x="0" stroke-width="0" stroke="#000" fill="#ff56ff" />
+	            <rect id="svg_6" height="30" width="10" y="10" x="20" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_16" height="30" width="10" y="10" x="39.33334" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_17" height="30" width="10" y="10" x="59.99991" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_18" height="30" width="10" y="10" x="79.99983" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_19" height="30" width="10" y="10" x="99.99974" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_20" height="30" width="10" y="10" x="119.99966" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_21" height="30" width="10" y="10" x="139.99957" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_22" height="30" width="10" y="10" x="159.99949" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_23" height="30" width="10" y="10" x="179.9994" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_24" height="30" width="10" y="10" x="199.99932" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_25" height="30" width="10" y="10" x="219.99923" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_26" height="30" width="10" y="10" x="239.99915" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_27" height="30" width="10" y="10" x="259.99906" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_28" height="30" width="10" y="10" x="279.99898" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_29" height="30" width="10" y="10" x="299.99889" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_30" height="30" width="10" y="10" x="319.99881" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_31" height="30" width="10" y="10" x="339.99872" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_32" height="30" width="10" y="10" x="359.99864" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_33" height="30" width="10" y="10" x="377.99856" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_54" height="30" width="10" y="52.66648" x="20" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_55" height="30" width="10" y="52.66648" x="39.33334" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_56" height="30" width="10" y="52.66648" x="59.99991" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_57" height="30" width="10" y="52.66648" x="79.99983" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_58" height="30" width="10" y="52.66648" x="99.99974" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_59" height="30" width="10" y="52.66648" x="119.99966" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_60" height="30" width="10" y="52.66648" x="139.99957" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_61" height="30" width="10" y="52.66648" x="159.99949" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_62" height="30" width="10" y="52.66648" x="179.9994" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_63" height="30" width="10" y="52.66648" x="199.99932" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_64" height="30" width="10" y="52.66648" x="219.99923" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_65" height="30" width="10" y="52.66648" x="239.99915" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_66" height="30" width="10" y="52.66648" x="259.99906" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_67" height="30" width="10" y="52.66648" x="279.99898" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_68" height="30" width="10" y="52.66648" x="299.99889" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_69" height="30" width="10" y="52.66648" x="319.99881" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_70" height="30" width="10" y="52.66648" x="339.99872" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_71" height="30" width="10" y="52.66648" x="359.99864" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	            <rect id="svg_72" height="30" width="10" y="52.66648" x="377.99856" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#00ff00" />
+	        </g>
+	    </svg>
+    </div>
+</body>
+<script type="text/javascript">
+var oBox = document.querySelector('.box');
+var box1 = new MyBox('#box1');
+var box2 = new MyBox('#box2');
+var box3 = new MyBox('#box3');
+oBox.appendChild(box1.render());
+oBox.appendChild(box2.render());
+oBox.appendChild(box3.render());
+
+
+var oBtn = document.querySelector('#btn');
+oBtn.onclick = function() {
+    /*$(box1).find('.watch').eq(0).css({
+    	'background':'#fff'
+    });*/
+    console.log($('#box1').html());
+}
+</script>
+
+</html>

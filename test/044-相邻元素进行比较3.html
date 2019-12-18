@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+	// 响铃元素依次进行比较	
+	var arr=[98,34,58,89,89,48,83];
+	for(let i=0;i<arr.length-1;i++){
+		if(arr[i]==arr[i+1]){
+			console.log('索引:',i);
+		}
+	}
+
+	// 间隔一个元素进行比较
+	var arr2=[98,34,58,34,89,48,83]; 
+	for(let i=0;i<arr2.length-2;i++){
+		if(arr[i]==arr[i+2]){
+			console.log('索引:',i);
+		}
+	}
+</script>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSS3感应鼠标的背景闪烁和图片缩放动态效果</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+    /*标题背景*/
+    h2 {
+        background: rgba(0, 0, 0, 0.5);
+        color: #FFF;
+        padding: 10px 0;
+        width: 300px;
+        text-align: center;
+        transition: opacity 0.5s linear 0s;
+        -moz-animation: bg .5s ease-in-out;
+        -webkit-animation: bg .5s ease-in-out infinite;
+    }
+
+    h2:hover {
+        
+    }
+
+    h2,
+    a {
+        cursor: pointer;
+        margin: 10px auto;
+    }
+
+    @-moz-keyframes bg {
+        0% {
+            background: rgba(144, 24, 53, 0.18);
+        }
+
+        25% {
+            background: rgba(144, 24, 53, 0.5);
+        }
+
+        50% {
+            background: rgba(144, 24, 53, 0.1);
+        }
+
+        75% {
+            background: rgba(144, 24, 53, 0.5);
+        }
+
+        100% {
+            background: rgba(144, 24, 53, 0.18);
+        }
+    }
+
+    @-webkit-keyframes bg {
+        0% {
+            background: rgba(144, 24, 53, 0.18);
+        }
+
+        25% {
+            background: rgba(144, 24, 53, 0.5);
+        }
+
+        50% {
+            background: rgba(144, 24, 53, 0.1);
+        }
+
+        75% {
+            background: rgba(144, 24, 53, 0.3);
+        }
+
+        100% {
+            background: rgba(144, 24, 53, 0.18);
+        }
+    }
+
+    /*放大镜效果*/
+    a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #000;
+        transition: opacity 0.2s linear 0s;
+        background: url(http://www.codefans.net/jscss/demoimg/201211/eye.png) no-repeat;
+    }
+
+    /*就把它当做放大镜吧*/
+    a {
+        -moz-animation: heart_beat .5s ease-in-out;
+        -webkit-animation: heart_beat .5s ease-in-out;
+    }
+
+    @-moz-keyframes heart_beat {
+        0% {
+            -moz-transform: scale(1)
+        }
+
+        25% {
+            -moz-transform: scale(1.70)
+        }
+
+        50% {
+            -moz-transform: scale(0.9)
+        }
+
+        75% {
+            -moz-transform: scale(1.55)
+        }
+
+        100% {
+            -moz-transform: scale(1)
+        }
+    }
+
+    @-webkit-keyframes heart_beat {
+        0% {
+            -webkit-transform: scale(1)
+        }
+
+        25% {
+            -webkit-transform: scale(1.70)
+        }
+
+        50% {
+            -webkit-transform: scale(0.9)
+        }
+
+        75% {
+            -webkit-transform: scale(1.55)
+        }
+
+        100% {
+            -webkit-transform: scale(1)
+        }
+    }
+
+    div {
+        width: 500px;
+        margin: 0 auto;
+        border: solid 1px #ccc;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.5);
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>好好学习 天天向上</h1>
+        <h2>好好学习 天天向上</h2>
+        <a></a>
+    </div>
+</body>
+
+</html>

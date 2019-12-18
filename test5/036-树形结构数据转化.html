@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let data = [
+        {
+            menuId: 1,
+            parentId: 0,
+            name: '系统管理'
+        },
+        {
+            menuId: 2,
+            parentId: 0,
+            name: '系统监控'
+        },
+        {
+            menuId: 3,
+            parentId: 0,
+            name: '个人中心'
+        },
+        {
+            menuId: 4,
+            parentId: 1,
+            name: '角色管理'
+        },
+        {
+            menuId: 5,
+            parentId: 1,
+            name: '用户管理'
+        },
+        {
+            menuId: 6,
+            parentId: 2,
+            name: '数据监控'
+        },
+        {
+            menuId: 7,
+            parentId: 2,
+            name: '定时任务'
+        },
+        {
+            menuId: 8,
+            parentId: 3,
+            name: '供电基础'
+        },
+        {
+            menuId: 9,
+            parentId: 3,
+            name: '评估用户'
+        },
+        {
+            menuId: 10,
+            parentId: 5,
+            name: '用户管理-新增'
+        },
+        {
+            menuId: 11,
+            parentId: 5,
+            name: '用户管理-修改'
+        }
+    ]
+    // console.log(data)
+    let newData = treeDataTranslate(data, 'menuId', 'parentId')
+    console.log(newData)
+
+    // 将数据转换为树形结构的数据
+    function treeDataTranslate(data, id = 'id', pid = 'parentId') {
+        var res = []
+        var temp = {}
+        for (var i = 0; i < data.length; i++) {
+            temp[data[i][id]] = data[i]
+        }
+        for (var k = 0; k < data.length; k++) {
+            if (temp[data[k][pid]] && data[k][id] !== data[k][pid]) {
+                if (!temp[data[k][pid]]['children']) {
+                    temp[data[k][pid]]['children'] = []
+                }
+                if (!temp[data[k][pid]]['_level']) {
+                    temp[data[k][pid]]['_level'] = 1
+                }
+                data[k]['_level'] = temp[data[k][pid]]._level + 1
+                temp[data[k][pid]]['children'].push(data[k])
+            } else {
+                res.push(data[k])
+            }
+        }
+        return res
+    }
+
+    function jsonTranslate(data) {
+        console.log('之前:',data)
+        var menuId = []
+        var len = data.length
+        for (var i = 0; i < len; i++) {
+            var item = data[i]
+            if (item.children && item.children.length != 0) {
+                var child = item.children
+                for (var j = 0; j < child.length; j++) {
+                    data[len + j] = child[j]
+                }
+                len = data.length
+            }
+            menuId.push(item.menuName)
+        }
+        console.log('之后:',data)
+    }
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+    var str = `<p>好好学习</p>`;
+    $('.box').append(str);
+    /*$('.box p').on('click',function(){
+    	console.log(1);
+    });*/
+
+
+})
+
+$('.box').on('click', 'p', function() {
+    console.log(1);
+});
+</script>
+
+</html>

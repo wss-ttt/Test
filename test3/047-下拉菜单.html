@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				position: relative;
+			}
+			.content{
+				width: 500px;
+				height: 500px;
+				background-color: #ccc;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	</head>
+
+	<body>
+		<div class="box">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li>
+					<a href="#" data-stopPropagation="true">Action</a>
+					<!--<a href="#" >Action</a>-->
+				</li>
+				<li>
+					<a href="#" data-stopPropagation="true">Another action</a>
+					<!--<a href="#" >Action</a>-->
+				</li>
+				<li>
+					<a href="#" data-stopPropagation="true">Something else here</a>
+					<!--<a href="#" >Action</a>-->
+				</li>
+				<li role="separator" class="divider"></li>
+				<li>
+					<a href="#" data-stopPropagation="true">Separated link</a>
+					<!--<a href="#" >Action</a>-->
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			好好学习
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			/*$(".box").on("mouseover", function() {
+				$(".dropdown-menu").show();
+			})
+			$(".box").on("mouseout", function() {
+				$(".dropdown-menu").hide();
+			})*/
+		})
+	</script>
+
+</html>

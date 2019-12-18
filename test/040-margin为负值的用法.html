@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    .box {
+        width: 500px;
+        height: 500px;
+        margin: 10px auto;
+        background-color: #ccc;
+        padding: 0 15px;
+    }
+
+    .in {
+        width: 100%;
+        height: 100px;
+        background-color: green;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="in"></div>
+    </div>
+</body>
+<script type="text/javascript">
+
+var str='20170112';
+var d=str.fo
+
+
+
+Date.prototype.format = function(fmt) {
+    var o = {
+        "M+": this.getMonth() + 1, //月份 
+        "d+": this.getDate(), //日 
+        "h+": this.getHours(), //小时 
+        "m+": this.getMinutes(), //分 
+        "s+": this.getSeconds(), //秒 
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+        "S": this.getMilliseconds() //毫秒 
+    };
+    if (/(y+)/.test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    }
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt))
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
+</script>
+
+</html>

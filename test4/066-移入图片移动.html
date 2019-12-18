@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.box{
+				width: 380px;
+				height: 250px;
+				background-color: #ccc;
+				border: 1px solid red;
+				overflow: hidden;
+				margin: 100px auto;
+			}
+			.box img{
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="images/1.png" alt="" />
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('.box').hover(function(){
+			var $img = $(this).find('img');
+			var imgH = $img.height();   // 获取图片的高度
+			// 获取父级的高度
+			var pH = $(this).height();
+			$img.css({
+				'transform':"translateY(-"+(imgH-pH)+"px)",
+				'transition':'all 5s linear'
+			});
+		},function(){
+			var $img = $(this).find('img');
+			$img.css({
+				'transform':"translateY(0px)",
+				'transition':'all 2s linear'
+			});
+		});
+	</script>
+</html>

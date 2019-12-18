@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="js/jquery.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<select id="sel">
+		<option value="a">武汉</option>	
+		<option value="b">上海</option>	
+		<option value="c">北京</option>	
+	</select>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('#sel').change();
+	})
+	$('#sel').change(function(){
+		var val=$(this).val();
+		console.log(val);
+	});
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let o = {
+        name: '乔峰',
+        age: 18,
+        info: {
+            tel: '110',
+            address: '武汉'
+        },
+        say: function () {
+            console.log('好好学习')
+        }
+    }
+
+
+    let o2 = copyObject(o)
+    o.info.tel = '220'
+    console.log(o)
+    console.log(o2)
+    console.log(o === o2)
+    o2.say()
+
+    function copyObject(o) {
+        let objectMap = new WeakMap();
+        function copy(object) {
+            if (objectMap.get(object)) {
+                return objectMap.get(object);
+            }
+            if (typeof object !== "object") {
+                return object;
+            }
+            if (object instanceof RegExp) {
+                return object;
+            }
+            let newObject = new object.constructor();
+            objectMap.set(object, newObject);
+            for (let k in object) {
+                newObject[k] = copy(object[k]);
+            }
+            return newObject;
+        }
+        return copy(o);
+    }
+</script>
+
+</html>

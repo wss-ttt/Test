@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+		var arr = [{
+				id: 1,
+				dictSort: 0,
+				dictLabel: '立即执行',
+				dictValue: "1"
+			},
+			{
+				id: 2,
+				dictSort: 0,
+				dictLabel: '执行一次',
+				dictValue: "2"
+			},
+			{
+				id: 3,
+				dictSort: 0,
+				dictLabel: '放弃执行',
+				dictValue: "3"
+			},
+		]
+
+		var data = [];
+		
+		/*arr.forEach(function(item,index){
+			data[item.dictValue] = item.dictLabel;
+		})*/
+		
+		
+		for(let i = 0; i < arr.length; i++) {
+			var key = arr[i].dictValue;
+			var val = arr[i].dictLabel;
+			console.log(typeof key);
+			console.log(val);
+			// data[arr[i].dictValue] = arr[i].dictLabel;
+			data[key] = val;
+		}
+		console.log('-------------------');
+		/*console.log(arr);
+		console.log(data);*/
+		console.log(data['1']);
+		console.log(data[1])
+		console.log('-------------------');
+		
+		
+		
+		var brr = [];
+		brr['a'] = 'aa',
+		brr['b'] = 'bb';
+		var crr = [];
+		crr['1'] = 'aa'
+		crr['2'] = 'bb'
+		console.log(brr);
+		console.log(crr);
+		
+		
+		
+		
+	</script>
+	
+
+</html>

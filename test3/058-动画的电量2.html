@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			
+			body {
+				padding: 20px;
+				background: #1a1a1a;
+				color: #DDD;
+				font-family: "Open Sans", sans-serif;
+				font-size: 17px;
+				font-weight: 400;
+			}
+			
+			.progress-container {
+				width:250px;
+				height: 82px;
+				/*width: 82px;
+				height: 250px;*/
+				border: solid 1px #111;
+				background: #151515;
+				margin: 0 auto;
+				position: relative;
+				border: 7px solid red;
+				border-radius: 5px;
+				/*overflow: hidden;*/
+			}
+			.progress-container::after{
+				content: '';
+				width: 20px;
+				height: 40px;
+				background-color: red;
+				position: absolute;
+				right: -20px;
+				top:50%;
+				transform: translateY(-50%);
+				/*z-index: 2;*/
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+			.progress-container.done {
+				box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 2px #0c8112;
+			}
+			
+			.progress-container.done .progress {
+				background: #0f9816;
+			}
+			
+			.progress-container.done .progress-overlay {
+				display: none;
+			}
+			
+			.progress,
+			.progress-overlay {
+				position: absolute;
+			}
+			
+			.progress {
+				/*width: 80px;*/
+				/*height: 80px;*/
+				height: calc(100% - 20px);
+				background: #114baf;
+				box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+				z-index: 1;
+				/*bottom: 0;*/
+				text-align: center;
+				color: #151515;
+				text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+				font-weight: bold;
+				transition: background 250ms ease;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="prog" class="progress-container done">
+			<div class="progress">
+				
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		// Demostration JS
+		(function($) {
+			var
+				$cont = $('#prog'),
+				$bar = $cont.find('.progress'),
+				value = 0,
+				time = 35;
+
+			function reset() {
+				value = 0;
+				$cont.removeClass('done');
+//				$bar.css('height', '0%').text('0');
+				$bar.css('width', '0%');
+				setTimeout(increment, 500);
+			}
+
+			function increment() {
+				value += 1;
+				
+				// 这个是高度的变化
+				/*$bar.css('height', value + '%')
+					.text(value);*/
+					
+				// 现在我们需要宽度的变化
+				$bar.css('width', value + '%');
+				if(value === 100) {
+					$cont.addClass('done');
+//					setTimeout(reset, 3000);
+					return;
+				}
+
+				setTimeout(increment, time);
+			}
+
+			reset();
+
+		}(this.jQuery))
+	</script>
+
+</html>

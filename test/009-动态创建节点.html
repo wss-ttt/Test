@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	<button id="btn1">获取</button>	
+	<button id="btn2">设置</button>
+	<div class="box"></div>
+</body>
+<script type="text/javascript">
+	$('<div style="width:100px;height:100px;color:red;border:1px solid red;">div</div>').appendTo('body');
+	var str="<span>好好学习 天天向上</span>";
+	$('#btn1').click(function(){
+		console.log($(str).html());
+	});
+	$('#btn2').click(function(){
+		$('body').append(str);
+		$('span').html('我们不一样');
+		console.log($('span').html());
+		// $(str).html('我们不一样的');
+		// console.log($(str).html());
+		// $('.box').html(str);
+	});
+
+</script>
+</html>

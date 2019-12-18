@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html {}
+			
+			body {}
+			
+			.box {
+				/*1920px 下400px*400px*/
+				width: 4rem;
+				height: 4rem;
+				background-color: #ccc;
+				font-size:16px;
+			}
+		</style>
+		<title></title>
+	</head>
+
+	<body>
+		<div class="box">好好学习 天天向上</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*$(window).resize(function() // 绑定到窗口的这个事件中
+					{
+						// 表示1920的设计图,使用100PX的默认值
+						var whdef = 100 / 1920;
+						var wH = window.innerHeight; // 当前窗口的高度
+						var wW = window.innerWidth; // 当前窗口的宽度
+						var rem = wW * whdef; // 以默认比例值乘以当前窗口宽度,得到该宽度下的相应FONT-SIZE值
+						$('html').css('font-size', rem + "px");
+					});*/
+
+		$(window).resize(resetPC);
+		$(function(){
+			$(window).resize();   // 执行一次
+		})
+		function resetPC() {
+			console.log(11);
+			var wH = window.innerHeight; // 当前窗口的高度
+			var wW = window.innerWidth; // 当前窗口的宽度
+			// 表示1920的设计图,使用100PX的默认值
+			var whdef = 100 / 1920;
+			if(wW > 1400) {
+				var rem = wW * whdef; // 以默认比例值乘以当前窗口宽度,得到该宽度下的相应FONT-SIZE值
+				var html = document.documentElement;
+				html.style.fontSize = rem + "px"; //适用于PC网站
+			} else {
+				// 小于1400时  font-size大小固定
+				var rem = 1400 * whdef;
+				var html = document.documentElement;
+				html.style.fontSize = rem + "px";
+			}
+		}
+		
+	</script>
+
+</html>

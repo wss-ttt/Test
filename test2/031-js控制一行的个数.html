@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="theme/031.css" />
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div class="box">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+			<div>10</div>
+			<div>11</div>
+			<div>12</div>
+			<div>13</div>
+			<div>14</div>
+			<div>15</div>
+			<div>16</div>
+			<div>17</div>
+			<div>18</div>
+			<div>19</div>
+			<div>20</div>
+		</div>
+		
+		<div class="container">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			ajustAuto();
+			$(window).resize(function(){
+				ajustAuto();
+			});
+		})
+		
+		function ajustAuto(){
+			// 获取宽度
+			var w = $('.box').width();
+			// 获取每一个盒子的宽度
+			var pw = $('.box>div').outerWidth();
+//			console.log(w,pw);
+		}
+	</script>
+</html>

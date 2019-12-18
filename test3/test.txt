@@ -1,0 +1,44 @@
+tableData: [{
+						merchantId: '10001',
+						merchantName: '二维码聚合支付',
+						merchantStatus: 0,
+						total: '1000',
+						time: '19:01:02'
+					},
+					{
+						merchantId: '10001',
+						merchantName: '二维码聚合支付',
+						merchantStatus: 0,
+						total: '1000',
+						time: '19:01:02'
+					},
+					{
+						merchantId: '10001',
+						merchantName: '二维码聚合支付',
+						merchantStatus: 0,
+						total: '1000',
+						time: '19:01:02'
+					},
+					{
+						merchantId: '10001',
+						merchantName: '二维码聚合支付',
+						merchantStatus: 0,
+						total: '1000',
+						time: '19:01:02'
+					},
+				],
+
+
+代理商中心agentCenter 完成            -> 完成
+商户中心merchantCenter 完成           -> 完成
+订单中心orderCenter 完成(状态:圆点)     -> 完成
+审核中心examineCenter 完成(没有左侧部分  操作:更多)   -> 完成
+二维码资料页codePage 完成(需要左侧部分 但是和审核中心界面类似)   -->完成
+资料页infoPage 完成   (不需要右侧部分 不需要查询部分)   --> 完成
+财务资料financeInfo 完成   (和资料页类似)      --> 完成
+费率管理rataManage   完成           -->完成
+
+
+--整合
+代理商中心agentCenter  完成 
+全局的css   完成

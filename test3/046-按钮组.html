@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.group{
+				width: 500px;
+				height: 400px;
+				background-color: #ccc;
+				margin: 100px auto;
+			}
+			button{
+				padding: 20px 30px;
+    			font-size: 18px;
+    			border-radius: 10px;
+    			outline: none;
+    			border: none;
+    			float: left;
+    			border: 10px solid #000;
+    			/*margin-right: -10px;*/
+    			margin-left: -10px;
+			}
+			button:nth-child(1){
+				margin-left: 0;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			button:nth-child(2){
+				border-radius: 0;
+			}
+			button:nth-child(3){
+				/*margin-right: 0;*/
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="group">
+			<button>1</button>
+			<button>2</button>
+			<button>3</button>
+		</div>
+	</body>
+</html>

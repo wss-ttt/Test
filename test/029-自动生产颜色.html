@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    p {
+        color: ;
+    }
+    </style>
+</head>
+
+<body>
+    <p>好好学习</p>
+</body>
+<script type="text/javascript">
+function color() {
+    var r = Math.floor(Math.random() * 255);
+    var g = Math.floor(Math.random() * 255);
+    var b = Math.floor(Math.random() * 255);
+    var color = 'rgba(' + r + ',' + g + ',' + b + ',0.8)';
+    return color;
+}
+var getRandomColor = function() {
+    return '#' + (function(color) {
+        return 
+        (color += '0123456789abcdef' [Math.floor(Math.random() * 16)]) &&
+            (color.length == 6) ? color : arguments.callee(color);
+    })('');
+}
+// 获取dom元素
+var oP = document.querySelector('p');
+oP.style.color = getRandomColor();
+var color1=color();
+oP.style.backgroundColor=color1;
+// console.log(color1);
+
+console.log('0123456789abcdef' [Math.floor(Math.random() * 16)]);
+
+console.log(Math.floor(Math.random() * 16));   // [0,15]
+
+
+console.log('abc'[2]);
+console.log('abc'.charAt(2));
+</script>
+
+</html>

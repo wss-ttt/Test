@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        /*下面两种设置方法 还是1rem = 12px  
+            因为谷歌支持的最小字体就是12px  再小就默认还是12px
+        */
+        font-size: 62.5%;
+        /*font-size:10px;*/
+
+        /*font-size:625%;*/
+    }
+    .box {
+          width: 10rem;
+                 height: 10rem; 
+        background: #ccc;
+        font-size:1rem; 
+        /*font-size:16px;*/
+        /*width: 1536px;*/
+        /* width: 100%;
+        height: 100px; */
+
+        /* width: 1rem;   100px
+        height: 1rem;   100px
+        background: #ccc;
+        font-size: 0.16rem ;   此处对应着是16px */
+    }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        好好学习 天天向上
+        --no-cache %FileName% %FileBaseName%.css --style compact
+        <br />
+        --no-cache %FileName% ../css/%FileBaseName%.css --style expanded
+    </div>
+</body>
+<script src="js/height.js"></script>
+<script type="text/javascript">
+    var w=screen.width;
+    console.log(w);
+    console.log('设备像素比:',window.devicePixelRatio);
+
+	
+</script>
+</html>

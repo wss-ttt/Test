@@ -1,0 +1,70 @@
+@charset "utf-8";
+$browser-default-font-size:16px;   // 默认字体大小
+
+@function px2rem($px) {
+    //$px为需要转换的字号
+    @return $px / $browser-default-font-size * 1rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+html{
+    font-size:$browser-default-font-size;
+}
+
+.container{
+//  overflow: hidden;
+    width: 100vw;
+    height: 100%;
+    .left{
+        width: px2rem(220px);
+        height: 100%;
+        background-color: #ccc;
+        float: left;
+    }
+    .right{
+        float: left;
+        position:relative;
+        height: 100%;
+        .header{
+            width: px2rem(1700px);
+            height: 50px;
+            height: px2rem(50px);   // 3.125rem;
+            background-color: #00B83F;
+        }
+        .tabs{
+            width: px2rem(1700px);
+            height: 40px;
+            height: px2rem(40px);   // 2.5rem
+            background-color: #ffB84F;
+        }
+        .main-content{
+            width: px2rem(1700px);
+//          height: calc(100% - 50px - 40px - 40px );
+            height: calc(100% - 3.125rem - 2.5rem - 2.5rem);
+            background-color: #0B9AEC;
+            padding: px2rem(30px) px2rem(30px) px2rem(0px);
+            .select{
+                
+            }
+            .detect{
+                
+            }
+        }
+        .footer{
+            width: px2rem(1700px);
+            height: 40px;
+            height: px2rem(40px);
+            background-color: #ffB84F;
+            position: absolute;
+            bottom:0;
+            left: 0;
+        }
+    }
+}

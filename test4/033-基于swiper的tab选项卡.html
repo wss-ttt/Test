@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/swiper.css" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.container{
+				position: relative;
+				width: 600px;
+				height: 300px;
+				border: 1px solid red;
+				margin:100px auto;
+			}
+						
+			.tabs {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				height: 50px;
+				width: 100%;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+			
+			.tabs button {
+				width: 80px;
+				height: 30px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="tabs">
+				<button>1</button>
+				<button>2</button>
+				<button>3</button>
+			</div>
+			<div class="box swiper-container">
+				<div class="content swiper-wrapper">
+					<div class="swiper-slide">1</div>
+					<div class="swiper-slide">2</div>
+					<div class="swiper-slide">3</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		var mySwiper = new Swiper('.swiper-container');
+
+		$('.tabs button').on('click', function(e) {
+			e.preventDefault();
+			// 获取当前索引
+			var index = $(this).index();
+			mySwiper.slideTo(index, 1000, false);
+		});
+	</script>
+</html>

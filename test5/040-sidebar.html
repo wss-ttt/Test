@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            height: 100%;
+        }
+        .wrapper{
+            height: 100%;
+        }
+        .wrapper .sidebar{
+            /*设置动画效果*/
+            transition: width 0.28s; 
+            width: 210px;
+            height:100%;
+            position: fixed;
+            top:0;
+            bottom:0;
+            left:0;
+            z-index:1001;
+            background-color: #304156;
+        }
+        .wrapper.closeSidebar .sidebar{
+            width: 54px;
+        }
+        .wrapper.closeSidebar .container{
+            margin-left: 54px;
+        }
+        .wrapper .container{
+            min-height: 100%;
+            /*设置动画效果*/
+            transition: margin-left .28s;
+            margin-left: 210px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar"></div>
+        <div class="container">
+            <button class="action">展开/折叠</button>
+        </div>
+    </div>
+</body>
+<script>
+    let action = document.querySelector('.action');
+    let wrapper = document.querySelector('.wrapper')
+    // 展开/折叠
+    action.onclick = function(){
+        wrapper.classList.toggle('closeSidebar')
+    }
+</script>
+</html>

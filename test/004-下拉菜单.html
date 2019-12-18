@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- 图标的使用 -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<button class="btn btn-primary">确定</button>
+    <div class="dropdown">
+  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown trigger
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dLabel">
+    <li>0001</li>
+    <li>0002</li>
+    <li>0003</li>
+    <li>0004</li>
+  </ul>
+</div>
+
+	<div class="box" style="width:100px;height: 100px;background-color: #ccc;">
+		<button class="btn btn-primary closeBtn">关闭</button>
+	</div>
+	<div class="close">close</div>
+	<button id="btn1" class="btn btn-primary">弹出框</button>
+	<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on 左侧
+
+  <i class="fa fa-chevron-up"></i>
+</button>
+</body>
+<script type="text/javascript">
+	$('.close').click(function(){
+		$(this).closest('.box').remove();  // 删除掉
+	});
+	$('#btn1').click(function(){
+
+	})
+
+	$('[data-toggle="popover"]').popover()
+</script>
+</html>

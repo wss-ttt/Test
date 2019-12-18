@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            height: 50px;
+            background-color: #ccc;
+        }
+
+        .main {
+            background-color: #1acd7e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">头部</div>
+    <div class="main"></div>
+</body>
+<script>
+    let h = document.documentElement['clientHeight']
+    console.log(h)
+    let oMain = document.querySelector('.main')
+    oMain.style.height = h - 50 + 'px'
+    var num = farmatWan(38933)
+    console.log(num)
+    function farmatWan(num) {
+        var value = (Number(num) / 10000)
+        // console.log(value)
+        var value2 = (parseInt(value * 100) / 100).toFixed(2);
+        // console.log(value2)
+        return value2;
+    }
+    var num2 = 2.443252342;
+    num2 = num2.toFixed(4);  // num will be equal to 2.4432
+    console.log(typeof num2)
+
+</script>
+
+</html>

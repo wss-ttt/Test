@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				float: left;
+			}
+			.up{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			.box{
+				width: 100px;
+				height: 100px;
+				background-color: #ccc;
+				margin: 0 auto;
+				/*过渡效果*/
+				transition:all .3s;   
+			}
+		</style>
+	</head>
+	<body>
+		<div class="up"></div>
+		<div class="box"></div>
+		<button type="button" id="btn">aaa</button>
+	</body>
+	<script type="text/javascript">
+		var oBtn=document.querySelector('#btn');
+		var oBox=document.querySelector('.box');
+		oBtn.onclick=function(){
+			oBox.style.transform='translateX(-30px)';
+		}
+	</script>
+</html>

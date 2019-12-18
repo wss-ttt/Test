@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let res1 = validator('dark')
+    let res2 = validator('light')
+    let res3 = validator('aa')
+    console.log(res1)  // true
+    console.log(res2)  // true
+    console.log(res3)  // false
+    function validator(value) {
+        return ['light', 'dark'].indexOf(value) !== -1;
+    }
+</script>
+
+</html>

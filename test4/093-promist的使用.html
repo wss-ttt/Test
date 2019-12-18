@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		// 请求新闻数据
+		/*$.get('data/news.json', function(res) {
+			console.log(res);
+			console.log('p1');
+		});*/
+
+		// 请求产品数据
+		/*$.get('data/products.json', function(res) {
+			console.log(res);
+			console.log('p2');
+		});*/
+
+
+		// 请求新闻数据
+		/*var p1 = new Promise((resolve, rejcet) => {
+			$.get('data/news.json', function(res) {
+				resolve(res);
+				console.log('p1');
+			});
+		});*/
+		
+		// 请求产品数据
+		/*var p2 = new Promise((resolve, rejcet) => {
+			$.get('data/products.json', function(res) {
+				resolve(res);
+				console.log('p2');
+			});
+		});*/
+		
+		var p1 = getData('data/news.json').then((res)=>{
+			console.log(res);
+		});
+		
+		var p2 = getData('data/products.json').then((res)=>{
+			console.log(res);
+		});
+		
+		Promise.all([p1,p2]).then((res)=>{
+			console.log(res);
+			console.log('p3');
+		});
+		
+		function getData(url){
+			return new Promise((resolve,rejcet)=>{
+				$.get(url,function(res){
+					resolve(res);
+				})
+			});
+		}
+	</script>
+
+</html>

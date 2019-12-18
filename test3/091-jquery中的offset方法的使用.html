@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			height: 2000px;
+			background-color: #ccc;
+			overflow: hidden;
+		}
+		.container .box{
+			width: 400px;
+			height: 400px;
+			margin: 100px auto;
+			background-color: #1acd7e;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+			<button>开始你的表演</button>
+		</div>
+	</div>	
+</body>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(window).scroll(function(){
+		// 获取元素
+		var $btn = $('button');
+		var top = $btn.offset().top;
+		console.log('top:',top);   // 始终是101px 不知道为什么会多出1px
+	});
+</script>
+</html>

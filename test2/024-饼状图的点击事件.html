@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			.disabled {
+		        pointer-events: none;
+		        opacity: 0.8;
+		    }
+		    html{
+		    	font-size: 16px;
+		    }
+		    button{
+		    	border-radius: 0.1875rem;
+			    width: 4.25rem;
+			    height: 2.125rem;
+			    display: inline-block;
+			    background-color: #0b9aec;
+			    border: 1px solid #2198fd;
+			    text-align: center;
+			    color: #fff;
+			    line-height: 2.125rem;
+			    margin-right: 4.375rem;
+			    position: fixed;
+			    top:100px;
+			    right: 10px;
+		    }
+		</style>
+	</head>
+
+	<body style="height: 100%; margin: 0">
+		<div id="container" style="height: 100%"></div>
+		<button class="disabled">对比</button>
+		<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.js"></script>
+		<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+
+		<script type="text/javascript">
+			// 4:饼状图
+			// 获取元素
+			var chartMain4 = document.getElementById('container');
+			// 初始化
+			var myChart4 = echarts.init(chartMain4);
+			var chart4Value;
+			var option4 = {
+				title: {
+					text: '饼状图' // 饼状图是没有x轴和y轴的
+				},
+				legend: {
+					data: ['数学', '语文', '英语']
+				},
+				color:['red', 'green', 'blue'],
+				series: {
+					type: 'pie', // 饼状图
+					// data:[ 98,80,54 ]     // data是一个数组 单个的数组
+					data: [ // 此时是一个对象数组
+						{
+							name: '数学',
+							value: 98,
+							selected:false   // 是否选中了
+						},
+						{
+							name: '语文',
+							value: 84,
+							selected:false
+						},
+						{
+							name: '英语',
+							value: 54,
+							selected:false
+						}
+					],
+					hoverAnimation: false, // 去掉突出的效果
+					
+					itemStyle: {
+						
+						// 鼠标悬浮的样式
+						/*emphasis:{
+							shadowBlur:10,
+		                    shadowOffsetX:0,
+		                    shadowColor:'rgba(0,0,0,0.5)'
+						}*/
+					}
+
+				}
+			};
+			myChart4.setOption(option4);
+			// 添加单击事件
+			var oldColor=[];  // 保存之前的颜色
+			var len = 0;
+			myChart4.on('click', function(params) {
+/*				console.log(params);
+				option4.series.data[2].name='java';
+				option4.series.data[2].value='99';
+//				console.log(option4.series.data[2].itemStyle.color);
+				option4.series.data[2].itemStyle.color='black';
+//				option4.color[2]='black';
+				option4.legend.data[2]='java';
+				myChart4.setOption(option4);*/
+				
+				console.log(params);
+				var index = params.dataIndex;
+				// 查询是否被选中
+				var selected = params.data.selected;
+				if(!selected){
+					// 说明之前是没选中的 需要选中
+					console.log(1);
+//					oldColor = params.color;
+//					oldColor.push(params.color);
+					oldColor[index]=params.color;   // 保存之前的颜色
+					// 改变状态
+					option4.series.data[index].selected = true;
+					option4.series.itemStyle.emphasis={
+						shadowBlur:10,
+	                    shadowOffsetX:0,
+	                    shadowColor:'rgba(0,0,0,0.7)'
+					};
+//					option4.color[index]='#ccc';
+				}else{
+					// 说明已经是选中的 变回到之前的颜色
+					console.log(2);
+					option4.series.data[index].selected = false;
+//					option4.color[index]=oldColor[index];
+				}
+				myChart4.setOption(option4);
+				
+				// 按钮的启用与否
+				len=0;
+				option4.series.data.forEach(function(item,index){
+//					console.log(item);
+					if(item.selected){
+						len++;
+					}
+					
+				});
+				console.log('len:',len);
+				$('button').toggleClass('disabled',len<2);
+			});
+			
+			
+			$('button').click(function(){
+//				console.log('好好学习 天天向上');
+				alert('可以对比了');
+			});
+		</script>
+	</body>
+
+</html>

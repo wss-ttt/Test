@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .container {
+            height: 100%;
+        }
+
+        .container .header {
+            height: 100px;
+            background-color: #ccc;
+        }
+
+        .container .content {
+            height: calc(100% - 100px);
+            position: relative;
+        }
+
+        .container .content .left {
+            height: 100%;
+            width: 65%;
+            background-color: aqua;
+            float: left;
+            /*相对定位*/
+            position: relative;
+            /* transition: all 0.3s ease-in-out; */
+        }
+        .container .content .left.max{
+            /* position: absolute; */
+            position: fixed;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .container .content .left #chart{
+            width: 100%;
+            height: 100%;
+        }
+        .container .content .left .tool{
+            /*绝对定位*/
+            position: absolute;
+            top:0;
+            right:0;
+        }
+        .container .content .right {
+            height: 100%;
+            width: 30%;
+            float: right;
+            background-color: #1acd7e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <div class="content">
+            <div class="left">
+                <div id="chart"></div>
+                <div class="tool">
+                    <button class="full-screen">全屏</button>
+                </div>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+</body>
+<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    let myChart = null;
+    let fullScreen = document.querySelector('.full-screen')
+    let left = document.querySelector('.left')
+    fullScreen.onclick = function(){
+        left.classList.toggle('max')
+        // 图表重绘
+        myChart.resize()
+    }
+    initChart()
+    function initChart() {
+        if (myChart != null && myChart != "" && myChart != undefined) {
+            myChart.dispose();
+        }
+        myChart = echarts.init(document.getElementById('chart'));
+        var option = {
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: [120, 200, 150, 80, 70, 110, 130],
+                type: 'bar'
+            }]
+        };
+
+        myChart.setOption(option);
+        // 图表自适应
+        window.onresize = myChart.resize;
+    };
+</script>
+</html>

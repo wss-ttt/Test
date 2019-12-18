@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .content {
+            width: 400px;
+            background-color: lightyellow;
+            margin: 100px auto;
+        }
+        .out {
+            /*不能给该元素添加width属性*/
+            /* width: 400px; */
+            height: 400px;
+            /* overflow: hidden; */
+            /*添加了该代码后 子级的阴影效果会被截断*/
+
+            /* 如何解决该问题 */
+            overflow: hidden;
+            padding: 15px;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        .in {
+            width: 100%;
+            height: 100%;
+            background-color: lightskyblue;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="out">
+            <div class="in"></div>
+        </div>
+    </div>
+</body>
+</html>

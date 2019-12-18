@@ -1,0 +1,96 @@
+@charset "utf-8";
+$page-minH:937px;
+$page-minW:1920px;
+$page-rW:1700px;
+$page-lW:220px;
+
+// 宽度进行百分比换算
+@function perW($px) {
+    //$px为需要转换的字号
+    @return percentage( $px / $page-minW);
+}
+// 高度进行百分比换算
+
+// 宽度进行百分比换算
+@function perH($px) {
+    //$px为需要转换的字号
+    @return percentage( $px / $page-minH);
+}
+
+// 右边区域 padding margin 的百分比换算
+@function perRPM($px){
+    @return percentage($px / $page-rW);
+}
+// 左边区域 padding margin 的百分比换算
+@function perLPM($px){
+    @return percentage($px / $page-lW);
+}
+
+.test{
+    width: 100px - 50px;
+    height: 100px - 50px;
+    background-color: #ccc;
+    width: percentage(20/100);
+}
+.test2{
+    width: 100px*2;
+    height: 100px*2;
+    background-color: #0B9AEC;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+.container{
+    height: 100%;
+    min-height: $page-minH;
+    min-width: $page-minW;
+    .left{
+        width: perW(220px);
+        
+        height: 100%;
+        background-color: #ccc;
+        float: left;
+    }
+    .right{
+//      width: percentage((1920 - 220)/1920);
+        width:perW((1920px - 220px));
+        height: 100%;
+        background-color: #00B83F;
+        float: left;
+        .header{
+            height: 50px;
+            height: perH(50px);
+            background-color: pink;
+        }
+        .tabs{
+            height: 40px;
+            height: perH(40px);
+            background-color: blue;
+        }
+        .main-content{
+            height:  100% - perH(50px) - perH(40px) - perH(40px) ;
+            background-color: red;
+            padding: 30px 30px 10px;
+//          padding: percentage(30/1700) percentage(30/1700) percentage(10/1700);
+            padding:perRPM(30px) perRPM(30px) perRPM(10px);
+            .select{
+                height: perH(80px);
+                background-color: brown;
+            }
+        }
+        .footer{
+            height: 40px;
+            height: perH(40px);
+            background-color: #0B9AEC;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+}

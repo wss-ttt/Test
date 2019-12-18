@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 500px;
+            padding: 15px;
+            background-color: bisque;
+            margin: 100px auto;
+            overflow: auto;
+        }
+        .content{
+            width: 500px;
+            height: 100px;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">改变大小</button>
+    <div class="box">
+        <div class="content">
+
+        </div>
+    </div>
+</body>
+<script>
+    let bnt1 = document.querySelector('#btn1')
+    let oBox = document.querySelector('.box')
+    btn1.onclick = function(){
+       oBox.style.width = '400px' 
+       getHeight()
+    }
+    getHeight()
+    function getHeight(){
+        let h = oBox.offsetHeight
+        console.log(h)
+    }
+</script>
+</html>

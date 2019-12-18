@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li{
+				list-style: none;
+			}
+			.nav ul{
+				
+			}
+			.nav ul li{
+				width: 120px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				float: left;
+				margin: 5px;
+				background-color: #ccc;
+				cursor: pointer;
+			}
+			.nav ul li:hover>div{
+				display: block;
+				animation: slideInUp .5s both 1;
+			}
+			.nav ul li>div{
+				display: none;
+				border: 1px solid red;
+			}
+			
+			@keyframes  slideInUp{
+				0%{
+					transform: translateY(20px);
+					opacity: 0;
+				}
+				100%{
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<ul>
+				<li>
+					春
+					<div class="seconde">
+						<div>一月</div>
+						<div>二月</div>
+						<div>三月</div>
+						<div>四月</div>
+					</div>
+				</li>
+				<li>
+					夏
+					<div class="seconde">
+						<div>一月</div>
+						<div>二月</div>
+						<div>三月</div>
+						<div>四月</div>
+					</div>
+				</li>
+				<li>
+					秋
+					<div class="seconde">
+						<div>一月</div>
+						<div>二月</div>
+						<div>三月</div>
+						<div>四月</div>
+					</div>
+				</li>
+				<li>
+					冬
+					<div class="seconde">
+						<div>一月</div>
+						<div>二月</div>
+						<div>三月</div>
+						<div>四月</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

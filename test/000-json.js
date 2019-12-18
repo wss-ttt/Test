@@ -1,0 +1,22 @@
+[
+    { detectEquipNo: 1, assessErr: -0.08, assessType: 9 },
+    { detectEquipNo: 2, assessErr: -0.08, assessType: 9 },
+    { detectEquipNo: 3, assessErr: -0.03584, assessType: 3 },
+    { detectEquipNo: 4, assessErr: -0.00783, assessType: 2 },
+    { detectEquipNo: 5, assessErr: 0.01694, assessType: 2 },
+    { detectEquipNo: 6, assessErr: -0.0127, assessType: 2 },
+    { detectEquipNo: 7, assessErr: 0.02448, assessType: 2 },
+    { detectEquipNo: 8, assessErr: 0.00212, assessType: 2 },
+    { detectEquipNo: 9, assessErr: -0.08, assessType: 9 },
+    { detectEquipNo: 10, assessErr: -0.02741, assessType: 2 },
+    { detectEquipNo: 11, assessErr: -0.08, assessType: 9 },
+    { detectEquipNo: 12, assessErr: 0, assessType: 1 },
+    { detectEquipNo: 13, assessErr: -0.0419, assessType: 3 },
+    { detectEquipNo: 14, assessErr: -0.02021, assessType: 2 },
+    { detectEquipNo: 15, assessErr: -0.03302, assessType: 2 },
+    { detectEquipNo: 16, assessErr: -0.08, assessType: 9 },
+    { detectEquipNo: 17, assessErr: 0.00735, assessType: 2 },
+    { detectEquipNo: 18, assessErr: 0.00094, assessType: 2 },
+    { detectEquipNo: 19, assessErr: 0.00834, assessType: 2 },
+    { detectEquipNo: 20, assessErr: -0.08, assessType: 9 }
+]

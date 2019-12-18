@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			body{
+				background-color: #1a1a1a;
+			}
+			.container{
+				float: left;
+				border: 1px solid red;
+				position: relative;
+				border-radius: 2px;
+				width: 122px;
+				height: 22px;
+			}
+			.container::after{
+				content: '';
+				width: 5px;
+				height: 10px;
+				background-color: red;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: -5px;
+				border-top-right-radius: 2px;
+				border-bottom-right-radius: 2px;
+			}
+			.container div{
+				width: 10px;
+				height: 20px;
+				background-color: red;
+				float: left;
+				margin:0 1px;
+				display: none;
+			}
+			.container div:last-child{
+				/*margin-right: 0;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="prog" class="container">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<button>运动</button>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('button').click(function(){
+			for(var i = 0;i < 10; i++){
+				setTimeout(function(){
+					$('.container div').eq(i).show();
+				},500);
+				
+//				$('.container div').eq(i).show();
+			}
+		});
+	</script>
+
+</html>

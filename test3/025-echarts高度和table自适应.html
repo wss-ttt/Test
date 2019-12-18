@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			html,
+			body {
+				height: 100%;
+			}
+			.btn{
+				position: fixed;
+				right: 0;
+				top:0;
+				width: 100px;
+				height: 80px;
+				background-color: rgb(0,0,0,.5);
+			}
+			.box {
+				height: 100%;
+			}
+			
+			.box .header {
+				height: 240px;
+				background-color: #ccc;
+				/*transition: all .5s;*/
+			}
+			
+			.box .content {
+				height: calc( 100% - 240px);
+				background-color: #00B83F;
+				/*transition: all .5s;*/
+			}
+			.box .content #main{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<title></title>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="header"></div>
+			<div class="content">
+				<div id="main"></div>
+			</div>
+		</div>
+		<div class="btn">
+			<button>增加</button>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var myChart = null;
+		initCharts();
+
+		function initCharts() {
+			if(!myChart) {
+				myChart = echarts.init(document.getElementById('main'));
+			}
+			var labelRight = {
+				normal: {
+					position: 'right'
+				}
+			};
+			var option = {
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: { // 坐标轴指示器，坐标轴触发有效
+						type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+					}
+				},
+				grid: {
+					top: 0,
+					bottom: 0
+				},
+				xAxis: {
+					type: 'value',
+					position: 'top',
+					splitLine: {
+						show: false,
+						lineStyle: {
+							type: 'dashed'
+						}
+					},
+				},
+				yAxis: {
+					type: 'category',
+					axisLine: {
+						show: false
+					},
+					axisLabel: {
+						show: false
+					},
+					axisTick: {
+						show: false
+					},
+					splitLine: {
+						show: true,
+						lineStyle: {
+							type: 'dashed',
+							color: '#dcdbd3'
+						}
+					},
+					data: ['ten', 'nine', 'eight', 'seven', 'six', 'five', 'four', 'three', 'two', 'one']
+				},
+				series: [{
+					name: '生活费',
+					type: 'bar',
+					stack: '总量',
+					label: {
+						normal: {
+							show: true,
+							formatter: '{b}'
+						}
+					},
+					data: [{
+							value: -0.07,
+							label: labelRight
+						},
+						{
+							value: -0.09,
+							label: labelRight
+						},
+						0.2, 0.44,
+						{
+							value: -0.23,
+							label: labelRight
+						},
+						0.08,
+						{
+							value: -0.17,
+							label: labelRight
+						},
+						0.47,
+						{
+							value: -0.36,
+							label: labelRight
+						},
+						0.18
+					]
+				}]
+			};
+
+			myChart.setOption(option);
+			// 跟着窗口大小的改变而改变
+			//	        $(window).resize(myChart.resize);
+			window.onresize = myChart.resize;
+		}
+	
+	
+		// 全屏显示按钮
+		$('button:eq(0)').click(function(){
+			var hh = $('.box .header').height();
+			$('.box .header').css({
+				'height': hh-30+'px'
+			});
+			var hh2 = $('.box .header').height();
+			console.log(hh2);
+			var ch = hh2 + 'px';
+			$('.box .content').css({
+				'height':'calc( 100% - '+ch+' )'
+			});
+		});
+	</script>
+
+</html>

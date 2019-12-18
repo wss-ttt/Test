@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		懒加载原理
+<img>标签有一个属性是src，用来表示图像的URL，当这个属性的值不为空时，浏览器就会根据这个值发送请求。如果没有src属性，就不会发送请求。
+
+我先不设置src，需要的时候再设置？
+
+nice，就是这样。
+
+我们先不给<img>设置src，把图片真正的URL放在另一个属性data-src中，在需要的时候也就是图片进入可视区域的之前，将URL取出放到src中。
+方法一
+网上看到好多这种方法，稍微记录一下。
+
+通过document.documentElement.clientHeight获取屏幕可视窗口高度
+通过element.offsetTop获取元素相对于文档顶部的距离
+通过document.documentElement.scrollTop获取浏览器窗口顶部与文档顶部之间的距离，也就是滚动条滚动的距离
+然后判断②-③<①是否成立，如果成立，元素就在可视区域内。
+	
+	
+	
+	当你为图片的src赋值时，DOM节点渲染完毕时就会主动去请求src指向的资源，即使该图片不在用户的可视范围。那么，如果图片太多，加载页面的速度会就会变慢。
+<img>标签有一个属性是src，用来表示图像的URL，当这个属性的值不为空时，浏览器就会根据这个值发送请求。如果没有src属性，就不会发送请求
+	</body>
+</html>

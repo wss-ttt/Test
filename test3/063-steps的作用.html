@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 100px;
+				height: 100px;
+				background-color: #ccc;
+				animation: move 5s both steps(5) 1;
+			}
+			.tiao{
+				position: fixed;
+				width: 1px;
+				height: 100vh;
+				background-color: red;
+				left: 500px;
+				top:0;
+			}
+			@keyframes move{
+				from{
+					transform: translateX(0);
+				}
+				to{
+					transform: translateX(500px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="tiao"></div>
+	</body>
+</html>

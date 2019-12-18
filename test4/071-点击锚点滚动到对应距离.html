@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<!--引用jq-->
+		<title>jq点击导航页面滑动到对应内容</title>
+		<style>
+			ul {
+				list-style: none;
+				position: fixed;
+				top:0;
+				left: 0;
+			}
+			
+			ul li {
+				width: 80px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				display: inline-block;
+				cursor: pointer;
+				background: gray;
+			}
+			
+			#s1 {
+				height: 100px;
+				width: 100%;
+			}
+			
+			#s2 {
+				height: 200px;
+				width: 100%;
+			}
+			
+			#s3 {
+				height: 300px;
+				width: 100%;
+			}
+			
+			#s4 {
+				height: 400px;
+				width: 100%;
+			}
+			
+			#s5 {
+				height: 700px;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<ul>
+				<li onclick="click_scroll()">导航1</li>
+				<li onclick="click_scroll2()">导航2</li>
+				<li onclick="click_scroll3()">导航3</li>
+				<li onclick="click_scroll4()">导航4</li>
+				<li onclick="click_scroll5()">导航5</li>
+			</ul>
+			<!--<input type="button" value="点击button跳转" onclick="click_scroll()" id="sj"/>-->
+		</div>
+		<div>
+			<div id="s1" class="section section1">
+				<div>第一部分</div>
+			</div>
+			<div id="s2" class="section section2">
+				<div>第二部分</div>
+			</div>
+			<div id="s3" class="section section3">
+				<div>第三部分</div>
+			</div>
+			<div id="s4" class="section section4">
+				<div>第四部分</div>
+			</div>
+			<div id="s5" class="section section5">
+				<div>第五部分</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			function click_scroll() {
+				var scroll_offset = $("#s1").offset().top;
+				$("body,html").animate({
+					scrollTop: scroll_offset 
+				}, 800); //800 控制点击滚动条向下滑动的速度（越大越慢）
+			}
+
+			function click_scroll2() {
+				var scroll_offset = $("#s2").offset().top;
+				$("body,html").animate({
+					scrollTop: scroll_offset 
+				}, 800);
+			}
+
+			function click_scroll3() {
+				var scroll_offset = $("#s3").offset().top;
+				$("body,html").animate({
+					scrollTop: scroll_offset 
+				}, 800);
+			}
+
+			function click_scroll4() {
+				var scroll_offset = $("#s4").offset().top;
+				$("body,html").animate({
+					scrollTop: scroll_offset 
+				}, 800);
+			}
+
+			function click_scroll5() {
+				var scroll_offset = $("#s5").offset().top;
+				$("body,html").animate({
+					scrollTop: scroll_offset 
+				}, 800);
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		// 1 声明构造函数方式一
+		/*var Box = function(p){
+			this.name=p.name;
+			this.age=p.age;
+			console.log('我是box');
+			console.log('我的姓名是:',this.name);
+			console.log('我的年龄是:',this.age);
+		}*/
+		// 2 声明构造函数方式二
+		function Box(p){
+			// 进行数据初始化
+			this.init(p);
+		}
+		
+		// 在原型上放公共的属性和方法
+		Box.prototype = {
+			init:function(p){
+				// 设置默认值
+				this.name=p.name?p.name:'张三';
+				this.age=p.age?p.age:18;
+				this.sex=p.sex?p.sex:'男';
+				this.say=p.say?p.say:function(){
+					console.log('好好学习 天天向上');
+				};
+				
+				this.print();
+			},
+			print:function(){
+				console.log('姓名:',this.name);
+				console.log('年龄:',this.age);
+				console.log('性别:',this.sex);
+				this.say();
+			}
+		};
+		
+		var b1 = new Box({
+			'name':'乔峰',
+			'age':28,
+			'sex':'女',
+			/*say:function(){
+				console.log('给我一首歌的时间');
+			}*/
+		});
+	</script>
+</html>

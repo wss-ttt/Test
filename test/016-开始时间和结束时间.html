@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 引入所需要的文件 -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/moment-with-locales.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-sm-3">
+            <label>开始时间:</label>
+            <div class='input-group date' id='pzTime'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <label>结束时间:</label>
+            <div class='input-group date' id='pzqxTime'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $("#pzTime").datetimepicker({
+        // format: 'YYYY-MM-DD',
+        locale: moment.locale('zh-cn'),
+        // language : 'zh-CN',
+        // weekStart : 1,
+        // todayBtn : 1,
+        // autoclose : 1,
+        // todayHighlight : 1,
+        // startView : 2,
+        // minView: "month",
+        format: 'yyyy-mm-dd',
+        // forceParse : 0,
+        // endDate : new Date()
+    }).on('hide', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var startTime = event.date;
+        $('#pzqxTime').datetimepicker('setStartDate',startTime);
+        $('#pzqxTime').val("");
+    });
+    $("#pzqxTime").datetimepicker({
+        // format: 'YYYY-MM-DD',
+        locale: moment.locale('zh-cn'),
+        // language : 'zh-CN',
+        // weekStart : 1,
+        // todayBtn : 1,
+        // autoclose : 1,
+        // todayHighlight : 1,
+        // startView : 2,
+        // minView: "month",
+        format: 'yyyy-mm-dd',
+        // forceParse : 0,
+        // endDate : new Date()
+    }).on('hide', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var endTime = event.date;
+        $('#pzTime').datetimepicker('setEndDate',endTime);
+    });
+
+</script>
+
+</html>

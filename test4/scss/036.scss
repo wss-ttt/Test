@@ -1,0 +1,98 @@
+@charset "utf-8";
+// px 转换为rem函数
+@function px2rem($px) {
+    //$px为需要转换的字号
+    $rem: 100px;
+    @return $px / $rem * 1rem;
+}
+
+.test{
+    width: calc(100% - #{px2rem(100px)});
+    
+    height: 100px;
+    
+    border: 1px solid red;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+html{
+//  font-size:16px;
+}
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: px2rem(16px);
+}
+
+.box {
+    /*1920px 下400px*400px*/
+    width: 4rem;
+    height: 4rem;
+    background-color: #ccc;
+    //  font-size: px2rem(16px);
+}
+
+.left {
+    height: 100%;
+    width: 220px;
+    background-color: #ccc;
+    float: left;
+}
+
+.right {
+    padding: 30px 30px;
+    width: calc(100% - 220px);
+    background-color: #00FCBD;
+    float: left;
+    .select {
+        ul {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 30px;
+            padding: px2rem(20px) px2rem(30px);
+            background-color: #EDF8F9;
+            min-width: 1000px;
+            li {
+                margin-right: 30px;
+                margin-right: px2rem(30px);
+                input {
+                    height: 40px;
+                    width: 280px;
+                    height: px2rem(40px);
+                    width: px2rem(280px);
+                    outline: none;
+                    border-radius: 4px;
+                    border: 0;
+                }
+                button {
+                    height: 40px;
+                    width: 120px;
+                    height: px2rem(40px);
+                    width: px2rem(120px);
+                    color: #fff;
+                    background-color: #125C5B;
+                    border: 0;
+                    outline: none;
+                    font-size: px2rem(16px);
+                }
+            }
+        }
+    }
+    .content{
+        
+    }
+}

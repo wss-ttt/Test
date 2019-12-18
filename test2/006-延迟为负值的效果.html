@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    div{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+    }
+    .box1{
+        background-color: red;
+        top: 100px;
+        animation: move 1s;
+        animation-fill-mode:forwards;
+    }
+    .box2{
+        background-color: blue;
+        top: 250px;
+        animation: move 2s;
+        animation-fill-mode:forwards;
+    }
+    .box3{
+        background-color: green;
+        top: 350px;
+        animation: move 2s -1s;/*使动画马上开始跳过1s前的动画*/
+       animation-fill-mode:forwards;
+    }
+    @keyframes move{
+        0%{
+            left: 0;
+        }	
+        100%{
+            left: 500px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="box1">1s到达</div>
+    <!--<div class="box2">2s到达</div>-->
+    <div class="box3">为-2</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 都会执行
+    window.addEventListener('resize', () => {
+        console.log('1')
+    })
+
+    window.addEventListener('resize', () => {
+        console.log('2')
+    })
+
+    window.addEventListener('resize', () => {
+        console.log('3')
+    })
+</script>
+
+</html>

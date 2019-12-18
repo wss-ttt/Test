@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			/*2个色的渐变*/
+			.box{
+				width: 600px;
+				height: 100px;
+				background:linear-gradient(to right, red ,green);
+			}
+			/*2个色的突变*/
+			.box2{
+				width: 600px;
+				height: 100px;
+				background:linear-gradient(to right,red 50%,green 50%);
+			}
+			/*3个色的渐变*/
+			.box3{
+				width: 600px;
+				height: 100px;
+				background:linear-gradient(to right,red,green,blue);
+			}
+			/*3个色的突变*/
+			.box4{
+				width: 600px;
+				height: 100px;
+				background:linear-gradient(to right,
+							red   0,
+							red   33.333%,
+							
+							green 33.333%,
+							green 66.666%,
+							
+							blue  66.666%,
+							blue  100%
+							
+							);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		<div class="box4"></div>
+	</body>
+</html>

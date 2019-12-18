@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+			}
+			body{
+				background-image: url('images/1.jpg');
+				background-size: 100% 100%;
+				animation: change 2s both ;
+			}
+			
+			@keyframes  change{
+				0%{
+					background-image: url('images/1.jpg');
+				}
+				25%{
+					background-image: url('images/2.jpg');
+				}
+				50%{
+					background-image: url('images/3.jpg');
+				}
+				75%{
+					background-image: url('images/4.jpg');
+				}
+				100%{
+					background-image: url('images/1.jpg');
+				}
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var imgArr = [
+			'images/1.jpg',
+			'images/2.jpg',
+			'images/3.jpg',
+			'images/4.jpg',
+		];
+		var imgs = [];
+		function preloadImg(o){
+			for(let i = 0;i< o.length;i++){
+				imgs[i] = new Image();
+				imgs[i].src = o[i];
+			}
+		}
+		window.onload = function(){
+			preloadImg(imgArr);
+		};
+	</script>
+</html>

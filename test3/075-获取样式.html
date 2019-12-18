@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				/*width: 100px;
+				height: 100px;*/
+				background-color: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box1" style="width: 400px;height: 400px;"></div>
+		<button id="btn1">showtime</button>
+	</body>
+	<script type="text/javascript">
+		var obtn = document.querySelector('#btn1');
+		var obox = document.querySelector('#box1');
+		obtn.onclick = function(){
+			/*var w = obox.style.width;
+			var h = obox.style.height;
+			console.log('w',w);
+			console.log('h',h);*/
+			/*var w2 = getComputedStyle(obox).width;
+			var h2 = getComputedStyle(obox).height;
+			console.log('w2',w2);
+			console.log('h2',h2);*/
+			var w = getStyle2(obox,'width');
+			var h = getStyle2(obox,'height');
+			console.log(w,h);
+		}
+		// 带px单位的
+		function getStyle(ele,style){
+			 let result = ele.currentStyle ? ele.currentStyle[style] : getComputedStyle(ele, null)[style];
+			 return result;
+		}
+		
+		// 不带px代为的
+		function getStyle2(ele,style){
+			 let result = ele.currentStyle ? ele.currentStyle[style] : getComputedStyle(ele, null)[style];
+			 return parseInt(result);
+		}
+		
+	</script>
+</html>

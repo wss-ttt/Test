@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.mask{
+				position: fixed;
+				top:0;
+				left: 0;
+				right:0;
+				bottom: 0;
+				background-color: rgb(0,0,0,0.5);
+				z-index:999;
+				display: none;
+			}
+			.content{
+				position: fixed;
+				top:0;
+				right: -1300px;
+				width: 1200px;
+				height: 100%;
+				background-color: #fff;
+				box-shadow: -13px 0 40px rgba(0,0,0,.3);
+				z-index: 99999;
+				font-size:50px;
+				text-align: center;
+				/*添加过度效果*/
+				transition: all .5s;
+			}
+		</style>
+	</head>
+	<body>
+		<button>侧边滑出内容</button>
+		
+		<div class="sidebar">
+			<div class="mask"></div>
+			<div class="content">
+				内容显示
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		// 点击按钮滑出侧边内容
+		$('button').click(function(){
+			$('.mask').show();
+			$('.content').css({
+				'right':0
+			});
+		});
+		
+		// 点击遮罩层进行消失
+		$('.mask').click(function(){
+			
+			$('.mask').hide();
+			// 第一种效果 直接淡出
+			// $(this).next().fadeOut();
+			
+			// 第二种效果 带有动效果的 匀速往右偏移消失
+			/*$(this).next().animate({
+				'right':'-1200px'
+			},800);*/
+			
+			// 第三种 结合transition+js的来实现动画往右偏移消失
+			// transition: all .5s; 该种效果比较好
+			$(this).next().css({
+				'right':'-1300px'
+			});
+		});
+	</script>
+</html>

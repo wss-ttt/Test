@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				background-color: #ccc;
+				margin: 100px auto;
+				overflow: hidden;	
+				position: relative;
+			}
+			.box .group{
+				height: 4800px;
+				transition: all 8s linear;
+				
+				position: absolute;
+				top:0;
+				left: 0;
+				
+				/*transform: translateY(-300px);*/
+				/*animation: 8s move linear infinite both;*/
+			}
+			.box div{
+				width: 400px;
+				height: 400px;
+				background-color: #666;
+				font-size:40px;
+			}
+			.btns{
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+				height: 50px;
+				background-color: rgba(0,0,0,.5);;
+			}
+			
+			@keyframes move{
+				from{
+					transform: translateY(0);
+				}
+				to{
+					transform: translateY(-3200px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="group">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				
+				<div>5</div>
+				<div>6</div>
+				<div>7</div>
+				<div>8</div>
+			</div>
+		</div>
+		
+		<div class="btns">
+			<button>开始你的表演</button>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+		})
+		var timer;
+		// 获取元素
+		var group = document.querySelector('.group');
+		var top = 0;
+		$('button').click(function(){
+			
+			/*$('.group').animate({
+				
+				'transform':'translateY(-400px)'
+				
+			},1000);*/
+			
+			/*var ty = $('.group').css('transform').replace(/[^0-9\-,]/g,'').split(',')[5];
+			if(ty == -2800){
+				$('.group').css({
+					'transform':'translateY(0px)'
+				});
+			}
+			
+			$('.group').css({
+				'transform':'translateY(-2800px)'
+			});*/
+			
+			timer = setInterval(function(){
+//				top + =10;
+				if(group.offsetTop == -4800){
+					clearInterval(timer);
+				}
+				group.style.top= - group.offsetTop -10 +'px';
+			},10);
+			
+		});
+	</script>
+</html>

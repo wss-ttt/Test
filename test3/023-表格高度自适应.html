@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			.btn {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 80px;
+				background-color: rgba(0, 0, 0, .5);
+				z-index: 999;
+			}
+			
+			.box {
+				height: 400px;
+				background-color: #ccc;
+				display: flex;
+			}
+			
+			table {
+				border-collapse: collapse;
+				height: 100%;
+				width: 30%;
+			}
+			
+			table>tbody>tr>td {
+				text-align: center;
+				border: 1px solid #fff;
+			}
+			
+			.charts {
+				width: 70%;
+				height: 100%;
+				background-color: #00B83F;
+			}
+			.charts #main{
+				height: 100%;
+				background-color: #00B83F;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="btn">
+			<button>增高</button>
+		</div>
+		<div class="box">
+			<table cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td>学号</td>
+						<td>姓名</td>
+						<td>状态</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>乔峰</td>
+						<td>好</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>乔峰</td>
+						<td>好</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>乔峰</td>
+						<td>好</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>乔峰</td>
+						<td>好</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>乔峰</td>
+						<td>好</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>乔峰</td>
+						<td>好</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>乔峰</td>
+						<td>好</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>乔峰</td>
+						<td>好</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>乔峰</td>
+						<td>好</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>乔峰</td>
+						<td>好</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="charts">
+				<div id="main"></div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdn.bootcss.com/jquery-resize/1.1/jquery.ba-resize.js"></script>
+	<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*
+		(function($, h, c) {
+			var a = $([]),
+				e = $.resize = $.extend($.resize, {}),
+				i,
+				k = "setTimeout",
+				j = "resize",
+				d = j + "-special-event",
+				b = "delay",
+				f = "throttleWindow";
+			e[b] = 250;
+			e[f] = true;
+			$.event.special[j] = {
+				setup: function() {
+					if(!e[f] && this[k]) {
+						return false;
+					}
+					var l = $(this);
+					a = a.add(l);
+					$.data(this, d, {
+						w: l.width(),
+						h: l.height()
+					});
+					if(a.length === 1) {
+						g();
+					}
+				},
+				teardown: function() {
+					if(!e[f] && this[k]) {
+						return false;
+					}
+					var l = $(this);
+					a = a.not(l);
+					l.removeData(d);
+					if(!a.length) {
+						clearTimeout(i);
+					}
+				},
+				add: function(l) {
+					if(!e[f] && this[k]) {
+						return false;
+					}
+					var n;
+
+					function m(s, o, p) {
+						var q = $(this),
+							r = $.data(this, d);
+						r.w = o !== c ? o : q.width();
+						r.h = p !== c ? p : q.height();
+						n.apply(this, arguments);
+					}
+					if($.isFunction(l)) {
+						n = l;
+						return m;
+					} else {
+						n = l.handler;
+						l.handler = m;
+					}
+				}
+			};
+
+			function g() {
+				i = h[k](function() {
+						a.each(function() {
+							var n = $(this),
+								m = n.width(),
+								l = n.height(),
+								o = $.data(this, d);
+							if(m !== o.w || l !== o.h) {
+								n.trigger(j, [o.w = m, o.h = l]);
+							}
+						});
+						g();
+					},
+					e[b]);
+			}
+		})(jQuery, this);
+		*/
+		$('button:eq(0)').click(function() {
+			var h = $('.box').height();
+			$('.box').animate({
+				'height': h + 200 + 'px'
+			}, 1000);
+		});
+		$('.box').resize(function(){
+			myChart.resize;
+		});
+		var myChart = null;
+		initCharts();
+		function initCharts() {
+			if(!myChart) {
+				myChart = echarts.init(document.getElementById('main'));
+			}
+			var labelRight = {
+			    normal: {
+			        position: 'right'
+			    }
+			};
+			var option = {
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: { // 坐标轴指示器，坐标轴触发有效
+						type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+					}
+				},
+				grid: {
+					top: top,
+					bottom: 0
+				},
+				xAxis: {
+					type: 'value',
+					position: 'top',
+					splitLine: {
+						show: false,
+						lineStyle: {
+							type: 'dashed'
+						}
+					},
+				},
+				yAxis: {
+					type: 'category',
+					axisLine: {
+						show: false
+					},
+					axisLabel: {
+						show: false
+					},
+					axisTick: {
+						show: false
+					},
+					splitLine: {
+	                    show: true,
+	                    lineStyle: {
+	                        type: 'dashed',
+	                        color: '#dcdbd3'
+	                    }
+	                },
+					data: ['ten', 'nine', 'eight', 'seven', 'six', 'five', 'four', 'three', 'two', 'one']
+				},
+				series: [{
+					name: '生活费',
+					type: 'bar',
+					stack: '总量',
+					label: {
+						normal: {
+							show: true,
+							formatter: '{b}'
+						}
+					},
+					data: [{
+							value: -0.07,
+							label: labelRight
+						},
+						{
+							value: -0.09,
+							label: labelRight
+						},
+						0.2, 0.44,
+						{
+							value: -0.23,
+							label: labelRight
+						},
+						0.08,
+						{
+							value: -0.17,
+							label: labelRight
+						},
+						0.47,
+						{
+							value: -0.36,
+							label: labelRight
+						},
+						0.18
+					]
+				}]
+			};
+			
+			myChart.setOption(option);
+	        // 跟着窗口大小的改变而改变
+//	        $(window).resize(myChart.resize);
+	        window.onresize = myChart.resize;
+		}
+	
+	</script>
+
+</html>

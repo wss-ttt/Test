@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>	
+</body>
+<script type="text/javascript">
+	// 模拟后台返回的数据
+	var data=[
+		{
+			"id":"001",
+			"name":"刘备",
+			"age":18
+		},
+		{
+			"id":"002",
+			"name":"张飞",
+			"age":19
+		},
+		{
+			"id":"003",
+			"name":"关羽",
+			"age":20
+		},
+		{
+			"id":"004",
+			"name":"袁绍",
+			"age":21
+		}
+	]
+	data.forEach(function(item,index){
+
+		/*var arr=[item.id,item.name,item.age];
+
+		var str='<tr><td>'+arr.join('</td><td>')+'</td></tr>'
+
+		$('table').append(str);*/
+
+		var str='';
+		str+=`<tr>
+			<td>${item.id}</td>
+			<td>${item.name}</td>
+			<td>${item.age}</td>
+		</tr>`;
+		$('table').append(str);
+		
+	});
+</script>
+</html>

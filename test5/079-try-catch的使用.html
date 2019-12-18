@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    try {
+        let a = ''
+        console.log('上面')    // 这个会执行    
+        throw Error() || (a = '哈哈哦')
+        console.log(a)
+        console.log('下面')   // 这个是不会执行的
+    } catch{
+        console.log('参数错误了')
+    } finally {
+        console.log('这个是都会执行的')
+    }
+
+
+
+    {
+        var str = "test-test-test";
+        str = "test-test-test".replace("test", "ok");
+        console.log(str);
+    }
+    {
+        var str = "test-test-test";
+        str = "test-test-test".replace(/test/g, "ok");
+        console.log(str);
+    }
+    {
+        var str = "123/1234/1231/23";
+        str = str.replace(/\//g, "-");
+        console.log(str)
+    }
+</script>
+
+</html>

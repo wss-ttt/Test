@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="box">
+			<!--<div class="item">
+				<img src="http://192.168.0.222:8082/profile/upload/2019/06/27/a6dbca840a467b60189a74b1ad1742df.jpg" alt="" />
+			</div>
+			<div class="item">
+				<img src="http://192.168.0.222:8082/profile/upload/2019/06/27/a6dbca840a467b60189a74b1ad1742df.jpg" alt="" />
+			</div>
+			<div class="item">
+				<img src="http://192.168.0.222:8082/profile/upload/2019/06/27/a6dbca840a467b60189a74b1ad1742df.jpg" alt="" />
+			</div>-->
+			<script type="text/html" id="temp1">
+				{{each $data}}
+					<div>
+						<img src ="http://192.168.0.222:8082/{{$value.imgUrl}}"/>
+					</div>
+				{{/each}}
+			</script>
+			
+		</div>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/template-web.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$.ajax({
+			type:'post',
+			url:'http://192.168.0.222:8082/official/view/home/homeImgList',
+			success:function(res){
+				console.log(res);
+				var html = template('temp1',res.rows);
+				$('.box').html(html);
+				
+			}
+		});
+		var src = $('.box img:first-child').attr('src');
+				console.log(src);
+		
+		
+	</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body>
+    <select id="sel">
+        
+    </select>
+</body>
+<script type="text/javascript">
+var group = "";
+for (var i = 0; i < 3; i++) {
+    group += "<optgroup label='第"+(i+1)+"组'>";
+    var opt = "";
+    for (var j = 0; j < 3; j++) {
+        opt += "<option>" + j + "</option>";
+    }
+    group += opt;
+    group += "</optgroup>";
+}
+console.log(group);
+$('#sel').append(group);
+</script>
+
+</html>

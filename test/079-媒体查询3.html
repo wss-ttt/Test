@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        font-size: 34px;
+    }
+    body{
+        height: 1000px;
+    }
+    .container {
+        width: 1000px;
+        height: auto;
+        margin: 0 auto;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .header {
+        width: 100%;
+        height: 100px;
+        background: #1acd7e;
+        line-height: 100px;
+        text-align: center;
+    }
+
+    .left {
+        width: 400px;
+        height: 400px;
+        background: #aff;
+        float: left;
+        line-height: 400px;
+        text-align: center;
+    }
+
+    .right {
+        width: 580px;
+        height: 400px;
+        background: #ffa;
+        float: right;
+        line-height: 400px;
+        text-align: center;
+    }
+
+    .footer {
+        width: 100%;
+        height: 100px;
+        background: #ccc;
+        line-height: 100px;
+        text-align: center;
+    }
+
+    .clearfiex::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    @media screen and (max-width: 1024px) {
+
+        /*<=1024px*/
+        .container {
+            width: 90%;
+        }
+
+        .header {
+            background: #1acd7e;
+            color: #fff;
+        }
+
+        .left {
+            width: 30%;
+        }
+
+        .right {
+            width: 65%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+        /*<=768px*/
+        .container {
+            width: 80%;
+            min-width: 500px;
+            /*最小宽度*/
+        }
+
+        .container div {
+            margin-bottom: 10px;
+        }
+
+        .header {
+            width: 100%;
+            color: initial;
+        }
+
+        .left {
+            width: 100%;
+        }
+
+        .right {
+            width: 100%;
+        }
+
+        .container .footer {
+            width: 100%;
+            margin-bottom: initial;
+        }
+    }
+
+    /*css样式是从上往下执行的  同一个选择器 后面的样式会覆盖前面的样式*/
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">header</div>
+        <div class="main clearfiex">
+            <div class="left">left</div>
+            <div class="right">right</div>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+
+</html>

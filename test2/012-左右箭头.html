@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			a{
+				color:#337AB7;
+				text-decoration: none;
+			}
+			ul,li{
+				list-style: none;
+			}
+			.arrow{
+				
+			}
+			.arrow ul{
+				margin-bottom: 20px;
+				margin-top: 20px;
+				text-align: center;
+			}
+			.arrow ul li{
+				overflow: hidden;
+				display: inline-block;
+			}
+			.arrow ul li a{
+				display: inline-block;
+			    padding: 5px 14px;
+			    background-color: #fff;
+			    border: 1px solid #ddd;
+			    border-radius: 15px;
+			}
+			.arrow ul li.previous{
+				float:left;
+			}
+			.arrow ul li.next {
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="arrow">
+			<ul>
+				<li class="previous">
+					<a href="#">←Older</a>
+				</li>
+				<li class="next">
+					<a href="#">→Newer</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

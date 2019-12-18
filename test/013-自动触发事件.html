@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	<select id="sel1">
+		<option value="0">数学</option>
+		<option value="1">语文</option>
+		<option value="2">英语</option>
+	</select>	
+</body>
+<script type="text/javascript">
+
+	$('#sel1').change(function(){
+		console.log('好好学习');
+	});
+	/*$(function(){
+		$('#sel1').change();
+	});*/
+
+	// 这个必须要写在下面了。。。
+	$('#sel1').change();
+</script>
+</html>

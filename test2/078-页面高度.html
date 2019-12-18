@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var h =document.body.clientHeight||document.documentElement.clientHeight;
+        console.log(h);   // 937
+        var h2=window.innerHeight;
+        console.log('innerHeight',h2);   // 937 
+        var h3=window.outerHeight;
+        console.log('outerHeight',h3);    // 1038
+        var h4=screen.height;
+        console.log('screen.height',h4);   // 1080
+        var h5 = $(window).height();  // 窗口可视区高度
+        console.log('h5',h5);   // 937
+        // 获取页面的宽度
+        var w =document.body.clientWidth||document.documentElement.clientWidth;
+        console.log('页面的宽度是:',w);
+        var w2 = window.outerWidth;
+        console.log('outerWidth:',w2);
+        var w3 = window.innerWidth;
+        console.log('innerWidth',w3);
+	</script>
+</html>

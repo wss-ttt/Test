@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		.container{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+		}
+		.container .aside{
+			width: 200px;
+			background-color: #ccc;
+		}
+		.container .main{
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+		}
+		.container .main .header{
+			height: 60px;
+			background-color: green;
+		}
+		.container .main .content{
+			flex: 1;
+			background-color: #1acd7e;
+			overflow: auto;
+		}
+		.container .main .content .box{
+			height: 2000px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="aside"></div>
+		<div class="main">
+			<div class="header"></div>
+			<div class="content">
+				<div class="box"></div>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

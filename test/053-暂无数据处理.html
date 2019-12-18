@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <style type="text/css">
+    table {
+        border-collapse: collapse;
+        width: 200px;
+    }
+
+    table tr td,
+    table tr th {
+        border: solid 1px #ccc;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" class="form-control" style="width: 200px;display: inline-block;">
+    <input type="button" id="btn1" class="btn btn-primary" value="确定">
+    <div class="content hidden">
+        <table>
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="noData hidden">暂无数据</div>
+</body>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+var data = [{
+        "id": "001",
+        "name": "刘备",
+        "age": 18
+    },
+    {
+        "id": "002",
+        "name": "张飞",
+        "age": 19
+    },
+    {
+        "id": "003",
+        "name": "关羽",
+        "age": 20
+    },
+    {
+        "id": "004",
+        "name": "袁绍",
+        "age": 21
+    }
+]
+$('#btn1').click(function() {
+    var name = $('input[type=text]').val();
+    console.log(name);
+    for (let item of data) {
+        if (item.name == name) {
+        	$('.content').removeClass('hidden').next().addClass('hidden');
+            var str = `<tr>
+					<td>${item.id}</td>
+					<td>${item.name}</td>
+					<td>${item.age}</td>
+				</tr>`;
+            console.log(str);
+            $('table>tbody').append(str);
+            break;
+        }else{
+        	$('.content').addClass('hidden').next().removeClass('hidden');
+        }
+    }
+});
+</script>
+
+</html>
