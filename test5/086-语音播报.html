@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <audio autoplay="autoplay" id="auto1" src=""></audio> 
+    <audio autoplay="autoplay" id="auto2" src=""></audio>
+    <button type="button">播放1</button>
+    <button type="button">播放2</button>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    let data = [5133,8517];
+    $('button:eq(0)').click(function(){
+        $('audio:eq(0)').attr('src','audio/5133.wav');
+    });
+    $('button:eq(1)').click(function(){
+        $('audio:eq(1)').attr('src','audio/8517.wav');
+    });
+</script>
+</html>

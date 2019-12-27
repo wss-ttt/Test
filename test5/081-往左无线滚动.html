@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul,li{
+			list-style-type: none;
+		}
+		.box{
+			width: 1600px;
+			height: 400px;
+			background-color: #ccc;
+			margin:100px auto;
+			overflow: hidden;
+			position: relative;
+		}
+		.box ul{
+			width: 3200px;
+			height: 400px;
+			background-color: green;
+			position: absolute;
+			left: 0;
+			top:0;
+		}
+		.box ul li{
+			width: 400px;
+			height: 400px;
+			float: left;
+			font-size:50px;
+			text-align: center;
+			background-color: #ccc;
+		}
+		ul li:nth-child(1){
+			background-color: red;
+		}
+		ul li:nth-child(2){
+			background-color: green;
+		}
+		ul li:nth-child(3){
+			background-color: blue;
+		}
+		ul li:nth-child(4){
+			background-color: yellow;
+		}
+		ul li:nth-child(5){
+			background-color: red;
+		}
+		ul li:nth-child(6){
+			background-color: green;
+		}
+		ul li:nth-child(7){
+			background-color: blue;
+		}
+		ul li:nth-child(8){
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<!-- <li>5</li> -->
+		</ul>
+	</div>	
+</body>
+<script type="text/javascript">
+	var timer = null;
+	// 获取元素
+	var oul = document.querySelector('ul');
+
+	// 需要两截
+	oul.innerHTML += oul.innerHTML;
+
+	// timer = setInterval(moveToLeft,30);
+
+	// oul.onmouseover = function(){
+	// 	clearInterval(timer);
+	// }
+	
+	// oul.onmouseout = function(){
+	// 	timer = setInterval(moveToLeft,30);
+	// }
+
+	// 往左移动
+	function moveToLeft(){
+		if(oul.offsetLeft === -1600){
+			oul.style.left = 0
+		}
+		// +2 往左移动
+		oul.style.left = oul.offsetLeft - 2 +'px';
+	}
+
+</script>
+</html>
