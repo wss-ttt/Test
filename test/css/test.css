@@ -1,10 +1,3 @@
-.box {
-  width: 100px;
-  height: 200px;
-  background-color: #ccc;
+.test {
+  color: green;
 }
-.box .content {
-  font-size: 15px;
-}
-
-/*# sourceMappingURL=test.css.map */

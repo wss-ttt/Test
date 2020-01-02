@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+   /* {
+       // 声明了之后，不允许进行修改值
+       const a = '乔峰';
+       a = '杨过';  // 报错: Uncaught TypeError: Assignment to constant variable.
+   }  */
+   {
+       // 一旦声明就必须进行初始化
+       const a;
+       a = '乔峰';  // 报错：Uncaught SyntaxError: Missing initializer in const declaration
+   }
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    {
+        let arr = ['乔峰', '杨过', '小龙女'];
+        // pop: 删除一个数组中的最后的一个元素，并且返回这个元素。  
+        let res = arr.pop();
+        console.log(arr);    //  ['乔峰','杨过']
+        console.log(res);    // '小龙女'
+    }
+    {
+        let arr = ['乔峰', '杨过', '小龙女'];
+        // shift： 删除数组的第一个元素，并返回这个元素
+        let res = arr.shift();
+        console.log(arr);    // ['杨过','小龙女']
+        console.log(res);    // '乔峰'
+    }
+    {
+        let arr = ['乔峰', '杨过', '小龙女'];
+        // push:   可向数组的末尾添加一个或多个元素，并返回新的长度
+        let res = arr.push('aaa','bbb');
+        console.log(arr);   // ['乔峰','杨过','小龙女','aaa','bbb']
+        console.log(res);   // 5  返回打是数组的长度
+    }
+    {
+        let arr = ['乔峰', '杨过', '小龙女'];
+        // unshift:  可向数组的开头添加一个或更多元素，并返回新的长度 
+        let res = arr.unshift('aaa','bbb');
+        console.log(arr);     //  ['aaa','bbb','乔峰','杨过','小龙女']
+        console.log(res);    // 5
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,1171 @@
+@charset "UTF-8";
+.test {
+  width: 1.46341%;
+}
+
+/*全局的样式--开始*/
+body {
+  font-size: 0.16rem;
+}
+
+/*全局的样式--结束*/
+/*覆盖bootstap.css--开始*/
+/*覆盖bootstap.css--结束*/
+/*首页框架样式 分布为: 
+ * 上  
+ * 中  中分布为:(左、右(tab、主体展示))
+ * 下*/
+body#home #wrapper header {
+  height: 0.5rem;
+  padding-left: 0.32rem;
+}
+
+body#home #wrapper header .logo-pic {
+  width: 4.79rem;
+  height: 0.48rem;
+}
+
+body#home #wrapper header .header-r > ul.nav > li a {
+  font-size: 0.16rem;
+}
+
+body#home #wrapper .middle {
+  height: calc( 100% - 0.5rem - 0.4rem);
+  /*左边菜单部分*/
+  /*右侧主题内容部分*/
+}
+
+body#home #wrapper .middle nav.left {
+  height: calc(100% - 0.5rem - 0.4rem);
+}
+
+body#home #wrapper .middle nav.left .sidebar-collapse > ul.nav > li a {
+  font-size: 0.14rem;
+}
+
+body#home #wrapper .middle div.right .content-tabs {
+  height: 0.4rem;
+  /*右箭头*/
+  /*页签操作按钮*/
+  /*刷新按钮*/
+}
+
+body#home #wrapper .middle div.right .content-tabs .fixedLeft a {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+body#home #wrapper .middle div.right .content-tabs nav.page-tabs {
+  margin-left: 0.8rem;
+}
+
+body#home #wrapper .middle div.right .content-tabs nav.page-tabs a {
+  /*激活*/
+}
+
+body#home #wrapper .middle div.right .content-tabs .tabRight {
+  right: 1.72rem;
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+body#home #wrapper .middle div.right .content-tabs .btn-group {
+  right: 0.62rem;
+  width: 1.12rem;
+  height: 0.4rem;
+  padding: 0;
+}
+
+body#home #wrapper .middle div.right .content-tabs .btn-group button {
+  width: 1.12rem;
+  height: 0.4rem;
+}
+
+body#home #wrapper .middle div.right .content-tabs .tabReload {
+  top: 0;
+  right: 0;
+  width: 0.6rem;
+  height: 0.4rem;
+}
+
+body#home #wrapper .middle div.right .mainContent {
+  height: calc(100% - 0.4rem);
+}
+
+body#home #wrapper footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  padding-right: 0.3rem;
+}
+
+/*首页布局样式--结束*/
+/*公共的样式--开始*/
+.white-bg {
+  background-color: #fff;
+}
+
+body.page-com .container-div {
+  padding: 0 0.3rem;
+  padding-top: 0.3rem;
+  min-width: 9.5rem;
+}
+
+body.page-com .container-div div.search-collapse {
+  margin-top: 0;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+}
+
+body.page-com .container-div div.search-collapse div.select-list ul {
+  padding: 0 0.3rem;
+}
+
+body.page-com .container-div div.search-collapse div.select-list ul li a.evaluateBtn {
+  width: 1.5rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  padding: 0;
+  font-size: 0.16rem;
+}
+
+body.page-com .container-div div.search-collapse div.select-list ul li select#evaluateSection {
+  width: 3rem;
+  height: 0.4rem;
+}
+
+/*layui弹框样式修改--开始*/
+body .layer-ext-moon .layui-layer-title {
+  font-size: 0.16rem !important;
+}
+
+body .layer-ext-moon .layui-layer-btn a {
+  width: 0.58rem !important;
+  height: 0.34rem !important;
+  line-height: 0.34rem !important;
+  padding: 0 !important;
+  font-size: 0.16rem !important;
+}
+
+body .layer-ext-moon .layui-layer-btn .layui-layer-btn0 {
+  border: 0 !important;
+}
+
+/*layui弹框样式修改--结束*/
+/*daterangepicker时间范围插件样式--开始*/
+button#daterange-btn {
+  outline: none;
+  background-color: #fff;
+  border: 1px solid #AEB1B1;
+}
+
+button#daterange-btn:active {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.daterangepicker .calendar .daterangepicker_input input {
+  border: 1px solid #AEB1B1;
+  outline: none;
+}
+
+.daterangepicker .calendar div.calendar-table {
+  border: 1px solid #AEB1B1;
+}
+
+.daterangepicker .calendar div.calendar-table table > thead > tr > th select {
+  border: 1px solid #AEB1B1;
+  border-radius: 4px;
+}
+
+.daterangepicker .calendar div.calendar-table table > thead > tr > th select option {
+  background-color: #fff;
+}
+
+.daterangepicker .calendar div.calendar-table table > tbody > tr > td.disabled {
+  color: #000;
+}
+
+.daterangepicker .calendar div.calendar-table table > tbody > tr > td.active {
+  background-color: #57B8AD;
+  color: #fff;
+}
+
+.daterangepicker .calendar div.calendar-table table > tbody > tr > td.in-range {
+  background-color: #edf8f9;
+  color: #000;
+}
+
+.daterangepicker .calendar div.calendar-table table > tbody > tr > td.off {
+  color: #000;
+}
+
+.daterangepicker .calendar div.calendar-table table > tbody > tr > td:hover {
+  background-color: #57b8ad;
+  color: #fff;
+}
+
+.daterangepicker div.ranges ul li {
+  background-color: #fff;
+  border: 1px solid #57B8AD;
+  color: #000;
+}
+
+.daterangepicker div.ranges ul li.active {
+  background-color: #57B8AD;
+  color: #fff;
+}
+
+.daterangepicker div.ranges div.range_inputs button {
+  outline: none;
+  background-color: #fff;
+  border: 1px solid #57B8AD;
+  color: #000;
+}
+
+/*daterangepicker时间范围插件样式--结束*/
+/*bootsterp-table样式--开始*/
+/*bootsterp-table样式--结束*/
+/*公共的样式--结束*/
+/*异常感知页面样式--开始*/
+body#abnormalPerception {
+  /*************以下代码不用**************/
+  /*************以上代码不用**************/
+  /**************更新如下*****************/
+}
+
+body#abnormalPerception .container-div {
+  height: 100%;
+}
+
+body#abnormalPerception .container-div div.colorDefine {
+  padding: 0.09rem 0;
+}
+
+body#abnormalPerception .container-div div.colorDefine ul li {
+  width: 1.2rem;
+}
+
+body#abnormalPerception .container-div div.colorDefine ul li div.color {
+  width: 0.1rem;
+  height: 0.25rem;
+  border-radius: 4px;
+  margin-right: 0.05rem;
+}
+
+body#abnormalPerception .container-div div.colorDefine ul li div.explain {
+  margin-top: 0.05rem;
+}
+
+body#abnormalPerception .container-div div.colorDefine div.report a.reportBtn {
+  font-size: 0.18rem;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect {
+  float: left;
+  width: 23.90244%;
+  height: 1.12rem;
+  border: 0.06rem solid #c0002a;
+  border-radius: 4px;
+  padding: 0 0.11rem;
+  margin-right: 1.46341%;
+  margin-bottom: 0.13rem;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect.old {
+  width: 23.90244%;
+  height: 1.12rem;
+  border: 0.06rem solid #c0002a;
+  border-radius: 4px;
+  padding: 0 0.11rem;
+  margin-right: 1.46341%;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect:nth-child(4n) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect span.detect-name {
+  line-height: 0.2rem;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect span.detect-name.old {
+  line-height: 0.2rem;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div {
+  width: 2.7933%;
+  height: 25%;
+  margin-right: 0.55866%;
+  margin-bottom: 0.1rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.35);
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div:nth-of-type(30) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div:nth-of-type(60) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div:nth-last-of-type(-n+30) {
+  margin-bottom: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div.old {
+  width: 2.7933%;
+  height: 25%;
+  margin-right: 0.55866%;
+  margin-bottom: 0.1rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.35);
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div.old:nth-of-type(30) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div.old:nth-of-type(60) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div.old:nth-last-of-type(-n+30) {
+  margin-bottom: 0;
+}
+
+body#abnormalPerception .container-div .nodata {
+  font-size: 0.4rem;
+  padding-top: 0.3rem;
+}
+
+body#abnormalPerception .w-box {
+  padding: 0.3rem 0.3rem 0.1rem;
+  min-height: 8.06rem;
+  min-width: 13rem;
+}
+
+body#abnormalPerception .w-box .select-box {
+  padding: 0 0.3rem;
+}
+
+body#abnormalPerception .w-box .select-box ul li {
+  margin-right: 0.1rem;
+}
+
+body#abnormalPerception .w-box .select-box ul li a.evaluateBtn {
+  width: 1.5rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  font-size: 0.16rem;
+}
+
+body#abnormalPerception .w-box .select-box ul li select#evaluateSection {
+  width: 3rem;
+  height: 0.4rem;
+}
+
+body#abnormalPerception .w-box .select-box ul li input.apTime {
+  height: 0.4rem;
+}
+
+body#abnormalPerception .w-box .select-box ul li button#query {
+  height: 0.4rem;
+  border-radius: 0.04rem;
+  padding: 0 0.15rem;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.meter li {
+  width: 1.2rem;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.meter li div.color {
+  width: 0.1rem;
+  height: 0.25rem;
+  margin-right: 0.05rem;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.meter li div.explain {
+  margin-top: 0.05rem;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.unit li {
+  width: 1.2rem;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.unit li div.color {
+  width: 0.1rem;
+  height: 0.25rem;
+  margin-right: 0.05rem;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.unit li div.explain {
+  margin-top: 0.05rem;
+}
+
+body#abnormalPerception .w-box .colorDefine div.report a.reportBtn {
+  font-size: 0.18rem;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect {
+  padding: 0 0.11rem;
+  height: calc((100% - 4*0.13rem)/5);
+  margin-bottom: 0.13rem;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect span.detect-name {
+  height: 0.3rem;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect > div {
+  margin-bottom: 0.1rem;
+}
+
+body#abnormalPerception .w-box .nodata {
+  font-size: 0.4rem;
+  padding-top: 0.3rem;
+}
+
+@keyframes beat-soon {
+  0% {
+    background: #f5a100;
+  }
+  100% {
+    background: #fec720;
+  }
+}
+
+@-moz-keyframes beat-soon {
+  0% {
+    background: #f5a100;
+  }
+  100% {
+    background: #fec720;
+  }
+}
+
+@-webkit-keyframes beat-soon {
+  0% {
+    background: #f5a100;
+  }
+  100% {
+    background: #fec720;
+  }
+}
+
+@-o-keyframes beat-soon {
+  0% {
+    background: #f5a100;
+  }
+  100% {
+    background: #fec720;
+  }
+}
+
+@keyframes beat-already {
+  0% {
+    background: #c0002a;
+  }
+  100% {
+    background: #ff1b36;
+  }
+}
+
+@-moz-keyframes beat-already {
+  0% {
+    background: #c0002a;
+  }
+  100% {
+    background: #ff1b36;
+  }
+}
+
+@-webkit-keyframes beat-already {
+  0% {
+    background: #c0002a;
+  }
+  100% {
+    background: #ff1b36;
+  }
+}
+
+@-o-keyframes beat-already {
+  0% {
+    background: #c0002a;
+  }
+  100% {
+    background: #ff1b36;
+  }
+}
+
+@keyframes txt-soon {
+  0% {
+    color: #f5a100;
+  }
+  100% {
+    color: #fec720;
+  }
+}
+
+@-moz-keyframes txt-soon {
+  0% {
+    color: #f5a100;
+  }
+  100% {
+    color: #fec720;
+  }
+}
+
+@-webkit-keyframes txt-soon {
+  0% {
+    color: #f5a100;
+  }
+  100% {
+    color: #fec720;
+  }
+}
+
+@-o-keyframes txt-soon {
+  0% {
+    color: #f5a100;
+  }
+  100% {
+    color: #fec720;
+  }
+}
+
+@keyframes txt-already {
+  0% {
+    color: #c0002a;
+  }
+  100% {
+    color: #ff1b36;
+  }
+}
+
+@-moz-keyframes txt-already {
+  0% {
+    color: #c0002a;
+  }
+  100% {
+    color: #ff1b36;
+  }
+}
+
+@-webkit-keyframes txt-already {
+  0% {
+    color: #c0002a;
+  }
+  100% {
+    color: #ff1b36;
+  }
+}
+
+@-o-keyframes txt-already {
+  0% {
+    color: #c0002a;
+  }
+  100% {
+    color: #ff1b36;
+  }
+}
+
+@keyframes border-soon {
+  0% {
+    border-color: #f5a100;
+  }
+  100% {
+    border-color: #fec720;
+  }
+}
+
+@-moz-keyframes border-soon {
+  0% {
+    border-color: #f5a100;
+  }
+  100% {
+    border-color: #fec720;
+  }
+}
+
+@-webkit-keyframes border-soon {
+  0% {
+    border-color: #f5a100;
+  }
+  100% {
+    border-color: #fec720;
+  }
+}
+
+@-o-keyframes border-soon {
+  0% {
+    border-color: #f5a100;
+  }
+  100% {
+    border-color: #fec720;
+  }
+}
+
+@keyframes border-already {
+  0% {
+    border-color: #c0002a;
+  }
+  100% {
+    border-color: #ff1b36;
+  }
+}
+
+@-moz-keyframes border-already {
+  0% {
+    border-color: #c0002a;
+  }
+  100% {
+    border-color: #ff1b36;
+  }
+}
+
+@-webkit-keyframes border-already {
+  0% {
+    border-color: #c0002a;
+  }
+  100% {
+    border-color: #ff1b36;
+  }
+}
+
+@-o-keyframes border-already {
+  0% {
+    border-color: #c0002a;
+  }
+  100% {
+    border-color: #ff1b36;
+  }
+}
+
+/*异常感知页面样式--结束*/
+/*质量管控页面--开始*/
+body#qualityControl {
+  /*************以下代码不用**************/
+  /*************以上代码不用**************/
+  /**************更新如下*****************/
+}
+
+body#qualityControl .container-div {
+  overflow: auto;
+}
+
+body#qualityControl .container-div div.search-collapse div.select-list ul li input {
+  height: 0.4rem;
+}
+
+body#qualityControl .container-div div.search-collapse div.select-list ul li a.selectBtn {
+  width: 0.8rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  border-radius: 4px;
+  line-height: 0.4rem;
+  padding: 0;
+}
+
+body#qualityControl .container-div .content {
+  padding-top: 0.4rem;
+  padding-bottom: 0.1rem;
+}
+
+body#qualityControl .container-div .content .item {
+  height: 100%;
+  width: 100%;
+}
+
+body#qualityControl .container-div .content .item:nth-of-type(3) {
+  padding-right: 0.3rem;
+}
+
+body#qualityControl .container-div .content .item .myTable {
+  margin-left: 1.9rem;
+}
+
+body#qualityControl .container-div .content .item .myTable .select-table {
+  margin-top: 0;
+}
+
+body#qualityControl .container-div .content .item .myTable .select-table .btn-group-sm a.compareBtn {
+  width: 0.68rem;
+  height: 0.34rem;
+  line-height: 0.34rem;
+}
+
+body#qualityControl .container-div .content .toggleBtn {
+  top: 0.5rem;
+  left: 0.45rem;
+}
+
+body#qualityControl .container-div .content .toggleBtn ul li {
+  margin-bottom: 0.25rem;
+}
+
+body#qualityControl .container-div .content .toggleBtn ul li:last-child {
+  margin-bottom: 0;
+}
+
+body#qualityControl .container-div .content .toggleBtn ul li a {
+  width: 1.3rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+}
+
+body#qualityControl .container-div .content .toggleBtn ul li a > i {
+  margin: 0.05rem;
+}
+
+body#qualityControl .container-div .content .tool-panel {
+  bottom: 0;
+  left: 1.5rem;
+  right: 0;
+}
+
+body#qualityControl .container-div .content .tool-panel #theme a {
+  width: 0.46rem;
+  height: 0.46rem;
+  margin: 0px 0.05rem;
+}
+
+body#qualityControl .container-div .content .tool-panel #theme a span {
+  width: 0.4rem;
+  height: 40px;
+}
+
+body#qualityControl .container-div .content .tool-panel #theme .popover .theme-palette span {
+  width: 0.2rem;
+  height: 0.2rem;
+  margin-left: 0.03rem;
+}
+
+body#qualityControl .container-div .noData {
+  font-size: 0.4rem;
+  padding-top: 0.3rem;
+}
+
+body#qualityControl .w-box {
+  padding: 0.3rem 0.3rem 0.1rem;
+  min-height: 8.06rem;
+  min-width: 13rem;
+}
+
+body#qualityControl .w-box .select-box {
+  padding: 0 0.3rem;
+}
+
+body#qualityControl .w-box .select-box ul li {
+  margin-right: 0.1rem;
+}
+
+body#qualityControl .w-box .select-box ul li a.selectBtn {
+  width: 0.8rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  line-height: 0.4rem;
+}
+
+body#qualityControl .w-box .content {
+  margin-top: 0.4rem;
+}
+
+body#qualityControl .w-box .content .item:nth-of-type(3) {
+  padding-left: 1.9rem;
+  padding-right: 0.3rem;
+}
+
+body#qualityControl .w-box .content .item:nth-of-type(3) a.compareBtn {
+  width: 0.68rem;
+  height: 0.34rem;
+  line-height: 0.34rem;
+  margin-top: 0.05rem;
+  margin-bottom: 0.1rem;
+}
+
+body#qualityControl .w-box .content .toggleBtn {
+  top: 0.5rem;
+  left: 0.45rem;
+}
+
+body#qualityControl .w-box .content .toggleBtn ul li {
+  margin-bottom: 0.25rem;
+}
+
+body#qualityControl .w-box .content .toggleBtn ul li a {
+  width: 1.3rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+}
+
+body#qualityControl .w-box .content .toggleBtn ul li a > i {
+  margin: 0.05rem;
+}
+
+body#qualityControl .w-box .content .tool-panel {
+  left: 1.5rem;
+}
+
+body#qualityControl .w-box .content .tool-panel #theme a {
+  width: 0.46rem;
+  height: 0.46rem;
+  margin: 0px 0.05rem;
+}
+
+body#qualityControl .w-box .content .tool-panel #theme a span {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+body#qualityControl .w-box .content .tool-panel #theme .popover .theme-palette span {
+  width: 0.2rem;
+  height: 0.2rem;
+  margin-left: 0.03rem;
+  display: inline-block;
+}
+
+body#qualityControl .w-box .noData {
+  font-size: 0.4rem;
+  padding-top: 0.3rem;
+}
+
+/*质量管控页面--结束*/
+/*状态评估页面--开始*/
+body#standardAssess {
+  /*************以下代码不用**************/
+  /*************以上代码不用**************/
+  /**************更新如下*****************/
+}
+
+body#standardAssess .container-div .main {
+  padding-top: 0.4rem;
+  padding-bottom: 0.1rem;
+}
+
+body#standardAssess .container-div .main .content .table-box {
+  width: 2.5rem;
+}
+
+body#standardAssess .container-div .main .content .table-box table.myTable > tbody > tr {
+  /*存在偏移 预警的背景颜色*/
+  /*高风险的背景颜色*/
+  /*已超差的背景颜色*/
+  /*误差为零*/
+}
+
+body#standardAssess .container-div .main .noData {
+  font-size: 0.4rem;
+}
+
+body#standardAssess .w-box {
+  padding: 0.3rem 0.3rem 0.1rem;
+  min-height: 8.06rem;
+  min-width: 13rem;
+}
+
+body#standardAssess .w-box .select-box {
+  padding: 0 0.3rem;
+}
+
+body#standardAssess .w-box .select-box ul li {
+  margin-right: 0.1rem;
+}
+
+body#standardAssess .w-box .select-box ul li a.evaluateBtn {
+  width: 1.5rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  font-size: 0.16rem;
+}
+
+body#standardAssess .w-box .select-box ul li select#evaluateSection {
+  width: 3rem;
+  height: 0.4rem;
+}
+
+body#standardAssess .w-box .select-box ul li input.apTime {
+  height: 0.4rem;
+}
+
+body#standardAssess .w-box .select-box ul li button#query {
+  height: 0.4rem;
+  border-radius: 0.04rem;
+  padding: 0 0.15rem;
+}
+
+body#standardAssess .w-box .main {
+  margin-top: 0.4rem;
+}
+
+body#standardAssess .w-box .main .content .myTable {
+  width: 2.5rem;
+}
+
+body#standardAssess .w-box .main .content .myTable > tbody > tr {
+  /*存在偏移 预警的背景颜色*/
+  /*高风险的背景颜色*/
+  /*已超差的背景颜色*/
+  /*误差为零*/
+}
+
+body#standardAssess .w-box .noData {
+  font-size: 0.4rem;
+}
+
+/*状态评估页面--结束*/
+/*功能页面所有弹框页面--开始*/
+/*单台体报告--开始*/
+body#singleDetectReport {
+  padding: 0.15rem 0.15rem;
+}
+
+body#singleDetectReport .container-div {
+  padding: 0;
+}
+
+body#singleDetectReport .container-div .table {
+  margin-bottom: 0;
+}
+
+/*单台体报告--结束*/
+/*所有台体报告--开始*/
+body#allDetectReport .container-div {
+  padding: 0.05rem 0.15rem;
+}
+
+body#allDetectReport .container-div .table {
+  margin-bottom: 0;
+}
+
+body#allDetectReport .container-div .table > thead > tr > th {
+  padding: 0;
+}
+
+body#allDetectReport .container-div .table > tbody > tr {
+  height: 0.3rem;
+}
+
+body#allDetectReport .container-div .table > tbody > tr td {
+  padding: 0;
+}
+
+/*所有台体报告--结束*/
+/*detectDetails弹框页面--开始*/
+body#detectDetails {
+  padding: 0.05rem;
+}
+
+body#detectDetails .container-div {
+  padding: 0;
+  padding-top: 0.1rem;
+}
+
+body#detectDetails .container-div .search-box {
+  padding-top: 0.05rem;
+  padding-bottom: 0.05rem;
+}
+
+body#detectDetails .container-div .search-box div.select-list ul {
+  padding: 0 0.3rem;
+}
+
+body#detectDetails .container-div .search-box div.select-list ul li #detectSel {
+  width: 1rem;
+  height: 0.4rem;
+}
+
+body#detectDetails .container-div .search-box div.select-list ul li .selectBtn {
+  width: 1rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+}
+
+body#detectDetails .container-div #line {
+  margin-top: 0.3rem;
+  height: calc(100% - 1rem);
+}
+
+body#detectDetails .container-div .nodata {
+  font-size: 0.4rem;
+  padding-top: 0.3rem;
+}
+
+/*detectDetails弹框页面--结束*/
+/*compare弹框页面--开始*/
+body#compare {
+  padding: 0.15rem 0.1rem;
+}
+
+body#compare .container-div {
+  padding: 0;
+}
+
+body#compare .container-div .myTable {
+  margin-bottom: 0;
+}
+
+body#compare .container-div .myTable > thead tr {
+  height: 0.4rem;
+}
+
+body#compare .container-div .myTable > thead tr > th {
+  padding: 0;
+}
+
+body#compare .container-div .myTable > tbody > tr {
+  height: 0.3rem;
+}
+
+body#compare .container-div .myTable > tbody > tr td {
+  padding: 0;
+}
+
+/*compare弹框页面--结束*/
+/*功能页面所有弹框页面--结束*/
+/*系统管理页面样式--开始*/
+/*系统页面公共的样式--开始*/
+body.sys-com .container-div {
+  padding: 0.3rem 0.45rem;
+  min-width: 9.5rem;
+}
+
+body.sys-com .container-div div.search-collapse {
+  margin-top: 0;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+}
+
+body.sys-com .container-div div.search-collapse div.select-list ul li a {
+  margin-right: 0.3rem;
+  font-size: 0.16rem;
+}
+
+body.sys-com .container-div div.search-collapse div.select-list ul li a:last-child {
+  margin-right: 0;
+}
+
+body.sys-com .container-div div.search-collapse div.select-list ul li input,
+body.sys-com .container-div div.search-collapse div.select-list ul li select {
+  height: 0.4rem;
+  width: 1.9rem;
+}
+
+body.sys-com .container-div div.search-collapse div.select-list ul li input.time-input {
+  width: 1.2rem;
+}
+
+body.sys-com .container-div div.select-table {
+  margin-top: .2rem;
+}
+
+body.sys-com .container-div div.select-table #toolbar > a {
+  font-size: 0.16rem;
+}
+
+body.sys-com .container-div div.select-table table#bootstrap-table > tbody > tr td > a,
+body.sys-com .container-div div.select-table table#bootstrap-tree-table > tbody > tr td > a {
+  font-size: 0.16rem;
+}
+
+/*系统页面公共的样式--结束*/
+body#user-add-page,
+body#user-edit-page {
+  color: #000;
+}
+
+body#user-add-page button,
+body#user-edit-page button {
+  width: 0.58rem;
+  height: 0.34rem;
+  padding: 0;
+  line-height: 0.34rem;
+}
+
+/*系统管理页面样式--结束*/
+/*二期新增页面样式*/
+/*接驳环节预警页面--开始*/
+body#position-warning .handler {
+  height: 0.4rem;
+  padding: 0 0.15rem;
+  line-height: 0.34rem;
+}
+
+/*接驳环节预警页面--结束*/
+/*风险预警页面--开始*/
+body#early-warning {
+  padding: 0.3rem;
+}
+
+body#early-warning .v-container {
+  font-size: 0.4rem;
+}
+
+body#early-warning .v-container > .item {
+  margin-bottom: 0.3rem;
+}
+
+body#early-warning .v-container > .item：last-child {
+  margin-bottom: 0;
+}
+
+body#early-warning .v-container > .item .title {
+  width: 1rem;
+  line-height: 1rem;
+  margin-right: 0.15rem;
+}
+
+body#early-warning .v-container > .item .main > .m-item {
+  padding: 0 0.15rem;
+}
+
+body#early-warning .v-container > .item .main > .m-item .txt {
+  width: 1.8rem;
+}
+
+body#early-warning .v-container > .item .main > .m-item .info .list {
+  font-size: 0;
+}
+
+body#early-warning .v-container > .item .main > .m-item .info .list > div {
+  font-size: 0.34rem;
+}
+
+body#early-warning .v-container > .item .main > .m-item .info .more {
+  width: 1rem;
+}
+
+body#early-warning .v-container > .item .main > .m-item .tip {
+  width: 2.2rem;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 {
+  padding: 0 0.15rem;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 .txt {
+  width: 1.8rem;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 .info .list {
+  font-size: 0;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 .info .list > div {
+  font-size: 0.34rem;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 .info .more {
+  width: 1rem;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 .tip {
+  width: 2.2rem;
+}
+
+/*风险预警页面--结束*/

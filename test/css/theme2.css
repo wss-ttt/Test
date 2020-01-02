@@ -1,0 +1,2646 @@
+@charset "UTF-8";
+.test {
+  width: 1.46341%;
+}
+
+/*全局的样式--开始*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #000;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+input,
+button,
+select {
+  outline: none;
+}
+
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  border: none;
+}
+
+/*全局的样式--结束*/
+/*覆盖bootstap.css--开始*/
+.btn:focus, .btn:active {
+  outline: none;
+  outline-offset: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/*覆盖bootstap.css--结束*/
+/*首页框架样式 分布为: 
+ * 上  
+ * 中  中分布为:(左、右(tab、主体展示))
+ * 下*/
+body#home #wrapper {
+  background-color: #fff;
+}
+
+body#home #wrapper header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007069;
+  padding-left: 32px;
+}
+
+body#home #wrapper header .logo-pic {
+  width: 479px;
+  height: 48px;
+  float: left;
+  background-image: url("../../img/logo.png");
+  background-repeat: no-repeat;
+}
+
+body#home #wrapper header .title {
+  font-size: 24px;
+  color: white;
+  font-weight: 400;
+  height: 50px;
+  line-height: 50px;
+  float: left;
+}
+
+body#home #wrapper header .header-r > ul.nav > li a {
+  font-size: 16px;
+}
+
+body#home #wrapper header .header-r > ul.nav > li > a:focus {
+  color: #fff;
+  background-color: #57b8ad;
+}
+
+body#home #wrapper header .header-r > ul.nav > li > a:hover {
+  color: #fff;
+  background-color: #57b8ad;
+}
+
+body#home #wrapper header .header-r > ul.nav > li.open > a {
+  color: #fff;
+  background-color: #58B8AE;
+}
+
+body#home #wrapper header .header-r > ul.nav > li.dropdown:hover > a {
+  color: #fff;
+  background-color: #58B8AE;
+}
+
+body#home #wrapper header .header-r > ul.nav > li > ul.dropdown-menu > li.active > a {
+  color: #fff;
+  background-color: #58B8AE;
+}
+
+body#home #wrapper header .header-r > ul.nav > li > ul.dropdown-menu > li > a:focus {
+  color: #fff;
+  background-color: #58B8AE;
+}
+
+body#home #wrapper header .header-r > ul.nav > li > ul.dropdown-menu > li > a:hover {
+  color: #fff;
+  background-color: #58B8AE;
+}
+
+body#home #wrapper .middle {
+  width: 100%;
+  height: calc( 100% - 50px - 40px);
+  /*左边菜单部分*/
+  /*右侧主题内容部分*/
+}
+
+body#home #wrapper .middle nav.left {
+  position: fixed;
+  z-index: 2001;
+  height: calc(100% - 50px - 40px);
+  background-color: #125C5B;
+  border-right: 2px solid #125C5B;
+}
+
+body#home #wrapper .middle nav.left .sidebar-collapse > ul li a {
+  color: #fff;
+  background-color: #125C5B;
+  border-radius: 4px;
+}
+
+body#home #wrapper .middle nav.left .sidebar-collapse > ul li a:hover {
+  background-color: #14A39A;
+}
+
+body#home #wrapper .middle nav.left .sidebar-collapse > ul li a:focus {
+  background-color: #125C5B;
+}
+
+body#home #wrapper .middle nav.left .sidebar-collapse > ul li.active {
+  background-color: #125C5B;
+  border-left: none;
+}
+
+body#home #wrapper .middle nav.left .sidebar-collapse > ul li.active > a {
+  background-color: #14A39A;
+  color: #fff;
+}
+
+body#home #wrapper .middle nav.left .sidebar-collapse > ul li.active > ul > li > a.menuItem.menuActive {
+  background-color: #C3F3EE;
+  color: #00927A;
+}
+
+body#home #wrapper .middle div.right .content-tabs {
+  background-color: #125C5B;
+  border-bottom: none;
+  height: 40px;
+  /*右箭头*/
+  /*页签操作按钮*/
+  /*刷新按钮*/
+}
+
+body#home #wrapper .middle div.right .content-tabs .fixedLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body#home #wrapper .middle div.right .content-tabs .fixedLeft a {
+  width: 40px;
+  height: 40px;
+  display: block;
+  float: left;
+  text-align: center;
+  border-right: 2px solid #368988;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+body#home #wrapper .middle div.right .content-tabs nav.page-tabs {
+  margin-left: 80px;
+}
+
+body#home #wrapper .middle div.right .content-tabs nav.page-tabs a {
+  color: #fff;
+  border-right: 2px solid #368988;
+  /*激活*/
+}
+
+body#home #wrapper .middle div.right .content-tabs nav.page-tabs a:hover {
+  background-color: #368988;
+  color: #fff;
+}
+
+body#home #wrapper .middle div.right .content-tabs nav.page-tabs a.active {
+  background-color: #368988;
+  color: #fff;
+}
+
+body#home #wrapper .middle div.right .content-tabs .tabRight {
+  position: absolute;
+  top: 0;
+  right: 172px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  border-left: 2px solid #368988;
+  background-color: #125C5B;
+}
+
+body#home #wrapper .middle div.right .content-tabs .btn-group {
+  position: absolute;
+  right: 62px;
+  top: 0;
+  z-index: 2;
+  width: 112px;
+  height: 40px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  border-left: 2px solid #368988;
+}
+
+body#home #wrapper .middle div.right .content-tabs .btn-group button {
+  background-color: #125C5B;
+  width: 112px;
+  height: 40px;
+}
+
+body#home #wrapper .middle div.right .content-tabs .btn-group > ul {
+  background-color: #fff;
+  color: #000;
+  border: 0;
+}
+
+body#home #wrapper .middle div.right .content-tabs .btn-group > ul > li > a:hover {
+  color: #fff;
+  background-color: #57b8ad;
+}
+
+body#home #wrapper .middle div.right .content-tabs .tabReload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 40px;
+  outline: none;
+  border-left: 2px solid #368988;
+  color: #fff;
+  background-color: #125C5B;
+  text-align: center;
+}
+
+body#home #wrapper .middle div.right .mainContent {
+  height: calc(100% - 40px);
+}
+
+body#home #wrapper footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 4444;
+  line-height: 40px;
+  text-align: right;
+  padding-right: 30px;
+  color: #fff;
+  background-color: #125C5B;
+}
+
+/*首页布局样式--结束*/
+/*公共的样式--开始*/
+.white-bg {
+  background-color: #fff;
+}
+
+body.page-com .container-div {
+  padding: 0 30px;
+  padding-top: 30px;
+  min-width: 950px;
+}
+
+body.page-com .container-div div.search-collapse {
+  margin-top: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #000;
+  background: #EDF8F9;
+  box-shadow: unset;
+}
+
+body.page-com .container-div div.search-collapse div.select-list ul {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+body.page-com .container-div div.search-collapse div.select-list ul li {
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+body.page-com .container-div div.search-collapse div.select-list ul li a.evaluateBtn {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  font-size: 16px;
+  border: none;
+}
+
+body.page-com .container-div div.search-collapse div.select-list ul li a {
+  background: #125C5B;
+  color: #fff;
+  border-radius: 4px;
+}
+
+body.page-com .container-div div.search-collapse div.select-list ul li a:hover {
+  background-color: #368988;
+}
+
+body.page-com .container-div div.search-collapse div.select-list ul li select#evaluateSection {
+  width: 300px;
+  height: 40px;
+  background: white;
+  border: 1px solid #aeb1b1;
+  border-radius: 4px;
+}
+
+/*layui弹框样式修改--开始*/
+body .layer-ext-moon .layui-layer-title {
+  background: #04938A !important;
+  border-bottom: none !important;
+  color: #fff !important;
+  font-size: 16px !important;
+}
+
+body .layer-ext-moon .layui-layer-btn {
+  background: #ededed !important;
+  border: 0 !important;
+}
+
+body .layer-ext-moon .layui-layer-btn a {
+  width: 58px !important;
+  height: 34px !important;
+  line-height: 34px !important;
+  padding: 0 !important;
+  font-size: 16px !important;
+}
+
+body .layer-ext-moon .layui-layer-btn .layui-layer-btn0 {
+  background: #0cb694 !important;
+  border-radius: 4px !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+
+body .layer-ext-moon .layui-layer-btn .layui-layer-btn0.disabled {
+  background-color: #808080 !important;
+  color: #fff !important;
+  pointer-events: none !important;
+}
+
+body .layer-ext-moon .layui-layer-btn .layui-layer-btn1 {
+  background: #0cb694 !important;
+  border-radius: 4px !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+
+.layui-layer-setwin .layui-layer-min:hover cite {
+  background-color: #3CAFAE !important;
+}
+
+.layui-layer-setwin .layui-layer-min cite {
+  background-color: #fff !important;
+}
+
+/*layui弹框样式修改--结束*/
+/*daterangepicker时间范围插件样式--开始*/
+button#daterange-btn {
+  outline: none;
+  background-color: #fff;
+  border: 1px solid #AEB1B1;
+}
+
+button#daterange-btn:active {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.daterangepicker .calendar .daterangepicker_input input {
+  border: 1px solid #AEB1B1;
+  outline: none;
+}
+
+.daterangepicker .calendar div.calendar-table {
+  border: 1px solid #AEB1B1;
+}
+
+.daterangepicker .calendar div.calendar-table table > thead > tr > th select {
+  border: 1px solid #AEB1B1;
+  border-radius: 4px;
+}
+
+.daterangepicker .calendar div.calendar-table table > thead > tr > th select option {
+  background-color: #fff;
+}
+
+.daterangepicker .calendar div.calendar-table table > tbody > tr > td.disabled {
+  color: #000;
+}
+
+.daterangepicker .calendar div.calendar-table table > tbody > tr > td.active {
+  background-color: #57B8AD;
+  color: #fff;
+}
+
+.daterangepicker .calendar div.calendar-table table > tbody > tr > td.in-range {
+  background-color: #edf8f9;
+  color: #000;
+}
+
+.daterangepicker .calendar div.calendar-table table > tbody > tr > td.off {
+  color: #000;
+}
+
+.daterangepicker .calendar div.calendar-table table > tbody > tr > td:hover {
+  background-color: #57b8ad;
+  color: #fff;
+}
+
+.daterangepicker div.ranges ul li {
+  background-color: #fff;
+  border: 1px solid #57B8AD;
+  color: #000;
+}
+
+.daterangepicker div.ranges ul li.active {
+  background-color: #57B8AD;
+  color: #fff;
+}
+
+.daterangepicker div.ranges div.range_inputs button {
+  outline: none;
+  background-color: #fff;
+  border: 1px solid #57B8AD;
+  color: #000;
+}
+
+/*daterangepicker时间范围插件样式--结束*/
+/*bootsterp-table样式--开始*/
+.fixed-table-pagination .btn-group .btn {
+  color: #000;
+  background-color: #f6f6f6;
+}
+
+.fixed-table-pagination .open .dropdown-toggle.btn-default:focus, .fixed-table-pagination .open .dropdown-toggle.btn-default:hover {
+  background-color: #57b8ad;
+  color: #fff;
+  border: 1px solid #57b8ad;
+}
+
+.fixed-table-pagination .open ul.dropdown-menu > li > a:hover {
+  background-color: #57b8ad;
+  color: #fff;
+}
+
+.fixed-table-pagination .open ul.dropdown-menu > li.active > a {
+  background-color: #57b8ad;
+  color: #fff;
+}
+
+/*bootsterp-table样式--结束*/
+/*公共的样式--结束*/
+/*异常感知页面样式--开始*/
+body#abnormalPerception {
+  overflow-x: auto;
+  /*************以下代码不用**************/
+  /*************以上代码不用**************/
+  /**************更新如下*****************/
+}
+
+body#abnormalPerception .container-div {
+  height: 100%;
+}
+
+body#abnormalPerception .container-div div.colorDefine {
+  position: relative;
+  padding: 9px 0;
+  color: #000;
+}
+
+body#abnormalPerception .container-div div.colorDefine ul {
+  overflow: hidden;
+}
+
+body#abnormalPerception .container-div div.colorDefine ul li {
+  float: left;
+  width: 120px;
+}
+
+body#abnormalPerception .container-div div.colorDefine ul li div {
+  float: left;
+}
+
+body#abnormalPerception .container-div div.colorDefine ul li div.color {
+  width: 10px;
+  height: 25px;
+  border-radius: 4px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+body#abnormalPerception .container-div div.colorDefine ul li div.explain {
+  margin-top: 5px;
+}
+
+body#abnormalPerception .container-div div.colorDefine ul.meter li div.already,
+body#abnormalPerception .container-div div.colorDefine ul.unit li div.already {
+  background: #c0002a;
+}
+
+body#abnormalPerception .container-div div.colorDefine ul.meter li div.soon,
+body#abnormalPerception .container-div div.colorDefine ul.unit li div.soon {
+  background: #f5a100;
+}
+
+body#abnormalPerception .container-div div.colorDefine ul.meter li div.normal,
+body#abnormalPerception .container-div div.colorDefine ul.unit li div.normal {
+  background: #57b8ad;
+}
+
+body#abnormalPerception .container-div div.colorDefine div.report a.reportBtn {
+  color: #000;
+  line-height: 1;
+  font-size: 18px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+body#abnormalPerception .container-div div.colorDefine div.report a.reportBtn:focus, body#abnormalPerception .container-div div.colorDefine div.report a.reportBtn:focus {
+  color: #00927a;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect {
+  float: left;
+  width: 23.90244%;
+  height: 112px;
+  border: 6px solid #c0002a;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35), inset 0 0 5px 2px rgba(0, 0, 0, 0.25);
+  background: #e7eaea;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0 11px;
+  margin-right: 1.46341%;
+  margin-bottom: 13px;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect.old {
+  float: left;
+  width: 23.90244%;
+  height: 112px;
+  border: 6px solid #c0002a;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35), inset 0 0 5px 2px rgba(0, 0, 0, 0.25);
+  background: #e7eaea;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0 11px;
+  margin-right: 1.46341%;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect:nth-child(4n) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect.already {
+  border-color: #c0002a;
+  -webkit-animation: border-already .4s infinite linear;
+  -moz-animation: border-already .4s infinite linear;
+  -o-animation: border-already .4s infinite linear;
+  animation: border-already .4s infinite linear;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect.soon {
+  border-color: #f5a100;
+  -webkit-animation: border-soon .8s infinite linear;
+  -moz-animation: border-soon .8s infinite linear;
+  -o-animation: border-soon .8s infinite linear;
+  animation: border-soon .8s infinite linear;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect.normal {
+  border-color: #57b8ad;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect span.detect-name {
+  display: block;
+  line-height: 20px;
+  font-weight: bold;
+  color: #57b8ad;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect span.detect-name.old {
+  display: block;
+  line-height: 20px;
+  font-weight: bold;
+  color: #57b8ad;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect span.detect-name.already {
+  color: #c0002a;
+  -webkit-animation: txt-already .4s infinite linear;
+  -moz-animation: txt-already .4s infinite linear;
+  -o-animation: txt-already .4s infinite linear;
+  animation: txt-already .4s infinite linear;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect span.detect-name.soon {
+  color: #f5a100;
+  -webkit-animation: txt-soon .8s infinite linear;
+  -moz-animation: txt-soon .8s infinite linear;
+  -o-animation: txt-soon .8s infinite linear;
+  animation: txt-soon .8s infinite linear;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect span.detect-name.normal {
+  color: #57b8ad;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div {
+  width: 10px;
+  width: 2.7933%;
+  height: 25px;
+  height: 25%;
+  background: #57b8ad;
+  float: left;
+  margin-right: 0.55866%;
+  margin-bottom: 10px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.35);
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div:nth-of-type(30) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div:nth-of-type(60) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div:nth-last-of-type(-n+30) {
+  margin-bottom: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div.old {
+  width: 10px;
+  width: 2.7933%;
+  height: 25px;
+  height: 25%;
+  background: #57b8ad;
+  float: left;
+  margin-right: 0.55866%;
+  margin-bottom: 10px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.35);
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div.old:nth-of-type(30) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div.old:nth-of-type(60) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div.old:nth-last-of-type(-n+30) {
+  margin-bottom: 0;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div.already {
+  background: #c0002a;
+  -webkit-animation: beat-already .4s infinite linear;
+  -moz-animation: beat-already .4s infinite linear;
+  -o-animation: beat-already .4s infinite linear;
+  animation: beat-already .4s infinite linear;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div.soon {
+  background: #f5a100;
+  -webkit-animation: beat-soon .8s infinite linear;
+  -moz-animation: beat-soon .8s infinite linear;
+  -o-animation: beat-soon .8s infinite linear;
+  animation: beat-soon .8s infinite linear;
+}
+
+body#abnormalPerception .container-div div.detect-main div.detect > div.normal {
+  background: #57b8ad;
+}
+
+body#abnormalPerception .container-div .nodata {
+  color: #000;
+  text-align: center;
+  clear: both;
+  font-size: 40px;
+  padding-top: 30px;
+}
+
+body#abnormalPerception .container-div .disabled {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+body#abnormalPerception .w-box {
+  padding: 30px 30px 10px;
+  height: 100%;
+  min-height: 806px;
+  min-width: 1300px;
+}
+
+body#abnormalPerception .w-box .select-box {
+  height: 10.43025%;
+  display: flex;
+  align-items: center;
+  background-color: #EDF8F9;
+  padding: 0 30px;
+}
+
+body#abnormalPerception .w-box .select-box ul {
+  display: flex;
+  align-items: center;
+}
+
+body#abnormalPerception .w-box .select-box ul li {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+body#abnormalPerception .w-box .select-box ul li a.evaluateBtn {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  font-size: 16px;
+  border: none;
+  background: #125C5B;
+  color: #fff;
+  border-radius: 4px;
+}
+
+body#abnormalPerception .w-box .select-box ul li a.evaluateBtn:hover {
+  background-color: #368988;
+}
+
+body#abnormalPerception .w-box .select-box ul li select#evaluateSection {
+  width: 300px;
+  height: 40px;
+  background: white;
+  border: 1px solid #aeb1b1;
+  border-radius: 4px;
+}
+
+body#abnormalPerception .w-box .select-box ul li select#evaluateSection:hover, body#abnormalPerception .w-box .select-box ul li select#evaluateSection:focus {
+  border-color: #aeb1b1 !important;
+}
+
+body#abnormalPerception .w-box .select-box ul li input.apTime {
+  height: 40px;
+}
+
+body#abnormalPerception .w-box .select-box ul li button#query {
+  height: 40px;
+  background: #125C5B;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0 15px;
+}
+
+body#abnormalPerception .w-box .select-box ul li button#query:hover {
+  background-color: #368988;
+}
+
+body#abnormalPerception .w-box .colorDefine {
+  height: 9.77836%;
+  position: relative;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.meter {
+  height: 50%;
+  display: flex;
+  align-items: center;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.meter li {
+  float: left;
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.meter li div.color {
+  width: 10px;
+  height: 25px;
+  border-radius: 4px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.meter li div.explain {
+  margin-top: 5px;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.unit {
+  height: 50%;
+  display: flex;
+  align-items: center;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.unit li {
+  float: left;
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.unit li div.color {
+  width: 10px;
+  height: 25px;
+  border-radius: 4px;
+  background-color: red;
+  margin-right: 5px;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.unit li div.explain {
+  margin-top: 5px;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.meter li div.already,
+body#abnormalPerception .w-box .colorDefine ul.unit li div.already {
+  background: #c0002a;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.meter li div.soon,
+body#abnormalPerception .w-box .colorDefine ul.unit li div.soon {
+  background: #f5a100;
+}
+
+body#abnormalPerception .w-box .colorDefine ul.meter li div.normal,
+body#abnormalPerception .w-box .colorDefine ul.unit li div.normal {
+  background: #57b8ad;
+}
+
+body#abnormalPerception .w-box .colorDefine div.report a.reportBtn {
+  color: #000;
+  line-height: 1;
+  font-size: 18px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+body#abnormalPerception .w-box .colorDefine div.report a.reportBtn:focus, body#abnormalPerception .w-box .colorDefine div.report a.reportBtn:focus {
+  color: #00927a;
+}
+
+body#abnormalPerception .w-box .detect-main {
+  height: calc(100% - 10.43025% - 9.77836%);
+}
+
+body#abnormalPerception .w-box .detect-main div.detect {
+  padding: 0 11px;
+  width: 23.90244%;
+  height: calc((100% - 4*13px)/5);
+  margin-right: 1.46341%;
+  margin-bottom: 0.79268%;
+  margin-bottom: 13px;
+  float: left;
+  cursor: pointer;
+  border: 6px solid #57b8ad;
+  border-radius: 4px;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35), inset 0 0 5px 2px rgba(0, 0, 0, 0.25);
+}
+
+body#abnormalPerception .w-box .detect-main div.detect:nth-child(4n) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect:nth-child(17) {
+  margin-bottom: 0;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect:nth-child(18) {
+  margin-bottom: 0;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect:nth-child(19) {
+  margin-bottom: 0;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect:nth-child(20) {
+  margin-bottom: 0;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect.already {
+  border-color: #c0002a;
+  -webkit-animation: border-already .4s infinite linear;
+  -moz-animation: border-already .4s infinite linear;
+  -o-animation: border-already .4s infinite linear;
+  animation: border-already .4s infinite linear;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect.soon {
+  border-color: #f5a100;
+  -webkit-animation: border-soon .8s infinite linear;
+  -moz-animation: border-soon .8s infinite linear;
+  -o-animation: border-soon .8s infinite linear;
+  animation: border-soon .8s infinite linear;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect.normal {
+  border-color: #57b8ad;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect span.detect-name {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  font-weight: bold;
+  color: #57B8AD;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect > div {
+  width: 10px;
+  width: 2.7933%;
+  height: 25px;
+  height: 25%;
+  background: #57b8ad;
+  float: left;
+  margin-right: 0.55866%;
+  margin-bottom: 10px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.35);
+}
+
+body#abnormalPerception .w-box .detect-main div.detect > div:nth-of-type(30) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect > div:nth-of-type(60) {
+  margin-right: 0;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect > div:nth-last-of-type(-n+30) {
+  margin-bottom: 0;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect > div.already {
+  background: #c0002a;
+  -webkit-animation: beat-already .4s infinite linear;
+  -moz-animation: beat-already .4s infinite linear;
+  -o-animation: beat-already .4s infinite linear;
+  animation: beat-already .4s infinite linear;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect > div.soon {
+  background: #f5a100;
+  -webkit-animation: beat-soon .8s infinite linear;
+  -moz-animation: beat-soon .8s infinite linear;
+  -o-animation: beat-soon .8s infinite linear;
+  animation: beat-soon .8s infinite linear;
+}
+
+body#abnormalPerception .w-box .detect-main div.detect > div.normal {
+  background: #57b8ad;
+}
+
+body#abnormalPerception .w-box .nodata {
+  color: #000;
+  text-align: center;
+  clear: both;
+  font-size: 40px;
+  padding-top: 30px;
+}
+
+body#abnormalPerception .w-box .disabled {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+@keyframes beat-soon {
+  0% {
+    background: #f5a100;
+  }
+  100% {
+    background: #fec720;
+  }
+}
+
+@-moz-keyframes beat-soon {
+  0% {
+    background: #f5a100;
+  }
+  100% {
+    background: #fec720;
+  }
+}
+
+@-webkit-keyframes beat-soon {
+  0% {
+    background: #f5a100;
+  }
+  100% {
+    background: #fec720;
+  }
+}
+
+@-o-keyframes beat-soon {
+  0% {
+    background: #f5a100;
+  }
+  100% {
+    background: #fec720;
+  }
+}
+
+@keyframes beat-already {
+  0% {
+    background: #c0002a;
+  }
+  100% {
+    background: #ff1b36;
+  }
+}
+
+@-moz-keyframes beat-already {
+  0% {
+    background: #c0002a;
+  }
+  100% {
+    background: #ff1b36;
+  }
+}
+
+@-webkit-keyframes beat-already {
+  0% {
+    background: #c0002a;
+  }
+  100% {
+    background: #ff1b36;
+  }
+}
+
+@-o-keyframes beat-already {
+  0% {
+    background: #c0002a;
+  }
+  100% {
+    background: #ff1b36;
+  }
+}
+
+@keyframes txt-soon {
+  0% {
+    color: #f5a100;
+  }
+  100% {
+    color: #fec720;
+  }
+}
+
+@-moz-keyframes txt-soon {
+  0% {
+    color: #f5a100;
+  }
+  100% {
+    color: #fec720;
+  }
+}
+
+@-webkit-keyframes txt-soon {
+  0% {
+    color: #f5a100;
+  }
+  100% {
+    color: #fec720;
+  }
+}
+
+@-o-keyframes txt-soon {
+  0% {
+    color: #f5a100;
+  }
+  100% {
+    color: #fec720;
+  }
+}
+
+@keyframes txt-already {
+  0% {
+    color: #c0002a;
+  }
+  100% {
+    color: #ff1b36;
+  }
+}
+
+@-moz-keyframes txt-already {
+  0% {
+    color: #c0002a;
+  }
+  100% {
+    color: #ff1b36;
+  }
+}
+
+@-webkit-keyframes txt-already {
+  0% {
+    color: #c0002a;
+  }
+  100% {
+    color: #ff1b36;
+  }
+}
+
+@-o-keyframes txt-already {
+  0% {
+    color: #c0002a;
+  }
+  100% {
+    color: #ff1b36;
+  }
+}
+
+@keyframes border-soon {
+  0% {
+    border-color: #f5a100;
+  }
+  100% {
+    border-color: #fec720;
+  }
+}
+
+@-moz-keyframes border-soon {
+  0% {
+    border-color: #f5a100;
+  }
+  100% {
+    border-color: #fec720;
+  }
+}
+
+@-webkit-keyframes border-soon {
+  0% {
+    border-color: #f5a100;
+  }
+  100% {
+    border-color: #fec720;
+  }
+}
+
+@-o-keyframes border-soon {
+  0% {
+    border-color: #f5a100;
+  }
+  100% {
+    border-color: #fec720;
+  }
+}
+
+@keyframes border-already {
+  0% {
+    border-color: #c0002a;
+  }
+  100% {
+    border-color: #ff1b36;
+  }
+}
+
+@-moz-keyframes border-already {
+  0% {
+    border-color: #c0002a;
+  }
+  100% {
+    border-color: #ff1b36;
+  }
+}
+
+@-webkit-keyframes border-already {
+  0% {
+    border-color: #c0002a;
+  }
+  100% {
+    border-color: #ff1b36;
+  }
+}
+
+@-o-keyframes border-already {
+  0% {
+    border-color: #c0002a;
+  }
+  100% {
+    border-color: #ff1b36;
+  }
+}
+
+/*异常感知页面样式--结束*/
+/*质量管控页面--开始*/
+body#qualityControl {
+  overflow-x: auto;
+  /*************以下代码不用**************/
+  /*************以上代码不用**************/
+  /**************更新如下*****************/
+}
+
+body#qualityControl .container-div {
+  overflow: auto;
+}
+
+body#qualityControl .container-div div.search-collapse div.select-list ul li input {
+  height: 40px;
+}
+
+body#qualityControl .container-div div.search-collapse div.select-list ul li a.selectBtn {
+  text-align: center;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  color: #fff;
+  line-height: 40px;
+  padding: 0;
+}
+
+body#qualityControl .container-div .content {
+  padding-top: 40px;
+  padding-bottom: 10px;
+  /*相对定位*/
+  position: relative;
+}
+
+body#qualityControl .container-div .content .item {
+  background: #f6f6f6;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+body#qualityControl .container-div .content .item:nth-of-type(1) {
+  display: block;
+}
+
+body#qualityControl .container-div .content .item:nth-of-type(3) {
+  height: auto;
+  padding-right: 30px;
+}
+
+body#qualityControl .container-div .content .item .myTable {
+  color: #000;
+  margin-left: 190px;
+}
+
+body#qualityControl .container-div .content .item .myTable .select-table {
+  margin-top: 0;
+  background-color: #f6f6f6;
+}
+
+body#qualityControl .container-div .content .item .myTable .select-table .btn-group-sm {
+  text-align: right;
+}
+
+body#qualityControl .container-div .content .item .myTable .select-table .btn-group-sm a.compareBtn {
+  display: inline-block;
+  width: 68px;
+  height: 34px;
+  background: #125c5b;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  line-height: 34px;
+}
+
+body#qualityControl .container-div .content .item .myTable .select-table .btn-group-sm a.compareBtn:hover, body#qualityControl .container-div .content .item .myTable .select-table .btn-group-sm a.compareBtn:focus {
+  background: #368988;
+  color: #fff;
+}
+
+body#qualityControl .container-div .content .item .myTable .select-table .table {
+  border-radius: 4px;
+}
+
+body#qualityControl .container-div .content .item .myTable .select-table .table > thead > tr th {
+  text-align: center;
+  color: #000;
+  border: 1px solid #CACDCD;
+  border-top: 1px solid #CACDCD !important;
+  border-bottom: 1px solid #CACDCD !important;
+}
+
+body#qualityControl .container-div .content .item .myTable .select-table .table > tbody > tr {
+  cursor: pointer;
+}
+
+body#qualityControl .container-div .content .item .myTable .select-table .table > tbody > tr td {
+  text-align: center;
+  border: 1px solid #CACDCD;
+  border-top: 1px solid #CACDCD !important;
+  border-bottom: 1px solid #CACDCD !important;
+}
+
+body#qualityControl .container-div .content .item .myTable .select-table .pull-left {
+  float: unset !important;
+}
+
+body#qualityControl .container-div .content .toggleBtn {
+  position: absolute;
+  top: 50px;
+  left: 45px;
+  z-index: 888;
+}
+
+body#qualityControl .container-div .content .toggleBtn ul li {
+  margin-bottom: 25px;
+  box-shadow: 1px 5px 10px 0 rgba(38, 38, 38, 0.3);
+  border-radius: 4px;
+}
+
+body#qualityControl .container-div .content .toggleBtn ul li:last-child {
+  margin-bottom: 0;
+}
+
+body#qualityControl .container-div .content .toggleBtn ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 60px;
+  line-height: 60px;
+  color: #000;
+  text-align: center;
+  background: #dedede;
+  border-radius: 4px;
+}
+
+body#qualityControl .container-div .content .toggleBtn ul li a > i {
+  margin: 5px;
+}
+
+body#qualityControl .container-div .content .toggleBtn ul li:hover a {
+  color: #fff;
+  background: #57b8ad;
+}
+
+body#qualityControl .container-div .content .toggleBtn ul li.on a {
+  color: #fff;
+  background: #57b8ad;
+}
+
+body#qualityControl .container-div .content .tool-panel {
+  position: absolute;
+  bottom: 0;
+  left: 150px;
+  right: 0;
+}
+
+body#qualityControl .container-div .content .tool-panel #theme {
+  float: left;
+}
+
+body#qualityControl .container-div .content .tool-panel #theme a {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  margin: 0px 5px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: #fff;
+  position: relative;
+}
+
+body#qualityControl .container-div .content .tool-panel #theme a.selected {
+  border: 1px solid #e43c59;
+}
+
+body#qualityControl .container-div .content .tool-panel #theme a span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body#qualityControl .container-div .content .tool-panel #theme a.default span {
+  background: linear-gradient(135deg, #de7e7b 0%, #c23531 50%, #2f4554 51%, #547b95 100%);
+}
+
+body#qualityControl .container-div .content .tool-panel #theme a.light span {
+  background: linear-gradient(135deg, #8dcaea 0%, #37A2DA 50%, #ffd85c 51%, #fff0c2 100%);
+}
+
+body#qualityControl .container-div .content .tool-panel #theme a.dark span {
+  background: linear-gradient(135deg, #f0bcb9 0%, #dd6b66 50%, #759aa0 51%, #b1c6ca 100%);
+}
+
+body#qualityControl .container-div .content .tool-panel #theme .popover {
+  z-index: 3000;
+}
+
+body#qualityControl .container-div .content .tool-panel #theme .popover .theme-palette {
+  color: #000;
+}
+
+body#qualityControl .container-div .content .tool-panel #theme .popover .theme-palette span {
+  width: 20px;
+  height: 20px;
+  margin-left: 3px;
+  display: inline-block;
+}
+
+body#qualityControl .container-div .noData {
+  color: #000;
+  text-align: center;
+  clear: both;
+  font-size: 40px;
+  padding-top: 30px;
+}
+
+body#qualityControl .container-div .disabled {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+body#qualityControl .w-box {
+  padding: 30px 30px 10px;
+  height: 100%;
+  min-height: 806px;
+  min-width: 1300px;
+}
+
+body#qualityControl .w-box .select-box {
+  height: 10.43025%;
+  display: flex;
+  align-items: center;
+  background-color: #EDF8F9;
+  padding: 0 30px;
+}
+
+body#qualityControl .w-box .select-box ul {
+  display: flex;
+  align-items: center;
+}
+
+body#qualityControl .w-box .select-box ul li {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+body#qualityControl .w-box .select-box ul li a.selectBtn {
+  text-align: center;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  color: #fff;
+  line-height: 40px;
+  padding: 0;
+  background: #125C5B;
+}
+
+body#qualityControl .w-box .select-box ul li a.selectBtn:hover {
+  background-color: #368988;
+}
+
+body#qualityControl .w-box .content {
+  margin-top: 40px;
+  height: calc(100% - 40px - 10.43025%);
+  /*相对定位*/
+  position: relative;
+}
+
+body#qualityControl .w-box .content .item {
+  background-color: #F6F6F6;
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+body#qualityControl .w-box .content .item:nth-of-type(3) {
+  min-height: 100%;
+  height: auto;
+  padding-left: 190px;
+  padding-right: 30px;
+}
+
+body#qualityControl .w-box .content .item:nth-of-type(3) a.compareBtn {
+  display: inline-block;
+  width: 68px;
+  height: 34px;
+  background: #125c5b;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  line-height: 34px;
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+body#qualityControl .w-box .content .item:nth-of-type(3) a.compareBtn:hover, body#qualityControl .w-box .content .item:nth-of-type(3) a.compareBtn:focus {
+  background: #368988;
+  color: #fff;
+}
+
+body#qualityControl .w-box .content .item:nth-of-type(3) .table {
+  border-radius: 4px;
+}
+
+body#qualityControl .w-box .content .item:nth-of-type(3) .table > thead > tr th {
+  text-align: center;
+  color: #000;
+  border: 1px solid #CACDCD;
+  border-top: 1px solid #CACDCD !important;
+  border-bottom: 1px solid #CACDCD !important;
+}
+
+body#qualityControl .w-box .content .item:nth-of-type(3) .table > tbody > tr {
+  cursor: pointer;
+}
+
+body#qualityControl .w-box .content .item:nth-of-type(3) .table > tbody > tr td {
+  text-align: center;
+  border: 1px solid #CACDCD;
+  border-top: 1px solid #CACDCD !important;
+  border-bottom: 1px solid #CACDCD !important;
+}
+
+body#qualityControl .w-box .content .toggleBtn {
+  position: absolute;
+  top: 50px;
+  left: 45px;
+  z-index: 888;
+}
+
+body#qualityControl .w-box .content .toggleBtn ul li {
+  margin-bottom: 25px;
+  box-shadow: 1px 5px 10px 0 rgba(38, 38, 38, 0.3);
+  border-radius: 4px;
+}
+
+body#qualityControl .w-box .content .toggleBtn ul li:last-child {
+  margin-bottom: 0;
+}
+
+body#qualityControl .w-box .content .toggleBtn ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 60px;
+  line-height: 60px;
+  color: #000;
+  text-align: center;
+  background: #dedede;
+  border-radius: 4px;
+}
+
+body#qualityControl .w-box .content .toggleBtn ul li a > i {
+  margin: 5px;
+}
+
+body#qualityControl .w-box .content .toggleBtn ul li:hover a {
+  color: #fff;
+  background: #57b8ad;
+}
+
+body#qualityControl .w-box .content .toggleBtn ul li.on a {
+  color: #fff;
+  background: #57b8ad;
+}
+
+body#qualityControl .w-box .content .tool-panel {
+  position: absolute;
+  bottom: 0;
+  left: 150px;
+  right: 0;
+}
+
+body#qualityControl .w-box .content .tool-panel #theme {
+  float: left;
+}
+
+body#qualityControl .w-box .content .tool-panel #theme a {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  margin: 0px 5px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: #fff;
+  position: relative;
+}
+
+body#qualityControl .w-box .content .tool-panel #theme a.selected {
+  border: 1px solid #e43c59;
+}
+
+body#qualityControl .w-box .content .tool-panel #theme a span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body#qualityControl .w-box .content .tool-panel #theme a.default span {
+  background: linear-gradient(135deg, #de7e7b 0%, #c23531 50%, #2f4554 51%, #547b95 100%);
+}
+
+body#qualityControl .w-box .content .tool-panel #theme a.light span {
+  background: linear-gradient(135deg, #8dcaea 0%, #37A2DA 50%, #ffd85c 51%, #fff0c2 100%);
+}
+
+body#qualityControl .w-box .content .tool-panel #theme a.dark span {
+  background: linear-gradient(135deg, #f0bcb9 0%, #dd6b66 50%, #759aa0 51%, #b1c6ca 100%);
+}
+
+body#qualityControl .w-box .content .tool-panel #theme .popover {
+  z-index: 3000;
+}
+
+body#qualityControl .w-box .content .tool-panel #theme .popover .theme-palette {
+  color: #000;
+}
+
+body#qualityControl .w-box .content .tool-panel #theme .popover .theme-palette span {
+  width: 20px;
+  height: 20px;
+  margin-left: 3px;
+  display: inline-block;
+}
+
+body#qualityControl .w-box .noData {
+  color: #000;
+  text-align: center;
+  clear: both;
+  font-size: 40px;
+  padding-top: 30px;
+}
+
+body#qualityControl .w-box .disabled {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/*质量管控页面--结束*/
+/*状态评估页面--开始*/
+body#standardAssess {
+  overflow-x: auto;
+  /*************以下代码不用**************/
+  /*************以上代码不用**************/
+  /**************更新如下*****************/
+}
+
+body#standardAssess .container-div .main {
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+body#standardAssess .container-div .main .content {
+  /*弹性布局*/
+  background-color: #f6F6f6;
+  display: flex;
+  height: 100%;
+}
+
+body#standardAssess .container-div .main .content .table-box {
+  width: 250px;
+}
+
+body#standardAssess .container-div .main .content .table-box table.myTable {
+  border: 2px solid #cacdcd;
+  width: 100%;
+  height: 100%;
+}
+
+body#standardAssess .container-div .main .content .table-box table.myTable > thead > tr th {
+  border: 2px solid #cacdcd;
+  text-align: center;
+}
+
+body#standardAssess .container-div .main .content .table-box table.myTable > tbody > tr {
+  cursor: pointer;
+  /*存在偏移 预警的背景颜色*/
+  /*高风险的背景颜色*/
+  /*已超差的背景颜色*/
+  /*误差为零*/
+}
+
+body#standardAssess .container-div .main .content .table-box table.myTable > tbody > tr td {
+  border: 2px solid #cacdcd;
+  text-align: center;
+}
+
+body#standardAssess .container-div .main .content .table-box table.myTable > tbody > tr:first-child {
+  font-weight: bold;
+}
+
+body#standardAssess .container-div .main .content .table-box table.myTable > tbody > tr:not(:first-child):hover {
+  background-color: #e3ebec;
+  color: #368988;
+}
+
+body#standardAssess .container-div .main .content .table-box table.myTable > tbody > tr.yj {
+  background-color: #F5A100;
+}
+
+body#standardAssess .container-div .main .content .table-box table.myTable > tbody > tr.py {
+  background-color: #F53A00;
+}
+
+body#standardAssess .container-div .main .content .table-box table.myTable > tbody > tr.cc {
+  background-color: #C0002A;
+}
+
+body#standardAssess .container-div .main .content .table-box table.myTable > tbody > tr.zero {
+  background-color: #a270e0;
+}
+
+body#standardAssess .container-div .main .content #bar {
+  flex: 1;
+  height: 100%;
+}
+
+body#standardAssess .container-div .main .noData {
+  color: #000;
+  text-align: center;
+  clear: both;
+  font-size: 40px;
+}
+
+body#standardAssess .w-box {
+  padding: 30px 30px 10px;
+  height: 100%;
+  min-height: 806px;
+  min-width: 1300px;
+}
+
+body#standardAssess .w-box .select-box {
+  height: 10.43025%;
+  display: flex;
+  align-items: center;
+  background-color: #EDF8F9;
+  padding: 0 30px;
+}
+
+body#standardAssess .w-box .select-box ul {
+  display: flex;
+  align-items: center;
+}
+
+body#standardAssess .w-box .select-box ul li {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+body#standardAssess .w-box .select-box ul li a.evaluateBtn {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  font-size: 16px;
+  border: none;
+  background: #125C5B;
+  color: #fff;
+  border-radius: 4px;
+}
+
+body#standardAssess .w-box .select-box ul li a.evaluateBtn:hover {
+  background-color: #368988;
+}
+
+body#standardAssess .w-box .select-box ul li select#evaluateSection {
+  width: 300px;
+  height: 40px;
+  background: white;
+  border: 1px solid #aeb1b1;
+  border-radius: 4px;
+}
+
+body#standardAssess .w-box .select-box ul li select#evaluateSection:hover, body#standardAssess .w-box .select-box ul li select#evaluateSection:focus {
+  border-color: #aeb1b1 !important;
+}
+
+body#standardAssess .w-box .select-box ul li input.apTime {
+  height: 40px;
+}
+
+body#standardAssess .w-box .select-box ul li button#query {
+  height: 40px;
+  background: #125c5b;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0 15px;
+}
+
+body#standardAssess .w-box .select-box ul li button#query:hover {
+  background-color: #368988;
+}
+
+body#standardAssess .w-box .main {
+  margin-top: 40px;
+  height: calc(100% - 40px - 10.43025%);
+}
+
+body#standardAssess .w-box .main .content {
+  height: 100%;
+  display: flex;
+  background-color: #F6F6F6;
+}
+
+body#standardAssess .w-box .main .content .myTable {
+  width: 250px;
+  height: 100%;
+  border: 2px solid #cacdcd;
+  border-bottom: 2px solid #cacdcd !important;
+}
+
+body#standardAssess .w-box .main .content .myTable > tbody > tr {
+  cursor: pointer;
+  /*存在偏移 预警的背景颜色*/
+  /*高风险的背景颜色*/
+  /*已超差的背景颜色*/
+  /*误差为零*/
+}
+
+body#standardAssess .w-box .main .content .myTable > tbody > tr td {
+  border: 2px solid #cacdcd;
+  text-align: center;
+}
+
+body#standardAssess .w-box .main .content .myTable > tbody > tr:first-child {
+  font-weight: bold;
+}
+
+body#standardAssess .w-box .main .content .myTable > tbody > tr:not(:first-child):hover {
+  background-color: #e3ebec;
+  color: #368988;
+}
+
+body#standardAssess .w-box .main .content .myTable > tbody > tr.yj {
+  background-color: #F5A100;
+}
+
+body#standardAssess .w-box .main .content .myTable > tbody > tr.py {
+  background-color: #F53A00;
+}
+
+body#standardAssess .w-box .main .content .myTable > tbody > tr.cc {
+  background-color: #C0002A;
+}
+
+body#standardAssess .w-box .main .content .myTable > tbody > tr.zero {
+  background-color: #a270e0;
+}
+
+body#standardAssess .w-box .main .content #bar {
+  flex: 1;
+  height: 100%;
+}
+
+body#standardAssess .w-box .noData {
+  color: #000;
+  text-align: center;
+  clear: both;
+  font-size: 40px;
+}
+
+/*状态评估页面--结束*/
+/*功能页面所有弹框页面--开始*/
+/*单台体报告--开始*/
+body#singleDetectReport {
+  padding: 15px 15px;
+  background-color: #CACDCD;
+}
+
+body#singleDetectReport .container-div {
+  padding: 0;
+}
+
+body#singleDetectReport .container-div .table {
+  border-radius: 4px;
+  background-color: #fff !important;
+  margin-bottom: 0;
+  border-bottom: none !important;
+  text-align: center;
+}
+
+body#singleDetectReport .container-div .table > tbody > tr > td {
+  border: 2px solid #cacdcd;
+}
+
+body#singleDetectReport .container-div .table > tbody > tr > td.hight-risk {
+  cursor: pointer;
+}
+
+body#singleDetectReport .container-div .table > tbody > tr > td.performance-degradation {
+  cursor: pointer;
+}
+
+/*单台体报告--结束*/
+/*所有台体报告--开始*/
+body#allDetectReport {
+  background-color: #CACDCD;
+}
+
+body#allDetectReport .container-div {
+  padding: 5px 15px;
+}
+
+body#allDetectReport .container-div .table {
+  border-radius: 4px;
+  background-color: #fff !important;
+  border-bottom: none !important;
+  margin-bottom: 0;
+}
+
+body#allDetectReport .container-div .table > thead > tr > th {
+  text-align: center;
+  border: 2px solid #cacdcd;
+  padding: 0;
+}
+
+body#allDetectReport .container-div .table > tbody > tr {
+  height: 30px;
+}
+
+body#allDetectReport .container-div .table > tbody > tr td {
+  text-align: center;
+  border: 2px solid #cacdcd;
+  padding: 0;
+}
+
+/*所有台体报告--结束*/
+/*detectDetails弹框页面--开始*/
+body#detectDetails {
+  padding: 5px;
+  background-color: #CACDCD;
+}
+
+body#detectDetails .container-div {
+  padding: 0;
+  padding-top: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+body#detectDetails .container-div .search-box {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #EDF8F9;
+  border-radius: 6px;
+}
+
+body#detectDetails .container-div .search-box div.select-list ul {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+body#detectDetails .container-div .search-box div.select-list ul li {
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+body#detectDetails .container-div .search-box div.select-list ul li #detectSel {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #aebab1;
+}
+
+body#detectDetails .container-div .search-box div.select-list ul li .selectBtn {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  background-color: #125C5B;
+  border-radius: 4px;
+}
+
+body#detectDetails .container-div .search-box div.select-list ul li .selectBtn:hover {
+  background-color: #368988;
+}
+
+body#detectDetails .container-div #line {
+  margin-top: 30px;
+  height: calc(100% - 60px - 10px - 30px);
+}
+
+body#detectDetails .container-div .nodata {
+  color: #000;
+  text-align: center;
+  clear: both;
+  font-size: 40px;
+  padding-top: 30px;
+}
+
+/*detectDetails弹框页面--结束*/
+/*compare弹框页面--开始*/
+body#compare {
+  background-color: #CACDCD;
+  padding: 15px 10px;
+}
+
+body#compare .container-div {
+  padding: 0;
+}
+
+body#compare .container-div .myTable {
+  border-radius: 4px;
+  background-color: #fff !important;
+  border-bottom: none !important;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+body#compare .container-div .myTable > thead tr {
+  height: 40px;
+}
+
+body#compare .container-div .myTable > thead tr > th {
+  text-align: center;
+  border: 2px solid #cacdcd;
+  padding: 0;
+}
+
+body#compare .container-div .myTable > tbody > tr {
+  height: 30px;
+}
+
+body#compare .container-div .myTable > tbody > tr td {
+  text-align: center;
+  border: 2px solid #cacdcd;
+  padding: 0;
+}
+
+/*compare弹框页面--结束*/
+/*功能页面所有弹框页面--结束*/
+/*系统管理页面样式--开始*/
+/*系统页面公共的样式--开始*/
+body.sys-com .container-div {
+  padding: 30px 45px;
+  min-width: 950px;
+  height: auto;
+}
+
+body.sys-com .container-div div.search-collapse {
+  margin-top: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #000;
+  background: #EDF8F9;
+  -webkit-box-shadow: unset;
+  box-shadow: unset;
+}
+
+body.sys-com .container-div div.search-collapse div.select-list ul li a {
+  background-color: #125C5B;
+  color: #fff;
+  margin-right: 30px;
+  font-size: 16px;
+}
+
+body.sys-com .container-div div.search-collapse div.select-list ul li a:hover {
+  background-color: #368988;
+}
+
+body.sys-com .container-div div.search-collapse div.select-list ul li a:last-child {
+  margin-right: 0;
+}
+
+body.sys-com .container-div div.search-collapse div.select-list ul li input,
+body.sys-com .container-div div.search-collapse div.select-list ul li select {
+  height: 40px;
+  width: 190px;
+}
+
+body.sys-com .container-div div.search-collapse div.select-list ul li input.time-input {
+  width: 120px;
+}
+
+body.sys-com .container-div div.select-table {
+  background-color: #F6F6F6;
+  -webkit-box-shadow: unset;
+  box-shadow: unset;
+  margin-top: 20px;
+}
+
+body.sys-com .container-div div.select-table #toolbar > a {
+  background-color: #57B8AD;
+  color: #fff;
+  font-size: 16px;
+}
+
+body.sys-com .container-div div.select-table #toolbar > a.disabled {
+  background-color: #808080;
+  color: #fff;
+  pointer-events: none;
+}
+
+body.sys-com .container-div div.select-table #toolbar > a:hover {
+  background-color: #0e7e77;
+  color: #fff;
+}
+
+body.sys-com .container-div div.select-table .bootstrap-table .columns button.btn-default {
+  border-color: #57B8AD;
+}
+
+body.sys-com .container-div div.select-table .bootstrap-table .columns button:hover, body.sys-com .container-div div.select-table .bootstrap-table .columns button:focus {
+  background-color: #F6F6F6;
+  color: #000;
+}
+
+body.sys-com .container-div div.select-table .bootstrap-table .columns .open .dropdown-toggle.btn-default {
+  background-color: #F6F6F6;
+  color: #000;
+}
+
+body.sys-com .container-div div.select-table .bootstrap-table .columns .open ul.dropdown-menu li:hover {
+  background-color: #58B8AE;
+  color: #fff;
+}
+
+body.sys-com .container-div div.select-table .bootstrap-tree-table .btn-group {
+  color: #000;
+}
+
+body.sys-com .container-div div.select-table .bootstrap-tree-table .btn-group button.btn-default {
+  border-color: #57B8AD;
+}
+
+body.sys-com .container-div div.select-table .bootstrap-tree-table .btn-group button:hover, body.sys-com .container-div div.select-table .bootstrap-tree-table .btn-group button:focus {
+  background-color: #F6F6F6;
+  color: #000;
+}
+
+body.sys-com .container-div div.select-table .bootstrap-tree-table .btn-group > ul li:hover {
+  background-color: #58B8AE;
+  color: #fff;
+}
+
+body.sys-com .container-div div.select-table table#bootstrap-table > tbody > tr td > a,
+body.sys-com .container-div div.select-table table#bootstrap-tree-table > tbody > tr td > a {
+  background-color: #DEDEDC;
+  color: #006560;
+  font-size: 16px;
+}
+
+body.sys-com .container-div div.select-table table#bootstrap-table > tbody > tr td > a:hover,
+body.sys-com .container-div div.select-table table#bootstrap-tree-table > tbody > tr td > a:hover {
+  background-color: #bfc6c4;
+}
+
+/*系统页面公共的样式--结束*/
+body#user-page div.content-right {
+  overflow: auto;
+}
+
+body#menu-page .select-table .bootstrap-tree-table table#bootstrap-tree-table > thead > tr th,
+body#dept-page .select-table .bootstrap-tree-table table#bootstrap-tree-table > thead > tr th {
+  border-color: #cacdcd !important;
+  border-width: 2px;
+}
+
+body#menu-page .select-table .bootstrap-tree-table table#bootstrap-tree-table > tbody > tr td,
+body#dept-page .select-table .bootstrap-tree-table table#bootstrap-tree-table > tbody > tr td {
+  border-color: #cacdcd !important;
+  border-width: 2px;
+}
+
+body#user-add-page,
+body#user-edit-page {
+  color: #000;
+}
+
+body#user-add-page .form-content h4.form-header,
+body#user-edit-page .form-content h4.form-header {
+  color: #000;
+  border-bottom: 2px solid #cacdcd !important;
+}
+
+body#user-add-page button,
+body#user-edit-page button {
+  outline: none;
+  width: 58px;
+  height: 34px;
+  background-color: #0CB694;
+  border-radius: 4px;
+  padding: 0;
+  line-height: 34px;
+  text-align: center;
+  color: #fff;
+}
+
+body#config-page .container-div table#bootstrap-table > tbody > tr > td > a[class=tooltip-show] {
+  background-color: transparent;
+  color: #000;
+}
+
+/*系统管理页面样式--结束*/
+/*二期新增页面样式*/
+/*接驳环节预警页面--开始*/
+body#position-warning .handler {
+  outline: none;
+  height: 40px;
+  background-color: #125C5B;
+  border-radius: 4px;
+  padding: 0px 15px;
+  line-height: 34px;
+  text-align: center;
+  color: #fff;
+}
+
+body#position-warning .handler:hover {
+  background-color: #368988;
+}
+
+/*接驳环节预警页面--结束*/
+/*接驳环节预警详情页面--开始*/
+body#position-warning-details .w-table, body#electric-loop-warning-details .w-table, body#verification-loop-warning-details .w-table {
+  background-color: #F6F6F6;
+}
+
+/*接驳环节预警详情页面--结束*/
+/*风险预警页面--开始*/
+body#early-warning {
+  padding: 30px;
+}
+
+body#early-warning .v-container {
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+}
+
+body#early-warning .v-container > .item {
+  height: calc((100% - 30px*2)/3);
+  margin-bottom: 30px;
+  display: flex;
+}
+
+body#early-warning .v-container > .item：last-child {
+  margin-bottom: 0px;
+}
+
+body#early-warning .v-container > .item .title {
+  width: 100px;
+  line-height: 100px;
+  height: 100%;
+  background-color: #57B8AD;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+  border-radius: 8px 4px 4px 8px;
+  color: #fff;
+  writing-mode: vertical-lr;
+  /*从左向右 从右向左是 writing-mode: vertical-rl;*/
+  writing-mode: tb-lr;
+  /*IE浏览器的从左向右 从右向左是 writing-mode: tb-rl；*/
+  text-align: center;
+  margin-right: 15px;
+}
+
+body#early-warning .v-container > .item .main {
+  flex: 1;
+}
+
+body#early-warning .v-container > .item .main > .m-item {
+  height: 50%;
+  border: 4px solid #57b8ad;
+  background: linear-gradient(90deg, #deeaea, #f3f7f7, white, #f3f7f7, #deeaea);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+body#early-warning .v-container > .item .main > .m-item:first-child {
+  border-bottom-width: 2px;
+}
+
+body#early-warning .v-container > .item .main > .m-item:last-child {
+  border-top-width: 2px;
+}
+
+body#early-warning .v-container > .item .main > .m-item.high-risk {
+  color: #C0002A;
+}
+
+body#early-warning .v-container > .item .main > .m-item.performance-degradation {
+  color: #F5A100;
+}
+
+body#early-warning .v-container > .item .main > .m-item .txt {
+  width: 180px;
+}
+
+body#early-warning .v-container > .item .main > .m-item .info {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+body#early-warning .v-container > .item .main > .m-item .info .list {
+  position: absolute;
+  left: 0;
+  flex: 1;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 0;
+}
+
+body#early-warning .v-container > .item .main > .m-item .info .list > div {
+  width: calc(100%/10);
+  display: inline-block;
+  font-size: 34px;
+}
+
+body#early-warning .v-container > .item .main > .m-item .info .more {
+  width: 100px;
+  text-align: center;
+}
+
+body#early-warning .v-container > .item .main > .m-item .tip {
+  width: 220px;
+  text-align: right;
+  margin-left: auto;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 {
+  flex: 1;
+  height: calc(100%/3);
+  border: 4px solid #57b8ad;
+  background: linear-gradient(90deg, #deeaea, #f3f7f7, white, #f3f7f7, #deeaea);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2:nth-child(1) {
+  border-bottom-width: 2px;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2:nth-child(2) {
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2:nth-child(3) {
+  border-top-width: 2px;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2.exceed {
+  color: #C0002A;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2.high-risk {
+  color: #F53A00;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2.deviation {
+  color: #F5A100;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 .txt {
+  width: 180px;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 .info {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 .info .list {
+  position: absolute;
+  left: 0;
+  flex: 1;
+  font-size: 0;
+  width: 100%;
+  white-space: nowrap;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 .info .list > div {
+  width: calc(100%/10);
+  display: inline-block;
+  font-size: 34px;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 .info .more {
+  width: 100px;
+  text-align: center;
+}
+
+body#early-warning .v-container > .item .main > .m-item-2 .tip {
+  width: 220px;
+  text-align: right;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 1440px) {
+  body#early-warning .v-container > .item .main > .m-item .info .list > div {
+    width: calc(100%/5);
+  }
+  body#early-warning .v-container > .item .main > .m-item-2 .info .list > div {
+    width: calc(100%/5);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  body#early-warning .v-container > .item .main > .m-item .info .list > div {
+    width: calc(100%/2);
+  }
+  body#early-warning .v-container > .item .main > .m-item-2 .info .list > div {
+    width: calc(100%/2);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body#early-warning .v-container > .item .main > .m-item .info .list > div {
+    width: calc(100%/1);
+  }
+  body#early-warning .v-container > .item .main > .m-item-2 .info .list > div {
+    width: calc(100%/1);
+  }
+}
+
+/*风险预警页面--结束*/
+/*核查报告页面--开始*/
+body#examine-report button.w-btn {
+  outline: none;
+  height: 40px;
+  background-color: #125C5B;
+  border-radius: 4px;
+  padding: 0px 15px;
+  text-align: center;
+  color: #fff;
+}
+
+body#examine-report button.w-btn.export.disabled {
+  background-color: #808080;
+  color: #fff;
+  pointer-events: none;
+}
+
+body#examine-report button.w-btn:hover {
+  background-color: #368988;
+}
+
+/*核查报告页面--结束*/
+/*核查报告新增页面 、核查报告编辑页面--开始*/
+body#examine-report-add .w-title ul, body#examine-report-edit .w-title ul {
+  display: flex;
+  align-items: center;
+}
+
+body#examine-report-add .w-title ul li, body#examine-report-edit .w-title ul li {
+  margin-right: 15px;
+}
+
+body#examine-report-add .w-title ul li span, body#examine-report-edit .w-title ul li span {
+  margin-right: 15px;
+}
+
+body#examine-report-add .w-title ul li:last-child, body#examine-report-edit .w-title ul li:last-child {
+  margin-right: 0;
+}
+
+body#examine-report-add .w-title ul li input#year, body#examine-report-edit .w-title ul li input#year {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: transparent;
+  outline: none;
+  width: 80px;
+  height: 40px;
+  padding-left: 5px;
+}
+
+body#examine-report-add .w-title ul li select#quarter, body#examine-report-edit .w-title ul li select#quarter {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: transparent;
+  outline: none;
+  width: 100px;
+  height: 40px;
+}
+
+body#examine-report-add .w-title ul li select#examine-device, body#examine-report-edit .w-title ul li select#examine-device {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: transparent;
+  outline: none;
+  width: 185px;
+  height: 40px;
+}
+
+body#examine-report-add ul.secondTab, body#examine-report-edit ul.secondTab {
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+body#examine-report-add ul.secondTab > li, body#examine-report-edit ul.secondTab > li {
+  float: left;
+  margin-right: 15px;
+}
+
+body#examine-report-add ul.secondTab > li > span, body#examine-report-edit ul.secondTab > li > span {
+  margin-right: 15px;
+}
+
+body#examine-report-add ul.secondTab > li > input, body#examine-report-edit ul.secondTab > li > input {
+  width: 185px;
+  height: 40px;
+  border-radius: 1px;
+  padding: 6px 12px;
+  border: 1px solid #e5e6e7;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+body#examine-report-add ul.secondTab > li > input:focus, body#examine-report-edit ul.secondTab > li > input:focus {
+  border-color: #1ab394 !important;
+}
+
+body#examine-report-add ul.secondTab > li > input[disabled], body#examine-report-edit ul.secondTab > li > input[disabled] {
+  background-color: #eee;
+  cursor: no-drop;
+}
+
+body#examine-report-add .w-tabs ul, body#examine-report-edit .w-tabs ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+body#examine-report-add .w-tabs ul li, body#examine-report-edit .w-tabs ul li {
+  padding: 8px 15px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #9E9E9E;
+  cursor: pointer;
+}
+
+body#examine-report-add .w-tabs ul li.w-active, body#examine-report-edit .w-tabs ul li.w-active {
+  background-color: #57B8AD;
+}
+
+body#examine-report-add .w-contents > div, body#examine-report-edit .w-contents > div {
+  padding: 15px 0;
+  display: none;
+}
+
+body#examine-report-add .w-contents > div.w-active, body#examine-report-edit .w-contents > div.w-active {
+  display: block;
+}
+
+body#examine-report-add .w-contents > div > ul > li, body#examine-report-edit .w-contents > div > ul > li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+body#examine-report-add .w-contents > div > ul > li:last-child, body#examine-report-edit .w-contents > div > ul > li:last-child {
+  margin-bottom: 0;
+}
+
+body#examine-report-add .w-contents > div > ul > li > span, body#examine-report-edit .w-contents > div > ul > li > span {
+  width: 150px;
+  text-align: right;
+  margin-right: 15px;
+}
+
+body#examine-report-add .w-contents > div > ul > li > input, body#examine-report-edit .w-contents > div > ul > li > input {
+  flex: 1;
+  height: 40px;
+  border-radius: 1px;
+  padding: 6px 12px;
+  border: 1px solid #e5e6e7;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+body#examine-report-add .w-contents > div > ul > li > input:focus, body#examine-report-edit .w-contents > div > ul > li > input:focus {
+  border-color: #1ab394 !important;
+}
+
+body#examine-report-add .w-contents > div > ul > li > input[disabled], body#examine-report-edit .w-contents > div > ul > li > input[disabled] {
+  background-color: #eee;
+  cursor: no-drop;
+}
+
+body#examine-report-add .w-contents > div > ul > li div.unit, body#examine-report-edit .w-contents > div > ul > li div.unit {
+  width: 50px;
+}
+
+/*核查报告新增页面 、核查报告编辑页面--结束*/

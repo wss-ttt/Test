@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+   {
+       // 使用... 扩展运算符进行合并数据
+       let arr = ['乔峰','杨过','小龙女'];
+       let arr2 = ['aaa','bbb','ccc'];
+       let res = [...arr,...arr2]
+       console.log(arr);   //  ['乔峰','杨过','小龙女']
+       console.log(arr2);   // ['aaa','bbb','ccc']
+       console.log(res);    //  ['乔峰','杨过','小龙女','aaa','bbb','ccc']
+   }
+   {
+       // 使用concat方法进行合并数组
+       let arr = ['乔峰','杨过','小龙女'];  // ['乔峰','杨过','小龙女']
+       let arr2 = ['aaa','bbb','ccc'];
+       let res = arr.concat(arr2);
+       console.log(arr);   //  ['乔峰','杨过','小龙女']
+       console.log(arr2);   // ['aaa','bbb','ccc']
+       console.log(res);    //  ['乔峰','杨过','小龙女','aaa','bbb','ccc']
+   }
+   {
+       // 完成复制 粘贴
+   }
+   
+   
+
+</script>
+
+</html>
