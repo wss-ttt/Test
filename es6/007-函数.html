@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    {
+        // 默认参数
+        function test(name, age = 18) {
+            console.log('姓名', name, '年龄', age);
+        }
+        test('乔峰');   // 乔峰 18
+        test('杨过', undefined);// 杨过 18
+        test('小龙女', null);// 小龙女 null
+        test('李四', '');    // 李四 
+        test('张三', 28);   // 张三 28
+    }
+    {
+        // 不定参数
+        function test(name, ...values) {
+            console.log(name, values.length)
+            for (let i = 0; i < values.length; i++) {
+                console.log(values[i])
+            }
+        }
+        test('乔峰', '男', 18);
+        test('杨过', '女', 28, '武汉');
+    }
+    {
+        // 箭头函数
+        let f = item => item;  // 推荐使用 (简洁)
+        // 等价于
+        let f2 = item => {
+            return item;
+        };
+        // 等价于
+        let f3 = function (item) {
+            return item;
+        }
+        console.log(f('好好学习'));
+        console.log(f2('给我一首歌的时间'));
+        console.log(f3('黑色毛衣'));
+    }
+    {
+        // 箭头函数返回的是一个对象需要用()给包起来
+        // 否则就会报错
+        let f = () => ({
+            name: '乔峰',
+            age: 18
+        });
+        console.log(f());
+    }
+</script>
+
+</ht里拉四

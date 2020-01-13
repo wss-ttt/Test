@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // ES6 对象
+    {
+        // 对象字面量
+        let name = '乔峰';
+        let age = 18;
+        let person = {
+            name,
+            age,
+            // 方法简写
+            say() {
+                console.log('给我一首歌的时间');
+            }
+        };
+        console.log(person);
+        person.say();
+    }
+    {
+        // ES6允许用表达式作为属性名，但是一定要将表达式放在方括号内
+        let name = 'qiaofeng'
+        let person = {
+            [name]: 100
+            // name:100   // 如果用这个 输出的结果是: {name:100}
+        }
+        console.log(person);  // {'qiafeng':100}
+    }
+    {
+        // 对象的扩展运算符--复制对象
+        let person = {
+            name: '乔峰',
+            age: 18
+        };
+        let person2 = { ...person };
+        console.log(person2); // {name:'乔峰',age:18}
+        console.log(person === person2);  // false
+    }
+    {
+        // 对象的扩展运算符--合并对象
+        let person = {
+            name: '乔峰'
+        };
+        let person2 = {
+            age: 18
+        };
+        let person3 = {
+            sex: '男'
+        };
+        let res = { ...person, ...person2, ...person3 };
+        console.log(res);// {name:'乔峰',age:18,sex:'男'}
+    }
+    {
+        // 对象的扩展运算符--合并对象
+        let person = {
+            name: '乔峰'
+        };
+        let person2 = {
+            age: 18
+        };
+        let person3 = {
+            sex: '男'
+        };
+        // 会覆盖
+        let res = { ...person, ...person2, ...person3, name: '杨过' };
+        console.log(res);// {name:'杨过',age:18,sex:'男'}
+    }
+    {
+        // 对象的扩展运算符--合并对象
+        let person = {
+            name: '乔峰'
+        };
+        let person2 = {
+            age: 18
+        };
+        let person3 = {
+            sex: '男'
+        };
+        // 会覆盖
+        let res = { name: '杨过', ...person, ...person2, ...person3 };
+        console.log(res);// {name:'乔峰',age:18,sex:'男'}
+    }
+    {
+        // 对象的扩展运算符--合并对象
+        let person = {
+            name: '乔峰'
+        };
+        let person2 = {
+            age: 18
+        };
+        let person3 = {
+            name: '杨过'
+        };
+        // 会覆盖
+        let res = { ...person, ...person2, ...person3 };
+        console.log(res);// {name:'杨过',age:18'}
+    }
+    {
+        // Object.assign方法的使用
+        let o1 = {
+            name: '张三'
+        };
+        let o2 = {
+            age: 18
+        };
+        let res = Object.assign({}, o1, o2);
+        console.log(res);   // {name:'张三',age:18}
+        res.name = '李四'
+        res.age = 28;
+        console.log(res);   // {name:'李四',age:28}
+        console.log(o1);    // {name:'张三'}
+        console.log(o2);    // {age:18}
+    }
+    {
+        // Object.assign方法的使用(assign是浅拷贝)
+        let sourceObj = { a: { b: 1 } };
+        let targetObj = { c: 3 };
+        Object.assign(targetObj, sourceObj);
+        console.log(targetObj);
+        console.log(targetObj.b === sourceObj.b);   // true 说明指向的是同一个地址
+    }
+</script>
+
+</html>

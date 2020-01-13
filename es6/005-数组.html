@@ -13,7 +13,164 @@
 </body>
 <script>
     {
-        
+        // Array.of方法 
+        let arr = Array.of('乔峰', '小龙女', '杨过');
+        console.log(arr);   // ['乔峰','小龙女','杨过']
+        let arr2 = Array.of();
+        console.log(arr2);   // 返回的是一个空数组 []
+    }
+    {
+        // Array.from方法
+        let arr = Array.from('hello world');
+        console.log(arr); // 返回值如下: 长度为11  包含一个空格
+        //  ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"]
+    }
+    {
+        // find方法: 查找数组中符合条件的元素,若有多个符合条件的元素，则返回第一个元素。
+        let arr = Array.of('乔峰', '小龙女', '王重阳', '杨过');
+
+        /* let res = arr.find(item=>{
+            return item.length>2
+        }); */
+
+        let res = arr.find(item => item.length > 2);
+        console.log(res);// 输出的是 '小龙女'
+    }
+    {
+        // findIndex方法:查找数组中符合条件的元素索引，若有多个符合条件的元素，则返回第一个元素索引。
+        let arr = Array.of('乔峰', '小龙女', '王重阳', '杨过');
+        // let res = arr.findIndex(item=>item === '杨过');
+        let res = arr.findIndex(item => { return item === '杨过' });
+        console.log(res); // 返回的是索引值:  3
+    }
+    {
+        // fill方法
+        let arr = Array.of('乔峰', '小龙女', '王重阳', '杨过');
+        arr.fill('好', 1, 2);  //从索引值为1开始 索引值2结束(不包含)
+        // 相当于值被替换了
+        console.log(arr);// ['乔峰','好','王重阳','杨过']
+    }
+    {
+        let arr = new Array(5);  // length为5
+        arr.fill('好', 0, 5);  // 0 1 2 3 4
+        console.log(arr);
+    }
+    {
+        // includes方法
+        let arr = Array.of('乔峰', '小龙女', '王重阳', '杨过', NaN);
+        let res = arr.includes('杨过');
+        let res2 = arr.includes(NaN);  // 注意:NaN的判断
+        console.log(res);   // true
+        console.log(res2);  // true
+    }
+    {
+        // flat方法：可以将嵌套数组转换为一位数组(还是比较方便的)
+        let arr = [
+            ['乔峰', 100],
+            ['杨过', 90],
+            ['小龙女', 80]
+        ];
+        let res = arr.flat();
+        console.log(res);   // ['乔峰',100,'杨过',90,'小龙女',80]
+    }
+    {
+        let arr = [
+            [['乔峰', 100]],  // 嵌套了2层
+            ['杨过', 90],
+            ['小龙女', 80]
+        ];
+        let res = arr.flat(Infinity);// 不管嵌套多少层，都能转换成一维数组(厉害啦)
+        console.log(res);// ['乔峰',100,'杨过',90,'小龙女',80]
+    }
+    {
+        // 循环遍历
+        let arr = ['乔峰', '杨过', '小龙女'];
+        // 第一种遍历方法
+        for (let [key, value] of arr.entries()) {
+            console.log(key + '--' + value);
+        }
+        // 第二种遍历方法
+        arr.forEach((item, index) => {
+            console.log(index + '--' + item);
+        });
+    }
+    {
+        // 遍历keys
+        let arr = ['乔峰', '杨过', '小龙女'];
+        console.log('遍历keys');
+        for(let key of arr.keys()){
+            console.log(key);
+        }
+    }
+    {
+        // 遍历values
+        let arr = ['乔峰', '杨过', '小龙女'];
+        console.log('遍历values');
+        for(let value of arr.values()){
+            console.log(value);
+        }
+
+    }
+    {
+        // 循环遍历数组下标为字符串的数组(经过测试:遍历不了)
+        let arr = [];
+        arr['乔峰'] = 100;
+        arr['杨过'] = 90;
+        arr['小龙女'] = 80;
+        console.log('下标为字符串');
+        for (let [key, value] of arr.entries()) {
+            console.log(key + '--' + value);  // 控制台没有输出 说明循环不了
+        }
+    }
+    {   // 循环遍历数组下标为字符串的数组(经过测试:遍历不了)
+        let arr = [];
+        arr['乔峰'] = 100;
+        arr['杨过'] = 90;
+        arr['小龙女'] = 80;
+        arr.forEach((item, index) => {
+            console.log(index + '--' + item);
+        });
+    }
+    {
+        // 使用for in 是可以遍历的(经过测试： 可以实现遍历)
+        let arr = [];
+        arr['乔峰'] = 100;
+        arr['杨过'] = 90;
+        arr['小龙女'] = 80;
+        console.log('使用for in');
+        for (let i in arr) {
+            console.log(i);
+            console.log(arr[i]);
+        }
+    }
+    {
+        // 使用for循环 也不实现循环(经过测试:遍历不了)
+        let arr = [];
+        arr['乔峰'] = 100;
+        arr['杨过'] = 90;
+        arr['小龙女'] = 80;
+        console.log('使用for循环');
+        for (let i = 0; i < arr.length; i++) {
+            console.log(i);
+            console.log(arr[i]);
+        }
+    }
+    {
+        // 扩展运算符-- 复制数组
+        let arr = ['乔峰','杨过','小龙女'];
+        let arr2 = ['乔峰',,'小龙女'];// 有一个元素没有
+        let res = [...arr];  // 复制值
+        let res2 = [...arr2];
+        console.log(res);
+        console.log(res === arr);  // false
+        console.log(res2); // ['乔峰',undefined,'小龙女']
+    }
+    {
+        // 扩展运算符-- 合并数组
+        let arr = ['qiaofeng'];
+        let arr2 = ['yangguo'];
+        let res = [...arr,...arr2];
+        console.log(res);// ['qiaofeng','yangguo']
     }
 </script>
 
