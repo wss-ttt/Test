@@ -23,12 +23,8 @@
         let uname = $('input[name=uname]').val();
         let age = $('input[name=age]').val();
         $.ajax({
-            url: 'http://localhost:2000/user',
+            url: `http://localhost:2000/user/${uname}/${age}`,
             type: 'get',
-            data: {
-                uname: uname,
-                age: age
-            },
             success: function (res) {
                 console.log(res);
             }
