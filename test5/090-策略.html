@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var performanceS = function (salary) {
+        return salary * 4;
+    };
+    var performanceA = function (salary) {
+        return salary * 3;
+    };
+    var performanceB = function (salary) {
+        return salary * 2;
+    };
+    var calculateBonus = function (performanceLevel, salary) {
+        if (performanceLevel === 'S') {
+            // 返回的是一个函数
+            return performanceS(salary);
+        }
+        if (performanceLevel === 'A') {
+            // 返回的是一个函数
+            return performanceA(salary);
+        }
+        if (performanceLevel === 'B') {
+            // 返回的是一个函数
+            return performanceB(salary);
+        }
+    };
+    let res = calculateBonus('A', 10000); // 输出：30000
+    console.log(res);
+</script>
+
+</html>
