@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* {
+        // 1 混入式继承
+        let o = {};
+        let person = {
+            name: '乔峰',
+            age: 18,
+            say: function () {
+                console.log('好好学习');
+            }
+        };
+        for(let k in person){
+            o[k] = person[k];
+        }
+        console.log(o);
+    } */
+    /* {
+        // 2 原型继承
+        // 给原型对象添加成员  不是严格意义上的继承
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.say = function () {
+            console.log('好好学习');
+        }
+        let p1 = new Person('乔峰', 18);
+        // 这里p1对象就继承了原型对象
+        p1.say();
+    } */
+    /* {
+        // 3 直接替换原型对象
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        let parent = {
+            say: function () {
+                console.log('好好学习');
+            }
+        }
+        Person.prototype = parent;
+        let p1 = new Person('乔峰', 18);
+        // 这里p1对象就继承了原型对象(其实也是parent对象)
+        p1.say();
+    } */
+    /* {
+        // 利用混入的方式给原型对象添加成员
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.play = function () {
+            console.log('我在打篮球');
+        }
+        let parent = {
+            say: function () {
+                console.log('好好学习');
+            }
+        }
+        for(let k in parent){
+            Person.prototype[k] = parent[k];
+        }
+        let p1 = new Person('乔峰',18);
+        // 这里p1对象就继承了原型对象
+        p1.say(); // 输出:  好好学习
+        p1.play();  // 输出: 我再打篮球
+    } */
+</script>
+
+</html>

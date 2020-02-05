@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    /* let songList = [{
+        songName: '黑色毛衣',
+        singer: '周杰伦'
+    }, {
+        songName: '七里香',
+        singer: '周杰伦'
+    }, {
+        songName: '莉莉安',
+        singer: '宋冬野'
+    }]; */
+
+    function SongManger() {
+        // 每个对象所拥有的歌曲(因为每个对象的歌曲都不一样)
+        this.songList = null;
+    }
+    /* function SongManger(songList) {
+        this.songList = songList;
+    } */
+    // 在当前对象的方法中,调用当前对象的其他方法,需要使用this
+    SongManger.prototype = {
+        init: function (songList) {
+            this.songList = songList;
+        },
+        // 添加歌曲
+        addSong: function (song) {
+            this.songList.push(song);
+        },
+        // 删除歌曲
+        removeSong: function (songName) {
+            let song = this.selectSong(songName);
+            if (song === null) {
+                throw '您要删除的歌曲不存在!请重新尝试!'
+            }
+            let index = this.songList.indexOf(song);
+            console.log(index);
+            //  删除歌曲
+            this.songList.splice(index, 1);
+        },
+        // 修改歌曲
+        updateSong: function (songName, singer) {
+            let song = this.selectSong(songName);
+            if (song === null) {
+                throw '您要修改的歌曲不存在!请重新尝试!'
+            }
+            song.singer = singer;
+        },
+        // 查询歌曲
+        selectSong: function (songName) {
+            for (let i = 0; i < this.songList.length; i++) {
+                let song = this.songList[i];
+                if (song.songName === songName) {
+                    return song;
+                }
+            }
+            return null;
+        }
+    }
+    // manager1对象
+    let manager1 = new SongManger();
+    // 初始化
+    manager1.init([{
+        songName: '莉莉安',
+        singer: '宋冬野'
+    }, {
+        songName: '安河桥',
+        singer: '宋冬野'
+    }]);
+    manager1.addSong({
+        songName: '董小姐',
+        singer: '宋冬野'
+    });
+    console.log(manager1.songList);
+    // manage2对象
+    let manager2 = new SongManger();
+    // 初始化
+    manager2.init([]);
+    manager2.addSong({
+        songName: '七里香',
+        singer: '周杰伦'
+    });
+    manager2.addSong({
+        songName: '莉莉安',
+        singer: '宋冬野'
+    });
+    manager2.addSong({
+        songName: '桥边姑娘',
+        singer: '张三'
+    });
+    manager2.removeSong('桥边姑娘');
+    console.log(manager2.songList);
+</script>
+
+</html>

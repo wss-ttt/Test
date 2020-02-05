@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    {
+        function MyArry(){
+            // 还能有自己的属性
+            this.msg = '黑色毛衣';
+            // 还能有自己的行为
+            this.say = function(){
+                console.log('好好学习');
+            }
+        }
+        // 使用[]进行替换原型对象
+        MyArry.prototype = [];
+        // 还能有自己的行为(方法)
+        /* MyArry.prototype.say = function(){
+            console.log('好好学习');
+        } */
+        // arr1对象此时就继承了原型对象(此处也是数组[]对象)
+        let arr1 = new MyArry();
+        arr1.push('乔峰');
+        arr1.push('杨过');
+        console.log(arr1);
+        console.log(arr1.msg);// 输出: 黑色毛衣
+        console.log(arr1[0]); // 输出:  乔峰
+        arr1.say();  // 好好学习
+        let arr2 = new MyArry();
+        console.log(arr2);
+    }
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* function test() {
+        for (let i = 0; i < arguments.length; i++) {
+            console.log(arguments[i])
+        }
+    }
+    test('乔峰', [1, '杨过'], function () {
+        console.log('好好学习');
+    }) */
+    {
+        let distinct = new Function(`
+        let arr = [];
+        for(let i = 0; i < arguments.length; i ++){
+            if(arr.indexOf(arguments[i]) == -1){
+                    arr.push(arguments[i]);
+                }
+            }
+            return arr;
+        `);
+        let res = distinct(19, 80, 30, 3, 84, 30,19);
+        console.log(res);
+    }
+    /* {
+        function test() {
+            let arr = [];
+            for (let i = 0; i < arguments.length; i++) {
+                if (arr.indexOf(arguments[i]) == -1) {
+                    console.log('aaa');
+                    arr.push(arguments[i]);
+                }
+            }
+            return arr;
+        }
+        let res = test(19, 80, 30, 3, 84, 30);
+        console.log(res);
+    } */
+</script>
+
+</html>
