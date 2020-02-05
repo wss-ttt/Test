@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.js"></script>
+</head>
+
+<body>
+    姓名:<input type="text" name="uname">
+    <br>
+    年龄:<input type="number" name="age">
+    <br>
+    <button type="button">提交</button>
+
+</body>
+<script>
+
+    $('button').on('click', function () {
+        let uname = $('input[name=uname]').val();
+        let age = $('input[name=age]').val();
+        $.ajax({
+            url: 'http://localhost:2000/person/test',
+            type: 'post',
+            data: {
+                uname: uname,
+                age: age
+            },
+            success: function (res) {
+                console.log(res);
+            }
+        });
+    });
+</script>
+
+</html>
