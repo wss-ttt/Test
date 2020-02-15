@@ -33,6 +33,7 @@
     } */
     // 在当前对象的方法中,调用当前对象的其他方法,需要使用this
     SongManger.prototype = {
+        constructor:SongManger,   // 手动指定 不要忘了
         init: function (songList) {
             this.songList = songList;
         },

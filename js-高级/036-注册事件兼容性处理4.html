@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var div = document.getElementById('box1');
+        // 这个代码只需要执行一次
+        var registeEvent = createEventRegister();
+        
+        registeEvent(div,'click',function(){
+            console.log('好好学习');
+        });
+    }
+
+    // 注册事件的处理函数中的this不一致,如何统一
+    // addEventListener的方式注册的点击事件的回调函数中的this指向是target
+    // attachEvent的方式注册的点击事件的回调函数中的this指向是window
+    // onclick的形式中回调函数中的this指向的也是target
+    function createEventRegister() {
+        if (window.addEventListener) {
+            return function (target, type, handler) {
+                // handler中的this指向的是targer对象
+                target.addEventListener(type, handler);
+            }
+        } else if (window.attachEvent) {
+            return function (target, type, handler) {
+                // handler中的this指向的是window对象
+                // target.attachEvent('on' + type, handler);
+                // 进行如下处理
+                target.attachEvent('on'+type,function(){
+                    // 同时把事件对象也统一一下
+                    handler.call(target,window.event);
+                });
+            }
+        } else {
+            return function (target, type, handler) {
+                // handler中的this指向的是targer对象
+                target['on' + type] = handler;
+            }
+        }
+    }
+</script>
+
+</html>

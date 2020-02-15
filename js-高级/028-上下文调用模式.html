@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* var obj = {
+        name: '乔峰'
+    };
+    var name = '杨过';
+    function test() {
+        console.log(this.name);
+    }
+    test();  // 输出: 杨过
+    test.apply(obj); // 输出: 乔峰
+    test.call(obj); // 输出:乔峰 */
+
+    // 传递参数
+    /* var obj = {
+        name: '乔峰'
+    };
+    var name = '杨过';
+    function test(age) {
+        console.log(this.name, '年龄:', age);
+    }
+    test(18);  // 输出: 杨过
+    test.apply(obj, [28]); // 输出: 乔峰
+    test.call(obj, 38); // 输出:乔峰 */
+
+    var obj = {
+        name: '乔峰'
+    };
+    var name = '杨过';
+    function test() {
+        console.log(this.name);
+    }
+    test();    //杨过
+    test.apply(null);  // 杨过
+    test.call(null);  // 杨过
+    test.apply();  // 杨过
+    test.call();   // 杨过
+    
+</script>
+
+</html>

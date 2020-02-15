@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* for (var i = 0; i < 5; i++) {
+        setTimeout(function () {
+            console.log(i);
+        }, 0);
+    } */
+
+    for (let i = 0; i < 5; i++) {
+        setTimeout(function () {
+            console.log(i);
+        }, 0);
+    }
+
+    /* for (var i = 0; i < 5; i++) {
+        function foo(j) {
+            return function () {
+                console.log(j);
+            }
+        }
+        var f = foo(i);
+        f();
+    } */
+
+    /* for (var i = 0; i < 5; i++) {
+        function foo(j) {
+            return function () {
+                console.log(j);
+            }
+        }
+        var f = foo(i);
+        // setTimeout(f, 0);
+        f();
+    } */
+
+    /* for (var i = 0; i < 5; i++) {
+        setTimeout((function (j) {
+            return function () {
+                console.log(j);
+            }
+        })(i), 0);
+    } */
+
+    // 模拟提升之后的代码:
+    /* function foo(j) {
+        return function () {
+            console.log(j);
+        }
+    }
+    for (var i = 0; i < 5; i++) {
+        var f = foo(i);
+        f();
+    } */
+
+
+    /* function foo(){
+        var str = 'aaa';
+        return function(){
+            console.log(str);
+        }
+    }
+    var f = foo();
+    f();
+    var f2 = foo();
+    f2(); */
+
+    /* function foo() {
+        var str = 'aaa';
+        return str;
+    }
+    var res1 = foo();
+    var res2 = foo();
+    console.log(res1 === res2); // true
+
+    function boo() {
+        var person = {
+            name: '乔峰'
+        };
+        return person;
+    }
+    var p1 = boo();
+    var p2 = boo();
+    console.log(p1 === p2); // false */
+    /* function test(){
+        var a = 10;
+        return function(){
+            return a;
+        }
+    }
+    var f = test(); */
+</script>
+
+</html>

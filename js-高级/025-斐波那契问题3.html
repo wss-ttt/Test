@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+</body>
+<script>
+    //fn = fn(n-1) + fn(n-2);
+    var count = 0;
+    function createFib() {
+        // 避免cache在全局污染
+        var cache = [];
+        // 使用闭包
+        function fib(n) {
+            count++;
+            // 判断是否有该数据
+            if (cache[n]) {
+                // 有
+                return cache[n];
+            }
+            // 没有
+            if (n <= 2) {
+                cache[n] = 1;
+                return 1;
+            }
+            // 没有
+            var temp = fib(n - 1) + fib(n - 2);
+            cache[n] = temp;
+            return temp;
+        }
+        return fib;
+    }
+    var fib = createFib();
+    fib(5);
+    console.log(count);
+    count = 0;
+    fib(6);
+    console.log(count);
+    count = 0;
+    fib(10);
+    console.log(count);
+    count = 0;
+    fib(21);
+    console.log(count);
+
+</script>
+
+</html>

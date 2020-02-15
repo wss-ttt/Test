@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</body>
+<script>
+    /* window.onload = function () {
+        var divs = document.getElementsByTagName('div');
+        for (var i = 0; i < divs.length; i++) {
+            // 闭包--开始
+            function foo(j) {
+                return function () {
+                    console.log(j);
+                }
+            }
+            // 闭包--结束
+            var f = foo(i);
+            var div = divs[i];
+            // 注册事件
+            div.onclick = f;
+        }
+    } */
+    // 优化代码
+    /* window.onload = function () {
+        var divs = document.getElementsByTagName('div');
+        for (var i = 0; i < divs.length; i++) {
+            var div = divs[i];
+            // 注册事件
+            div.onclick = (function(){
+                var j = i;
+                return function(){
+                    console.log(j);
+                }
+            })();
+        }
+    } */
+    // 使用es6中的let
+    /* window.onload = function () {
+        let divs = document.getElementsByTagName('div');
+        for (let i = 0; i < divs.length; i++) {
+            let div = divs[i];
+            // 注册事件
+            div.onclick = function () {
+                console.log(i);
+            }
+        }
+    } */
+    var arr = [{
+        id: 1,
+        name: '乔峰'
+    }, {
+        id: 2,
+        name: '杨过'
+    }];
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].say = (function (j) {
+            return function () {
+                console.log(j);
+            }
+        })(i);
+    }
+    for (var i = 0; i < arr.length; i++) {
+        arr[i].say();
+    }
+</script>
+
+</html>

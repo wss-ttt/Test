@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+</body>
+<script>
+    function Tab(config) {
+        this._init(config);
+    }
+    Tab.prototype = {
+        constructor: Tab,
+        _init: function (config) {
+            // 获取元素
+            var ele = document.querySelector(config.ele);
+            var children = ele.children;
+            for (var i = 0; i < children.length; i++) {
+                var div = children[i];
+                div.style.border = '1px solid red'
+                div.style.width = '100px';
+                div.style.height = '100px';
+                div.style.margin = '5px';
+            }
+        }
+    };
+    var t = new Tab({
+        ele: '.content'
+    });
+</script>
+
+</html>

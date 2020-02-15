@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function test(){
+        var str = 'aaa';
+        return {
+            getStr:function(){
+                return str;
+            },
+            setStr:function(value){
+                str = value;
+            }
+        }
+    }
+    var f = test();
+    // 设置值
+    // f.setStr('好好学习');
+    // f.setStr('给我一首歌的时间');
+    console.log(f.getStr());
+</script>
+
+</html>

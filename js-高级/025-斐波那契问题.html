@@ -6,23 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    </style>
 </head>
 
 <body>
-
 </body>
 <script>
-    for(var i =0;i<5;i++){
-        var num =i;
+    //fn = fn(n-1) + fn(n-2);
+    // 1
+    var count = 0;
+    function fib(n) {
+        count1++;
+        if (n <= 2) {
+            return 1;
+        }
+        return fib(n - 1) + fib(n - 2);
     }
-    console.log('i',i);// 4
-    console.log('num',num);//5
-
-    for(let i=0;i<5;i++){
-        let num =i;
-    }
-    console.log('i',i); // 报错
-    console.log('num',num);// 报错
+    fib(10);
+    console.log('计算次数:',count);
 </script>
 
 </html>

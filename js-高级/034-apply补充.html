@@ -12,17 +12,17 @@
 
 </body>
 <script>
-    for(var i =0;i<5;i++){
-        var num =i;
-    }
-    console.log('i',i);// 4
-    console.log('num',num);//5
 
-    for(let i=0;i<5;i++){
-        let num =i;
+    function test() {
+        console.log(this);
     }
-    console.log('i',i); // 报错
-    console.log('num',num);// 报错
+    test.apply(1);
+    test.apply('aaa');
+    test.apply(true);
+
+    test.apply(null);
+    test.apply(undefined);
+    test.apply();
 </script>
 
 </html>

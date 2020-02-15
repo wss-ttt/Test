@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var div = document.getElementById('box1');
+        registeEvent(div, 'click', function () {
+            console.log('好好学习');
+        });
+    }
+
+    // 封装
+    function registeEvent(target, type, handler) {
+        if (target.addEventListener) {
+            target.addEventListener(type, handler);
+        } else if (target.attachEvent) {
+            target.attachEvent('on' + type, handler);
+        } else {
+            target['on' + type] = handler;
+        }
+    }
+</script>
+
+</html>

@@ -12,17 +12,17 @@
 
 </body>
 <script>
-    for(var i =0;i<5;i++){
-        var num =i;
-    }
-    console.log('i',i);// 4
-    console.log('num',num);//5
 
-    for(let i=0;i<5;i++){
-        let num =i;
-    }
-    console.log('i',i); // 报错
-    console.log('num',num);// 报错
+    var obj = {
+        0: '乔峰',
+        1: 18,
+        2: '男',
+        length: 3
+    };
+
+    var res = [].concat.apply([], obj);
+    // 相当于 [].concat(obj[0],obj[1],obj[2]);
+    console.log(res);  // 输出: ['乔峰',18,'男']
 </script>
 
 </html>

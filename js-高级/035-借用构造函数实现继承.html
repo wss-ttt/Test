@@ -12,17 +12,17 @@
 
 </body>
 <script>
-    for(var i =0;i<5;i++){
-        var num =i;
+    // 借用构造函数 实现继承
+    function Person(){
+        this.name = '乔峰';
+        this.age = 18;
     }
-    console.log('i',i);// 4
-    console.log('num',num);//5
-
-    for(let i=0;i<5;i++){
-        let num =i;
+    function Student(){
+        this.gender = '男';
+        Person.apply(this);
     }
-    console.log('i',i); // 报错
-    console.log('num',num);// 报错
+    var stu = new Student();
+    console.log(stu);
 </script>
 
 </html>

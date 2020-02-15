@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            /*保证盒子大小不变*/
+            box-sizing: border-box;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        ul.tab {
+            overflow: hidden;
+        }
+
+        ul.tab li.tab-item {
+            float: left;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        ul.tab li.tab-item.active {
+            color: #fff;
+            background-color: #1acd7e;
+        }
+
+        div.content {
+            margin-top: 15px;
+            width: 400px;
+            height: 400px;
+            border: 1px solid #eee;
+        }
+
+        div.content div.main {
+            font-size: 20px;
+            display: none;
+        }
+
+        div.content div.main.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="tab" id="tab-menu">
+        <li class="tab-item active">相册</li>
+        <li class="tab-item">博客</li>
+        <li class="tab-item">新闻</li>
+        <li class="tab-item">购物</li>
+    </ul>
+    <div class="content" id="tab-main">
+        <div class="main active">相册内容</div>
+        <div class="main">博客内容</div>
+        <div class="main">新闻内容</div>
+        <div class="main">购物内容</div>
+    </div>
+</body>
+<script src="js/tab.js"></script>
+<script>
+    var t = new Tab({
+        tabMenu: 'tab-menu',
+        tabMain: 'tab-main',
+        auto: true,    // 是否自动播放
+    });
+</script>
+
+</html>

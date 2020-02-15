@@ -12,17 +12,18 @@
 
 </body>
 <script>
-    for(var i =0;i<5;i++){
-        var num =i;
+    function Person(name, age) {
+        var o = {};
+        o.name = name;
+        o.age = age;
+        o.say = function () {
+            console.log(this.name, this.age);
+        }
+        return o;
     }
-    console.log('i',i);// 4
-    console.log('num',num);//5
-
-    for(let i=0;i<5;i++){
-        let num =i;
-    }
-    console.log('i',i); // 报错
-    console.log('num',num);// 报错
+    var p1 = Person('乔峰',18);
+    console.log(p1);
+    p1.say();
 </script>
 
 </html>

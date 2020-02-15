@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            /*保证盒子大小不变*/
+            box-sizing: border-box;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        ul.tab {
+            overflow: hidden;
+        }
+
+        ul.tab li.tab-item {
+            float: left;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        ul.tab li.tab-item.active {
+            color: #fff;
+            background-color: #1acd7e;
+        }
+
+        div.content {
+            margin-top: 15px;
+            width: 400px;
+            height: 400px;
+            border: 1px solid #eee;
+        }
+
+        div.content div.main {
+            font-size: 20px;
+            display: none;
+        }
+
+        div.content div.main.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="tab" id="tab-menu">
+        <li class="tab-item active">相册</li>
+        <li class="tab-item">博客</li>
+        <li class="tab-item">新闻</li>
+        <li class="tab-item">购物</li>
+    </ul>
+    <div class="content" id="tab-main">
+        <div class="main active">相册内容</div>
+        <div class="main">博客内容</div>
+        <div class="main">新闻内容</div>
+        <div class="main">购物内容</div>
+    </div>
+</body>
+<script>
+    function Tab(config) {
+        this.tabMenus = null;
+        this.tabMains = null;
+        if (config) {
+            this._init(config);
+        }
+    }
+    Tab.prototype = {
+        consturctor: Tab,// 手动指定构造函数的指向
+        _init: function (config) {
+            var tabMenu = document.getElementById(config.tabMenu);
+            var tabMain = document.getElementById(config.tabMain);
+            this.tabMenus = tabMenu.children;
+            this.tabMains = tabMain.children;
+            console.log(this.tabMenus);
+            console.log(this.tabMains);
+            // 注册事件
+            for (var i = 0; i < this.tabMenus.length; i++) {
+                var li = this.tabMenus[i];
+                li.index = i;
+                // 这里面的this指向的是Tab构造函数创建出来的对象
+                // 并使用that进行保存起来
+                var that = this;
+                // this.onclick = this.change;  // 不能传递参数
+                li.onclick = function () {
+                    // this 指向的是当前点击的对象li
+                    that.change(this);// 传递的当前点击的li对象
+                }
+            }
+            if (config.auto) {
+                this.autoPlay();  // 进行自动播放
+            }
+        },
+        change: function (tabMenu) {
+            //1 让所有的li变暗
+            for (var i = 0; i < this.tabMenus.length; i++) {
+                this.tabMenus[i].className = 'tab-item';
+                //3 让所有的div进行隐藏
+                this.tabMains[i].className = 'main';
+            }
+            //2 让当前li高亮
+            tabMenu.className += ' active';// notice:active前面要打空格
+            //4 让当前div进行显示
+            this.tabMains[tabMenu.index].className += ' active';
+        },
+        autoPlay: function () {
+            var index = 0;
+            // 使用that保存当前Tab构造函数创建出来的tab对象
+            var that = this;
+            setInterval(() => {
+                index++;
+                if (index === that.tabMenus.length) {
+                    index = 0;
+                }
+                that.change(that.tabMenus[index]);
+            }, 2000);
+        }
+    };
+
+    var t = new Tab({
+        tabMenu: 'tab-menu',
+        tabMain: 'tab-main',
+        auto: true,    // 是否自动播放
+    });
+</script>
+
+</html>

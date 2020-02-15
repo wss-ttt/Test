@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+</body>
+<script>
+    function createCache() {
+        var cache = {};
+        // 使用了闭包
+        return function (key, value) {
+            // 如果传值了,说明是赋值操作
+            if (value) {
+                cache[key] = value;
+                return cache[key];
+            } else {
+                // 如果没有传value 也就是说只传了key
+                // 说明是获取值
+                return cache[key]
+            }
+        }
+    }
+    var count = 0;
+    function createFib() {
+        var fibCache = createCache();
+        // 使用闭包
+        function fib(n) {
+            count++;
+            // 判断是否有该数据
+            if (fibCache(n)) {
+                // 有
+                return fibCache(n);
+            }
+            // 没有
+            if (n <= 2) {
+                fibCache(n, 1);
+                return 1;
+            }
+            // 没有
+            var temp = fib(n - 1) + fib(n - 2);
+            fibCache(n, temp);
+            return temp;
+        }
+        return fib;
+    }
+    var fib = createFib();
+    console.log(fib(5));
+</script>
+
+</html>
