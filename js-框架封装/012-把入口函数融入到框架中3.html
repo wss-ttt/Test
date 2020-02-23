@@ -271,13 +271,18 @@
     console.log($({ 0: document.body, length: 1 })); */
 
     //入口方法传递函数 测试
-    $(function(){
+    $(function () {
         // 能够获取到内容
-        console.log($('span'));
+        // console.log($('span'));
     })
     // 获取不到内容
-    console.log($('span'));
+    // console.log($('span'));
+
+    // 测试
+    // console.log($('li').toArray());
+    console.log($('li').eq(0));
 </script>
 <span>111</span>
 <span>222</span>
+
 </html>
