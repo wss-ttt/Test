@@ -20,7 +20,61 @@
         }
         // 添加fn属性(相当于给prototype起了一个别名简称fn) 替换原型对象
         jQuery.fn = jQuery.prototype = {
-            constructor: jQuery
+            constructor: jQuery,
+            jquery: version,
+            selector: '',
+            length: 0,
+            toArray: function () {
+                return [].slice.call(this);
+            },
+            get: function (num) {
+                // 1.如果传递是null或undefined,则转换为数组进行返回
+                // 2.如果传递是正数,则按照下标进行返回即可
+                // 3.如果传递是负数,则按照下标倒叙返回 this.length+负数即可
+                // if (!num) {   // 这个地方不能这样写 是有问题的
+                if(num == null){   // 这个地方使用 == 就能过滤掉 null和undefined
+                    return [].slice.call(this);// 和toArray方法一样
+                    // 或者这样写
+                    // return this.toArray();  // 一样的
+                }
+                if (num >= 0) {
+                    return this[0];  // 返回的是原生的dom元素
+                } else {
+                    return this[this.length + num]; // 从后面开发返回元素
+                }
+                
+            },
+            _get:function(num){
+                // 优化版:
+                return num == null ? this.toArray() : (num >0  ? this[i] : this[this.length + nul]);  // 一行代码搞定
+            },
+            // 参数个数不定 所以在函数内部直接使用arguments对象
+            slice:function(){
+                var nodes = [].slice.apply(this,arguments);// 此时nodes已经是一个数组了
+                return jQuery(nodes);
+
+                // 优化版
+                // return jQuery([].slice.apply(this,arguments));
+            },
+            eq:function(num){
+                // 1.如果传入的是null或undefined,返回一个新的实例
+                // 2.如果传递是正数,按照指定下标获取元素,再包装成新的实例返回
+                // 3.如果是负数,按照下标倒着(this.length + num)获取元素,再包装成新的实例返回
+                // if(!num){   // 这个地方不能直接 !num 这样 否则会到 num=0的 也会执行这个代码
+                // 过滤掉 null和undefined 不能写成 === 而要写成 ==
+                if(num == null){
+                    return jQuery();
+                }
+                if(num>=0){
+                    return jQuery(this[num]);
+                }else{
+                    return jQuery(this[this.length + num]);
+                }
+            },
+            _eq:function(num){
+                // 优化版
+                return num == null?jQuery():(num>=0?jQuery(this[num]):jQuery(this[this.length + num]));
+            }
         };
         // 给jQuery和原型对象分别添加extend方法
         jQuery.extend = jQuery.fn.extend = function (obj) {
