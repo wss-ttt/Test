@@ -153,8 +153,12 @@
                 }
             }
         } else if (init.isLikeArray(selector)) {
-            [].push.apply(this, selector);
-
+            // [].push.apply(this, selector); // 该代码在ie8中会报错
+            // ie8中apply存在问题:
+            // apply只能平铺真数组或内置的伪数组,我们自定的伪数组会报错
+            // [].push.apply(this, selector); // 该代码在ie8中会报错
+            // 解决办法:
+            [].push.apply(this, [].slice.apply(selector));
         } else {
             this[0] = selector;
             this.length = 1;
