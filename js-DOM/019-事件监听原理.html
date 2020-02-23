@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">点击我</div>
+</body>
+<script>
+    var box1 = document.getElementById('box1');
+    // 第一种方法 注册事件 后面的会覆盖前面的事件处理程序
+    box1.onclick = function () {
+        console.log('好好学习');
+    }
+    box1.onclick = function () {
+        console.log('天天向上');
+    }
+    // 第二这方法 是不会覆盖前面的
+    box1.addEventListener('click', fn1);
+    box1.addEventListener('click', fn2);
+    function fn1() {
+        console.log('乔峰');
+    }
+    function fn2() {
+        console.log('杨过');
+    }
+</script>
+
+</html>

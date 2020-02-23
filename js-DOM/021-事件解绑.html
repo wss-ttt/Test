@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="btn1">确定</button>
+</body>
+<script>
+    var btn1 = document.getElementById('btn1');
+    function fn() { }
+    // 第一种方式
+    btn1.onclick = fn;
+    // 解绑事件
+    btn1.onclick = null;
+
+    // 第二种方式 火狐 谷歌 ie9+
+    btn1.addEventListener('click', fn);
+    btn1.removeEventListener('click', fn);
+
+    // 第三种方式 ie678
+    btn1.attachEvent('onclick', fn);
+    btn1.detachEvent('onclick', fn);
+</script>
+
+</html>

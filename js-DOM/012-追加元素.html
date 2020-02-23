@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            float: left;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid pink;
+            float: left;
+        }
+
+        .item {
+            width: 80px;
+            height: 80px;
+            background-color: #ccc;
+            float: left;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button id="btn1">追加</button>
+    </div>
+    <div class="box1" id="box1">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="box2" id="box2"></div>
+</body>
+<script>
+    var btn1 = document.getElementById('btn1');
+    var box1 = document.getElementById('box1');
+    var box2 = document.getElementById('box2');
+    // 全部追加
+    /* btn1.onclick = function () {
+        var arr = box1.children;
+        for (var i = arr.length - 1; i >= 0; i--) {
+            box2.appendChild(arr[0]);
+        }
+        console.log(arr);// 追加完毕以后 arr已经变空了
+    }  */
+
+    btn1.onclick = function () {
+        // var arr = box1.children;
+        var arr = Array.from(box1.children);// 伪数组变成一个真数组
+        for (var i = 0; i < arr.length; i++) {
+            box2.appendChild(arr[i]);
+        }
+        console.log(arr);
+    } 
+</script>
+
+</html>

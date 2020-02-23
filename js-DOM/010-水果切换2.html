@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select {
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="" id="sel1" size="10" multiple>
+        <option value="0">1香蕉</option>
+        <option value="1">2苹果</option>
+        <option value="2">3鸭梨</option>
+        <option value="3">4葡萄</option>
+    </select>
+    <input type="button" value=">>>">
+    <input type="button" value=">">
+    <input type="button" value="<">
+    <input type="button" value="<<<">
+    <select name="" id="sel2" size="10" multiple>
+    </select>
+
+</body>
+<script>
+    var sel1 = document.getElementById('sel1');
+    var sel2 = document.getElementById('sel2');
+    var btns = document.getElementsByTagName('input');
+
+    // 全部最加 sel1 -> sel2
+    btns[0].onclick = function () {
+        var arr = sel1.children;
+        for (var i = arr.length - 1; i >= 0; i--) {
+            sel2.appendChild(arr[0]);
+        }
+    }
+    // 全部追加  sel2 -> sel1
+    btns[3].onclick = function () {
+        var arr = sel2.children;
+        for (var i = arr.length - 1; i >= 0; i--) {
+            sel1.appendChild(arr[0]);
+        }
+    }
+
+    // 追加选中的  sel1 -> sel2
+    btns[1].onclick = function () {
+        var arr = sel1.children;
+        for (var i = arr.length - 1; i >= 0; i--) {
+            if (arr[i]['selected']) {
+                arr[i]['selected'] = false;
+                sel2.appendChild(arr[i]);
+            }
+        }
+        // 将伪数组-> 真数组  然后进行排序
+        var res = Array.from(sel2.children).sort(function (a, b) {
+            return a.value - b.value;
+        });
+        // 清空sel2中的所有子元素
+        for (var i = 0; i < sel2.children.length; i++) {
+            sel2.removeChild(sel2.children[i]);
+        }
+        // 添加子元素
+        for (var i = 0; i < res.length; i++) {
+            sel2.appendChild(res[i]);
+            console.log(res);
+        }
+    }
+
+    // 追加选中的   sel2 -> sel1
+    btns[2].onclick = function () {
+        var arr = sel2.children;
+        for (var i = arr.length - 1; i >= 0; i--) {
+            if (arr[i]['selected']) {
+                arr[i]['selected'] = false;
+                sel1.appendChild(arr[i]);
+            }
+        }
+        // 同理
+
+    }
+</script>
+
+</html>

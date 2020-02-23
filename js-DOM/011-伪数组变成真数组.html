@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</body>
+<script>
+    // arr是一个伪数组
+    var arr = {
+        '0': '乔峰',
+        '1': '男',
+        '2': '18',
+        length: 3
+    }
+    var res = Array.from(arr);
+    console.log(arr);
+    console.log(res);
+    // divs也是一个伪数组
+    var divs = document.getElementsByTagName('div');
+    var res2 = Array.from(divs);
+    console.log(divs);
+    console.log(res2);
+
+</script>
+
+</html>

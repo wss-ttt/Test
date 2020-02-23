@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="container" id="box1">好好学习</div>
+</body>
+<script>
+    // 获取元素节点
+    var eleNode = document.getElementById('box1');
+    // 获取属性节点
+    var attrNode = eleNode.getAttributeNode('id');
+    // 获取文本节点
+    var txtNode = eleNode.firstElementChild || eleNode.firstChild;
+    // nodeType
+    console.log(eleNode.nodeType);  // 1
+    console.log(attrNode.nodeType);  // 2
+    console.log(txtNode.nodeType);  // 3
+    // nodeName
+    console.log(eleNode.nodeName);// DIV
+    console.log(attrNode.nodeName);// id
+    console.log(txtNode.nodeName);// #text
+    // nodeValue
+    console.log(eleNode.nodeValue);// null
+    console.log(attrNode.nodeValue); // box
+    console.log(txtNode.nodeValue);//好好学习
+
+</script>
+
+</html>

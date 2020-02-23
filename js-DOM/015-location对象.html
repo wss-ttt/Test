@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn1">点击</button>    
+</body>
+<script>
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick =function(){
+        window.location.href= 'http://www.baidu.com';
+        console.log(location.href);
+        console.log(location.hash);
+        console.log(location.host);
+        console.log(location.hostname);
+        console.log(location.pathname);
+        console.log(location.protocol);
+        console.log(location.search);
+    }
+    console.log(window.navigator);
+    console.log(navigator.userAgent);
+    console.log(navigator.platform);
+</script>
+</html>

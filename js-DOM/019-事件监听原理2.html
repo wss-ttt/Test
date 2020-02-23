@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">点击我</div>
+</body>
+<script>
+    var box1 = document.getElementById('box1');
+    function fn1() {
+        console.log('乔峰');
+    }
+    function fn2() {
+        console.log('杨过');
+    }
+    function fn3() {
+        console.log('小龙女');
+    }
+
+    // 使用自己封装的test方法
+    test('click', fn1, box1);
+    test('click', fn2, box1);
+    test('click', fn3, box1);
+    // addEventListener的实现原理
+    function test(str, fn, ele) {
+        var oldEven = ele['on' + str];
+        ele['on' + str] = function () {
+            if (oldEven) {
+                // 把之前的事件处理先执行完,再执行后面的
+                oldEven();
+                fn();
+            } else {
+                // 没有绑定过事件
+                fn();
+            }
+        }
+    }
+</script>
+
+</html>

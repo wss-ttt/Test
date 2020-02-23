@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box1" id="box1"></div>
+        <div class="box2" id="box2"></div>
+        <div class="box3" id="box3"></div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        // 获取box1元素节点
+        var box1 = document.getElementById('box1');
+        // 获取父节点
+        var parent = box1.parentNode;
+        console.log(parent);
+
+        // 获取兄弟节点box2
+        // nextElementSibling好像要写在前面
+        // 如果nextSibling写在前面返回的就是一文本节点
+        var box2 = box1.nextElementSibling || box1.nextSibling;
+        console.log(box2)
+
+        // 获取第一个子元素节点 和 最后一个子元素节点
+        var first = parent.firstElementChild || parent.firstChild;
+        console.log(first);
+        var last = parent.lastElementChild || parent.lastChild;
+        // 获取所有的子元素节点(标签)
+        var children = parent.children;
+        console.log(children);
+
+    }
+
+</script>
+
+</html>
