@@ -82,7 +82,7 @@
                 // 优化版
                 // return num == null ? jQuery() : (num >= 0 ? jQuery(this[num]) : jQuery(this[this.length + num]));
                 // 进一步优化
-                return num == null ? jQuery():jQuery(this.get(num));
+                return num == null ? jQuery() : jQuery(this.get(num));
             }
         };
         // 给jQuery和原型对象分别添加extend方法
