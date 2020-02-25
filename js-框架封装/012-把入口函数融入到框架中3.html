@@ -147,6 +147,22 @@
                 // 当然这里可以遍历完成以后,return obj这个返回值
                 return obj;  // 遍历谁,就返回谁
             },
+            map:function(obj,fn){
+                var i, len, key;
+                var result = [];  // 保存返回值进行返回
+                // 1.如果是数组或是伪数组
+                if (jQuery.isLikeArray(obj)) {
+                    for (i = 0, len = obj.length; i < len; i++) {
+                        result.push(fn.call(obj[i], obj[i], i));
+                    }
+                } else {
+                    // 2.如果是对象 使用for in进行遍历
+                    for (key in obj) {
+                        result.push(fn.call(obj[key], obj[key], key));
+                    }
+                }
+                return result;
+            },
             // trim方法的兼容
             trim: function (str) {
                 if (typeof str !== 'string') {
