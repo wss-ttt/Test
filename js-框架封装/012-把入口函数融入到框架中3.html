@@ -359,16 +359,31 @@
         // 测试each方法
         // 实例调用的时候,只需要传递一个回调函数即可
         // 同时返回值 是一个jQuery实例对象
-        var res = $('li').each(function(index,val){
-            console.log(index,val);
-        });
-        console.log(res); // 返回的是 $('li')这个实例对象
+        // var res = $('li').each(function(index,val){
+        //     console.log(index,val);
+        // });
+        // console.log(res); // 返回的是 $('li')这个实例对象
 
-        var arr = ['aa','bb','cc'];
-        var res2 = $.each(arr,function(index,val){
-            console.log(index,val);
+        // var arr = ['aa','bb','cc'];
+        // var res2 = $.each(arr,function(index,val){
+        //     console.log(index,val);
+        // });
+        // console.log(res2); // 返回的是arr这个对象
+
+        // 测试map方法
+        var res = $('li').map(function(val,index){
+            console.log(val,index);
+            console.log('this:',this);
+            return val.innerHTML;  // 或者: this.val
         });
-        console.log(res2); // 返回的是arr这个对象
+        console.log(res);
+        var arr = ['aa','bb','cc'];
+        var res2 = $.map(arr,function(val,index){
+            console.log('this:',this);
+            console.log(val,index);
+            return val;
+        });
+        console.log(res2);
     })
     // 获取不到内容
     // console.log($('span'));
