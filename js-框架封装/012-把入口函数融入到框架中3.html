@@ -339,11 +339,19 @@
         // 能够获取到内容
         // console.log($('span'));
 
-        var a = $('li').slice();
-        var b = $('li')._slice();
-        console.log(a);
-        // console.log(({}).toString.call(b));
-        console.log(a === b);
+        // 测试each方法
+        // 实例调用的时候,只需要传递一个回调函数即可
+        // 同时返回值 是一个jQuery实例对象
+        var res = $('li').each(function(index,val){
+            console.log(index,val);
+        });
+        console.log(res); // 返回的是 $('li')这个实例对象
+
+        var arr = ['aa','bb','cc'];
+        var res2 = $.each(arr,function(index,val){
+            console.log(index,val);
+        });
+        console.log(res2); // 返回的是arr这个对象
     })
     // 获取不到内容
     // console.log($('span'));
