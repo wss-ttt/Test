@@ -58,11 +58,12 @@
             // 参数个数不定 所以在函数内部直接使用arguments对象
             slice: function () {
                 var nodes = [].slice.apply(this, arguments);// 此时nodes已经是一个数组了
-                return jQuery(nodes);
+                return jQuery(nodes); // 需要包装一次
 
                 // 优化版
                 // return jQuery([].slice.apply(this,arguments));
             },
+            // _slice:[].slice,  // 这样写是不行的 因为返回的是这个数组
             eq: function (num) {
                 // 1.如果传入的是null或undefined,返回一个新的实例
                 // 2.如果传递是正数,按照指定下标获取元素,再包装成新的实例返回
@@ -83,7 +84,25 @@
                 // return num == null ? jQuery() : (num >= 0 ? jQuery(this[num]) : jQuery(this[this.length + num]));
                 // 进一步优化
                 return num == null ? jQuery() : jQuery(this.get(num));
-            }
+            },
+            first:function(){
+                // 获取jQuery实例中的第一个元素 是一个jQuery实例
+                return this.eq(0);
+            },
+            last:function(){
+                // 获取jQuery实例中的最后一个元素 是一个jQuery实例
+                return this.eq(-1);
+            },
+            // 原型上的方法供实例调用
+            // 即是 实例对象.push,在调用的过程中,push内部的this指向了实例
+            // 所以就不需要通过call和apply方法改变this的指向,即可借用数组的方法
+            push:[].push,
+            // 相当于下面这种写法:
+            _push:function(){
+                return [].push.apply(this,arguments);
+            },
+            sort:[].sort,
+            splice:[].splice
         };
         // 给jQuery和原型对象分别添加extend方法
         jQuery.extend = jQuery.fn.extend = function (obj) {
@@ -283,13 +302,19 @@
     $(function () {
         // 能够获取到内容
         // console.log($('span'));
+
+        var a = $('li').slice();
+        var b = $('li')._slice();
+        console.log(a);
+        // console.log(({}).toString.call(b));
+        console.log(a === b);
     })
     // 获取不到内容
     // console.log($('span'));
 
     // 测试
     // console.log($('li').toArray());
-    console.log($('li').eq(0));
+    // console.log($('li').eq(0));
 </script>
 <span>111</span>
 <span>222</span>
