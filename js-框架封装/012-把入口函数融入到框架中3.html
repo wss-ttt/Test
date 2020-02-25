@@ -111,6 +111,34 @@
             }
         }
         jQuery.extend({
+            each: function(obj,fn){
+                // 把要使用的变量都定义在上面
+                var i, len, key;
+                // 1.需要判断obj是真数组或伪数组,还是对象
+                // 2.如果是真数组或是伪数组,通过for循环遍历这个对象
+                // 3.如果是对象,则通过for in 方式遍历这个对象
+                if (jQuery.isLikeArray(obj)) {
+                    // 说明是数组 或是伪数组
+                    for (i = 0, len = obj.length; i < len; i++) {
+                        // fn(i, obj[i]);
+                        // 修改this的指向 指向 -> val(obj[i])
+                        if (fn.call(obj[i], i, obj[i]) === false) {
+                            break;
+                        }
+                    }
+                } else {
+                    // 说明就是对象
+                    for (key in obj) {
+                        // fn(key, obj[key]);
+                        // 修改this的指向 指向 -> val(obj[key])
+                        if (fn.call(obj[key], key, obj[key]) === false) {
+                            break;
+                        }
+                    }
+                }
+                // 当然这里可以遍历完成以后,return obj这个返回值
+                return obj;  // 遍历谁,就返回谁
+            },
             // trim方法的兼容
             trim: function (str) {
                 if (typeof str !== 'string') {
