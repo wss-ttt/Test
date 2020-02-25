@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="jquery-2.2.0.js"></script>
+<script>
+
+    /*
+        jQuery中的方法,用来遍历对象或数组, 
+        然后把遍历的val和key传递给回调函数,
+        最后收集回调函数的返回值,构成新的数组返回
+    */
+    let obj = {
+        name: '乔峰',
+        age: 18,
+        gender: '男'
+    };
+    let arr = ['aa', 'bb', 'cc'];
+    console.log('遍历对象');
+    let res = $.map(obj, function (val, key) {
+        console.log(val, key);
+        console.log(this);
+        return 'a';
+    });
+    console.log(res);
+    console.log('遍历数组');
+    let res2 = $.map(arr, function (val, key) {
+        console.log(val, key);
+        console.log(this);
+        return 'b';
+    });
+    console.log(res2);
+</script>
+
+</html>
