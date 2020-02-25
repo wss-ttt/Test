@@ -55,6 +55,14 @@
                 // 优化版:
                 return num == null ? this.toArray() : (num > 0 ? this[i] : this[this.length + nul]);  // 一行代码搞定
             },
+            // 因为是实例对象调用 所以只要传递回调函数fn
+            each:function(fn){
+                // 调用静态的each方法
+                return jQuery.each(this,fn);
+            },
+            map:function(){
+
+            },
             // 参数个数不定 所以在函数内部直接使用arguments对象
             slice: function () {
                 var nodes = [].slice.apply(this, arguments);// 此时nodes已经是一个数组了
