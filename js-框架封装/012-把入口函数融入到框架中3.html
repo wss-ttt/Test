@@ -60,8 +60,9 @@
                 // 调用静态的each方法
                 return jQuery.each(this,fn);
             },
-            map:function(){
-
+            // 同理each:因为是实例对象调用 所以只要传递回调函数fn
+            map:function(fn){
+                return jQuery.map(this,fn);
             },
             // 参数个数不定 所以在函数内部直接使用arguments对象
             slice: function () {
