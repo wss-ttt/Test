@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="jquery-2.2.0.js"></script>
+<script>
+    let obj = {
+        name: {
+            val: '乔峰'
+        },
+        age: 18,
+        gender: '男'
+    };
+    let arr = ['aaa', 'bbb', 'ccc'];
+    $.each(obj, function (key, val) {
+        console.log(this);
+        console.log(key, val);
+    })
+    $.each(arr, function (index, val) {
+        console.log(this);
+        console.log(index, val);
+    });
+    // 遍历中断
+    console.log('遍历中断问题');
+    $.each(arr, function (index, val) {
+        if (val === 'bbb') {
+            return false;
+        }
+        console.log(index, val);
+    });
+
+    // 注意数组的forEach的参数和jQuery中的each参数是相反的
+    /* arr.forEach((val, index) => {
+        console.log(this);  // 这个指的是window对象
+        console.log(val, index);
+    }); */
+
+</script>
+
+</html>
