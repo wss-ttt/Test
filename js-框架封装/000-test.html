@@ -9,25 +9,18 @@
 
 <body>
     <div class="container">
-        <div class="box1">1</div>
-        <div class="box2">2</div>
+        <ul>
+            <li>00001</li>
+            <li>00002</li>
+            <li>00003</li>
+            <li>00004</li>
+            <li>00005</li>
+        </ul>
     </div>
 </body>
 <script>
-    /* test.name = 'aa';
-    function test() {
-    } */
-
-
-    /* test.name = 'aa';
-    var test = function(){} */
-
-    /* var test;
-    test.name = 'aa';
-    test = function(){} */
-
-    var obj;
-    obj.name = 'a';
+    var lis =document.getElementsByTagName('li');
+    console.log([].sort.call(lis));
 </script>
 
 </html>
