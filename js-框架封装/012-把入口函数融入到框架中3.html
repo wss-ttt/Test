@@ -63,6 +63,8 @@
             // 同理each:因为是实例对象调用 所以只要传递回调函数fn
             map:function(fn){
                 return jQuery.map(this,fn);
+                // jQuery中是下面这样实现的,返回的是一个jQuery实例对象
+                // return jQuery(jQuery.map(this,fn)); 
             },
             // 参数个数不定 所以在函数内部直接使用arguments对象
             slice: function () {
@@ -371,7 +373,7 @@
         // console.log(res2); // 返回的是arr这个对象
 
         // 测试map方法
-        var res = $('li').map(function(val,index){
+        /* var res = $('li').map(function(val,index){
             console.log(val,index);
             console.log('this:',this);
             return val.innerHTML;  // 或者: this.val
@@ -381,6 +383,17 @@
         var res2 = $.map(arr,function(val,index){
             console.log('this:',this);
             console.log(val,index);
+            return val;
+        });
+        console.log(res2); */
+
+        // 使用静态方法
+        var res = $.map($('li'), function (val, index) {
+            return val;
+        });
+        console.log(res);
+        // 使用实例方法
+        var res2 = $('li').map(function (val, index) {
             return val;
         });
         console.log(res2);
