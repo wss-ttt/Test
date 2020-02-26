@@ -43,6 +43,17 @@
         console.log(val, index);
     }); */
 
+
+    // 使用静态方法
+    var res = $.each($('li'), function (index, val) {
+        console.log(index, val);
+    });
+    console.log(res);// 这个返回的是一个数组
+    // 使用实例方法
+    var res2 = $('li').each(function (index, val) {
+        console.log(index, val);
+    });
+    console.log(res2);
 </script>
 
 </html>
