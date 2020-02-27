@@ -191,6 +191,23 @@
                 }
             }
             return jQuery(result);// 进行包装返回 返回的是一个jQuery实例对象
+        },
+        // 优化版: 使用each方法
+        _appendTo: function (selector) {
+            var result = [], temp = null;
+            var $selector = $(selector);
+            // 遍历this(注意这里有三个不同的this)
+            this.each(function () {
+                var self = this;
+                // 遍历目的地$selector
+                $selector.each(function (i, val) {
+                    // 可以多用三元运算符(比较简洁)
+                    temp = i === 0 ? self : self.cloneNode(true);
+                    this.appendChild(temp);
+                    result.push(temp);
+                });
+            });
+            return jQuery(result);
         }
     });
 
