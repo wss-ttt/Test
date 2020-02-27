@@ -331,6 +331,9 @@
                 // apply只能平铺真数组或内置的伪数组,我们自定的伪数组会报错
                 // [].push.apply(this, selector); // 该代码在ie8中会报错
                 // 解决办法:
+                // [].slice.apply(selector)通过这个代码将selector
+                // 转换成真数组,
+                // 然后再把真数组中的数据push到this实例身上去
                 [].push.apply(this, [].slice.apply(selector));
             } else {
                 this[0] = selector;
