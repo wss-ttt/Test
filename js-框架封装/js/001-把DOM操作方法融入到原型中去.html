@@ -8,11 +8,12 @@
 </head>
 
 <body>
-    <div>001</div>
-    <div>002</div>
-    <div>003</div>
-    <div>004</div>
-    <div>005</div>
+    <span>span:001</span>
+    <span>span:002</span>
+    <span>span:003</span>
+    <div>div:001</div>
+    <div>div:002</div>
+    <div>div:003</div>
 </body>
 <script src="core.js"></script>
 <script>
@@ -221,8 +222,29 @@
     // console.log($('div')._text());
     // $('div')._text('<h1>aaa</h1>');
 
-    console.log($('div').__text());
-    $('div').__text('<h1>aaa</h1>');
+    // console.log($('div').__text());
+    // $('div').__text('<h1>aaa</h1>');
+
+    // 测试  链式编程
+    // console.log($('div').html('<h1>aaa</h1>').toArray());
+
+    // 测试  appendTo
+    // 选择器
+    // $('span').appendTo('div');
+
+    // DOM
+    // var div = document.querySelector('div');// 只会获取到第一个div元素
+    // $('span').appendTo(div);
+
+    // jq实例对象
+    // $('span').appendTo($('div'));
+
+    // 返回值测试
+    var res1 = $('span').appendTo($('div'));
+    console.log(res1);
+    for(var i=0;i<res1.length;i++){
+        res1[i].style.color="red";
+    }
 </script>
 
 </html>
