@@ -22,18 +22,24 @@
             for (var i = 0, len = this.length; i < len; i++) {
                 this[i].innerHTML = '';
             }
+            // 为了链式编程
+            return this;
         },
         // 优化版: 借用数组的forEach方法进行遍历 
         _empty: function () {
             [].forEach.call(this, function (val, index) {
                 val.innerHTML = '';
             });
+            // 为了链式编程
+            return this;
         },
         // 优化版: 使用each方法
         __empty: function () {
             this.each(function () {
                 this.innerHTML = '';
             });
+            // 为了链式编程
+            return this;
         },
         // 融入remove方法
         remove: function () {
@@ -43,6 +49,8 @@
                 // 通过自身进行删除
                 this[i].remove();
             }
+            // 为了链式编程
+            return this;
         },
         // 优化版: 借用数组的forEach方法进行遍历操作
         _remove: function () {
@@ -52,6 +60,8 @@
                 // 通过自身进行删除
                 val.remove();
             });
+            // 为了链式编程
+            return this;
         },
         // 优化版: 使用each方法
         __remove: function () {
@@ -61,6 +71,8 @@
                 // 通过自己进行删除
                 this.remove();
             });
+            // 为了链式编程
+            return this;
         },
         // 融入html方法
         html: function (html) {
@@ -71,6 +83,8 @@
                 for (var i = 0, len = this.length; i < len; i++) {
                     this[i].innerHTML = html;
                 }
+                // 为了链式编程
+                return this;
             }
         },
         // 优化版 : 借用数组的forEach方法进行遍历
@@ -81,6 +95,8 @@
                 [].forEach.call(this, function (val, index) {
                     val.innerHTML = html;
                 });
+                // 为了链式编程
+                return this;
             }
         },
         // 优化版: 使用each方法
@@ -91,6 +107,8 @@
                 this.each(function () {
                     this.innerHTML = html;
                 });
+                // 为了链式编程
+                return this;
             }
         },
         // 融入text方法
@@ -105,6 +123,8 @@
                 for (var i = 0, len = this.length; i < len; i++) {
                     this[i].innerText = text;
                 }
+                // 为了链式编程
+                return this;
             }
         },
         // 优化版 : 借用数组的forEach方法进行遍历
@@ -119,6 +139,8 @@
                 [].forEach.call(this, function (val, index) {
                     val.innerText = text;
                 });
+                // 为了链式编程
+                return this;
             }
         },
         // 优化版: 使用each方法
@@ -133,6 +155,8 @@
                 this.each(function () {
                     this.innerText = text;
                 });
+                // 为了链式编程
+                return this;
             }
         }
     });
