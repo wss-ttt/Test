@@ -37,7 +37,7 @@
         */
         if (arguments.length === 1) {
             return likeArray[0].innerHTML;
-        } else if (arguments.length >= 2) {
+        } else if (arguments.length >= 2) {// 其实这个地方可以直接使用else就可以了
             for (var i = 0, len = likeArray.length; i < len; i++) {
                 likeArray[i].innerHTML = html;
             }
@@ -47,7 +47,7 @@
     function _html(likeArray, html) {
         if (arguments.length === 1) {
             return likeArray[0].innerHTML;
-        } else if (arguments.length >= 2) {
+        } else if (arguments.length >= 2) {// 其实这个地方可以直接使用else就可以了
             [].forEach.call(likeArray, function (val, index) {
                 val.innerHTML = html;
             });
