@@ -161,7 +161,7 @@
             }
         },
         // 把所有元素(注意这里是所有元素)添加到指定的元素中去
-        appendTo:function(selector){
+        appendTo: function (selector) {
             /*
                 实现思路:
                 1.定义一个数组,用来存储被添加的所有元素
@@ -172,25 +172,25 @@
                 如果不是第一个,则把外层遍历的元素clone版添加到内层遍历的元素中去
                 6.最后把被添加的元素添加到数组中去,然后用jQuery工厂函数包装返回
             */
-           var result = [],temp = null;
-           var $selector = $(selector);
-           // 因为被添加的元素可能会有很多,所以需要用到循环
-           for(var i =0,len = this.length;i<len;i++){
-               // 因为被追加的元素可能也会有很多,所以也需要用到循环
-               for(var j =0,jLen=$selector.length;j<jLen;j++){
-                   if(j === 0){
+            var result = [], temp = null;
+            var $selector = $(selector);
+            // 因为被添加的元素可能会有很多,所以需要用到循环
+            for (var i = 0, len = this.length; i < len; i++) {
+                // 因为被追加的元素可能也会有很多,所以也需要用到循环
+                for (var j = 0, jLen = $selector.length; j < jLen; j++) {
+                    if (j === 0) {
                         // 如果是第一次 给目的地添加元素
                         $selector[j].appendChild(this[i]);
                         result.push(this[i]);
-                   }else{
-                       // 如果不是第一次 给目的地添加元素
-                       temp = this[i].cloneNode(true)
-                       $selector[j].appendChild(temp);
-                       result.push(temp);
-                   }
-               }
-           }
-           return jQuery(result);// 进行包装返回 返回的是一个jQuery实例对象
+                    } else {
+                        // 如果不是第一次 给目的地添加元素
+                        temp = this[i].cloneNode(true)
+                        $selector[j].appendChild(temp);
+                        result.push(temp);
+                    }
+                }
+            }
+            return jQuery(result);// 进行包装返回 返回的是一个jQuery实例对象
         }
     });
 
@@ -242,8 +242,8 @@
     // 返回值测试
     var res1 = $('span').appendTo($('div'));
     console.log(res1);
-    for(var i=0;i<res1.length;i++){
-        res1[i].style.color="red";
+    for (var i = 0; i < res1.length; i++) {
+        res1[i].style.color = "red";
     }
 </script>
 
