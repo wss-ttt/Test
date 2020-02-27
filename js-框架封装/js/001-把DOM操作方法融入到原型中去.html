@@ -180,8 +180,9 @@
                 for (var j = 0, jLen = $selector.length; j < jLen; j++) {
                     if (j === 0) {
                         // 如果是第一次 给目的地添加元素
-                        $selector[j].appendChild(this[i]);
-                        result.push(this[i]);
+                        temp = this[i];
+                        $selector[j].appendChild(temp);
+                        result.push(temp);
                     } else {
                         // 如果不是第一次 给目的地添加元素
                         temp = this[i].cloneNode(true)
