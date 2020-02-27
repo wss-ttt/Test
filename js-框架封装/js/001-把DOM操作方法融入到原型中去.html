@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>001</div>
+    <div>002</div>
+    <div>003</div>
+    <div>004</div>
+    <div>005</div>
+</body>
+<script src="core.js"></script>
+<script>
+    $.fn.extend({
+        // 融入empty方法
+        empty: function () {
+            for (var i = 0, len = this.length; i < len; i++) {
+                this[i].innerHTML = '';
+            }
+        },
+        // 优化版: 借用数组的forEach方法进行遍历 
+        _empty: function () {
+            [].forEach.call(this, function (val, index) {
+                val.innerHTML = '';
+            });
+        },
+        // 优化版: 使用each方法
+        __empty: function () {
+            this.each(function () {
+                this.innerHTML = '';
+            });
+        },
+        // 融入remove方法
+        remove: function () {
+            for (var i = 0, len = this.length; i < len; i++) {
+                // 通过父节点进行删除
+                // this[i].parentNode.removeChild(this[i]);
+                // 通过自身进行删除
+                this[i].remove();
+            }
+        },
+        // 优化版: 借用数组的forEach方法进行遍历操作
+        _remove: function () {
+            [].forEach.call(this, function (val, index) {
+                // 通过父节点进行删除
+                // val.parentNode.removeChild(val);
+                // 通过自身进行删除
+                val.remove();
+            });
+        },
+        // 优化版: 使用each方法
+        __remove: function () {
+            this.each(function () {
+                // 通过父节点进行删除
+                // this.parentNode.removeChild(this);
+                // 通过自己进行删除
+                this.remove();
+            });
+        },
+        // 融入html方法
+        html: function (html) {
+            if (arguments.length === 0) {
+                // 说明是没有传递参数
+                return this[0].innerHTML;
+            } else {
+                for (var i = 0, len = this.length; i < len; i++) {
+                    this[i].innerHTML = html;
+                }
+            }
+        },
+        // 优化版 : 借用数组的forEach方法进行遍历
+        _html: function (html) {
+            if (arguments.length === 0) {
+                return this[0].innerHTML;
+            } else {
+                [].forEach.call(this, function (val, index) {
+                    val.innerHTML = html;
+                });
+            }
+        },
+        // 优化版: 使用each方法
+        __html: function (html) {
+            if (arguments.length === 0) {
+                return this[0].innerHTML;
+            } else {
+                this.each(function () {
+                    this.innerHTML = html;
+                });
+            }
+        },
+        // 融入text方法
+        text: function (text) {
+            var result = '';
+            if (arguments.length === 0) {
+                for (var i = 0, len = this.length; i < len; i++) {
+                    result += this[i].innerText;
+                }
+                return result;
+            } else {
+                for (var i = 0, len = this.length; i < len; i++) {
+                    this[i].innerText = text;
+                }
+            }
+        },
+        // 优化版 : 借用数组的forEach方法进行遍历
+        _text: function (text) {
+            var result = '';
+            if (arguments.length === 0) {
+                [].forEach.call(this, function (val, index) {
+                    result += val.innerText;
+                });
+                return result;
+            } else {
+                [].forEach.call(this, function (val, index) {
+                    val.innerText = text;
+                });
+            }
+        },
+        // 优化版: 使用each方法
+        __text: function (text) {
+            var result = '';
+            if (arguments.length === 0) {
+                this.each(function () {
+                    result += this.innerText;
+                });
+                return result;
+            } else {
+                this.each(function () {
+                    this.innerText = text;
+                });
+            }
+        }
+    });
+
+    // 测试  empty
+    // $('div').empty();
+    // $('div')._empty();
+    // $('div').__empty();
+
+    // 测试  remove
+    // $('div').remove();
+    // $('div')._remove();
+    // $('div').__remove();
+
+    // 测试  html
+    // console.log($('div').html());
+    // $('div').html('<h1>aaa</h1>');
+
+    // console.log($('div')._html());
+    // $('div')._html('<h1>aaa</h1>');
+
+    // console.log($('div').__html());
+    // $('div')._html('<h1>aaa</h1>');
+
+
+    // 测试  text方法
+    // console.log($('div').text());
+    // $('div').text('<h1>aaa</h1>');
+
+    // console.log($('div')._text());
+    // $('div')._text('<h1>aaa</h1>');
+
+    console.log($('div').__text());
+    $('div').__text('<h1>aaa</h1>');
+</script>
+
+</html>
