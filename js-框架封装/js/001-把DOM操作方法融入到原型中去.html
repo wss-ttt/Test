@@ -398,7 +398,46 @@
     // 测试   prependTo
 
     // console.log($('span').prependTo($('div')));
-    console.log($('span')._prependTo($('div')));
+    // console.log($('span')._prependTo($('div')));
+
+    // 测试 append
+    // jq对象
+    // $('div').append($('span'));
+    // 字符串
+    // $('div').append('<span style="color:red;">aaa</span>');
+    // $('div').append('span');
+    // dom对象
+    // var spans = document.querySelectorAll('span');
+    // console.log($('div').append(spans));
+
+    // 测试 _append
+    // jq对象
+    // console.log($('div')._append($('span')));
+    // 字符串
+    // console.log($('div')._append('<a href="#">百度一下</a>'));
+    // dom对象
+    // var spans = document.querySelectorAll('span');
+    // console.log($('div')._append(spans));
+
+    // 测试  prepend
+    // 字符串
+    // $('div').prepend('span');
+    // jq对象
+    // $('div').prepend($('span'));
+    // dom对象
+    // var spans = document.querySelectorAll('span');
+    // $('div').prepend(spans);
+    
+
+
+    // 测试 _prepend
+    // 字符串
+    // $('div')._prepend('span');
+    // jq对象
+    // $('div')._prepend($('span'));
+    // dom对象
+    var spans = document.querySelectorAll('span');
+    console.log($('div')._prepend(spans));
 </script>
 
 </html>
