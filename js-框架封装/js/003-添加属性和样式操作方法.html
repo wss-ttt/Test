@@ -89,7 +89,39 @@
                 });
             }
             return this;
-        }
+        },
+        prop: function (attr, val) {
+            /*
+            实现思路和attr方法的实现思路是一样的
+            */
+            if (!jQuery.isString(attr) && !jQuery.isObject(attr)) {
+                return this;
+            }
+            // 如果是字符串
+            if (jQuery.isString(attr)) {
+                // arguments.length === 1
+                if (arguments.length === 1) {
+                    // 获取第一个元素的属性值
+                    return this[0][attr];
+                } else if (arguments.length >= 2) {
+                    // 使用each进行遍历
+                    this.each(function () {
+                        // 设置属性值
+                        this[attr] = val;
+                    });
+                }
+            }
+            // 如果传入的是对象
+            if (jQuery.isObject(attr)) {
+                for (var key in attr) {
+                    this.each(function () {
+                        this[key] = attr[key];
+                    });
+                }
+            }
+            return this;
+        },
+        
     });
 
 
