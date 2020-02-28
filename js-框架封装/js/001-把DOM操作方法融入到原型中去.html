@@ -289,11 +289,11 @@
             }
             return this;
         },
-        // 优化版
-        _append:function(context){
+        // 优化版 使用each和复用appendTo方法
+        _append: function (context) {
             if (jQuery.isString(context)) {
                 // 循环this
-                this.each(function(){
+                this.each(function () {
                     this.innerHTML += context;   // 追加内容
                 });
             } else {
