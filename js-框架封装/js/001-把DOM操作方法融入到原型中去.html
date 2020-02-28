@@ -237,6 +237,22 @@
             }
             return jQuery(result);
         },
+        // 优化版: 使用each方法
+        _prependTo: function (selector) {
+            var result = [], temp = null;
+            var $selector = $(selector);
+            // 循环this 也就是被添加的元素 (这里有三个this,分别指向不同的引用)
+            this.each(function () {
+                var self = this;
+                $selector.each(function (i) {
+                    // 使用三元运算符(推荐)
+                    temp = i === 0 ? self : self.cloneNode(true);
+                    this.insertBefore(temp, this.firstChild);
+                    result.push(temp);
+                });
+            });
+            return jQuery(result);
+        }
     });
 
     // 测试  empty
