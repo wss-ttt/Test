@@ -54,6 +54,41 @@
             }
             // 为了链式编程
             return this;
+        },
+        // 另一种实现思路
+        _attr: function (attr, val) {
+            /*
+            实现思路:
+                1. 判断arguments.length
+                2.如果为1
+                3.继续判断attr是不是字符串,如果是字符串,则返回第一个元素的属性节点的值
+                4.如果不是,判断是不是对象,如果是,遍历这个对象,得到所有的属性值,然后
+                遍历所有的元素,然后再进行赋值
+                5.如果arguments.length>=2,遍历所有的元素进行赋值操作
+                6.return this
+            */
+            var self = this;
+            if (arguments.length === 1) {
+                if (jQuery.isString(attr)) {
+                    // 获取属性值
+                    return this[0].getAttribute(attr);
+                } else if (jQuery.isObject(attr)) {
+                    // 遍历attr这个对象 使用静态的each方法
+                    jQuery.each(attr, function (key, val) {
+                        // 遍历实例对象 不能直接使用this,因为指向不一样
+                        // 同时使用实例的each方法
+                        self.each(function () {
+                            // 这里面的this指向的是每一个dom元素
+                            this.setAttribute(key, val);
+                        });
+                    });
+                }
+            } else if (arguments.length >= 2) {
+                this.each(function () {
+                    this.setAttribute(attr, val);
+                });
+            }
+            return this;
         }
     });
 
@@ -65,12 +100,27 @@
     // console.log($('div').attr('id'));
 
     // $('div').attr('name', '乔峰');
-    
+
     /* $('div').attr({
         name:'aa',
         age:18,
         gender:'男'
     }); */
+
+
+    // 测试 _attr
+
+    // console.log($('div')._attr()); //测试是否会报错 
+
+    // console.log($('div')._attr('id'));
+
+    // $('div')._attr('name', '乔峰');
+
+    $('div')._attr({
+        name:'aa',
+        age:18,
+        gender:'男'
+    });
 </script>
 
 </html>
