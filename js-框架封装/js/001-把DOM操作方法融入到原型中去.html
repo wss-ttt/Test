@@ -302,6 +302,43 @@
                 $context.appendTo(this);
             }
             return this;
+        },
+        // 给所有元素的最前面添加html内容,或者其他元素
+        prepend: function (context) {
+            if (jQuery.isString(context)) {
+                for (var i = 0, len = this.length; i < len; i++) {
+                    // 放在前面
+                    this[i].innerHTML = context + this[i].innerHTML;
+                }
+            } else {
+                var $context = $(context);
+                var temp = null;
+                // 循环$context
+                for (var j = 0, jLen = $context.length; j < jLen; j++) {
+                    // 循环this
+                    for (var k = 0, kLen = this.length; k < kLen; k++) {
+                        // 三元运算符(推荐)
+                        temp = k === 0 ? $context[j] : $context[j].cloneNode(true);
+                        this[k].insertBefore(temp, this[k].firstChild);
+                    }
+                }
+            }
+            //为了链式编程
+            return this;
+        },
+        // 优化版: 使用each和复用prependTo方法
+        _prepend:function(context){
+            if(jQuery.isString(context)){
+                this.each(function(){
+                    this.innerHTML = context + this.innerHTML;
+                });
+            }else{
+                var $context = $(context);
+                // 复用prependTo方法
+                $context.prependTo(this);
+            }
+            // 为了链式编程
+            return this;
         }
     });
 
