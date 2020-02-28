@@ -252,6 +252,56 @@
                 });
             });
             return jQuery(result);
+        },
+        // 给所有元素添加html内容,或者其他元素
+        append: function (context) {
+            /*
+            实现思路:
+                1.先判断context是不是字符串
+                2.如果是字符串,则把这个字符串追加给所有的元素
+                3.如果不是,则先把context包装成jq对象,进行统一处理
+                4.
+                5.
+                6.
+                tips:最后的4,5,6步骤和appendTo实现思路是一样的
+            */
+            if (jQuery.isString(context)) {
+                // 循环this, 也就是实例调用者
+                for (var i = 0, len = this.length; i < len; i++) {
+                    this[i].innerHTML += context;   // 追加内容 
+                }
+            } else {
+                var $context = $(context);
+                var temp = null;
+                // 循环$context
+                for (var j = 0, jLen = $context.length; j < jLen; j++) {
+                    // 循环this
+                    for (var k = 0, kLen = this.length; k < kLen; k++) {
+                        if (k === 0) {
+                            temp = $context[j];
+                            this[k].appendChild(temp);
+                        } else {
+                            temp = $context[j].cloneNode(true);
+                            this[k].appendChild(temp);
+                        }
+                    }
+                }
+            }
+            return this;
+        },
+        // 优化版
+        _append:function(context){
+            if (jQuery.isString(context)) {
+                // 循环this
+                this.each(function(){
+                    this.innerHTML += context;   // 追加内容
+                });
+            } else {
+                var $context = $(context);
+                // 复用appendTo方法(经典)
+                $context.appendTo(this);
+            }
+            return this;
         }
     });
 
