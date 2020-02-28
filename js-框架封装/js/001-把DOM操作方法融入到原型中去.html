@@ -209,7 +209,34 @@
                 });
             });
             return jQuery(result);
-        }
+        },
+        // 把所有元素添加到指定元素的最前面去
+        prependTo: function (selector) {
+            var result = [], temp = null;
+            var $selector = $(selector);
+            // 循环被添加的元素
+            for (var i = 0, len = this.length; i < len; i++) {
+                // 循环$selector
+                for (var j = 0, jLen = $selector.length; j < jLen; j++) {
+                    /* if (j === 0) {
+                        temp = this[i];
+                        // 注意这里只能使用firstChild,而不能使用firstElementChild
+                        $selector[j].insertBefore(temp, $selector[j].firstChild);
+                    } else {
+                        temp = this[i].cloneNode(true);
+                        // 注意这里只能使用firstChild,而不能使用firstElementChild
+                        $selector[j].insertBefore(temp, $selector[j].firstChild);
+                    } */
+
+                    // 简写:  使用三元运算符(推荐)
+                    temp = j === 0 ? this[i] : this[i].cloneNode(true);
+                    // 注意这个地方只能使用firstChild 而不能使用firstElementChild
+                    $selector[j].insertBefore(temp, $selector[j].firstChild);
+                    result.push(temp);
+                }
+            }
+            return jQuery(result);
+        },
     });
 
     // 测试  empty
