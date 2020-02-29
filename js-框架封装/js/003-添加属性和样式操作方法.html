@@ -265,6 +265,7 @@
                 5.否则范湖false
             */
             for (var i = 0, len = this.length; i < len; i++) {
+                // 注意这里为什么要在前后添加上空格
                 if ((' ' + this[i].className + ' ').indexOf(' ' + className + ' ') !== -1) {
                     return true;
                 }
@@ -275,6 +276,7 @@
         _hasClass: function (className) {
             var flag = false;
             this.each(function () {
+                // 注意这里为什么要在前后添加上空格
                 if ((' ' + this.className + ' ').indexOf(' ' + className + ' ') !== -1) {
                     flag = true;
                     return false;// 中断循环
