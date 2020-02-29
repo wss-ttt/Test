@@ -331,6 +331,9 @@
             });
             return this;
         },
+        // 功能:1.清空 2.删除单个className
+        // 存在问题: 多个className进行删除就会有问题
+        // eg: 'aa bb'这种形式的就会有问题
         removeClass: function (className) {
             /*
             实现思路:
