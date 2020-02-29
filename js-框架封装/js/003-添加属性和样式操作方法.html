@@ -254,6 +254,33 @@
                 // 复用propo方法
                 return this.prop('value', val);
             }
+        },
+        hasClass: function (className) {
+            /*
+            实现思路:
+                1.遍历所有元素
+                2. 依次获取每个元素的className,为了方便判断,前后加上空格
+                3.使用indexOf方法进行判断
+                4.如果有一个元素的判断结果不为-1,就返回true
+                5.否则范湖false
+            */
+            for (var i = 0, len = this.length; i < len; i++) {
+                if ((' ' + this[i].className + ' ').indexOf(' ' + className + ' ') !== -1) {
+                    return true;
+                }
+            }
+            return false;
+        },
+        // 优化版: 使用each进行遍历
+        _hasClass: function (className) {
+            var flag = false;
+            this.each(function () {
+                if ((' ' + this.className + ' ').indexOf(' ' + className + ' ') !== -1) {
+                    flag = true;
+                    return false;// 中断循环
+                }
+            });
+            return flag;
         }
     });
 
