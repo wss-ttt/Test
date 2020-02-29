@@ -326,6 +326,23 @@
             return this;
         },
         toggleClass: function (className) {
+            /*
+            实现思路:
+                1.遍历所有的元素
+                2.判断每一个元素有没有指定的className
+                3.有则删除,没有则添加 
+                4.return this
+            */
+            this.each(function () {
+                var $this = jQuery(this);
+                if (jQuery(this).hasClass(className)) {
+                    // 有 ->  删除
+                    $this.removeClass(className);
+                } else {
+                    $this.addClass(className);
+                }
+            });
+            return this;
         }
     });
 
