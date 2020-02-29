@@ -460,12 +460,24 @@
     // console.log($('div')._hasClass('ab'));
 
     // 测试 addClass
-    // $('div').addClass('abc');
+    // console.log($('div').addClass('abc'));
 
+    // 测试   添加 多个class类名
+    // $('div').addClass('aa dd');  // 存在问题
+
+    // 测试  _addClass  添加多个class类名
+    // $('div')._addClass(' aa dd  abc ');// 可以成功
 
     // 测试  removeClass
     // $('div').removeClass();
     // $('div').removeClass('aa');
+
+    // 测试 删除多个class类名
+    // $('div').removeClass('aa cc');  // 存在问题
+
+
+    // 测试  toggleClass
+    // $('div').toggleClass('bb');
 </script>
 
 </html>
