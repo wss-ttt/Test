@@ -309,10 +309,23 @@
                 1.判断有没有参数
                 2.没有参数,遍历所有的元素,设置他们的className为空
                 3.有参数,遍历所有的元素,删除指定的className(元素.className.replace())
+                4.retrun this
             */
+            if (arguments.length === 0) {
+                this.each(function () {
+                    this.className = '';
+                });
+            } else {
+                this.each(function () {
+                    // 使用空格进行替换掉
+                    // eg: this.className = ' aa bb cc b ';
+                    var res = (' ' + this.className + ' ').replace(' ' + className + ' ', ' ');
+                    this.className = res;
+                });
+            }
+            return this;
         },
         toggleClass: function (className) {
-
         }
     });
 
