@@ -177,6 +177,38 @@
             return this;
         },
         css: function (styleName, val) {
+            /*
+            实现思路和attr方法的实现思路是一样的
+            */
+            var self = this;
+            // 如果既不是字符串也不是对象 直接返回对象
+            if (!jQuery.isString(styleName) && !jQuery.isObject(styleName)) {
+                return this;
+            }
+            // 如果是字符串
+            if (jQuery.isString(styleName)) {
+                if (arguments.length === 1) {
+                    // 只有一个参数 ,获取第一个元素的值
+                    return jQuery.getStyle(this[0], styleName);
+                } else if (arguments.length >= 2) {
+                    // 如果是2个参数以上,进行设置样式
+                    this.each(function () {
+                        this['style'][styleName] = val;
+                    });
+                }
+            }
+            // 如果是对象
+            if (jQuery.isObject(styleName)) {
+                jQuery.each(styleName, function (key, val) {
+                    self.each(function () {
+                        this['style'][key] = val;
+                    });
+                });
+            }
+            return this;
+        },
+        // 另一种实现思路
+        _css: function (styleName, val) {
             // 只有一个参数
             if (arguments.length === 1) {
                 if (jQuery.isString(styleName)) {
