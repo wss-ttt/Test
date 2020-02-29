@@ -227,10 +227,30 @@
     // 测试  prop
     // console.log($('div').prop('id'));
     // $('div').prop('id','张三');
-    $('div').prop({
-        a:'张三',
-        b:'李四'
-    });
+    /* $('div').prop({
+        a: '张三',
+        b: '李四'
+    }); */
+
+    // 测试 _prop
+    // console.log($('div')._prop('id'));
+    // $('div')._prop('id','张三');
+    console.log($('div')._prop({
+        a: '张三',
+        b: '李四'
+    }));
+
+
+    // 测试  css
+    // 获取样式
+    // console.log($('div').css('width'));
+    // console.log($('div').css('backgroundColor'));
+    // 设置样式
+    // $('div').css('width','200px');
+    /* $('div').css({
+        width: '200px',
+        backgroundColor: 'red',
+    }); */
 </script>
 
 </html>
