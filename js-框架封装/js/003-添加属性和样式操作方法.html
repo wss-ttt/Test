@@ -230,6 +230,29 @@
             }
             return this;
         },
+        val: function (val) {
+            if (arguments.length === 0) {
+                // 没有传入参数 就是获取值
+                return this[0]['value'];
+            } else if (arguments.length === 1) {
+                // 传入一个参数 就是设置值
+                this.each(function () {
+                    this['value'] = val;
+                });
+            }
+            return this;
+        },
+        // 优化版: 复用prop方法
+        _val: function (val) {
+            // 没有传参,返回第一个元数的value属性值
+            if (arguments.length === 0) {
+                // 复用prop方法
+                return this.prop('value');
+            } else if (arguments.length === 1) {
+                // 复用propo方法
+                return this.prop('value', val);
+            }
+        }
     });
 
 
