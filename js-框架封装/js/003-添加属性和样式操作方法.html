@@ -320,6 +320,8 @@
             // 双重循环
             this.each(function () {
                 var self = this;
+                // 分析一下这个地方为什么是true? 每一个元素都是引用类型
+                // console.log($(this)[0] === this);// true
                 // 使用静态方法遍历arr
                 jQuery.each(arr, function (index, val) {
                     if (!jQuery(self).hasClass(val)) {
