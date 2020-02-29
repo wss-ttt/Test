@@ -142,7 +142,55 @@
             }
             return this;
         },
-        
+        // 另一种实现思路
+        _prop: function (attr, val) {
+            var self = this;// 保存this
+            // 只有一个参数
+            if (arguments.length === 1) {
+                // 字符串
+                if (jQuery.isString(attr)) {
+                    // 返回第一个元素的属性值
+                    return this[0][attr];
+                } else if (jQuery.isObject(attr)) {
+                    // 是对象
+                    // 使用静态方法 遍历attr
+                    jQuery.each(attr, function (key, val) {
+                        // 使用实例each方法 进行遍历实例对象
+                        self.each(function () {
+                            this[key] = val;
+                        });
+                    });
+                }
+            } else if (arguments.length >= 2) {
+                // 两个参数
+                this.each(function () {
+                    this[attr] = val;
+                });
+            }
+            return this;
+        },
+        css: function (styleName, val) {
+            // 只有一个参数
+            if (arguments.length === 1) {
+                if (jQuery.isString(styleName)) {
+                    // 返回第一个元素的样式
+                    return jQuery.getStyle(this[0], styleName);
+                } else if (jQuery.isObject(styleName)) {
+                    for (var key in styleName) {
+                        this.each(function () {
+                            // 设置样式
+                            this['style'][key] = styleName[key];
+                        });
+                    }
+                }
+            } else if (arguments.length >= 2) { // 两个参数的情况
+                this.each(function () {
+                    // 设置样式
+                    this['style'][styleName] = val;
+                });
+            }
+            return this;
+        },
     });
 
 
