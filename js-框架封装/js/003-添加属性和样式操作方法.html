@@ -303,6 +303,29 @@
             });
             return this;
         },
+        // 添加多个class类型
+        // eg:  'aa bb cc'
+        _addClass: function (classNames) {
+            // 劈成数组
+            var arr = classNames.split(' ');
+            // 去掉空的元素
+            arr = arr.filter(function (item) {
+                if (!(item === ' ')) {
+                    return item;
+                }
+            });
+            // 双重循环
+            this.each(function () {
+                var self = this;
+                // 使用静态方法遍历arr
+                jQuery.each(arr, function (index, val) {
+                    if (!jQuery(self).hasClass(val)) {
+                        self.className += ' ' + val;
+                    }
+                });
+            });
+            return this;
+        },
         removeClass: function (className) {
             /*
             实现思路:
