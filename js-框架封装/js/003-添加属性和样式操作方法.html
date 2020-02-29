@@ -23,20 +23,20 @@
 <script>
     // 添加静态方法
     $.extend({
-        getStyle:function(obj,name){
-            if(div.currentStyle){
+        getStyle: function (obj, name) {
+            if (obj.currentStyle) {
                 // ie浏览器
                 return obj.currentStyle[name];
-            }else{
+            } else {
                 // 火狐 谷歌浏览器
-                return getComputedStyle(obj,null)[name];
+                return getComputedStyle(obj, null)[name];
             }
         },
-        _getStyle:function(obj,name){
-            if(window.getComputedStyle){
+        _getStyle: function (obj, name) {
+            if (window.getComputedStyle) {
                 // ie9 获取  谷歌(因为ie9有该属性)
-                return getComputedStyle(obj,null)[name];
-            }else{
+                return getComputedStyle(obj, null)[name];
+            } else {
                 // ie8(含)以下
                 return obj.currentStyle[name];
             }
