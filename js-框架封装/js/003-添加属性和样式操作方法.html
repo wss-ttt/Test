@@ -281,6 +281,36 @@
                 }
             });
             return flag;
+        },
+        addClass: function (className) {
+            /*
+            实现思路:
+                1.遍历所有元素
+                2.依次判断每一个元素有没有要添加的className
+                3.有则忽略,没有则添加( className += ' ' + className) 
+                4.最后可以针对元素.className.tirm() -> 这一步可有可无
+                5.return this
+            */
+            // 遍历所有的元素
+            this.each(function () {
+                // 注意:jQuery(this)相当于又创建了一个新的实例
+                // 和this是两个不同的对象
+                if (!jQuery(this).hasClass(className)) {
+                    this.className += ' ' + className;
+                }
+            });
+            return this;
+        },
+        removeClass: function (className) {
+            /*
+            实现思路:
+                1.判断有没有参数
+                2.没有参数,遍历所有的元素,设置他们的className为空
+                3.有参数,遍历所有的元素,删除指定的className(元素.className.replace())
+            */
+        },
+        toggleClass: function (className) {
+
         }
     });
 
