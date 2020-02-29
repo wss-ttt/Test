@@ -284,6 +284,9 @@
             });
             return flag;
         },
+        // 只能处理单个className 
+        // eg: 'item' 这个能添加
+        // eg: 'item box'  这个就存在问题了
         addClass: function (className) {
             /*
             实现思路:
