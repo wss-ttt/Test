@@ -413,6 +413,36 @@
                 }
             });
             return this;
+        },
+        // 升级版:
+        // eg: 'aa bb cc'
+        _toggleClass: function (classNames) {
+            /*
+            实现思路:
+                1.先把 classNames劈成数组,然后去掉空元素
+                2.外层遍历所有元素
+                3.内层遍历class
+                4.判断,有则删除,没有则添加
+                5.return this;
+            */
+            var arr = classNames.split(' ');
+            // 去掉空元素
+            arr = arr.filter(function (item) {
+                if (!(item === ' ')) {
+                    return item;
+                }
+            });
+            this.each(function () {
+                var $self = jQuery(this);
+                jQuery.each(arr, function (index, val) {
+                    if ($self.hasClass(val)) {
+                        $self.removeClass(val);
+                    } else {
+                        $self.addClass(val);
+                    }
+                });
+            });
+            return this;
         }
     });
 
