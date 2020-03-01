@@ -25,10 +25,8 @@
             }
             if (target.addEventListener) {
                 target.addEventListener(type, fn);
-            } else if (target.attachEvent) {
-                target.attachEvent('on' + type, fn);
             } else {
-                target['on' + type] = fn;
+                target.attachEvent('on' + type, fn);
             }
         },
         // 解绑事件
@@ -42,10 +40,8 @@
             }
             if (target.removeEventListener) {
                 target.removeEventListener(type, fn);
-            } else if (target.detachEvent) {
-                target.detachEvent('on' + type, fn);
             } else {
-                target['on' + type] = null;
+                target.detachEvent('on' + type, fn);
             }
         }
     });
