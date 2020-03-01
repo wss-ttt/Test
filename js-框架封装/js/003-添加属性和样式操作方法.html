@@ -296,6 +296,12 @@
                 4.最后可以针对元素.className.tirm() -> 这一步可有可无
                 5.return this
             */
+            // 1.先去掉收尾空格
+            className = jQuery.trim(className);
+            // 2.判断是否为空字符串
+            if (className.length === 0) {
+                return this;
+            }
             // 遍历所有的元素
             this.each(function () {
                 // 注意:jQuery(this)相当于又创建了一个新的实例
@@ -310,9 +316,15 @@
         // 添加多个class类型
         // eg:  'aa bb cc'
         _addClass: function (classNames) {
-            // 劈成数组
+            // 1.去掉classNames收尾的空格
+            classNames = jQuery.trim(classNames);
+            // 2.判断是不是空字符串
+            if (classNames.length === 0) {
+                return this;
+            }
+            // 3.劈成数组
             var arr = classNames.split(' ');
-            // 去掉空的元素
+            // 4.去掉空的元素
             arr = arr.filter(function (item) {
                 if (!(item === ' ')) {
                     return item;
@@ -348,6 +360,13 @@
                     this.className = '';
                 });
             } else {
+                // 1.去掉收尾的空格
+                className = jQuery.trim(className);
+                // 2.判断是否为空字符串
+                if (className.length === 0) {
+                    // 如果是空字符 直接返回this 不做任何的处理
+                    return this;
+                }
                 this.each(function () {
                     // 使用空格进行替换掉
                     // eg: this.className = ' aa bb cc b ';
@@ -377,7 +396,15 @@
                     this.className = '';
                 });
             } else {
+                // 1.去掉classNames收尾空格
+                classNames = jQuery.trim(classNames);
+                // 2.如果classNames为空字符串直接返回
+                if (classNames.length === 0) {
+                    return this;
+                }
+                // 3.将classNames劈成数组
                 var arr = classNames.split(' ');
+                // 4.去掉数组中的空元素
                 arr = arr.filter(function (item) {
                     if (!(item === ' ')) {
                         return item;
@@ -404,6 +431,12 @@
                 3.有则删除,没有则添加 
                 4.return this
             */
+            // 1.去掉收尾空格
+            className = jQuery.trim(className);
+            // 2.判断是不是为空字符串
+            if (className.length === 0) {
+                return this;
+            }
             this.each(function () {
                 var $this = jQuery(this);
                 if (jQuery(this).hasClass(className)) {
@@ -426,6 +459,13 @@
                 4.判断,有则删除,没有则添加
                 5.return this;
             */
+            // 1.去掉classNames前后的空格字符串
+            classNames = jQuery.trim(classNames);
+            // 2.判断是不是空字符串
+            if (classNames.length === 0) {
+                return this;
+            }
+            // 3.劈成数组
             var arr = classNames.split(' ');
             // 去掉空元素
             arr = arr.filter(function (item) {
