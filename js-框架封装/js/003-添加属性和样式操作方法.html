@@ -16,7 +16,7 @@
 
 <body>
     <div id="div1" class="a abc aa">001</div>
-    <div id="div2" class="aa bb cc">002</div>
+    <!-- <div id="div2" class="aa bb cc">002</div> -->
     <div id="div3">003</div>
     <input type="text" value="默认值1">
     <input type="text" value="默认值2">
@@ -569,9 +569,11 @@
     // console.log($('div').hasClass('ab'));
     // console.log($('div')._hasClass('ab'));
 
+
     // 测试 addClass
     // console.log($('div').addClass('abc'));
-    // $('div').addClass('');
+    // 测试 传入的参数为空格
+    // $('div').addClass('   ');   
 
     // 测试   添加 多个class类名
     // $('div').addClass('aa dd');  // 存在问题
@@ -579,9 +581,15 @@
     // 测试  _addClass  添加多个class类名
     // $('div')._addClass(' aa dd  abc ');// 可以成功
 
+    // 测试  传入的参数为空格
+    // $('div')._addClass(' ');
+
     // 测试  removeClass
     // $('div').removeClass();
     // $('div').removeClass('aa');
+
+    // 测试  传入的是空格
+    // $('div').removeClass('');
 
     // 测试 删除多个class类名
     // $('div').removeClass('aa cc');  // 存在问题
@@ -591,7 +599,7 @@
 
     // 测试  toggleClass
     // $('div').toggleClass('bb');
-    // $('div').toggleClass('');
+    $('div').toggleClass('');
     // 切换多个class类名的时候,存在问题
     // $('div').toggleClass('aa cc');    // 存在问题   
 
