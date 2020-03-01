@@ -306,6 +306,7 @@
             });
             return this;
         },
+        // 升级版本:
         // 添加多个class类型
         // eg:  'aa bb cc'
         _addClass: function (classNames) {
@@ -530,6 +531,7 @@
 
     // 测试 addClass
     // console.log($('div').addClass('abc'));
+    // $('div').addClass('');
 
     // 测试   添加 多个class类名
     // $('div').addClass('aa dd');  // 存在问题
@@ -544,9 +546,19 @@
     // 测试 删除多个class类名
     // $('div').removeClass('aa cc');  // 存在问题
 
+    // $('div')._removeClass('a aa');  // 可以成功
+
 
     // 测试  toggleClass
     // $('div').toggleClass('bb');
+    // $('div').toggleClass('');
+    // 切换多个class类名的时候,存在问题
+    // $('div').toggleClass('aa cc');    // 存在问题   
+
+    // 切换多个 class类名
+    // $('div')._toggleClass('aa cc');   //  可以成功
+    // $('div')._toggleClass('aa');
+
 </script>
 
 </html>
