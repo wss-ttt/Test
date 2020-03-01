@@ -356,6 +356,45 @@
             }
             return this;
         },
+        // 升级版本:
+        // 可以同时删除多个class类名
+        // eg:  'aa'  可以删除aa
+        // eg:  'aa bb'  也可以同时删除 aa和bb两个class类名
+        _removeClass: function (classNames) {
+            /*
+            实现思路:
+                1.判断有没有参数
+                2.没有参数,遍历所有的元素,设置他们的classNames为空
+                3.有参数,把classNames劈成数组,然后去掉空元素
+                4.外层遍历元素
+                5.内层遍历所有要删除的class类名
+                6.遍历到的每一个元素删除遍历到的class
+                7.return this
+            */
+            if (arguments.length === 0) {
+                this.each(function () {
+                    this.className = '';
+                });
+            } else {
+                var arr = classNames.split(' ');
+                arr = arr.filter(function (item) {
+                    if (!(item === ' ')) {
+                        return item;
+                    }
+                });
+                this.each(function () {
+                    // 保存每一个遍历的元素
+                    var self = this;
+                    var res = '';
+                    jQuery.each(arr, function (index, val) {
+                        res = (' ' + self.className + ' ').replace(' ' + val + ' ', ' ');
+                        // 必须需要重新赋值一次
+                        self.className = res;
+                    });
+                });
+                return this;
+            }
+        },
         toggleClass: function (className) {
             /*
             实现思路:
