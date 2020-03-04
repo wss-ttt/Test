@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+</script>
+<script src="js/lodash.min.js"></script>
+<script>
+    /*     let a = [{ id: 1, name: 'me' }, { id: 1, name: 'you' }, { id: 2, name: 'her' }];
+        let b = _.groupBy(a, 'id'); //就可以实现按id分组了。
+        console.log(b) */
+
+    let arr = [
+        {
+            id: 1,
+            name: '乔峰',
+            score: 88,
+            group: '一组'
+        },
+        {
+            id: 2,
+            name: '小龙女',
+            score: 74,
+            group: '一组'
+        },
+        {
+            id: 3,
+            name: '杨过',
+            score: 35,
+            group: '二组'
+        },
+        {
+            id: 4,
+            name: '张飞',
+            score: 90,
+            group: '三组'
+        },
+        {
+            id: 5,
+            name: '刘备',
+            score: 83,
+            group: '三组'
+        },
+        {
+            id: 6,
+            name: '关羽',
+            score: 45,
+            group: '三组'
+        }
+    ]
+
+    let res = _.groupBy(arr, 'group')
+    // 每个组的最大值和最小值
+    let lst = []
+    for (let [key, value] of Object.entries(res)) {
+        lst[key] = res[key].map(item => {
+            // 只保存成绩
+            return item.score
+        })
+    }
+    console.log(res)
+    console.log(lst)
+    // 最小值和最大值
+    let minMaxs = []
+    for (let [key, value] of Object.entries(lst)) {
+        minMaxs.push({
+            min: Math.min.apply(null, lst[key]),
+            max: Math.max.apply(null, lst[key])
+        })
+    }
+    console.log(minMaxs)
+
+    let minMaxs2 = {}
+    for (let [key, value] of Object.entries(lst)) {
+        minMaxs2[key] = {
+            min: Math.min.apply(null, lst[key]),
+            max: Math.max.apply(null, lst[key])
+        }
+    }
+    console.log(minMaxs2)
+</script>
+
+</html>

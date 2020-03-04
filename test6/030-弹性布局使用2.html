@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 400px;
+            height: 200px;
+            background-color: aquamarine;
+            margin: 100px auto;
+            /* 弹性布局 */
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .container .item1{
+            width: 200px;
+            background-color: green;
+            flex-shrink: 0;  /*不被压缩*/
+        }
+        .container .item2{
+            width: 300px;
+            background-color: blue;
+            flex-shrink: 0; /*不被压缩*/ 
+        }
+        .container .item3{
+            width: 400px;
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+</body>
+
+</html>

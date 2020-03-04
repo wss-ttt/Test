@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+</body>
+<script>
+    let str = '***好****学习***好*';
+    let res = str.replace('*', '嘿');
+    console.log(res);
+    // 全局替换
+    let res2 = str.replace(/\*/g, '嘿');  // \为转义符
+    let res3 = str.replace(/好/g, '嘿');
+    console.log(res2);
+    console.log(res3);
+
+</script>
+<script language="javascript">
+    {
+        let str = "中华人民共和国，中华人民共和国";
+        let value = '人民'
+        let newstr = str.replace(/(人民)/g, "<font color=red>$1</font>");
+        document.write(newstr);
+    }
+    {
+        let str = 'abbccA';
+        let value = 'a';
+        let res = str.replace(new RegExp(value,'gi'),'好');
+        console.log(res);
+    }
+    {
+        let str = "中华人民共和国，中华人民共和国";
+        let value = '人民'
+        // 要替换的内容是用一个变量表示的,该如何写了?
+        // let newstr = str.replace(/value/,'a');  // 这样写肯定是不行的
+        let newstr = str.replace(new RegExp(value,'g'),'a');
+        document.write(newstr);
+    }
+</script>
+
+
+
+</html>

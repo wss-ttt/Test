@@ -1,0 +1,25 @@
+.main {
+  width: 80%;
+  background-color: #1acd7e;
+  margin: 0 auto 10px;
+}
+.main h2 {
+  width: 100%;
+}
+.main .row {
+  border: 1px solid #fff;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 30px;
+    margin-bottom: 24px;
+    border: 1px solid #000;
+  }
+}
+@media (min-width: 992px) {
+  h2 {
+    font-size: 36px;
+    margin-bottom: 24px;
+    border: 1px solid red;
+  }
+}

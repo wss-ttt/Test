@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+			}
+			.btns{
+				position: fixed;
+				right: 0;
+				width: 100px;
+				top:0;
+				height: 100%;
+				background-color: rgba(0,0,0,.5);
+			}
+			.box{
+				width: 600px;
+				height: 200px;
+				background-color: #ccc;
+				margin: 0 auto;
+				transition: all .5s;
+			}
+			.box .item{
+				margin-bottom: 10px;
+				background-color: #1ACD7E;
+				height: calc((100% - 10px*2)/3);
+			}
+			.box .item:last-child{
+				margin-bottom: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+		<div class="btns">
+			<button>400</button>
+			<button>600</button>
+			<button>800</button>
+			<button>1000</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var btns = document.querySelectorAll('button');
+		var box = document.querySelector('.box');
+		for(let i = 0;i < btns.length;i++){
+			// 给每一个按钮添加单击事件
+			btns[i].onclick = function(){
+				var h = this.innerHTML;
+				box.style.height = h + 'px';
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				height: 100%;
+			}
+			
+			.container {
+				height: 100%;
+			}
+			
+			.container .header {
+				height: 50px;
+				background-color: #ccc;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 3;
+			}
+			
+			.container .left {
+				width: 60px;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				padding-top: 50px;
+				background-color: #1ACD7E;
+				z-index: 2;
+				float: lef;
+				transition: all .5s;
+			}
+			
+			.container .main-container {
+				position: relative;
+				margin-left: 60px;
+				padding-top: 50px;
+				transition: all .5s;
+			}
+			
+			.container .main-container .content {
+				height: 1000px;
+				background-color: #00FFFF;
+				padding: 30px;
+			}
+			
+			.container .footer {
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 50px;
+				background-color: #ccc;
+				margin-left: 60px;
+				transition: all .5s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="header">我是放logo的地方
+				<button>展开/折叠</button>
+			</div>
+			<div class="left">菜单</div>
+			<div class="main-container">
+				<div class="content">好好学习 天天向上</div>
+			</div>
+			<div class="footer">我是底部信息</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		// 展开
+		$('button:eq(0)').toggle(function() {
+			$('.left').css({
+				'width': '220px'
+			});
+			$('.main-container').css({
+				'margin-left': '220px'
+			});
+			$('.footer').css({
+				'margin-left': '220px'
+			});
+		}, function() {
+			$('.left').css({
+				'width': '60px'
+			});
+			$('.main-container').css({
+				'margin-left': '60px'
+			});
+			$('.footer').css({
+				'margin-left': '60px'
+			});
+		});
+	</script>
+
+</html>

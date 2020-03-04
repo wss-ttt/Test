@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // buildlogs.centos.org/centos/7/os/x86_64-20140614
+    {
+        let set = new Set();
+        set.add('乔峰');
+        set.add('杨过');
+        set.add('小龙女');
+        set.add('乔峰');  // 值相同了 会自动去重
+        console.log(set);
+    }
+    {
+        // 将Array对象转换成Set对象
+        let arr = ['乔峰', '杨过', '小龙女'];
+        let set = new Set(arr);
+        console.log(set);
+    }
+    {
+        // 将Set对象转换成Array对象
+        let set = new Set();
+        set.add('乔峰');
+        set.add('杨过');
+        set.add('小龙女');
+        let arr = [...set];
+        let arr2 = Array.from(set);
+        console.log(arr);
+        console.log(arr2);
+    }
+    {
+        // 循环遍历
+        let set = new Set();
+        set.add('乔峰');
+        set.add('杨过');
+        set.add('小龙女');
+        // 第一种循环方法
+        for (let item of set) {
+            console.log(item);
+        }
+        // 第二种循环方法
+        set.forEach(item => {
+            console.log(item);
+        })
+    }
+    {
+        // 获取Set中某一个元素的值
+        let set = new Set();
+        set.add('乔峰');
+        set.add('杨过');
+        set.add('小龙女');
+        console.log('获取第二个元素的值');
+        console.log([...set][1]);
+    }
+    {
+        // 判断是否有某个元素
+        let set = new Set();
+        set.add('乔峰');
+        set.add('杨过');
+        set.add('小龙女');
+        let res = set.has('乔峰');
+        console.log(res);   // true
+    }
+    {
+        // 将字符串转换成Set对象
+        let set = new Set('hello');
+        console.log(set);  // 元素有: h e l o  (会自动去重)
+    }
+</script>
+
+</html>

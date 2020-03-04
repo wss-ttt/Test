@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,
+			html {
+				height: 100%;
+				background-color: aqua;
+			}
+			
+			.box {
+				height: 60px;
+				width: 150px;
+				margin: 100px auto;
+				border: 10px solid rebeccapurple;
+				position: relative;
+				background-repeat: no-repeat;
+				background-image: linear-gradient(to right, #000 15%, #fff 15%);
+				background-size: 50px 60px;
+				background-repeat: repeat-x; 
+				/*background-position: top 2px left 3px;*/
+				/*background-size: 15% 100%;*/
+				/*animation: change 3s steps(8) infinite;*/
+				/* animation: charge 5s steps(8) infinite; */
+			}
+			
+			.box::after {
+				content: '';
+				height: 20px;
+				width: 1px;
+				background-color: rebeccapurple;
+				border: 5px solid rebeccapurple;
+				position: absolute;
+				top: 15px;
+				right: -20px;
+				border-radius: 0 2px 2px 0;
+			}
+			
+			@keyframes change {
+				0% {
+					background-size: 10% 90%;
+				}
+				100% {
+					background-size: 95% 90%;
+				}
+			}
+		</style>
+		<div class="box"></div>
+		</body>
+
+</html>

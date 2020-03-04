@@ -1,0 +1,509 @@
+@charset "utf-8";
+/**
+ *@author:Bruce
+ *@update:2018.08.13
+**/
+/*-----默认样式------*/
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  display: inline-block;
+  min-width: 1200px;
+  width: 100%;
+  background-color: #f6f6f6;
+}
+body {
+  font: 14px "Microsoft Yahei", Arial, sans-self;
+  color: #333;
+}
+ul,
+ol {
+  list-style-type: none;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+th,
+td {
+  word-wrap: break-word;
+}
+b {
+  font-weight: normal;
+}
+i,
+em,
+address {
+  font-style: normal;
+}
+img {
+  border: none;
+  vertical-align: top;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  color: #333;
+}
+a:hover,
+a:active,
+a:focus {
+  outline: none;
+  color: #333;
+}
+/**表单**/
+label {
+  vertical-align: middle;
+}
+input,
+textarea,
+select,
+button {
+  color: #666;
+  outline: none;
+  vertical-align: middle;
+}
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
+}
+input,
+textarea,
+keygen,
+select,
+button {
+  font-family: "微软雅黑";
+  font-size: 14px;
+}
+textarea {
+  resize: none;
+}
+input::-ms-input-placeholder {
+  color: rgba(51, 51, 51, 0.45);
+}
+input:-ms-input-placeholder {
+  color: rgba(51, 51, 51, 0.45);
+}
+input::-moz-placeholder {
+  color: rgba(51, 51, 51, 0.45);
+}
+input:-moz-placeholder {
+  color: rgba(51, 51, 51, 0.45);
+}
+input::-webkit-input-placeholder {
+  color: rgba(51, 51, 51, 0.45);
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.hide {
+  display: none;
+}
+.clearfix:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+.public-width {
+  width: 1190px;
+  margin: 0 auto;
+}
+/*-----头尾公共样式------*/
+.blockchain-header {
+  float: left;
+  width: 100%;
+  height: 66px;
+  background: #fff;
+}
+.blockchain-header .blockchain-logo {
+  float: left;
+  height: 66px;
+  line-height: 66px;
+}
+.blockchain-header .blockchain-logo img {
+  margin-top: 9px;
+}
+.blockchain-header .blockchain-header-list {
+  float: left;
+}
+.blockchain-header .blockchain-header-list li {
+  position: relative;
+  float: left;
+  line-height: 66px;
+  margin-right: 60px;
+  color: #222328;
+}
+.blockchain-header .blockchain-header-list li i {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 24px;
+  height: 3px;
+  margin-left: -12px;
+  background: #284BFC;
+  display: none;
+}
+.blockchain-header .blockchain-header-list li:hover a,
+.blockchain-header .blockchain-header-list li.cur a {
+  color: #284BFC;
+}
+.blockchain-header .blockchain-header-list li:hover i,
+.blockchain-header .blockchain-header-list li.cur i {
+  display: block;
+}
+.blockchain-header .blockchain-header-icon {
+  position: relative;
+  float: left;
+  width: 59px;
+  height: 66px;
+  border-left: #F1F2F7 1px solid;
+  border-right: #F1F2F7 1px solid;
+}
+.blockchain-header .blockchain-header-icon .b-h-i-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  margin-left: -16px;
+  border-radius: 50%;
+}
+.blockchain-header .blockchain-header-icon .b-h-i-horn {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  z-index: 9;
+}
+.blockchain-header .blockchain-header-icon ul {
+  position: absolute;
+  top: 66px;
+  left: -82px;
+  border: 1px solid #E4E7F0;
+  background: #fff;
+  padding: 8px 0;
+  display: none;
+  z-index: 999;
+}
+.blockchain-header .blockchain-header-icon ul li {
+  float: left;
+  width: 138px;
+  height: 36px;
+  line-height: 36px;
+}
+.blockchain-header .blockchain-header-icon ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: #222328;
+}
+.blockchain-header .blockchain-header-icon ul li a em {
+  padding-left: 35px;
+}
+.blockchain-header .blockchain-header-icon ul li a em.account {
+  background: url(../image/icon/top-account.png) no-repeat 14px;
+  background-size: 10px 12px;
+}
+.blockchain-header .blockchain-header-icon ul li a em.sign {
+  background: url(../image/icon/sign.png) no-repeat 14px;
+  background-size: 11px 11px;
+}
+.blockchain-header .blockchain-header-icon ul li a:hover {
+  background: #F1F2F7;
+}
+.blockchain-header .blockchain-header-icon:hover ul {
+  display: block;
+}
+.blockchain-footer {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #E8E8E8;
+  text-align: center;
+  font-size: 12px;
+  color: #B9BED3;
+}
+.blockchain-footer.blockchainFooter {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+.fb {
+  font-weight: bold;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.popup-public {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+}
+.pagination_div {
+  height: 24px;
+  line-height: 24px;
+}
+.pagination_div .pagination_set {
+  float: left;
+}
+.pagination_div .pagination_set .pag_tit {
+  float: left;
+  margin-right: 6px;
+  font-size: 12px;
+  color: #6A6B70;
+}
+.pagination_div .pagination_set .selec_page {
+  position: relative;
+  float: left;
+  outline: none;
+}
+.pagination_div .pagination_set .selec_page .select-content {
+  float: left;
+  width: 50px;
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid #E6E7E8;
+  border-radius: 2px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+.pagination_div .pagination_set .selec_page .select-content i {
+  float: left;
+  width: 70%;
+  font-size: 14px;
+  color: #686A6C;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.pagination_div .pagination_set .selec_page .select-content img {
+  float: right;
+  margin-right: 15px;
+  margin-top: 15px;
+  -o-transition: .2s all;
+  -moz-transition: .2s all;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+}
+.pagination_div .pagination_set .selec_page ul {
+  position: absolute;
+  left: 0;
+  top: 24px;
+  width: 50px;
+  max-height: 180px;
+  padding: 5px 0;
+  background: #FFF;
+  box-shadow: 0 2px 20px 0 rgba(119, 142, 161, 0.2);
+  border-radius: 1px;
+  z-index: 999;
+  display: none;
+  overflow-y: auto;
+}
+.pagination_div .pagination_set .selec_page ul li {
+  float: left;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 5%;
+  cursor: pointer;
+  -o-transition: .2s all;
+  -moz-transition: .2s all;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.pagination_div .pagination_set .selec_page ul li:hover {
+  padding-left: 8%;
+  background: #F1F2F7;
+}
+.pagination_div .pagination_set .selec_page.show ul {
+  display: block;
+}
+.pagination_div .pagination_set .selec_page.show .select-content img {
+  -o-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.pagination_div .pagination_set .selec_page .data_val {
+  display: none;
+}
+.pagination_div .pagination_set .selec_page .select-content {
+  background: #fff;
+  padding-left: 8px;
+}
+.pagination_div .pagination_set .selec_page .select-content i {
+  width: 25px;
+  font-size: 12px;
+}
+.pagination_div .pagination_set .selec_page .select-content img {
+  width: 9px;
+  height: 5px;
+  margin-right: 5px;
+  margin-top: 9px;
+}
+.pagination_div .pagination_set .selec_page ul {
+  font-size: 12px;
+}
+.pagination_div .pagination_set .selec_page ul li {
+  padding-left: 8px;
+}
+.pagination_div .pagination {
+  float: right;
+}
+.pagination_div .pagination li {
+  float: left;
+  font-size: 12px;
+  padding: 0 5px;
+}
+.pagination_div .pagination li.active {
+  color: #284BFC;
+}
+.pagination_div .pagination .pag_jup {
+  font-size: 12px;
+}
+.pagination_div .pagination .pag_jup span {
+  float: left;
+  margin-right: 6px;
+}
+.pagination_div .pagination .pag_jup input {
+  float: left;
+  padding-left: 5px;
+  width: 46px;
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid #E4E7F0;
+  border-radius: 2px;
+  border-right: none;
+}
+.pagination_div .pagination .pag_jup a {
+  float: left;
+  width: 24px;
+  height: 24px;
+  background: url(../image/icon/pag_to.png) center no-repeat;
+  background-size: contain;
+}
+.dialog-tips {
+  background: rgba(0, 0, 0, 0.5);
+}
+.dialog-tips .dialog-tips-content {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 260px;
+  margin-left: -200px;
+  margin-top: -130px;
+  z-index: 999;
+  background: #fff;
+  border-radius: 4px;
+  text-align: center;
+}
+.dialog-tips .dialog-tips-content .dialog-tips-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  -o-transition: .2s all;
+  -moz-transition: .2s all;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+  cursor: pointer;
+}
+.dialog-tips .dialog-tips-content .dialog-tips-close:hover {
+  -o-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.dialog-tips .dialog-tips-content .dialog-tips-icon {
+  margin-top: 50px;
+  margin-bottom: 24px;
+}
+.dialog-tips .dialog-tips-content p {
+  width: 90%;
+  font-size: 16px;
+  color: #222328;
+  font-weight: bold;
+  margin: 0 auto;
+}
+.pop_confirm .pop_del {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  background: url(../image/icon/del.png) no-repeat center;
+  background-size: cover;
+  -o-transition: .2s all;
+  -moz-transition: .2s all;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+}
+.pop_confirm .pop_del:hover {
+  -o-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.pop_confirm .pop_confirm_con {
+  position: relative;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 200px;
+  margin-left: -200px;
+  margin-top: -100px;
+  z-index: 999;
+  background: #fff;
+  border-radius: 4px;
+}
+.pop_confirm .pop_confirm_con .pop_title {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.pop_confirm .pop_confirm_con .pop_btn a {
+  display: inline-block;
+  width: 100px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  border-radius: 2px;
+}
+.pop_confirm .pop_confirm_con .pop_btn .pop_sure {
+  background: #284BFC;
+}
+.pop_confirm .pop_confirm_con .pop_btn .pop_sure:hover {
+  background: #2446D8;
+}
+.pop_confirm .pop_confirm_con .pop_btn .pop_cancel {
+  margin-left: 5px;
+  background: #B9BED3;
+}

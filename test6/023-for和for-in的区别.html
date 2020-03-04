@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = ['乔峰','杨过','小龙女']
+    
+    for(let i = 0;i<arr.length;i++){
+        console.log(arr[i])
+    }
+    for(let i in arr){
+        console.log(arr[i])
+    }
+
+    for(let i=0;i<arr.length;i++){
+        console.log(i)  // 0 1 2
+        console.log(typeof i) // number
+        if(!i){
+            console.log(arr[i])  // 乔峰
+        }
+    }
+
+    for(let i in arr){
+        console.log(i) // '0' '1' '2'
+        console.log(typeof i) // string
+        if(!i){
+            console.log(arr[i])// 这个没有任何的输出
+        }
+    }
+</script>
+</html>
