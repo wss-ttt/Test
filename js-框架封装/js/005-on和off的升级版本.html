@@ -160,6 +160,10 @@
                         for (var key in this.$_event_cache) {
                             this.$_event_cache[key] = []; // 清空
                         }
+                        // notice:
+                        // 如果直接将整个对象置为空对象,也是能清空的,但是再重新绑定事件的时候,就会
+                        // 出现问题,会绑定两次
+                        // this.$_event_cache = {};
                     } else if (argLen === 1) {
                         this.$_event_cache[type] = [];  // 清空
                     } else {
