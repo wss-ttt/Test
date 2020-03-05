@@ -126,8 +126,8 @@
                     jQuery.addEvent(self, type, function (e) {
                         // 5-4.步骤
                         // 使用静态的each方法
-                        jQuery.each(self.$_event_cache[type],function(){
-                            this.call(self,e);
+                        jQuery.each(self.$_event_cache[type], function () {
+                            this.call(self, e);
                         });
                     })
                 } else {
