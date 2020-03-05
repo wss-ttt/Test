@@ -200,9 +200,8 @@
     $('button')._on('mouseout', fn3);
     $('button')._on('mouseout', fn3);  // 添加一个相同的事件回调函数
     // $('button').off();
-    $('button').off('click');
-    // 按道理是,fn3回调函数都会剔除掉,但实际上不是  所以这是一个bug
-    $('button').off('mouseout', fn3); 
+    // $('button').off('click');
+    $('button').off('mouseout', fn3);  // 此时就不会有问题了
 
 </script>
 
