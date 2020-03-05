@@ -70,7 +70,7 @@
                 var self = this; // 保存每一个元素
                 // 2.3步骤
                 this.$_event_cache = this.$_event_cache || {};
-                // 4.步骤
+                // 4.步骤  如果没有说明是第一次绑定
                 if (!this.$_event_cache[type]) {
                     // 5-1.步骤
                     this.$_event_cache[type] = [];
@@ -106,7 +106,7 @@
                     5-2.然后把传入的回到函数fn,push进去
                     5-3.最后还得绑定对应的事件(调用静态的addEvaent方法)
                     5-4.这个事件回调里面去遍历事件类型数组,并依次执行
-                    5-5.执行时,需要改变内部的this,还需要把事件对象传递出去
+                    5-5.执行时,需要改变内部的this(需要执行dom元素),还需要把事件对象传递出去
                 6.如果有,直接把传入的回调函数push到对应事件的数组里面去就可以了
                 7.return this
             */
@@ -154,7 +154,7 @@
             this.each(function () {
                 if (!this.$_event_cache) {
                     // 直接跳出循环,进入下一次循环
-                    return;   // 不能return false
+                    return;   // 不能return false,因为使用return false就直接跳出循环了
                 } else {
                     if (argLen === 0) {
                         for (var key in this.$_event_cache) {
