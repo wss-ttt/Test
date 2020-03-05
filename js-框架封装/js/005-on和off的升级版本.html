@@ -139,6 +139,41 @@
             return this;
         },
         off: function (type, fn) {
+            /*
+            实现思路:
+                1.遍历所有的元素
+                2.判断每个元素有没有$_event_cache这个对象
+                3.如果没有$_event_cache这个属性,说明之前是没有绑定任何的事件,不用做任何的处理;
+                    如果有这个属性,继续判断
+                4.先判断有没有参数,如果没有传参,遍历$_event_cache中存储的数组,并分别清空
+                5.如果传了1个参数,指定事件类型的数组清空
+                6.如果传了2个参数,删除指定事件类型的指定回调函数
+
+            */
+            var argLen = arguments.length;
+            this.each(function () {
+                if (!this.$_event_cache) {
+                    // 直接跳出循环,进入下一次循环
+                    return;   // 不能return false
+                } else {
+                    if (argLen === 0) {
+                        for (var key in this.$_event_cache) {
+                            this.$_event_cache[key] = []; // 清空
+                        }
+                    } else if (argLen === 1) {
+                        this.$_event_cache[type] = [];  // 清空
+                    } else {
+                        var arr = this.$_event_cache[type];
+                        jQuery.each(arr, function (i, val) {
+                            if (this === fn) {
+                                arr.splice(i, 1);  // 删除
+                                return false;
+                            }
+                        })
+                    }
+                }
+            })
+            return this;
         }
     });
     function fn1(e) {
