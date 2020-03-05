@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var o = {
+        yAxis: [
+            {
+                name: '数学'
+            }
+        ],
+        series: [
+            {
+                name: '张三',
+                data: [10, 20, 30],
+                type: 'line'
+            }
+        ]
+    }
+    var o2 = {
+        name: '乔峰',
+        info: {
+            tel: '110',
+            address: '武汉'
+        }
+    };
+
+    /* var res = { ...o, ...o2 };
+    o.yAxis.name = '语文';
+    o2.name = '杨过';
+    o2.info.tel = '114';
+    console.log(res); */
+
+    // 通过Object.assign来合并对象
+    var res = Object.assign({}, o, o2);
+    o.yAxis.name = '语文';
+    o2.name = '杨过';
+    o2.info.tel = '114';
+    console.log(res);
+</script>
+
+</html>
