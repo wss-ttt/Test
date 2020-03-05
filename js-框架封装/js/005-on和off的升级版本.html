@@ -164,12 +164,21 @@
                         this.$_event_cache[type] = [];  // 清空
                     } else {
                         var arr = this.$_event_cache[type];
-                        jQuery.each(arr, function (i, val) {
+                        // 此处就不能使用下面这种方式进行遍历了
+                        /* jQuery.each(arr, function (i, val) {
                             if (this === fn) {
                                 arr.splice(i, 1);  // 删除
                                 return false;
                             }
-                        })
+                        }) */
+                        // 如果存在同名的回调函数,删除的时候就会有遗留
+                        // 此时就需要倒着遍历进行删除,那么这个时候就不能使用each方法了
+                        for (var i = arr.length - 1; i >= 0; i--) {
+                            if (arr[i] === fn) {
+                                arr.splice(i, 1);  // 删除 
+                                // 此处不需要中断
+                            }
+                        }
                     }
                 }
             })
