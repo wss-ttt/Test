@@ -12,8 +12,9 @@
 </body>
 <script>
     var btn1 = document.getElementById('btn1');
-
     btn1.onclick = function (e) {
+        // 因为在ie8(含)以下 e是undefined
+        // 所以就获取window.event这个值
         var e = e || window.event;
         console.log(e)
     }
