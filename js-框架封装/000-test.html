@@ -22,74 +22,13 @@
 </body>
 <!-- <script src="jquery-2.2.0.js"></script> -->
 <!-- <script src="jquery-1.8.3.js"></script> -->
-<!-- <script src="js/core.js"></script> -->
-<!-- <script src="js/event.js"></script> -->
+<script src="js/core.js"></script>
+<script src="js/event.js"></script>
 <script>
-    /* function fn() {
-        console.log(this);
-    }
-    fn();
-    fn.call(1);
-    fn.call('aaa'); */
-
-    /* test();
-    function test() {
-        var arr = [1, 2, 3, 4, 5];
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i] === 3) {
-                return true;
-            }
-            console.log(arr[i]);
-        }
-    } */
-
-    /* var arr = [1, 2, 3, 4, 5];
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] === 3) {
-            return true;
-        }
-        console.log(arr[i]);
-    } */
-
-
-    /* var o = {};
-    var selector = document.querySelectorAll('li');
-    // 1.经过这一步处理之后 ,是什么情况
-    var res = [].slice.apply(selector);
-
-    console.log('selector',selector); // 伪数组
-    console.log('res',res);  // 数组
-    
-    // 2.经过这一步处理之后 ,又是什么情况
-    [].push.apply(o, res);
-    console.log('o',o);    // 伪数组
-    console.log(selector === res);  // false
-    console.log(o === res);  // false
-    console.log(selector === o); // false
-
-    console.log(o[0] === selector[0]);// true
-    console.log(o[0] === res[0]);  // true
-    console.log(res[0] === selector[0]);// true */
-
-
-    /* var $div = $('div');
-    var $div2 = $($div);
-    console.log($div[0] === $div2[0]); */
-
-
-    // var btn1 = document.getElementById('btn1');
-    /* $.addEvent(btn1, 'click', function () {
-        console.log('aa');
-    }); */
-
-    /* $(btn1).on('click',function(){
-        console.log('aa');
-    }); */
-    /* $('button').on('click',function(){
+    $('button').on('click',function(){
         console.log(11);
-    }) */
+    })
 
-    console.log(document.addEventListener);
 </script>
 
 </html>
