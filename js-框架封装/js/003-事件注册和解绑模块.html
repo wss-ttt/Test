@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+    <button type="button" id="btn1">确定</button>
 </body>
 <script src="core.js"></script>
 <script>
@@ -26,7 +26,11 @@
             if (target.addEventListener) {
                 target.addEventListener(type, fn);
             } else {
-                target.attachEvent('on' + type, fn);
+                // target.attachEvent('on' + type, fn);
+                // 统一this的指向(ie8(含)以下版本)
+                target.attachEvent('on' + type, function(){
+                    fn.call(target);
+                });
             }
         },
         // 解绑事件
@@ -47,5 +51,10 @@
     });
 
 </script>
-
+<script>
+    var btn1 = document.getElementById('btn1');
+    $.addEvent(btn1,'click',function(){
+        console.log(this);
+    })
+</script>
 </html>
