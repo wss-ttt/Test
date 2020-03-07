@@ -27,7 +27,11 @@
             if (target.addEventListener) {
                 target.addEventListener(type, fn);
             } else {
-                target.attachEvent('on' + type, fn);
+                // target.attachEvent('on' + type, fn);
+                // 统一this的指向(ie8(含)以下版本)
+                target.attachEvent('on' + type,function(){
+                    fn.call(target);
+                });
             }
         },
         // 解绑事件
@@ -79,6 +83,7 @@
                     // 5-3.步骤 
                     // 要明白:事件回调函数执行的时机是在事件被触发的时候才会执行
                     jQuery.addEvent(self, type, function (e) {
+                        console.log('内部:',this);
                         // 5-4.步骤
                         for (var i = 0, len = self.$_event_cache[type].length; i < len; i++) {
                             // 5-5.步骤  ->1.需要改变this的指向,2.传递事件对象
@@ -187,7 +192,7 @@
                 }
             })
             return this;
-        },
+        }
         /* // 单独添加单击事件
         click:function(fn){
             return this.on('click',fn);
@@ -218,7 +223,8 @@
     })
     // 测试代码
     function fn1(e) {
-        console.log('1', this, e);
+        console.log('外部:',this);
+        // console.log('1', this, e);
     }
     function fn2(e) {
         console.log('2', this, e);
@@ -226,6 +232,9 @@
     function fn3(e) {
         console.log('mouseout', this, e);
     }
+    // 测试 on
+    $('button').on('click',fn1);
+
     // $('button')._on('click', fn1);
     // $('button')._on('click', fn2);
     // 
@@ -251,11 +260,11 @@
     }) */
 
     // 测试 hover
-    $('button').hover(function(){
+    /* $('button').hover(function(){
         console.log('移入');
     },function(){
         console.log('移出');
-    })
+    }) */
 </script>
 
 </html>
