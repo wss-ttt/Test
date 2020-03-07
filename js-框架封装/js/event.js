@@ -12,7 +12,11 @@ $.extend({
         if (target.addEventListener) {
             target.addEventListener(type, fn);
         } else {
-            target.attachEvent('on' + type, fn);
+            // target.attachEvent('on' + type, fn);
+            // 统一this的指向(ie8(含)以下版本)
+            target.attachEvent('on' + type,function(){
+                fn.call(target);
+            });
         }
     },
     // 解绑事件
