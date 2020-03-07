@@ -300,6 +300,7 @@
                 // notice:可以使用数组的push方法来添加,同时使用apply方法简化遍历过程
                 // 捕捉异常
                 try {
+                    // 注意 ie567 不支持querySelectorAll这个方法
                     var nodes = document.querySelectorAll(selector);
                     [].push.apply(this, nodes);
                 } catch (e) {
