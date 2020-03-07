@@ -188,15 +188,28 @@
             })
             return this;
         },
-        // 单独添加单击事件
+        /* // 单独添加单击事件
         click:function(fn){
             return this.on('click',fn);
         },
         // 单独添加鼠标移出事件
         mouseout:function(fn){
             return this.on('mouseout',fn);
-        }
+        } */
     });
+
+    // 单独一个一个的添加 太麻烦了
+    /* $.fn.click = function(fn){
+        return this.on('click',fn);
+    } */
+    // 批量添加绑定事件的方法
+    var events = 'click mouseout mousedown blur change'.split(' ');
+    // 通过遍历变量添加绑定事件的方法
+    jQuery.each(events,function(index,val){
+        jQuery.fn[val] = function(fn){
+            return this.on(val,fn);
+        }
+    })
     function fn1(e) {
         console.log('1', this, e);
     }
