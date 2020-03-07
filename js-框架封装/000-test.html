@@ -18,8 +18,11 @@
         </ul>
         <div id="div1">div1</div>
     </div>
+    <button type="button" id="btn1">确定</button>
 </body>
 <!-- <script src="jquery-2.2.0.js"></script> -->
+<script src="js/core.js"></script>
+<script src="js/event.js"></script>
 <script>
     /* function fn() {
         console.log(this);
@@ -72,8 +75,11 @@
     var $div2 = $($div);
     console.log($div[0] === $div2[0]); */
 
-    
 
+    var btn1 = document.getElementById('btn1');
+    $.addEvent(btn1, 'click', function () {
+        console.log('aa');
+    });
 </script>
 
 </html>
