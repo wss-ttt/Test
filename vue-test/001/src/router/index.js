@@ -27,6 +27,11 @@ export default new Router({
       path:'/index2',
       name:'index2',
       component:resolve=>require(['@/views/index2.vue'],resolve),
+    },
+    {
+      path:'/index3',
+      name:'index3',
+      component:resolve=>require(['@/views/index3.vue'],resolve),
     }
   ]
 })
