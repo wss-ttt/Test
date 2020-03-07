@@ -203,13 +203,20 @@
         return this.on('click',fn);
     } */
     // 批量添加绑定事件的方法
-    var events = 'click mouseout mousedown blur change'.split(' ');
+    var events = 'click mouseout mousedown blur change mouseenter mouseleave'.split(' ');
     // 通过遍历变量添加绑定事件的方法
     jQuery.each(events,function(index,val){
         jQuery.fn[val] = function(fn){
             return this.on(val,fn);
         }
     })
+    // 在原型上添加hover方法
+    jQuery.fn.extend({
+        hover:function(fnOver,fnOut){
+            return this.on('mouseenter',fnOver).on('mouseleave',fnOut);
+        }
+    })
+    // 测试代码
     function fn1(e) {
         console.log('1', this, e);
     }
@@ -229,18 +236,25 @@
     // $('button').off('mouseout', fn3);  // 此时就不会有问题了
 
     // 测试 click
-    $('button').click(function(){
+    /* $('button').click(function(){
         console.log('aaa')
-    })
+    }) */
     // 测试给同一事件绑定不同的回调
-    $('button').click(function(){
+    /* $('button').click(function(){
         console.log('bbb')
-    })
-    $('button').mouseout(function(){
+    }) */
+    /* $('button').mouseout(function(){
         console.log('鼠标移出1')
-    })
-    $('button').mouseout(function(){
+    }) */
+    /* $('button').mouseout(function(){
         console.log('鼠标移出2')
+    }) */
+
+    // 测试 hover
+    $('button').hover(function(){
+        console.log('移入');
+    },function(){
+        console.log('移出');
     })
 </script>
 
