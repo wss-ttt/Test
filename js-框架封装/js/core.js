@@ -299,8 +299,12 @@
                 // 2.然后遍历获取到的所有元素分别添加到this身上去,记住添加lengths属性
                 // notice:可以使用数组的push方法来添加,同时使用apply方法简化遍历过程
                 // 捕捉异常
+                // 为什么这里要捕捉异常了?
+                // 原因:1.如果传递不是符合选择器的格式 eg: ##eis+dfa,这样就会报错
                 try {
                     // 注意 ie567 不支持querySelectorAll这个方法
+                    // 所以最终就导致我们这个core.js文件不支持ie7(含)以下版本了,只支持
+                    // ie8(含)以上版本了
                     var nodes = document.querySelectorAll(selector);
                     [].push.apply(this, nodes);
                 } catch (e) {
