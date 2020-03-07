@@ -176,7 +176,7 @@ $.fn.extend({
             }
         })
         return this;
-    },
+    }
     /* // 单独添加单击事件
     click:function(fn){
         return this.on('click',fn);
