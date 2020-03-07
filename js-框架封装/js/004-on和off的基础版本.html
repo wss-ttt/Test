@@ -27,7 +27,11 @@
             if (target.addEventListener) {
                 target.addEventListener(type, fn);
             } else {
-                target.attachEvent('on' + type, fn);
+                // target.attachEvent('on' + type, fn);
+                // 统一this的指向(ie8(含)以下版本)
+                target.attachEvent('on' + type,function(){
+                    fn.call(target);
+                })
             }
         },
         // 解绑事件
@@ -75,6 +79,7 @@
         },
     });
     function fn1() {
+        console.log(this);
         console.log(1);
     }
     function fn2() {
@@ -86,9 +91,9 @@
     // 可以绑定多个事件类型
     $('button').on('click', fn1);
     $('button').on('click', fn2);
-    $('button').on('mouseover', fn3);
+    // $('button').on('mouseover', fn3);
     // 解绑事件
-    $('button').off('click', fn2).off('click', fn1);
+    // $('button').off('click', fn2).off('click', fn1);
 </script>
 
 </html>
