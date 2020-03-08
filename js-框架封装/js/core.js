@@ -97,16 +97,51 @@
         splice: [].splice
     };
     // 给jQuery和原型对象分别添加extend方法
-    jQuery.extend = jQuery.fn.extend = function (obj) {
-        /*
-            注意: 
-                1.当调用 jQuery.extend()方法的时候,方法里的this === jQuery
-                2.当调用的是jQuery.fn.extend()方法的时候,方法里的this === jQuery.prototype
-        */
+    /* jQuery.extend = jQuery.fn.extend = function (obj) {
+
+        // 注意: 
+        //     1.当调用 jQuery.extend()方法的时候,方法里的this === jQuery
+        //     2.当调用的是jQuery.fn.extend()方法的时候,方法里的this === jQuery.prototype
+
         for (var key in obj) {
             // 注意这个this的指向是谁!!!看上面的解释
             this[key] = obj[key]
         }
+    } */
+
+    // 对extedn方法进行升级
+    /*
+    需求:
+        1.传入一个参数,谁调用给谁混入内容
+        2.传入多个参数,把后面对象的内容混入到第一个对象中去 
+    */
+    jQuery.extend = jQuery.fn.extend = function () {
+        // 被混入的目标
+        var target = null;
+
+        // 当传入一个参数
+        if (arguments.length === 1) {
+            // 此时被混入的目标为this
+            target = this;
+            for (var key in arguments[0]) {
+                target[key] = arguments[0][key];
+            }
+        }
+        // 传入多个参数,把后面对象的内容混入到第一个对象中去 
+        else if (arguments.length >= 2) {
+            // 此时被 混入的目标是 arguments[0]
+            target = arguments[0];
+            // 遍历参数中(除了第一个参数)后面所有的对象
+            // 所以我们的循环从1开始遍历
+            for (var i = 1, len = arguments.length; i < len; i++) {
+                // 遍历每个对象的所有属性
+                for (var key in arguments[i]) {
+                    target[key] = arguments[i][key];
+                }
+            }
+        }
+        // 给谁混入就返回谁
+        return target;
     }
     jQuery.extend({
         each: function (obj, fn) {
