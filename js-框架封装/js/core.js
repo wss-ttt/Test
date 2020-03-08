@@ -98,7 +98,13 @@
     };
     // 给jQuery和原型对象分别添加extend方法
     jQuery.extend = jQuery.fn.extend = function (obj) {
+        /*
+            注意: 
+                1.当调用 jQuery.extend()方法的时候,方法里的this === jQuery
+                2.当调用的是jQuery.fn.extend()方法的时候,方法里的this === jQuery.prototype
+        */
         for (var key in obj) {
+            // 注意这个this的指向是谁!!!看上面的解释
             this[key] = obj[key]
         }
     }
