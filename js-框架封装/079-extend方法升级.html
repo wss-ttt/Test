@@ -98,6 +98,26 @@
     });
     console.log(obj);
     console.log(res); */
+
+
+    // 测试属性值也是一个对象
+    var obj = {
+        name:'乔峰'
+    };
+    var obj2 = {
+        age:18,
+        info:{
+            tel:'110',
+            address:'武汉'
+        }
+    };
+    jQuery.extend(obj,obj2);
+    console.log(obj === obj2); // false 
+    obj2.age = 28;
+    obj2.info.tel = '119';
+    console.log(obj);
+    console.log(obj2);
+    console.log(obj.info === obj2.info); // true
 </script>
 
 </html>
