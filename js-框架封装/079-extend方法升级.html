@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    function jQuery() {
+
+    }
+    jQuery.fn = jQuery.prototype = function () { };
+    // 添加extend方法
+
+    /*
+    需求:
+        1.传入一个参数,谁调用给谁混入内容
+        2.传入多个参数,把后面对象的内容混入到第一个对象中去 
+    */
+    jQuery.extend = jQuery.fn.extend = function () {
+        // 传入一个参数,把这个参数的内容混入this中去(也就是实例对象)
+        if (arguments.length === 1) {
+            for (var key in arguments[0]) {
+                this[key] = arguments[0][key];
+            }
+        }
+        // 传入多个参数,把后面对象的内容混入到第一个对象中去 
+        else if (arguments.length >= 2) {
+            // 遍历参数中(除了第一个参数)后面所有的对象
+            // 所以我们的循环从1开始遍历
+            for (var i = 1, len = arguments.length; i < len; i++) {
+                // 遍历每个对象的所有属性
+                for (var key in arguments[i]) {
+                    arguments[0][key] = arguments[i][key];
+                }
+            }
+        }
+    }
+</script>
+<script>
+    // 测试 一个参数
+    /* jQuery.extend({
+        age: 18,
+        msg: '好好学习'
+    });
+    jQuery.fn.extend({
+        age: 18,
+        msg: '好好学习'
+    });
+    console.log(jQuery.fn); */
+
+    // 测试 多个参数的
+    var obj = {
+        val1:'好好'
+    };
+    jQuery.extend(obj,{
+        val1:'111',  // 存在相同的属性,覆盖前面的属性值
+    },{
+        val2:'222',
+    },{
+        val3:'333',
+    });
+    console.log(obj);
+
+</script>
+
+</html>
