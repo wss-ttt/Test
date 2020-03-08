@@ -8,27 +8,31 @@
 </head>
 
 <body>
-
+    <button type="button" id="btn1">确定</button>
 </body>
 <script>
-    var xhr = new XMLHttpRequest();
-    // xhr.open('get', './data/person.json');
-    xhr.open('get', './data/test.js');
-    xhr.onreadystatechange = function () {
-        // 表示请求完成
-        if (xhr.readyState === 4) {
-            // status是200-299之间都算成功
-            // 304走缓存也算成功
-            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
-                // 注意:返回来的数据都是字符串
-                console.log(xhr.responseText);
-                console.log(typeof xhr.responseText);
-            } else {
-                console.log('请求失败');
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', './data/person.json?name=乔峰&age=18');
+        // xhr.open('get', './data/test.js');
+        xhr.onreadystatechange = function () {
+            // 表示请求完成
+            if (xhr.readyState === 4) {
+                // status是200-299之间都算成功
+                // 304走缓存也算成功
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                    // 注意:返回来的数据都是字符串
+                    console.log(xhr.responseText);
+                    console.log(typeof xhr.responseText);
+                } else {
+                    console.log('请求失败');
+                }
             }
         }
+        xhr.send();
     }
-    xhr.send();
+
 </script>
 
 </html>
