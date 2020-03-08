@@ -18,6 +18,7 @@
             url: location.href,    // 默认的url为本地地址
             type: 'get',           // 默认的请求方式为get
             async: true,           // 默认为异步请求
+            // post请求 需要设置请求头
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8',// post请求时设置
             timeout: null,
             success: function () { },
@@ -59,6 +60,10 @@
             // 创建xhr对象
             var xhr = new XMLHttpRequest();
             xhr.open(newOptions.type, newOptions.url, newOptions.async);
+            // 如果是post请求 需要设置请求头
+            if (newOptions.type === 'POST') {
+                xhr.setRequestHeader('Content-type', newOptions.contentType);
+            }
             xhr.onreadystatechange = function () {
                 // 表示请求完成
                 if (xhr.readyState === 4) {
@@ -82,6 +87,7 @@
 
     $.ajax({
         url: '../data/person.json',
+        type: 'post',
         data: {
             name: '乔峰',
             age: 18
