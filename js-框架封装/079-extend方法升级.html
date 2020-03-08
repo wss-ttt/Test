@@ -15,7 +15,8 @@
     function jQuery() {
 
     }
-    jQuery.fn = jQuery.prototype = function () { };
+    // 替换原型对象
+    jQuery.fn = jQuery.prototype = {};
     // 添加extend方法
 
     /*
