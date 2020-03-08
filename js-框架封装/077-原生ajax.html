@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var xhr = new XMLHttpRequest();
+    // xhr.open('get', './data/person.json');
+    xhr.open('get', './data/test.js');
+    xhr.onreadystatechange = function () {
+        // 表示请求完成
+        if (xhr.readyState === 4) {
+            // status是200-299之间都算成功
+            // 304走缓存也算成功
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                // 注意:返回来的数据都是字符串
+                console.log(xhr.responseText);
+                console.log(typeof xhr.responseText);
+            } else {
+                console.log('请求失败');
+            }
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
