@@ -113,16 +113,40 @@
         post:function(url,data,fn){
            // 如果没有传入fn,那么data参数就是回调函数,
             // 如果连data参数都没传入,手动给fn赋值一个函数
+            fn = fn || data || function(){}
             jQuery.ajax({
                 type:'POST',
                 url:url,
                 data:data,
                 success:fn
             }) 
-        }
+        },
+        // 加载JSON数据
+        getJSON:function(url,data,fn){
+            // 如果没有传入fn,那么data参数就是回调函数,
+            // 如果连data参数都没传入,手动给fn赋值一个函数
+            fn = fn || data || function(){}
+            jQuery.ajax({
+                dataType:'JSON',
+                url:url,
+                data:data,
+                success:fn
+            }) 
+        },
+        // 加载js脚本
+        getScript:function(url,data,fn){
+            // 如果没有传入fn,那么data参数就是回调函数,
+            // 如果连data参数都没传入,手动给fn赋值一个函数
+            jQuery.ajax({
+                dataType:'script',
+                url:url,
+                data:data,
+                success:fn
+            }) 
+        },
     });
 
-</script>
+</script>}
 <script>
 
     // 测试 ajax
