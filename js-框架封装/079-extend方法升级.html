@@ -78,7 +78,7 @@
     console.log(obj === res);  // true */
 
     // jQuery.fn.extend方法的测试
-    
+
     // 传入一个参数
     /* var res = jQuery.fn.extend({
         val1:'111',
@@ -86,7 +86,7 @@
     console.log(res);  // 查看返回 其实就是原型对象
     console.log(res === jQuery.fn); // true
     console.log(res === jQuery.prototype);  // true */
-    
+
     // 传入多个参数
     /* var obj = {};
     var res = jQuery.fn.extend(obj, {
@@ -102,16 +102,16 @@
 
     // 测试属性值也是一个对象
     var obj = {
-        name:'乔峰'
+        name: '乔峰'
     };
     var obj2 = {
-        age:18,
-        info:{
-            tel:'110',
-            address:'武汉'
+        age: 18,
+        info: {
+            tel: '110',
+            address: '武汉'
         }
     };
-    jQuery.extend(obj,obj2);
+    jQuery.extend(obj, obj2);
     console.log(obj === obj2); // false 
     obj2.age = 28;
     obj2.info.tel = '119';
