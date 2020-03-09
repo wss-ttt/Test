@@ -99,13 +99,25 @@
             };
             // 发送请求
             xhr.send(newOptions.data);
-        }
+        },
+        get:function(url,data,fn){
+            // 如果没有传入fn,那么data参数就是回调函数,
+            // 如果连data参数都没传入,手动给fn赋值一个函数
+            fn = fn || data || function(){}
+            jQuery.ajax({
+                url:url,
+                data:data,
+                success:fn
+            });
+        },
+        post:function(){}
     });
 
 </script>
 <script>
 
-    $.ajax({
+    // 测试 ajax
+    /* $.ajax({
         url: '../data/style.css',
         type: 'get',
         dataType:'style',
@@ -123,7 +135,13 @@
         error: function (error) {
             console.log('请求失败');
         }
-    });
+    }); */
+
+    // 测试 get
+    $.get('../data/person.json',function(res){
+        console.log(res);
+        console.log(typeof res);
+    })
 
 </script>
 
