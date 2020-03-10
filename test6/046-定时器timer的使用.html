@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h1">0</h1>
+    <button id="btn1" type="button">开始</button>
+</body>
+<script>
+    var h1 = document.getElementById('h1');
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function () {
+        test();
+    }
+    // 这个要放在全局上 如果不放在全局上
+    // 如果是不停的点击按钮 就会创造多个定时器
+    var timer = null;   
+    function test() {
+        var speed = 0;
+        clearInterval(timer);
+        console.log(h1.innerHTML);
+        h1.innerHTML = h1.innerHTML || speed
+        timer = setInterval(function () {
+            speed++;
+            h1.innerHTML = speed;
+            if (speed == 80) {
+                h1.innerHTML = ~~speed;
+                clearInterval(timer);
+            }
+        }, 80)
+    }
+</script>
+
+</html>
