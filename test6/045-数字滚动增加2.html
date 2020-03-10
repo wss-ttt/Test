@@ -13,6 +13,8 @@
 </body>
 <script>
     numRunFun(0, 1000);
+    // num : 起始位置
+    // maxNum: 结束位置
     function numRunFun(num, maxNum) {
         var numBox = document.getElementById("numBox");
         var num = num;
@@ -25,11 +27,12 @@
             } else {
                 numBox.innerHTML = ~~(num);
             }
-        }, 10); // 也可以调节速度
+        }, 100); // 也可以调节速度
     }
 
     var span = document.getElementById('num2');
     numScroll(span,1000);
+    // 该方法 传递的是元素
     function numScroll(ele, endNum) {
         var startNum = + ele.innerHTML;
         var num = startNum;
@@ -42,7 +45,7 @@
             } else {
                 ele.innerHTML = ~~(num);
             }
-        }, 10); // 也可以调节速度
+        }, 100); // 也可以调节速度
 
     }
 </script>

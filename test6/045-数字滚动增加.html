@@ -11,12 +11,12 @@
     <h1 id="numBox"></h1>
 </body>
 <script>
-    numRunFun(0, 1000);
+    numRunFun(0, 500);
     function numRunFun(num, maxNum) {
         var numBox = document.getElementById("numBox");
-        var num = num;
-        var maxNum = maxNum;
-        var timer = setInterval(function () {
+        var tiemr = null;
+        var time = 100;
+        timer = setInterval(function () {
             num++; // 调节速度
             if (num >= maxNum) {
                 numBox.innerHTML = maxNum;
@@ -24,7 +24,7 @@
             } else {
                 numBox.innerHTML = ~~(num);
             }
-        }, 10); // 也可以调节速度
+        }, time); // 也可以调节速
     }
 
 </script>
