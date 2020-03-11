@@ -8,16 +8,30 @@
 </head>
 
 <body>
+    <button type="button" id="btn1">确定</button>
+    <button type="button" id="btn2">改变数字大小</button>
     <div id="jjlin"></div>
 </body>
 <script src="047-数字滚动插件.js"></script>
 <script>
-    //调用
-    var test = new NumberScroll({
-        ele: "#jjlin",
-        speed: 300,  // 值越大越慢
-        count: -50
-    });
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var test;
+    btn1.onclick = function () {
+        //调用
+        test = new NumberScroll({
+            ele: "#jjlin",
+            speed: 50,  // 值越大越慢
+            count: 50
+        });
+    }
+    btn2.onclick = function(){
+        test = new NumberScroll({
+            ele: "#jjlin",
+            speed: 50,  // 值越大越慢
+            count: 100
+        });
+    }
     console.log(document.querySelector)
 </script>
 
