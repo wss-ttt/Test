@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: steelblue;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        var step = 0;
+        var timer = null;
+        timer = setInterval(function () {
+            step += 5;
+            div.style.left = step + 'px';
+            div.style.top = step + 'px';
+            if(div.offsetLeft > 300){
+                clearInterval(timer);
+            }
+        }, 30);
+
+    </script>
+</body>
+
+</html>
