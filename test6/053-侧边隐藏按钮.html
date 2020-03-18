@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .card {
+            /* padding: 16px 32px 16px 64px; */
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            box-shadow: 8px 0 8px -8px rgba(0, 0, 0, .5);
+            background: #edd6b4;
+            position: absolute;
+            top: 50%;
+            /* left:100%;
+             */
+            transform: translate(-100%,-50%);
+            transition: all .3s ease-in-out .1s;
+            cursor: pointer;
+        }
+
+        .card span {
+            color: #fff;
+            font-family: droid sans, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .card:hover {
+            transform: translate(-32px,-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card"><span>电气回路全部查询</span></div>
+</body>
+
+</html>
