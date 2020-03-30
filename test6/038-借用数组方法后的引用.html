@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* var o = {
+        0: {
+            name: '乔峰',
+            age: 18,
+        },
+        1: {
+            name: '杨过',
+            age: 19
+        },
+        2: {
+            name: '小龙女',
+            age: 20
+        },
+        length: 3
+    }
+    var arr = [];
+    [].push.apply(arr, o);
+    console.log(arr);
+    console.log(o[0] === arr[0]) // true */
+
+
+    /* var arr = [
+        {
+            name:'乔峰',
+            age:18
+        },
+        {
+            name:'杨过',
+            age:19
+        }
+    ]
+    var res = arr.slice() // 其实就相当月 res = arr
+    console.log(res === arr);
+    console.log(res[0] === arr[0]) // true
+    console.log(res[1] === arr[1]) // true */
+
+
+    /* var arr = [
+        {
+            name: '乔峰',
+            age: 18
+        },
+        {
+            name: '杨过',
+            age: 19
+        }
+    ]
+    var res = [];
+    [].push.apply(res,arr);
+    console.log(res)
+    console.log(res === arr) // false
+    console.log(res[0] === arr[0]) //true */
+
+
+    var arr1 = [
+        {
+            name: '乔峰',
+            age: 18
+        },
+        {
+            name: '杨过',
+            age: 19
+        }
+    ]
+
+    var arr2 = [
+        {
+            name: '张三',
+            age: 18
+        },
+        {
+            name: '李四',
+            age: 19
+        }
+    ]
+    var res = arr1.concat(arr2);
+    console.log(res);
+
+    console.log(res[0] === arr1[0]) // true
+    console.log(res[1] === arr1[1])  // true
+
+    console.log(res[2] === arr2[0]) // true
+    console.log(res[3] === arr2[1])  // true
+</script>
+
+</html>

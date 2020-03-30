@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body{
+				
+			}
+			body.show-menu .sidebar{
+				right: 0;
+			}
+			.sidebar{
+				width: 300px;
+				background-color: #000000;
+				position: fixed;
+				right: -300px;
+				top:0;
+				height: 100%;
+				transition: all .5s;
+				transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+			}
+		</style>
+	</head>
+	<body>
+		<button>显示/隐藏</button>
+		<div class="sidebar"></div>
+	</body>
+	<script src="js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		$('button').toggle(function(){
+			$('body').addClass('show-menu');
+		},function(){
+			$('body').removeClass('show-menu');
+		});
+	</script>
+</html>

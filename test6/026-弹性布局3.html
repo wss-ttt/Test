@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul,li{
+            list-style-type: none;
+        }
+        .search-box{
+            display: flex;
+            height: 40px;
+            background-color: chartreuse;
+            min-width: 400px;
+        }
+        .search-box li{
+            display: flex;
+            align-items: center;
+        }
+        .search-box li:nth-child(1){
+            /* flex:1; */
+            width:20%;
+        }
+        .search-box li:nth-child(2){
+            /* flex:2; */
+            width: 25%;
+        }
+        .search-box li:nth-child(3){
+            /* flex:3; */
+            width:35%;
+        }
+        .search-box li input{
+            height: 40px;
+            width: 100%;
+            /* flex:1; */
+            width:100%;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="search-box">
+        <li>
+            <span>站点:</span>
+            <input type="text" placeholder="站点">
+        </li>
+        <li>
+            <span>时间:</span>
+            <input type="text" placeholder="时间">
+        </li>
+        <li>
+            <span>互感器:</span>
+            <input type="text" placeholder="互感器">
+        </li>
+        <li>
+            <button>确定</button>
+        </li>
+    </ul>
+
+</body>
+<script>
+
+</script>
+
+</html>

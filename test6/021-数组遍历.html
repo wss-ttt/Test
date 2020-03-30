@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+</script>
+<script src="js/lodash.min.js"></script>
+<script>
+    // 1 对数组的遍历
+    let arr = ['乔峰', '杨过', '小龙女']
+    for (let [key, value] of arr.entries()) {
+        console.log(key, value)
+    }
+
+    for (let [key, value] of Object.entries(arr)) {
+        console.log(key, value)
+    }
+
+    // 2 对对象属性的遍历
+    let person = {
+        id:1,
+        name:'张三',
+        age:18
+    }
+    for(let [key,value] of Object.entries(person)){
+        console.log(key,value)
+    }
+
+    /* let arr2 = [
+        '乔峰':[20,34],
+        '小龙女':[43,56],
+        '杨过':[89,90]
+    ] */
+
+    let arr2 = []
+    arr2['乔峰'] = [20,34]
+    arr2['小龙女'] = [43,56]
+    arr2['杨过'] = [89,90]
+    console.log(arr2)
+    // 遍历
+    // 下面的代码不会执行
+    for(let [key,value] of arr2.entries()){
+        console.log(key,value)
+    }
+
+    for(let [key,value] of Object.entries(arr2)){
+        console.log(key,value)
+    }
+</script>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="loginBtn">登录</button>
+</body>
+<script>
+    {
+        var instance = null
+        var getInstance = function (arg) {
+            if (!instance) {
+                instance = arg
+            }
+            return instance
+        }
+
+        var a = getInstance('a');
+        var b = getInstance('b');
+        console.log(a);   // a
+        console.log(b);   // a
+        console.log(a === b);    // true
+    }
+
+    {
+        var Singleton = function (name) {
+            this.name = name;
+        };
+
+        Singleton.getInstance = (function () {
+            var instance = null;
+            return function (name) {
+                if (!instance) {
+                    instance = new Singleton(name);
+                }
+                return instance;
+            }
+        })();
+        var a = Singleton.getInstance('a')
+        var b = Singleton.getInstance('b')
+        console.log(a === b);   // true
+    }
+
+    {
+        class People {
+            constructor(name) {
+                if (typeof People.instance === 'object') {
+                    return People.instance;
+                }
+                People.instance = this;
+                this.name = name
+                return this;
+            }
+        }
+        var a = new People('a')
+        var b = new People('b')
+        console.log(a === b);   // true
+    }
+
+    {
+        // 1  点击创建登录框
+        // var loginLayer = (function () {
+        //     var div = document.createElement('div');
+        //     div.innerHTML = '我是登录浮窗';
+        //     div.style.display = 'none';
+        //     document.body.appendChild(div);
+        //     return div;
+        // })();
+        // document.getElementById('loginBtn').onclick = function () {
+
+        //     loginLayer.style.display = 'block';
+        // };
+    }
+    {
+        // 2 点击创建登录框
+        // 缺点: 每次点击都会创建一个登录框
+        /* var createLoginLayer = function () {
+            var div = document.createElement('div');
+            div.innerHTML = '我是登录浮窗';
+            div.style.display = 'none';
+            document.body.appendChild(div);
+            return div;
+        };
+        document.getElementById('loginBtn').onclick = function () {
+            var loginLayer = createLoginLayer();
+            loginLayer.style.display = 'block';
+        }; */
+    }
+    {
+        // 3 点击创建登录框
+        // 自执行函数  闭包
+        // 缺点:不够通用
+        /* var createLoginLayer = (function () {
+            var div;
+            return function () {
+                if (!div) {
+                    div = document.createElement('div');
+                    div.innerHTML = '我是登录浮窗';
+                    div.style.display = 'none';
+                    document.body.appendChild(div);
+                }
+                return div;
+            }
+        })();
+
+        document.getElementById('loginBtn').onclick = function () {
+            var loginLayer = createLoginLayer();
+            loginLayer.style.display = 'block';
+        }; */
+    }
+    {
+        var getSingle = function (fn) {
+            var result;
+            return function () {
+                return result || (result = fn.apply(this, arguments));
+            }
+        };
+
+        var createLoginLayer = function () {
+            var div = document.createElement('div');
+            div.innerHTML = '我是登录浮窗';
+            div.style.display = 'none';
+            document.body.appendChild(div);
+            return div;
+        };
+        var createSingleLoginLayer = getSingle(createLoginLayer);
+        document.getElementById('loginBtn').onclick = function () {
+            var loginLayer = createSingleLoginLayer();
+            loginLayer.style.display = 'block';
+        };
+
+        //下面我们再试试创建唯一的iframe 用于动态加载第三方页面：
+        /* var createSingleIframe = getSingle(function () {
+            var iframe = document.createElement('iframe');
+            document.body.appendChild(iframe);
+            return iframe;
+        });
+        document.getElementById('loginBtn').onclick = function () {
+            var loginLayer = createSingleIframe();
+            loginLayer.src = 'http://baidu.com';
+
+        }; */
+    }
+</script>
+
+</html>

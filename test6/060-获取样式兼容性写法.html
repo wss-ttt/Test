@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div{
+            width: 100px;
+            height: 100px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div style="width:100px;height:100px;"></div>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        console.log(getStyle(div,'width'));
+        console.log(typeof getStyle(div,'width'));
+        // 获取样式方法封装
+        function getStyle(obj, attr) {
+            if (window.getComputedStyle) {
+                // ie9 获取  谷歌(因为ie9有该属性)
+                return getComputedStyle(obj, null)[attr];
+            } else {
+                // ie8(含)以下
+                return obj.currentStyle[attr];
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="numBox"></h1>
+</body>
+<script>
+    numRunFun(0, 500);
+    function numRunFun(num, maxNum) {
+        var numBox = document.getElementById("numBox");
+        var tiemr = null;
+        var time = 100;
+        timer = setInterval(function () {
+            num++; // 调节速度
+            if (num >= maxNum) {
+                numBox.innerHTML = maxNum;
+                clearInterval(timer);
+            } else {
+                numBox.innerHTML = ~~(num);
+            }
+        }, time); // 也可以调节速
+    }
+
+</script>
+
+</html>

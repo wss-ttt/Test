@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bb{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" onclick="test(this)">确定</button>
+    <div id="div1">aaaa</div>
+    <button type="button" id="btn">添加class</button>
+    <script>
+        var btn = document.getElementById('btn');
+        var div1 = document.getElementById('div1');
+        btn.onclick = function(){
+            div1.className += ' bb';
+        }
+        function test(a){
+            console.log(a);
+        }
+    </script>
+</body>
+</html>

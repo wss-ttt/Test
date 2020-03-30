@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="numBox"></h1>
+    <span id="num2">100</span>
+</body>
+<script>
+    numRunFun(0, 1000);
+    // num : 起始位置
+    // maxNum: 结束位置
+    function numRunFun(num, maxNum) {
+        var numBox = document.getElementById("numBox");
+        var num = num;
+        var maxNum = maxNum;
+        var timer = setInterval(function () {
+            num++; // 调节速度
+            if (num >= maxNum) {
+                numBox.innerHTML = maxNum;
+                clearInterval(timer);
+            } else {
+                numBox.innerHTML = ~~(num);
+            }
+        }, 100); // 也可以调节速度
+    }
+
+    var span = document.getElementById('num2');
+    numScroll(span,1000);
+    // 该方法 传递的是元素
+    function numScroll(ele, endNum) {
+        var startNum = + ele.innerHTML;
+        var num = startNum;
+        var maxNum = endNum;
+        var timer = setInterval(function () {
+            num++; // 调节速度
+            if (num >= maxNum) {
+                ele.innerHTML = maxNum;
+                clearInterval(timer);
+            } else {
+                ele.innerHTML = ~~(num);
+            }
+        }, 100); // 也可以调节速度
+
+    }
+</script>
+
+</html>

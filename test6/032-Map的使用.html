@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+</body>
+<script>
+    // buildlogs.centos.org/centos/7/os/x86_64-20140614
+
+    {
+        // Map对象的基本使用
+        // 注意key是可以任意类型的值
+        let map1 = new Map();
+        map1.set('乔峰', 100);
+        console.log(map1.get('乔峰'));
+        let map2 = new Map();
+        let key = {};
+        map2.set(key, '好好学习');
+        console.log(map2.get(key));  // 好好学习
+    }
+    {
+        // 获取键值对的个数 size属性
+        let map1 = new Map();
+        map1.set('乔峰', 80);
+        map1.set('小龙女', 70);
+        map1.set('杨过', 60);
+        let size = map1.size;
+        console.log(size);   // 3 输出键值对的个数
+    }
+    {
+        // Map对象的遍历
+        let map1 = new Map();
+        map1.set('乔峰', 80);
+        map1.set('小龙女', 70);
+        map1.set('杨过', 60);
+        for (let [key, value] of map1) {
+            console.log('key', key);
+            console.log('value', value);
+        }
+        // 遍历key
+        for (let key of map1.keys()) {
+            console.log(key);  // 乔峰 小龙女 杨过
+        }
+        // 遍历value
+        for (let value of map1.values()) {
+            console.log(value); // 80 70 60
+        }
+    }
+    {
+
+        let map1 = new Map();
+        map1.set('乔峰', 80);
+        map1.set('小龙女', 70);
+        map1.set('杨过', 60);
+        // 通过forEach进行循环遍历
+        map1.forEach((value, key) => {
+            console.log(key + '--' + value);
+        });
+    }
+    {
+        // Map对象和Array对象的相互转换
+        // 将Array = > Map
+        let arr = [
+            ['乔峰',80],
+            ['小龙女',70],
+            ['杨过',60]
+        ];
+        let map = new Map(arr);
+        console.log(map);
+    }
+    {
+        // Map => Array
+        let map = new Map();
+        map.set('乔峰', 80);
+        map.set('小龙女', 70);
+        map.set('杨过', 60);
+        let arr = Array.from(map);
+        console.log(arr);
+    }
+    {
+        // 多个Map对象合并成一个Map对象
+        let map1 = new Map();
+        map1.set('乔峰',100);
+        let map2 = new Map();
+        map2.set('杨过',50);
+        let res = new Map([...map1,...map2]);
+        console.log(res);
+    }
+    {
+        // 合并时,如果有重复的键,后面的值会覆盖前年的值
+        let map1 = new Map();
+        map1.set('乔峰',100);
+        let map2 = new Map();
+        map2.set('杨过',50);
+        let map3 = new Map();
+        map3.set('乔峰',60);
+        let res = new Map([...map1,...map2,...map3]);
+        console.log(res);
+
+    }
+</script>
+
+</html>

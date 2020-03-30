@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        let o = {
+            name: '杨过',
+            age: 18,
+            getName() {
+                console.log('我的姓名是:', this.name)
+            },
+            getAge: function () {
+                console.log('我的年龄是:', this.age)
+            }
+        }
+        o.getName()
+        o.getAge()
+    </script>
+</body>
+
+</html>

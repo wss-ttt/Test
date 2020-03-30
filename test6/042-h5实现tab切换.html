@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            background-color: #1acd7e;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" class="active">春季</button>
+    <button type="button">夏季</button>
+    <button type="button">秋季</button>
+    <button type="button">冬季</button>
+</body>
+<script>
+    var btns = document.getElementsByTagName('button');
+    var len = btns.length;
+
+    // 1.给每一个按钮注册单击事件
+    for (var i = 0; i < len; i++) {
+        btns[i].onclick = function () {
+            change(this);
+        }
+    }
+
+    // 2.tab切换功能实现
+    function change(item) {
+        for (var j = 0; j < len; j++) {
+            btns[j].classList.remove('active');  // 移出所有按钮的active
+        }
+        item.classList.add('active');
+    }
+</script>
+
+</html>

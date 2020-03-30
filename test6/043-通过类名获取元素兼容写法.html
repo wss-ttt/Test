@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</body>
+<script>
+    var divs = getElesByClassNames('item','div');
+    console.log(divs);
+
+    function getElesByClassNames(classStr, tagName) {
+        if (document.getElementsByClassName) {
+            console.log('ie9+ chrome ff');
+            return document.getElementsByClassName(classStr)  // 这里是一个伪数组
+        } else {
+            console.log('i8(含)以下');
+            var nodes = document.getElementsByTagName(tagName), ret = [];
+            var obj = {};
+            for (i = 0; i < nodes.length; i++) {
+                if (hasClass(nodes[i], classStr)) {
+                    ret.push(nodes[i])
+                }
+            }
+            return ret;   // 这里返回的是一个数组
+        }
+    }
+    // 判断元素是否有某个class类名
+    // eg 'abc abcd'
+    function hasClass(ele, classStr) {
+        // \s 匹配度是一个空白字符
+        // \s+  匹配的是多个空白字符
+        // str.split(/\s+/) 也就是通过一个空白字符或多个空白字符阿来进行分割字符串的
+        // 这样分割下来的数据不会有空元素
+        var arr = ele.className.split(/\s+/); //这个正则表达式是因为class可以有多个,判断是否包含
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == classStr) {
+                return true;
+            }
+        }
+        return false;
+    }
+</script>
+
+</html>
