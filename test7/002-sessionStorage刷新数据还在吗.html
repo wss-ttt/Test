@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<span id="info"></span>
+<button type="button">设置值</button>
+
+<body>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        btns[0].onclick = function () {
+            sessionStorage.setItem('name', 'wss');
+            localStorage.setItem('age', '18');
+        }
+
+    </script>
+</body>
+
+</html>
