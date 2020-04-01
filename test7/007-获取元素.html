@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button">获取</button>
+    <div id="container">
+        <div></div>
+        <div></div>
+    </div>
+    <script>
+        var btns = document.getElementsByTagName('button');
+
+        btns[0].onclick = function(){
+            var container = document.getElementById('container');
+            var divs = container.getElementsByTagName('div');
+            console.log(divs);
+        }
+    </script>
+</body>
+</html>
