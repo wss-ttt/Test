@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button type="button">播放</button>
+<button type="button">暂停</button>
+
+<body>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        var audioList = ['mp3/positionList-001.mp3','mp3/positionListRisk-002.mp3']
+        // var audio = new Audio();
+        // audio.src = 'mp3/positionList-001.mp3';
+        // 播放
+        btns[0].onclick = function () {
+            // audio.play()
+            playMusic(audioList);
+        }
+        // 暂停
+        btns[1].onclick = function () {
+            myAudio.pause();
+        }
+
+        // console.log(audio.play() instanceof Promise); // true
+
+        var myAudio;
+        function playMusic(audioList) {
+            myAudio = new Audio();
+            //是否进行预加载
+            myAudio.preload = false;
+            //是否显示隐藏按钮
+            // myAudio.controls = true;
+            // myAudio.hidden = true;
+            //从音乐列表中，获取最后一个音乐（并删除）
+            // var src = audioList.pop();   // pop 删除数组中的最后一个元素
+            var src = audioList.shift();   // shift 删除数组中打的第一个元素
+            myAudio.src = src;
+            //将最后一个音乐添加到数组的开头，这样实现循环
+            // audioList.unshift(src);  // 向数组的头部添加一个元素
+            audioList.push(src); //  向数组打最后添加元素
+            //绑定音乐结束事件，当音乐播放完成后，将会触发playEndedHandler方法
+            myAudio.addEventListener("ended", playEndedHandler, false);
+            //播放当前音乐
+            myAudio.play();
+            // 1.先清空
+            // document.getElementById("music").innerHTML = '';
+            // 2.开始追加
+            // document.getElementById("music").appendChild(myAudio);
+            // 将循环播放关闭，如果开启，将不能触发playEndedHandler方法，只能进行单曲循环
+            myAudio.loop = false;
+
+            function playEndedHandler() {
+                src = audioList.shift();
+                myAudio.src = src;
+                audioList.push(src);
+                myAudio.play();
+            }
+        }
+    </script>
+</body>
+
+</html>
