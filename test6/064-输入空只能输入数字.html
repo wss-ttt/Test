@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1" onkeyup="value=value.replace(/[^\d\.]/g,'')">
+    <br>
+    <input type="text" id="input2">
+    <br>
+    <script>
+        var inputs = document.getElementsByTagName('input'); 
+        inputs[1].onblur = function(){
+            /* var reg = /^\d+\.?\d*$/;
+            console.log(reg.test(this.value)); */
+            // 判断只能输入数字(包括小数)
+            if(isNaN(this.value)){
+                alert('只能输入数字');
+            }
+        }
+    </script>
+</body>
+</html>

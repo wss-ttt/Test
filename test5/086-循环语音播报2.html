@@ -20,7 +20,7 @@
     let data = [1, 8517];
     let btns = document.getElementsByTagName('button');
     let musicList = ['audio/positionList-001.mp3', 'audio/positionListRisk-002.mp3','audio/loopWaning-003.mp3'];
-    var myAudio = new Audio();
+    var myAudio;
     window.onload = function(){
         // playMusic(musicList);
     }
@@ -33,29 +33,34 @@
         myAudio.pause();
     }
     function playMusic(musicList) {
-        
+        myAudio = new Audio();
         //是否进行预加载
         myAudio.preload = false;
         //是否显示隐藏按钮
         // myAudio.controls = true;
         // myAudio.hidden = true;
         //从音乐列表中，获取最后一个音乐（并删除）
-        var src = musicList.pop();   // pop 删除数组中的最后一个元素
+        // var src = musicList.pop();   // pop 删除数组中的最后一个元素
+        var src = musicList.shift();   // shift 删除数组中打的第一个元素
         myAudio.src = src;
         //将最后一个音乐添加到数组的开头，这样实现循环
-        musicList.unshift(src);  // 向数组的头部添加一个元素
+        // musicList.unshift(src);  // 向数组的头部添加一个元素
+        musicList.push(src); //  向数组打最后添加元素
         //绑定音乐结束事件，当音乐播放完成后，将会触发playEndedHandler方法
         myAudio.addEventListener("ended", playEndedHandler, false);
         //播放当前音乐
         myAudio.play();
+        // 1.先清空
+        document.getElementById("music").innerHTML='';
+        // 2.开始追加
         document.getElementById("music").appendChild(myAudio);
         // 将循环播放关闭，如果开启，将不能触发playEndedHandler方法，只能进行单曲循环
         myAudio.loop = false;
 
         function playEndedHandler() {
-            src = musicList.pop();
+            src = musicList.shift();
             myAudio.src = src;
-            musicList.unshift(src);
+            musicList.push(src);
             myAudio.play();
         }
     }

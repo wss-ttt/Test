@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button">播放</button>
+    <button type="button">暂停</button>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        var audio = new Audio();
+        btns[0].onclick = function () {
+            // audio.src = 'mp3/electLoop-005.mp3';
+            // audio.play();
+            playAudioMusic(['mp3/positionList-001.mp3','mp3/positionListRisk-002.mp3','mp3/loopWaning-003.mp3']);
+
+        }
+        btns[1].onclick = function(){
+            audio.pause();
+        }
+        var repeat = 0;
+        function playAudioMusic(arr){
+            if(arr.length == 0){return true;}
+            // var audio = audio = document.getElementById("audioPlay");
+            // var audio = new Audio();
+            audio.preload = false;
+            audio.controls = true;
+            audio.hidden = true;
+            var src = arr[repeat];
+            audio.src = src;
+            audio.addEventListener("ended",playEndedHandler,false);
+            audio.play();
+            audio.loop = false;
+            function playEndedHandler(){
+                // debugger;
+                var count = repeat ;
+                count ++ ;
+                if(count >= arr.length){
+                    count = 0;
+                }
+                src = arr[count];
+                audio.src = src;
+                // arr.unshift(src);
+                audio.addEventListener("ended",playEndedHandler,false);
+                audio.play();
+                repeat++;
+                if(repeat >= arr.length){
+                    repeat = 0;
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>

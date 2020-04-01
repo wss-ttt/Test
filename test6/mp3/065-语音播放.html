@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <audio src="loopWaning-003.mp3"></audio>
+    <button type="button">播放</button>
+    <button type="button">暂停</button>
+</body>
+<script>
+    var audio = document.getElementsByTagName('audio')[0];
+    var btns = document.getElementsByTagName('button'); 
+    btns[0].onclick = function(){
+        audio.play();
+    }
+
+    btns[1].onclick = function(){
+        audio.pause();  // 暂停
+    }
+</script>
+</html>
