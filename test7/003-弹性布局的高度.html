@@ -23,14 +23,22 @@
     </style>
 </head>
 <body>
-    <button>获取父窗口的元素</button>
+    <button type="button">获取当前的iframe</button>
+    <button type="button">获取父窗口的元素</button>
     <div class="container">
         <div class="item"></div>
     </div>
     <script>
         var btns = document.getElementsByTagName('button');
         btns[0].onclick = function(){
-            console.log(window.parent.document);
+            console.log(window.frameElement.nodeName);
+            console.log(window.frameElement.nodeType);
+        }
+        btns[1].onclick = function(){
+            console.log(window.parent);
+
+            // 如果想获取父页面的某一个元素
+            console.log(window.parent.document.getElementsByTagName('button'));
         }
     </script>
 </body>

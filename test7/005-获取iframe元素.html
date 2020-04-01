@@ -7,17 +7,22 @@
     <title>Document</title>
 </head>
 <body>
+    <button type="button">获取当前的iframe</button>
     <button type="button">获取</button>
     <hr>
     <iframe id="iframe1" src="003-弹性布局的高度.html" frameborder="0"></iframe>
     <script>
         var btns = document.getElementsByTagName('button');
         btns[0].onclick = function(){
+            // console.log(window.frameElement);
+            console.log(window.parent);
+        }
+        btns[1].onclick = function(){
             var iframe1 = document.getElementById('iframe1');
             console.log(iframe1);
             console.log(iframe1.src);
             // 替换src 试试 
-            iframe1.src = '004-音量跳动.html';
+            // iframe1.src = '004-音量跳动.html';
         }
     </script>
 </body>
