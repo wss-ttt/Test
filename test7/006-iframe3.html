@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>iframe3</h1>
+    <button type="button">确定</button>
+    <button type="button">确定2</button>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        btns[0].onclick = function () {
+            console.log(window.parent.document);
+            console.log(window.parent.parent.document);
+        }
+        btns[1].onclick = function () {
+            console.log(window.frameElement);
+            console.log(window.frameElement.contentWindow);
+            // 这样就可以获取到iframe中的页面啦 
+            console.log(window.frameElement.contentWindow.document);
+            console.log(window.frameElement.contentWindow.document.getElementsByTagName('button')[1]);
+        }
+    </script>
+</body>
+
+</html>
