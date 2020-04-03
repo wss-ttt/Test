@@ -12,8 +12,9 @@
             height: 100px;
             background-color: #ccc;
             position: fixed;
-            top:0;
+            top: 50%;
             left: 100%;
+            transform: translate(0, -50%);
             transition: all .5s ease;
         }
 
@@ -22,8 +23,9 @@
             height: 100px;
             background-color: #ccc;
             position: fixed;
-            top: 0;
-            right:100%;
+            top: 50%;
+            right: 100%;
+            transform: translate(0, -50%);
             transition: all .5s ease;
         }
 
@@ -32,17 +34,20 @@
             height: 100px;
             background-color: #ccc;
             position: fixed;
-            bottom:100%;
-            left: 0;
+            bottom: 100%;
+            left: 50%;
+            transform: translate(-50%, 0);
             transition: all .5s ease;
         }
-        .down{
+
+        .down {
             width: 100px;
             height: 100px;
             background-color: #ccc;
             position: fixed;
-            left: 0;
-            top:100%;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, 0);
             transition: all .5s ease;
         }
     </style>
@@ -62,19 +67,19 @@
         var divs = document.getElementsByTagName('div');
         // 从右边出来
         btns[0].onclick = function () {
-            divs[0].style.transform = 'translateX(-100%)';
+            divs[0].style.transform = 'translate(-100%,-50%)';
         }
         // 从左边出来
         btns[1].onclick = function () {
-            divs[1].style.transform = 'translateX(100%)';
+            divs[1].style.transform = 'translate(100%,-50%)';
         }
         // 从上边出来
         btns[2].onclick = function () {
-            divs[2].style.transform = 'translateY(100%)';
+            divs[2].style.transform = 'translate(-50%,100%)';
         }
         // 从下边出来
-        btns[3].onclick = function(){
-            divs[3].style.transform = 'translateY(-100%)';
+        btns[3].onclick = function () {
+            divs[3].style.transform = 'translate(-50%,-100%)';
         }
     </script>
 </body>
