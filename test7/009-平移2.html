@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .right {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            position: fixed;
+            top:0;
+            left: 100%;
+            transition: all .5s ease;
+        }
+
+        .left {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            position: fixed;
+            top: 0;
+            right:100%;
+            transition: all .5s ease;
+        }
+
+        .up {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            position: fixed;
+            bottom:100%;
+            left: 0;
+            transition: all .5s ease;
+        }
+        .down{
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            position: fixed;
+            left: 0;
+            top:100%;
+            transition: all .5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">从右边出来</button>
+    <button type="button">从左边出来</button>
+    <button type="button">从上边出来</button>
+    <button type="button">从下边出来</button>
+    <div class="right"></div>
+    <div class="left"></div>
+    <div class="up"></div>
+    <div class="down"></div>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        var divs = document.getElementsByTagName('div');
+        // 从右边出来
+        btns[0].onclick = function () {
+            divs[0].style.transform = 'translateX(-100%)';
+        }
+        // 从左边出来
+        btns[1].onclick = function () {
+            divs[1].style.transform = 'translateX(100%)';
+        }
+        // 从上边出来
+        btns[2].onclick = function () {
+            divs[2].style.transform = 'translateY(100%)';
+        }
+        // 从下边出来
+        btns[3].onclick = function(){
+            divs[3].style.transform = 'translateY(-100%)';
+        }
+    </script>
+</body>
+
+</html>
