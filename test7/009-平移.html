@@ -12,9 +12,9 @@
             height: 100px;
             background-color: #ccc;
             position: fixed;
-            top: 0;
+            top: 50%;
             right: 0;
-            transform: translateX(100%);
+            transform: translate(100%, -50%);
             transition: all .5s ease;
         }
 
@@ -23,9 +23,9 @@
             height: 100px;
             background-color: #ccc;
             position: fixed;
-            top: 0;
+            top: 50%;
             left: 0;
-            transform: translateX(-100%);
+            transform: translate(-100%, -50%);
             transition: all .5s ease;
         }
 
@@ -35,18 +35,19 @@
             background-color: #ccc;
             position: fixed;
             top: 0;
-            left: 0;
-            transform: translateY(-100%);
+            left: 50%;
+            transform: translate(-50%, -100%);
             transition: all .5s ease;
         }
-        .down{
+
+        .down {
             width: 100px;
             height: 100px;
             background-color: #ccc;
             position: fixed;
-            left: 0;
-            bottom:0;
-            transform: translateY(100%);
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 100%);
             transition: all .5s ease;
         }
     </style>
@@ -64,17 +65,21 @@
     <script>
         var btns = document.getElementsByTagName('button');
         var divs = document.getElementsByTagName('div');
+        // 从右边的正中间平移进来
         btns[0].onclick = function () {
-            divs[0].style.transform = 'translateX(0)';
+            divs[0].style.transform = 'translate(0,-50%)';
         }
+        // 从左边的正中间平移进来
         btns[1].onclick = function () {
-            divs[1].style.transform = 'translateX(0)';
+            divs[1].style.transform = 'translate(0,-50%)';
         }
+        // 从上边的正中间平移进来
         btns[2].onclick = function () {
-            divs[2].style.transform = 'translateY(0)';
+            divs[2].style.transform = 'translate(-50%,0)';
         }
-        btns[3].onclick = function(){
-            divs[3].style.transform = 'translateY(0)';
+        // 从下边的正中间平移进来
+        btns[3].onclick = function () {
+            divs[3].style.transform = 'translate(-50%,0)';
         }
     </script>
 </body>
