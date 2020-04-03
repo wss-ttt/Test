@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Documeno</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            top:50%;
+            right: 0;
+            transform: translate(100%,-50%);
+            background-color: #ccc;
+            transition: transform .5s ease;
+        }
+    </style>
+</head>
+<body>
+    <button type="button">平移出来</button>
+    <div class="box"></div>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        var divs = document.getElementsByTagName('div');
+        btns[0].onclick = function(){
+            divs[0].style.transform = 'translateY(-50%)';
+        }
+    </script>
+</body>
+</html>
