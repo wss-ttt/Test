@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .draw{
+            position: relative;
+        }
+        .draw.open .mask{
+            display: block;
+        }
+        .draw.open .content{
+            right: 0;
+        }
+        .draw .mask {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.5);
+            display: none;
+        }
+        .draw .content{
+            position: fixed;
+            width: 30%;
+            height: 100%;
+            right: -30%;
+            top:0;
+            background-color: pink;
+            transition:  all .5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">打开</button>
+
+    <div class="draw" id="draw">
+        <div class="mask"></div>
+        <div class="content"></div>
+    </div>
+
+    <script>
+
+        var btns = document.getElementsByTagName('button');
+        var draw = document.getElementById('draw');
+        var mask = draw.children[0];
+        btns[0].onclick = function () {
+            draw.classList.add('open');
+        }
+        mask.onclick = function(){
+            draw.classList.remove('open');
+        }
+    </script>
+</body>
+
+</html>
