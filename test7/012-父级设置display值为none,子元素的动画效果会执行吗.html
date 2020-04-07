@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 400px;
+            background-color: #ccc;
+        }
+        .container.hide .box{
+            animation: move-out .3s forwards;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            animation: move-in .3s forwards;
+        }
+        .hide{
+            display: none
+        }
+        @keyframes move-in {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(100%, 0);
+            }
+        }
+        @keyframes move-out{
+            0%{
+                transform: translate(100%, 0);
+            }
+            100%{
+                transform: translate(0, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">显示</button>
+    <button type="button">隐藏</button>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        var container = document.querySelector('.container');
+        // 显示
+        btns[0].onclick = function () {
+            // container.style.display = 'block';
+            container.className = 'container';
+        }
+        btns[1].onclick = function () {
+            // container.style.display = 'none';
+            container.className = 'container hide';
+        }
+    </script>
+</body>
+
+</html>

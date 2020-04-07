@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            margin: 100px auto;
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        .box {
+            position: absolute;
+            width: 30%;
+            height: 100%;
+            background-color: pink;
+            top: 0;
+            right: -30%;
+            transition: all .3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">显示</button>
+    <button type="button">隐藏</button>
+    <div class="container" id="container">
+        <div class="box"></div>
+    </div>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        var container = document.getElementById('container');
+        var box = container.children[0];
+        // 显示
+        btns[0].onclick = function () {
+            box.style['right'] = '0';
+        }
+        // 隐藏
+        btns[1].onclick = function () {
+            box.style['right'] = '-30%';
+        };
+
+    </script>
+</body>
+
+</html>
