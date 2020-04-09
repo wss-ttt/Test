@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+        }
+
+        .container .left {
+            height: 100%;
+            flex: 2;
+        }
+
+        .container .left .left-up {
+            height: 40%;
+            background-color: #ccc;
+        }
+
+        .container .left .left-down {
+            height: 60%;
+            background-color: pink;
+        }
+
+        .container .middle {
+            flex: 3;
+        }
+
+        .container .middle .middle-up {
+            height: 75%;
+            background-color: aqua;
+        }
+
+        .container .middle .middle-down {
+            height: 25%;
+            background-color: aquamarine;
+        }
+
+        .container .right {
+            flex: 2
+        }
+
+        .container .right .right-up {
+            height: 40%;
+            background-color: beige;
+        }
+
+        .container .right .right-middle {
+            height: 15%;
+            background-color: blueviolet;
+        }
+
+        .container .right .right-middle h2 {
+            /* font-size: 0.2rem; */
+            font-size:625%;
+        }
+
+        .container .right .right-down {
+            height: 45%;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="left-up"></div>
+            <div class="left-down"></div>
+        </div>
+        <div class="middle">
+            <div class="middle-up"></div>
+            <div class="middle-down"></div>
+        </div>
+        <div class="right">
+            <div class="right-up"></div>
+            <div class="right-middle">
+                <h2>好好哦好好哦分啊哈佛阿基佛啊发哦佛好哦啊哈哦分号分好好哦好好哦分啊哈佛阿基佛啊发哦佛好哦啊哈哦分号分
+                    好好哦好好哦分啊哈佛阿基佛啊发哦佛好哦啊哈哦分号分好好哦好好哦分啊哈佛阿基佛啊发哦佛好哦啊哈哦分号分
+                </h2>
+            </div>
+            <div class="middle-down"></div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            setRem();
+            function setRem() {
+                var width = document.documentElement.clientWidth;
+                // 限制页面的最小宽度,来达到这是1rem的最小值
+                // 小于1366, 依旧取值为1366
+                width = width > 1366 ? width : 1366;  // 小于1366时不在变化
+                // rem = width / 设计图尺寸宽 * 100 (设计图的rem,1rem = 100px)
+                var rem = width / 1920 * 100;  // 参照尺寸是1920 (pd端)
+                // var html = document.documentElement; // 也可以这样获取html
+                document.getElementsByTagName("html")[0].style.fontSize = rem + "px"
+            }
+            window.onresize = setRem;
+        })();
+
+    </script>
+</body>
+
+</html>

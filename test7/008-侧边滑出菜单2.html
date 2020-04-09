@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*提前把样式写好，js直接控制class类名即可*/
+        .draw.open .mask {
+            display: block;
+        }
+
+        .draw.open .content {
+            transform: translate(0, 0);
+        }
+
+        .draw .mask {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .draw .content {
+            position: fixed;
+            width: 30%;
+            right: 0;
+            top: 0;
+            height: 100%;
+            bottom: 0;
+            background-color: pink;
+            transform: translate(100%, 0);
+            transition: all .5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">打开</button>
+    <div class="draw" id="draw">
+        <div class="mask" id="mask"></div>
+        <div class="content" id="content">
+            好好好学习 天天向上
+        </div>
+    </div>
+
+    <script>
+
+        var btns = document.getElementsByTagName('button');
+        var draw = document.getElementById('draw');
+        var content = document.getElementById('content');
+        var mask = document.getElementById('mask');
+        btns[0].onclick = function () {
+            draw.className += ' open';
+        }
+        // 点击遮罩层,抽屉滑进去
+        mask.onclick = function () {
+            this.style.display = 'none';
+            content.style.transform = 'translate(100%,0)';
+        }
+    </script>
+</body>
+
+</html>
