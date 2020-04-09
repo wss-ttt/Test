@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 400px;
+            background-color: #ccc;
+            margin: 100px auto;
+            position: relative;
+            display: none;
+        }
+
+        .container.open .box {
+            animation: move-in .5s;
+        }
+
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            top: 0;
+            right: 0;
+            animation: move-out .5s;
+        }
+        /*从右边进来的动画效果*/
+        @keyframes move-in {
+            0% {
+                transform: translate(100%, 0);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+        /*消失的动画效果*/
+        @keyframes move-out {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(100%, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">打开</button>
+    <button type="button">隐藏</button>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <script>
+        var btns = document.getElementsByTagName('button');
+        var container = document.querySelector('.container');
+        // 打开
+        btns[0].onclick = function () {
+            container.style.display = 'block';
+            container.classList.add('open');
+        }
+        // 隐藏
+        btns[1].onclick = function () {
+            container.classList.remove('open');
+            // 需要延迟消失
+            setTimeout(function(){
+                container.style.display = 'none';
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>

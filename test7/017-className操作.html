@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="aa ddee  bb cc dd" id="box"></div>
+    <script>
+        var classList = {
+            getClass: function (ele) {
+                return ele.className.replace(/\s+/, ' ').split(' ');
+            },
+            hasClass: function (ele, cls) {
+                return (' ' + ele.className + ' ').indexOf(' ' + cls + ' ') > -1;
+            },
+            addClass: function (ele, cls) {
+                if (!this.hasClass(ele, cls)) {
+                    ele.className += ' ' + cls;
+                }
+            },
+            removeClass: function (ele, cls) {
+                if (this.hasClass(ele, cls)) {
+                    var reg = new RegExp('(\\s|^)' + cls + '\\s|$');
+                    ele.className = ele.className.replace(reg, ' ');
+                }
+            },
+            clearClass: function (ele) {
+                ele.className = '';
+            }
+        }
+    </script>
+    <script>
+        var box = document.getElementById('box');
+        var a = classList.getClass(box);
+        console.log(a);
+        var b = classList.hasClass(box, 'ee');
+        console.log(b);
+        classList.addClass(box,'ff');
+        classList.removeClass(box,'ff');
+
+        classList.addClass(box,'kk');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style-type: none;
+        }
+
+        .item {
+            width: 20%;
+            position: relative;
+        }
+
+        .placeholder:after {
+            content: '';
+            display: block;
+            padding-top: 130%;
+        }
+
+        .img {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="item placeholder">
+            <img class="img"
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532110043386&di=dc7277a3b566e40a9d98d736f1613dd2&imgtype=0&src=http%3A%2F%2Fpic.qqtn.com%2Fup%2F2016-5%2F201605301928431736188.png">
+        </li>
+        <li class="item placeholder">
+            <img class="img"
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532110043386&di=dc7277a3b566e40a9d98d736f1613dd2&imgtype=0&src=http%3A%2F%2Fpic.qqtn.com%2Fup%2F2016-5%2F201605301928431736188.png">
+        </li>
+    </ul>
+</body>
+
+</html>
