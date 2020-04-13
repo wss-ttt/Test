@@ -24,7 +24,7 @@
             },
             removeClass: function (ele, cls) {
                 if (this.hasClass(ele, cls)) {
-                    var reg = new RegExp('(\\s|^)' + cls + '\\s|$');
+                    var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
                     ele.className = ele.className.replace(reg, ' ');
                 }
             },
@@ -41,8 +41,6 @@
         console.log(b);
         classList.addClass(box,'ff');
         classList.removeClass(box,'ff');
-
-        classList.addClass(box,'kk');
     </script>
 </body>
 
