@@ -1,0 +1,136 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <style>
+        .modal-dialog-content {
+            width: 300px;
+            padding: 20px;
+            border:1px solid red;
+        }
+
+        .modal-layer {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            visibility: hidden;
+            transform: scale(1.1);
+            transition: opacity 0.25s 0s, transform 0.25s;
+            /* transition: opacity 0.25s 0s; */
+        }
+
+        .modal-layer.show {
+            visibility: visible;
+            transform: scale(1.0);
+            transition: opacity 0.25s 0s, transform 0.25s;
+        }
+
+        .modal-dialog-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="trigger-button">打开</button>
+    <ul>
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+        <li>005</li>
+        <li>006</li>
+        <li>007</li>
+        <li>008</li>
+        <li>009</li>
+        <li>010</li>
+    </ul>
+    <script>
+        function importFromBelow() {
+            /**
+             * 
+             * @param {object} options init options
+             * @param {string} options.id dialog id
+             * @param {string} options.contentHtml dialog content html
+             * @param {boolean} options.closeWhenClickLayer whether close dialog when click layer
+             */
+            function init(options) {
+                const { id: dialogId, contentHtml, closeWhenClickLayer = true } = options;
+                const layerEle = document.createElement('div');
+                layerEle.setAttribute('class', 'modal-layer');
+                layerEle.setAttribute('id', dialogId);
+                const contentContainerEle = document.createElement('div');
+                contentContainerEle.setAttribute('class', 'modal-dialog-container');
+                contentContainerEle.innerHTML = contentHtml;
+                layerEle.appendChild(contentContainerEle);
+                document.body.appendChild(layerEle);
+                if (closeWhenClickLayer) {
+                    document.onclick = function (e) {
+                        if (e.target === layerEle) {
+                            close(dialogId);
+                        }
+                    }
+                }
+            }
+
+            /**
+             * destroy modal dialog
+             * @param {string} dialogId dialog id
+             */
+            function destroy(dialogId) {
+                const dialogEle = document.querySelector(`#${dialogId}`);
+                dialogEle.parentNode.removeChild(dialogEle);
+            }
+
+            function popup(dialogId) {
+                const dialogEle = document.querySelector(`#${dialogId}`);
+                // 添加样式
+                dialogEle.classList.add('show');
+            }
+
+            function close(dialogId) {
+                const dialogEle = document.querySelector(`#${dialogId}`);
+                // 移除样式
+                dialogEle.classList.remove('show');
+            }
+
+            return { init, destroy, popup, close };
+        }
+    </script>
+    <script>
+
+        const dialogUtil = importFromBelow();
+        const DIALOG_ID = 'my-modal-dialog';
+        const contentHtml = `
+                <div class="modal-dialog-content" id="modal-dialog-content">
+                    <div>这里是弹窗内容</div>
+                    <div>
+                    <button id="dialog-close-button">close modal dialog</button>
+                    </div>
+                </div
+                `;
+        dialogUtil.init({
+            id: DIALOG_ID,
+            contentHtml,
+            closeWhenClickLayer: false
+        });
+        const closeButtonEle = document.querySelector('#dialog-close-button');
+        closeButtonEle.onclick = function (e) {
+            dialogUtil.close(DIALOG_ID);
+        };
+        const triggerButton = document.querySelector('#trigger-button');
+        triggerButton.onclick = function (e) {
+            dialogUtil.popup(DIALOG_ID);
+        };
+    </script>
+</body>
+
+</html>

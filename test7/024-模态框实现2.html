@@ -16,20 +16,21 @@
             background-color: rgba(0, 0, 0, 0.5);
             display: none;
             z-index: 1050;
-            opacity: 0;   /*透明度设置*/
+            opacity: 0;
+            /*透明度设置*/
             transition: all .5s ease-out 0s;
         }
 
         .dialog {
             width: 500px;
             height: 300px;
-            position: relative;
             box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
             border-radius: 10px;
             background-color: #fff;
-            margin: 30px auto;
-            transform: translate(0, -40%);
-            -webkit-transform: translate(0, -40%);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -100%);
             transition: all .5s ease-out 0s;
         }
 
@@ -58,7 +59,7 @@
 
         .in .dialog {
             transform: translate(0, 0);
-            -webkit-transform: translate(0, 0);
+            -webkit-transform: translate(-50%, 10%);
         }
     </style>
 </head>
@@ -81,6 +82,9 @@
         var oModal = document.getElementById("modal");
         var oClose = document.getElementById("close");
         oBtn.addEventListener("click", function () {
+            // display 和 opacity 有冲突
+            // 必须先设置 display
+            // 延迟 设置 opacity 才会有效果
             oModal.style.display = "block";
             // oModal.className = "modal in";
             var timer = setTimeout(function () {
@@ -92,6 +96,21 @@
             oModal.style.display = "none";
             oModal.className = "modal";
         });
+
+        // 不能这样实现，因为内容都在oModal中，
+        // 点击内容区域，一样会隐藏掉弹出层
+        /* oModal.onclick = function (event) {
+            oModal.style.display = "none";
+            oModal.className = "modal";
+        } */
+
+        document.onclick = function () {
+            var target = event.target ? event.target : event.srcElement;
+            if (target === oModal) {
+                oModal.style.display = "none";
+                oModal.className = "modal";
+            }
+        }
     </script>
 </body>
 
