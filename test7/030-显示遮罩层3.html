@@ -5,7 +5,8 @@
     <style>
         /* 定义模态对话框外面的覆盖层样式 */
         #modal {
-            visibility: hidden;
+            /* visibility: hidden; */
+            display: none;
             position: fixed;
             /*脱离了文档流*/
             /* 使用绝对定位或固定定位  */
@@ -21,7 +22,7 @@
         }
 
         #modal.show {
-            visibility: visible;
+            /* visibility: visible; */
             opacity: 1;
         }
 
@@ -74,16 +75,23 @@
         var mask = document.getElementById('modal');
         // 打开
         btns[1].onclick = function () {
-            mask.classList.add('show');
+            mask.style.display = 'block';
+            // mask.classList.add('show');
+            var timer = setInterval(function () {
+                mask.classList.add('show');
+                clearInterval(timer);
+            }, 20)
         }
         // 关闭
         btns[0].onclick = function () {
+            mask.style.display = 'none';
             mask.classList.remove('show');
         }
         // 点击遮罩层,需要隐藏弹框
         document.onclick = function (event) {
             var target = event.target ? event.target : event.srcElement;
             if (target === mask) {
+                mask.style.display = 'none';
                 mask.classList.remove('show');
             }
         }

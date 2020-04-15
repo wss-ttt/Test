@@ -11,24 +11,29 @@
             height: 100px;
             background-color: #ccc;
             transition: all 2s ease;
+            display: none;
+            opacity: 0;
+            transition: all 5s ease;
         }
         .in{
-            opacity: 0;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
+    <button type="button">显示</button>
     <div class="box"></div>
     <script>
         var divs = document.getElementsByTagName('div');
-
-        // 鼠标移入,透明度过渡为 0 
-        divs[0].onmouseover = function(){
-            this.classList.add('in');
-        }
-        // 鼠标移出, 透明度从 0 过渡到 1
-        divs[0].onmouseout = function(){
-            this.classList.remove('in');
+        var btns = document.getElementsByTagName('button');
+        btns[0].onclick = function(){
+            divs[0].style.display = 'block';
+            // 此处不能如下这样实现
+            // divs[0].className += ' in';
+            // 正确的做法
+            var timer = setInterval(function(){
+                divs[0].className += ' in';
+            },20)
         }
     </script>
 </body>
