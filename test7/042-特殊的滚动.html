@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            background-color: #ccc;
+        }
+        .inner{
+            height: 100%;
+        }
+        .item {
+            height: 200px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <div class="inner" >
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        var inner = box.children[0];
+        var items = inner.children;
+        var colors = ['red', 'green', 'blue'];
+        var step = 0;
+        var viewHeight =  6 * 200;
+        for (var i = 0; i < items.length; i++) {
+            items[i].style.backgroundColor = colors[i]
+        }
+        inner.innerHTML += inner.innerHTML;
+        var tiemr = setInterval(move,30)
+        function move(){
+            step++;
+            if(step === 600){
+                // inner.style.marginTop = 400 + 'px';
+                step = 0;
+            }
+            inner.style.marginTop = -step + 'px';
+        }
+        console.log(getComputedStyle(box,null)['marginTop'])
+    </script>
+</body>
+
+</html>
